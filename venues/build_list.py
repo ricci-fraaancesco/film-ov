@@ -211,7 +211,7 @@ NOMINATIM = "https://nominatim.openstreetmap.org/reverse"
 
 
 def fill_towns(osm: list[dict], cache_path: Path, fetch=None, delay: float = 1.1) -> int:
-    """Find the town and postcode of OSM cinemas that have none, from their coordinates.
+    """Find the town, postcode and province of OSM cinemas that miss them, from their coordinates.
     Uses OpenStreetMap's Nominatim, 1 request per second, each cinema only once ever
     (answers are kept in data/osm_towns.json)."""
     try:
@@ -224,7 +224,7 @@ def fill_towns(osm: list[dict], cache_path: Path, fetch=None, delay: float = 1.1
             return r.json().get("address", {})
     asked = 0
     for r in osm:
-        if r.get("city") or not r.get("lat"):
+        if (r.get("city") and r.get("province")) or not r.get("lat"):
             continue
         key = r["osm_id"]
         if key not in cache:
@@ -236,7 +236,7 @@ def fill_towns(osm: list[dict], cache_path: Path, fetch=None, delay: float = 1.1
             asked += 1
             time.sleep(delay)
         a = cache[key]
-        r["city"] = a.get("city") or a.get("town") or a.get("village") or a.get("municipality") or ""
+        r["city"] = r.get("city") or a.get("city") or a.get("town") or a.get("village") or a.get("municipality") or ""
         r["postcode"] = r.get("postcode") or a.get("postcode", "")
         iso = a.get("ISO3166-2-lvl6", "")
         if iso.startswith("IT-") and len(iso) == 5:

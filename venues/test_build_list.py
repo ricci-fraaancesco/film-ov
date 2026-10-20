@@ -95,3 +95,10 @@ def test_fill_towns_once(tmp_path):
     assert osm[0]["city"] == "Ciampino" and osm[0]["province"] == "RM" and osm[0]["address"] == "Via Roma 3"
     osm2 = [{"name": "Il Piccolissimo", "city": "", "lat": "41.79", "lon": "12.60", "osm_id": "node/9", "address": ""}]
     assert fill_towns(osm2, tmp_path / "t.json", fetch=fetch, delay=0) == 0 and len(calls) == 1
+
+
+def test_fill_province_only(tmp_path):
+    from build_list import fill_towns
+    osm = [{"name": "Cinema Conti", "city": "Acqualagna", "lat": "43.6", "lon": "12.6", "osm_id": "node/7", "address": "Via X 1"}]
+    fill_towns(osm, tmp_path / "t.json", fetch=lambda la, lo: {"town": "Acqualagna", "ISO3166-2-lvl6": "IT-PU"}, delay=0)
+    assert osm[0]["province"] == "PU" and osm[0]["city"] == "Acqualagna" and osm[0]["address"] == "Via X 1"
