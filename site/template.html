@@ -115,6 +115,18 @@ section > .lede { color: var(--muted); margin-top: -10px; font-size: 15px; }
 .tix:hover span { color: var(--screen-ink); border-left-color: var(--screen-muted); }
 .howto { font-size: 13px; color: var(--muted); }
 
+/* posters (TMDB) */
+.thumb { flex: none; width: 46px; height: 69px; border-radius: 3px; object-fit: cover; background: var(--chip); border: 1px solid var(--line); display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 22px; color: var(--muted); }
+.t.thumbed { display: flex; gap: 14px; align-items: flex-start; }
+.tt { display: grid; gap: 4px; min-width: 0; }
+.results .opt img.ic { width: 30px; height: 45px; object-fit: cover; padding: 0; }
+.film-head { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: start; }
+.film-head .fh-text { display: grid; gap: 10px; min-width: 0; }
+.poster { width: 100%; max-width: 200px; aspect-ratio: 2 / 3; height: auto; object-fit: cover; border-radius: 4px; background: var(--chip); border: 1px solid var(--line); }
+.orig { color: var(--muted); font-size: 15px; }
+.orig i { color: var(--ink); }
+.plot { margin: 0; max-width: 65ch; }
+
 /* cards and rows */
 .cities { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
 .city { display: grid; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; color: var(--ink); }
@@ -177,6 +189,8 @@ footer .wrap { display: grid; gap: 6px; }
   .daygrid .times { margin-bottom: 8px; }
   .next a.item { grid-template-columns: 60px minmax(0,1fr); }
   .next .city-tag { grid-column: 2; }
+  .film-head { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .poster { max-width: 140px; }
 }
 @media (prefers-reduced-motion: no-preference) {
   main { animation: in .25s ease-out both; }
@@ -246,6 +260,10 @@ const filmById = id => FILM.findIndex(f => f.id === id);
 const showsOfCity = c => SH.filter(s => CIN[s.c].c === c);
 const subs = f => [f.l, f.s].filter(Boolean).join(" · ");
 const tixHtml = s => `<a class="tix" href="${esc(s.u)}" target="_blank" rel="noopener" title="Prenota: ${esc(FILM[s.f].t)}, ${esc(whenShort(s.t))}, ${esc(CIN[s.c].n)}"><b>${hhmm(s.t)}</b><span>${esc(s.sc + (s.fmt && !s.sc.toLowerCase().includes(s.fmt) ? " · " + s.fmt : ""))}</span></a>`;
+const IMG = "https://image.tmdb.org/t/p/";
+const initial = F => esc((F.t.replace(/^(the|il|lo|la|i|gli|le|l'|un|una)\s+/i, "")[0] || "?").toUpperCase());
+const thumb = F => F.p ? `<img class="thumb" src="${IMG}w92${F.p}" alt="" loading="lazy" width="46" height="69" data-ph="${initial(F)}">` : `<span class="thumb" aria-hidden="true">${initial(F)}</span>`;
+document.addEventListener("error", e => { const el = e.target; if (el.tagName === "IMG" && el.dataset.ph !== undefined) { const sp = document.createElement("span"); sp.className = el.className; sp.setAttribute("aria-hidden", "true"); sp.textContent = el.dataset.ph; el.replaceWith(sp); } else if (el.tagName === "IMG" && el.classList.contains("poster")) el.remove(); }, true);
 const mapsUrl = c => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent([c.n, c.a, c.c].filter(Boolean).join(", "));
 
 /* ---------------- search ---------------- */
@@ -296,14 +314,14 @@ CIN.forEach((c, i) => {
 FILM.forEach((f, i) => {
   const sh = SH.filter(s => s.f === i);
   if (!sh.length) return;
-  IDX.push({ type: "film", fi: i, label: f.t, cities: new Set(sh.map(s => CIN[s.c].c)), words: norm(f.t + " " + f.l + " " + (f.lr || "")).split(" "), w: Math.min(0.4, Math.log10(sh.length + 1) / 4), n: sh });
+  IDX.push({ type: "film", fi: i, label: f.t, cities: new Set(sh.map(s => CIN[s.c].c)), words: norm([f.t, f.ot || "", (f.al || []).join(" "), f.y || "", f.l, f.lr || ""].join(" ")).split(" "), w: Math.min(0.4, Math.log10(sh.length + 1) / 4), n: sh });
 });
 
 function filmSub(e, city) {
   const sh = city ? e.n.filter(s => CIN[s.c].c === city) : e.n;
   const cins = new Set(sh.map(s => s.c));
   const where = cins.size === 1 ? CIN[[...cins][0]].n : plural(cins.size, "cinema", "cinema");
-  return [FILM[e.fi].l, where + (city ? "" : ", " + [...new Set(sh.map(s => CIN[s.c].c))].join(", ")), "prossimo " + whenShort(sh[0].t)].join(" · ");
+  return [FILM[e.fi].y, FILM[e.fi].l, where + (city ? "" : ", " + [...new Set(sh.map(s => CIN[s.c].c))].join(", ")), "prossimo " + whenShort(sh[0].t)].filter(Boolean).join(" · ");
 }
 
 function search(raw) {
@@ -368,7 +386,7 @@ function renderResults() {
       const href = e.type === "film" ? "#f-" + FILM[e.fi].id + (r.city ? "~" + citySlug(r.city) : "") : e.href;
       const sub = e.type === "film" ? filmSub(e, r.city) : e.sub;
       const i = opts.length; opts.push(href);
-      html += `<a class="opt" role="option" id="opt${i}" href="${href}" aria-selected="false"><span class="ic" aria-hidden="true">${ICON[e.type]}</span><span class="tx"><span class="lb">${highlight(e.label, r.toks)}</span><span class="sb">${esc(sub)}</span></span></a>`;
+      html += `<a class="opt" role="option" id="opt${i}" href="${href}" aria-selected="false">${e.type === "film" && FILM[e.fi].p ? `<img class="ic" src="${IMG}w92${FILM[e.fi].p}" alt="" loading="lazy" data-ph="F">` : `<span class="ic" aria-hidden="true">${ICON[e.type]}</span>`}<span class="tx"><span class="lb">${highlight(e.label, r.toks)}</span><span class="sb">${esc(sub)}</span></span></a>`;
     }
   }
   resEl.innerHTML = html;
@@ -421,7 +439,7 @@ function viewHome() {
     <p class="lede">I prossimi spettacoli in versione originale in tutte le città.</p>
     ${nextList(upcoming, 12, true)}</section>
   <section aria-labelledby="h-top"><h2 id="h-top">I più programmati</h2>
-    <div class="list">${byFilm.map(({ f, sh, cins }) => { const F = FILM[f]; const cities = [...new Set(sh.map(s => CIN[s.c].c))]; return `<div class="row"><div class="t"><h3><a href="#f-${F.id}">${esc(F.t)}</a></h3><span class="lang">${esc(subs(F))}</span></div><div class="side"><b>${plural(cins, "cinema", "cinema")}</b><br>${esc(cities.join(", "))}</div></div>`; }).join("")}</div></section>`;
+    <div class="list">${byFilm.map(({ f, sh, cins }) => { const F = FILM[f]; const cities = [...new Set(sh.map(s => CIN[s.c].c))]; return `<div class="row"><div class="t thumbed">${thumb(F)}<div class="tt"><h3><a href="#f-${F.id}">${esc(F.t)}</a></h3><span class="lang">${esc(subs(F))}</span></div></div><div class="side"><b>${plural(cins, "cinema", "cinema")}</b><br>${esc(cities.join(", "))}</div></div>`; }).join("")}</div></section>`;
 }
 
 function viewCity(city) {
@@ -442,7 +460,7 @@ function viewCity(city) {
     ${quiet.length || missing.length ? `<p class="note">${quiet.length ? `<b>Nessun film in VO al momento:</b> ${quiet.map(c => esc(c.n)).join(", ")}. ` : ""}${missing.length ? `<b>Non ancora coperti:</b> ${missing.map(esc).join(", ")}.` : ""}</p>` : ""}</section>
   <section aria-labelledby="h-films"><h2 id="h-films">Film in VO a ${esc(city)}</h2>
     <div class="list">${films.map(([f, list]) => { const F = FILM[f]; const cins = [...new Set(list.map(s => s.c))];
-      return `<div class="row"><div class="t"><h3><a href="#f-${F.id}~${citySlug(city)}">${esc(F.t)}</a></h3><span class="lang">${esc(subs(F))}</span><span class="sm">${cins.map(c => esc(CIN[c].n)).join(", ")}</span></div><div class="side">prossimo<br><b>${esc(whenShort(list[0].t))}</b></div></div>`; }).join("")}</div></section>`;
+      return `<div class="row"><div class="t thumbed">${thumb(F)}<div class="tt"><h3><a href="#f-${F.id}~${citySlug(city)}">${esc(F.t)}</a></h3><span class="lang">${esc(subs(F))}</span><span class="sm">${cins.map(c => esc(CIN[c].n)).join(", ")}</span></div></div><div class="side">prossimo<br><b>${esc(whenShort(list[0].t))}</b></div></div>`; }).join("")}</div></section>`;
 }
 
 let cinDay = null;
@@ -454,7 +472,7 @@ function viewCinema(ci) {
   const filmsN = new Set(sh.map(s => s.f)).size;
   const dayBtns = `<div class="days" role="group" aria-label="Scegli il giorno">${days.map(([k, l]) => `<button type="button" class="day" data-day="${k}" aria-pressed="${k === cinDay}">${dayLabel(l[0].t)} <small>${dayDate(l[0].t)} · ${l.length}</small></button>`).join("")}${days.length > 1 ? `<button type="button" class="day" data-day="all" aria-pressed="${cinDay === "all"}">Tutti <small>${days.length} giorni</small></button>` : ""}</div>`;
   const block = list => [...groupBy(list, s => s.f)].map(([f, l]) => { const F = FILM[f]; const labs = [...new Set(l.map(s => s.lab).filter(Boolean))];
-    return `<div class="row"><div class="t"><h3><a href="#f-${F.id}">${esc(F.t)}</a> ${labs.map(x => `<span class="badge">${esc(x)}</span>`).join(" ")}</h3><span class="lang">${esc(subs(F))}</span></div><div class="times">${l.map(tixHtml).join("")}</div></div>`; }).join("");
+    return `<div class="row"><div class="t thumbed">${thumb(F)}<div class="tt"><h3><a href="#f-${F.id}">${esc(F.t)}</a> ${labs.map(x => `<span class="badge">${esc(x)}</span>`).join(" ")}</h3><span class="lang">${esc(subs(F))}</span></div></div><div class="times">${l.map(tixHtml).join("")}</div></div>`; }).join("");
   const body = cinDay === "all"
     ? days.map(([k, l]) => `<h3 class="city-h" style="font-size:22px">${dayLabel(l[0].t)} <small>${dayDate(l[0].t)}</small></h3><div class="list">${block(l)}</div>`).join("")
     : `<div class="list">${block((days.find(([k]) => k === cinDay) || [, []])[1])}</div>`;
@@ -479,8 +497,13 @@ function viewFilm(fi, citySl) {
   const filt = cities.length > 1 ? `<div class="filters" role="group" aria-label="Filtra per città"><a class="day" href="#f-${F.id}" aria-pressed="${!city}">Tutte <small>${sh.length}</small></a>${cities.map(([c, l]) => `<a class="day" href="#f-${F.id}~${citySlug(c)}" aria-pressed="${c === city}">${esc(c)} <small>${l.length}</small></a>`).join("")}</div>` : "";
   return `
   <div class="head">${crumbs([["Home", "#"], ...(city ? [[city, "#c-" + citySlug(city)]] : []), [F.t]])}
-    <h1>${esc(F.t)}</h1>
-    <div class="facts"><span><span class="badge vo">VO</span> <b>${esc(F.l)}</b>${F.s ? " · " + esc(F.s) : ""}</span><span>in <b>${plural(cinN, "cinema", "cinema")}</b></span><span><b>${sh.length}</b> spettacoli</span></div></div>
+    <div class="film-head" style="${F.p ? "" : "grid-template-columns:minmax(0,1fr)"}">${F.p ? `<img class="poster" src="${IMG}w342${F.p}" alt="Locandina di ${esc(F.t)}" width="200" height="300">` : ""}
+      <div class="fh-text"><h1>${esc(F.t)}</h1>
+        ${F.ot || F.y ? `<div class="orig">${[F.ot ? `Titolo originale: <i>${esc(F.ot)}</i>` : "", F.y || "", F.rt ? F.rt + " min" : ""].filter(Boolean).join(" · ")}</div>` : ""}
+        <div class="facts"><span><span class="badge vo">VO</span> <b>${esc(F.l)}</b>${F.s ? " · " + esc(F.s) : ""}</span><span>in <b>${plural(cinN, "cinema", "cinema")}</b></span><span><b>${sh.length}</b> spettacoli</span></div>
+        ${F.o ? `<p class="plot">${esc(F.o)}</p>` : ""}
+        ${F.tm ? `<div class="actions"><a class="btn" href="https://www.themoviedb.org/movie/${F.tm}" target="_blank" rel="noopener">Scheda su TMDB ↗</a></div>` : ""}
+      </div></div></div>
   <section aria-labelledby="h-where"><h2 id="h-where">Dove e quando</h2>
     ${filt}
     ${sh.length ? `<p class="howto">Tocca un orario per prenotare sul sito del cinema.</p>` : `<p class="note">Nessuno spettacolo in programma.</p>`}
@@ -520,7 +543,7 @@ window.addEventListener("hashchange", route);
 /* ---------------- static bits ---------------- */
 const covered = new Set(ALL.map(s => s.c)).size;
 document.getElementById("heroMeta").innerHTML = `<b>${SH.length}</b> spettacoli in VO · <b>${new Set(SH.map(s => s.f)).size}</b> film · <b>${new Set(SH.map(s => s.c)).size}</b> cinema`;
-document.getElementById("foot").innerHTML = `<span>Programmazione letta dalle pagine pubbliche di vendita dei cinema (18tickets), aggiornata il ${esc(fmtUpd.format(new Date(D.updated)))}.</span><span>Orari e lingua possono cambiare: verifica sempre sulla pagina di prenotazione del cinema. Prototipo, copertura parziale.</span>`;
+document.getElementById("foot").innerHTML = `<span>Programmazione letta dalle pagine pubbliche di vendita dei cinema (18tickets), aggiornata il ${esc(fmtUpd.format(new Date(D.updated)))}.</span><span>Orari e lingua possono cambiare: verifica sempre sulla pagina di prenotazione del cinema. Prototipo, copertura parziale.</span><span>Schede e locandine dei film da <a href="https://www.themoviedb.org" target="_blank" rel="noopener">TMDB</a>. Questo sito usa le API di TMDB ma non è approvato né certificato da TMDB.</span>`;
 if (STALE) { const s = document.getElementById("staleBar"); s.className = "stale"; s.innerHTML = `<div class="wrap">Questi dati sono del ${esc(fmtUpd.format(new Date(D.updated)))} e potrebbero non essere più validi.</div>`; s.hidden = false; }
 route();
 </script>

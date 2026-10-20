@@ -9,8 +9,26 @@ from zoneinfo import ZoneInfo
 ap = argparse.ArgumentParser()
 ap.add_argument('--csv', default='data/ov_showtimes.csv')
 ap.add_argument('--out', default='public')
+ap.add_argument('--data', default='data', help='folder with tmdb_cache.json (optional)')
 args = ap.parse_args()
 HERE = Path(__file__).parent
+import sys; sys.path.insert(0, str(HERE))
+from films import film_key, norm, strip_edition, LANG_IT
+
+try:
+    TMDB = json.loads((Path(args.data) / 'tmdb_cache.json').read_text(encoding='utf-8'))
+except (FileNotFoundError, json.JSONDecodeError):
+    TMDB = {}
+
+def tmdb_for(raw):
+    m = TMDB.get(film_key(raw))
+    return m if m and m.get('id') else None
+
+def short(text, n=480):
+    text = (text or '').strip()
+    if len(text) <= n: return text
+    cut = text[:n].rsplit(' ', 1)[0].rstrip(',;:')
+    return cut + '…'
 
 rows = list(csv.DictReader(open(args.csv, encoding='utf-8')))
 
@@ -99,16 +117,28 @@ for (city, name), (addr, area, web) in VENUE.items():
 film_list = []; film_idx = {}; shows = []
 for r in rows:
     raw = r['title']
-    key = ALIAS.get(raw, raw)
+    m = tmdb_for(raw)
+    # films are grouped by TMDB id when we have one, otherwise by the cleaned cinema title
+    key = ('tmdb', m['id']) if m else ('title', film_key(ALIAS.get(raw, raw)))
     if key not in film_idx:
         film_idx[key] = len(film_list)
-        lang, sub = lang_short(r['language'])
-        film_list.append({"id": slug(key), "t": tcase(key), "l": lang, "s": sub, "lr": r['language']})
+        if m:
+            t = m['title'] or m['original_title']
+            rec = {"t": t, "ot": m['original_title'] if norm(m.get('original_title') or '') != norm(t) else '',
+                   "y": m.get('year'), "p": m.get('poster_path') or '', "o": short(m.get('overview')),
+                   "tm": m['id'], "rt": m.get('runtime') or 0, "_ol": m.get('original_language')}
+        else:
+            rec = {"t": tcase(strip_edition(ALIAS.get(raw, raw)))}
+        rec["al"] = []  # other titles used by the cinemas, for search
+        film_list.append(rec)
     fi = film_idx[key]
-    lg, sb = lang_short(r['language'])
     f = film_list[fi]
+    lg, sb = lang_short(r['language'])
+    if 'l' not in f: f['l'], f['s'], f['lr'] = lg, sb, r['language']
     if f['l'] == 'Lingua originale' and lg != 'Lingua originale': f['l'] = lg
     if not f['s'] and sb: f['s'] = sb
+    alt = tcase(strip_edition(raw))
+    if norm(alt) not in (norm(f['t']), norm(f.get('ot', ''))) and alt not in f['al']: f['al'].append(alt)
     if (r['city'], r['cinema']) not in cin_idx:  # venue not in VENUE yet: still show it
         cin_idx[(r['city'], r['cinema'])] = len(cin_list)
         cin_list.append({"id": slug(r['cinema']), "n": r['cinema'], "c": r['city'], "a": "", "z": "", "w": ""})
@@ -122,6 +152,18 @@ for r in rows:
     shows.append([ci, fi, ts, screen, tcase(lab) if lab else '', fmt, r['booking_url'].replace('https://','').replace('#theater-init','')])
 
 shows.sort(key=lambda s: s[2])
+
+# language from TMDB when the cinema only says "lingua originale"; stable unique page ids
+used = set()
+for f in film_list:
+    ol = f.pop('_ol', None)
+    if f['l'] == 'Lingua originale' and ol in LANG_IT and ol != 'it':
+        f['l'] = LANG_IT[ol]
+    fid = slug(f['t']) or 'film'
+    if fid in used and f.get('y'): fid = f"{fid}-{f['y']}"
+    while fid in used: fid += '-2'
+    used.add(fid); f['id'] = fid
+    if not f['al']: del f['al']
 data = {"updated": datetime.now(ZoneInfo("Europe/Rome")).replace(microsecond=0).isoformat(), "cities": cities, "cinemas": cin_list, "films": film_list, "shows": shows,
         "missing": {"Roma": ["Barberini", "Troisi", "Greenwich", "Nuovo Sacher", "Farnese", "Nuovo Cinema Aquila"]}}
 out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
