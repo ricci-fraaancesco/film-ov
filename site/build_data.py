@@ -127,7 +127,7 @@ for r in rows:
     if key not in film_idx:
         film_idx[key] = len(film_list)
         if m:
-            t = m['title_it']
+            t = re.sub(r"\s*\((film|serie tv|documentario)[^)]*\)$", "", m['title_it'], flags=re.I)  # "Fatherland (film 2026)"
             ot = m.get('original_title') or ''
             rec = {"t": t, "ot": ot if norm(ot) != norm(t) else '', "y": m.get('year'), "rt": m.get('runtime') or 0,
                    "d": ', '.join(m.get('directors') or []), "wd": m['qid'], "wp": m.get('itwiki') or '',
@@ -159,6 +159,9 @@ for r in rows:
     lab = r['label'] if r['label'] and not re.fullmatch(r'v\.?o\.?s?\.?|vos|v\.o\. sott\.', r['label'], re.I) else ''
     screen = re.sub(r'\s+', ' ', r['screen']).strip()
     if screen.isdigit(): screen = 'Sala ' + screen
+    # "Mastroianni PRIMA VISIONE" -> "Mastroianni": the label is already shown as a badge
+    cut = re.split(r"\s(?=[A-ZÀ-Ý']{4,}\b)", screen, maxsplit=1)[0].strip()
+    if cut and cut != screen and not cut.isupper(): screen = cut
     fmt = FORMAT.get(raw, '')
     shows.append([ci, fi, ts, screen, tcase(lab) if lab else '', fmt, r['booking_url'].replace('https://','').replace('#theater-init','')])
 

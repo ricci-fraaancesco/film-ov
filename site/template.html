@@ -96,7 +96,7 @@ main { padding-block: 32px 64px; display: grid; gap: 40px; }
 .head .facts { color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .head .facts b { color: var(--ink); font-weight: 600; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 7px 12px; border-radius: var(--r); font-size: 14px; font-weight: 600; }
+.btn { font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 7px 12px; border-radius: var(--r); font-size: 14px; font-weight: 600; }
 .btn:hover { text-decoration: none; border-color: var(--ink); }
 section { display: grid; gap: 16px; }
 section > h2 { font-family: var(--f-display); font-weight: 800; font-size: 28px; text-transform: uppercase; letter-spacing: .01em; }
@@ -116,16 +116,48 @@ section > .lede { color: var(--muted); margin-top: -10px; font-size: 15px; }
 .howto { font-size: 13px; color: var(--muted); }
 
 /* posters (from the cinemas) */
-.thumb { flex: none; width: 46px; height: 69px; border-radius: 3px; object-fit: cover; background: var(--chip); border: 1px solid var(--line); display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 22px; color: var(--muted); }
-.row .t.thumbed { display: flex; gap: 14px; align-items: flex-start; }
-.tt { display: grid; gap: 4px; min-width: 0; }
+.thumb { flex: none; width: 56px; height: 84px; border-radius: 3px; object-fit: cover; background: var(--screen); border: 1px solid var(--line); display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 24px; color: var(--sub); }
+.row .t.thumbed { display: flex; gap: 16px; align-items: flex-start; }
+.tt { display: grid; gap: 3px; min-width: 0; }
+.credit { font-size: 14px; color: var(--muted); }
+.credit i { font-style: normal; color: var(--ink); }
 .results .opt img.ic { width: 30px; height: 45px; object-fit: cover; padding: 0; }
-.film-head { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: start; }
-.film-head .fh-text { display: grid; gap: 10px; min-width: 0; }
-.poster { width: 100%; max-width: 200px; aspect-ratio: 2 / 3; height: auto; object-fit: cover; border-radius: 4px; background: var(--chip); border: 1px solid var(--line); }
-.orig { color: var(--muted); font-size: 15px; }
-.orig i { color: var(--ink); }
-.plot { margin: 0; max-width: 65ch; }
+
+/* poster wall: the lobby of the site */
+.posters { display: grid; grid-template-columns: repeat(auto-fill, minmax(156px, 1fr)); gap: 28px 18px; }
+.pcard { display: grid; gap: 8px; align-content: start; color: var(--ink); min-width: 0; }
+.pcard:hover { text-decoration: none; }
+.pimg { position: relative; aspect-ratio: 2 / 3; border-radius: 4px; overflow: hidden; background: var(--screen); box-shadow: 0 1px 0 var(--line), 0 10px 24px -14px rgba(5, 10, 20, .55); }
+.pimg img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s ease; }
+.pcard:hover .pimg img { transform: scale(1.03); }
+.pimg .ph { position: absolute; inset: 0; display: grid; align-content: center; padding: 14px; font-family: var(--f-display); font-weight: 800; font-size: 26px; line-height: .95; text-transform: uppercase; color: var(--screen-ink); text-wrap: balance; overflow-wrap: anywhere; }
+.pimg .subt { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 8px 8px; text-align: center; font-size: 12px; font-weight: 600; color: var(--sub); background: linear-gradient(transparent, rgba(0, 0, 0, .78) 45%); text-shadow: 0 1px 2px rgba(0, 0, 0, .8); }
+.pcard b { font-size: 16px; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pcard .pm { font-size: 13px; color: var(--muted); line-height: 1.35; }
+.pcard .pn { font-size: 13px; color: var(--ink); font-weight: 600; }
+.pcard .pn .mono { font-weight: 600; }
+.more { justify-self: start; }
+
+/* film page: the screen band carries the film */
+.band { display: block; position: relative; overflow: hidden; background: var(--screen); color: var(--screen-ink); }
+.band .bg { position: absolute; inset: -60px; background-size: cover; background-position: center; filter: blur(40px) saturate(1.3); opacity: .38; transform: scale(1.1); }
+.band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5, 8, 12, .92) 0%, rgba(5, 8, 12, .55) 60%, rgba(5, 8, 12, .8) 100%); }
+.band .wrap { position: relative; z-index: 1; padding-block: 28px 40px; display: grid; gap: 18px; }
+.band .crumbs, .band .crumbs a { color: var(--screen-muted); }
+.film-head { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 36px; align-items: start; }
+.film-head .fh-text { display: grid; gap: 12px; min-width: 0; align-content: start; }
+.film-head h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(40px, 6vw, 72px); line-height: .93; text-transform: uppercase; letter-spacing: .005em; }
+.poster { width: 100%; max-width: 240px; aspect-ratio: 2 / 3; height: auto; object-fit: cover; border-radius: 4px; background: #000; box-shadow: 0 24px 50px -20px rgba(0, 0, 0, .9); }
+.orig { color: var(--screen-muted); font-size: 15px; }
+.orig i { font-style: normal; color: var(--screen-ink); font-weight: 600; }
+.band .facts { color: var(--screen-muted); display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.band .facts b { color: var(--screen-ink); }
+.plot { margin: 0; max-width: 62ch; font-size: 17px; line-height: 1.55; color: var(--screen-ink); }
+.plot .src { font-size: 13px; color: var(--screen-muted); }
+.band .btn { background: transparent; color: var(--screen-ink); border-color: rgba(255, 255, 255, .25); }
+.band .btn:hover { border-color: var(--sub); color: var(--sub); }
+.band .btn.primary { background: var(--sub); color: var(--sub-ink); border-color: var(--sub); }
+.band .btn.primary:hover { color: var(--sub-ink); filter: brightness(1.05); }
 
 /* cards and rows */
 .cities { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
@@ -189,8 +221,13 @@ footer .wrap { display: grid; gap: 6px; }
   .daygrid .times { margin-bottom: 8px; }
   .next a.item { grid-template-columns: 60px minmax(0,1fr); }
   .next .city-tag { grid-column: 2; }
-  .film-head { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-  .poster { max-width: 140px; }
+  .film-head { grid-template-columns: 112px minmax(0, 1fr); gap: 16px; }
+  .film-head h1 { font-size: clamp(30px, 9vw, 44px); }
+  .film-head .plot, .film-head .actions { grid-column: 1 / -1; }
+  .film-head .fh-text { display: contents; }
+  .film-head .fh-top { grid-column: 2; display: grid; gap: 8px; align-content: start; }
+  .posters { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 14px; }
+  .thumb { width: 46px; height: 69px; }
 }
 @media (prefers-reduced-motion: no-preference) {
   main { animation: in .25s ease-out both; }
@@ -222,6 +259,7 @@ footer .wrap { display: grid; gap: 6px; }
 </form>
 
 <div id="staleBar" hidden></div>
+<section class="band" id="band" hidden aria-label="Scheda del film"></section>
 <main class="wrap" id="view"></main>
 <footer><div class="wrap" id="foot"></div></footer>
 
@@ -262,7 +300,22 @@ const subs = f => [f.l, f.s].filter(Boolean).join(" · ");
 const tixHtml = s => `<a class="tix" href="${esc(s.u)}" target="_blank" rel="noopener" title="Prenota: ${esc(FILM[s.f].t)}, ${esc(whenShort(s.t))}, ${esc(CIN[s.c].n)}"><b>${hhmm(s.t)}</b><span>${esc(s.sc + (s.fmt && !s.sc.toLowerCase().includes(s.fmt) ? " · " + s.fmt : ""))}</span></a>`;
 const initial = F => esc((F.t.replace(/^(the|il|lo|la|i|gli|le|l'|un|una)\s+/i, "")[0] || "?").toUpperCase());
 const thumb = F => F.p ? `<img class="thumb" src="${esc(F.p)}" alt="" loading="lazy" width="46" height="69" data-ph="${initial(F)}">` : `<span class="thumb" aria-hidden="true">${initial(F)}</span>`;
-document.addEventListener("error", e => { const el = e.target; if (el.tagName === "IMG" && el.dataset.ph !== undefined) { const sp = document.createElement("span"); sp.className = el.className; sp.setAttribute("aria-hidden", "true"); sp.textContent = el.dataset.ph; el.replaceWith(sp); } else if (el.tagName === "IMG" && el.classList.contains("poster")) { const head = el.closest(".film-head"); el.remove(); if (head) head.style.gridTemplateColumns = "minmax(0, 1fr)"; } }, true);
+document.addEventListener("error", e => { const el = e.target; if (el.tagName === "IMG" && el.parentElement && el.parentElement.classList.contains("pimg")) { const ph = el.parentElement.querySelector(".ph"); if (ph) ph.hidden = false; el.remove(); return; } if (el.tagName === "IMG" && el.dataset.ph !== undefined) { const sp = document.createElement("span"); sp.className = el.className; sp.setAttribute("aria-hidden", "true"); sp.textContent = el.dataset.ph; el.replaceWith(sp); } else if (el.tagName === "IMG" && el.classList.contains("poster")) { const head = el.closest(".film-head"); el.remove(); if (head) head.style.gridTemplateColumns = "minmax(0, 1fr)"; } }, true);
+const director1 = F => (F.d || "").split(",")[0].trim();
+const credit = F => [F.d ? `Regia di <i>${esc(F.d)}</i>` : "", F.y || "", F.rt ? F.rt + " min" : ""].filter(Boolean).join(" · ");
+const shortCredit = F => [director1(F), F.y].filter(Boolean).map(esc).join(" · ");
+const subLine = F => [F.l, F.s].filter(Boolean).join(" · ");
+function pcard(F, list, citySl) {
+  const next = list[0], cins = new Set(list.map(s => s.c));
+  const href = "#f-" + F.id + (citySl ? "~" + citySl : "");
+  const img = F.p ? `<img src="${esc(F.p)}" alt="" loading="lazy" data-ph="">` : "";
+  const where = cins.size > 1 ? `${esc(CIN[next.c].n)} e altri ${cins.size - 1}` : esc(CIN[next.c].n);
+  return `<a class="pcard" href="${href}"><span class="pimg">${img}<span class="ph" ${F.p ? "hidden" : ""}>${esc(F.t)}</span><span class="subt">${esc(subLine(F))}</span></span>
+    <b>${esc(F.t)}</b><span class="pm">${shortCredit(F) || "&nbsp;"}</span><span class="pn"><span class="mono">${esc(whenShort(next.t))}</span> · ${where}</span></a>`;
+}
+function posterWall(groups, citySl) {
+  return `<div class="posters">${groups.map(([f, list]) => pcard(FILM[f], list, citySl)).join("")}</div>`;
+}
 const mapsUrl = c => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent([c.n, c.a, c.c].filter(Boolean).join(", "));
 
 /* ---------------- search ---------------- */
@@ -421,6 +474,11 @@ function nextList(shows, limit, withCity) {
   return `<div class="next">${shows.slice(0, limit).map(s => { const c = CIN[s.c], f = FILM[s.f]; return `<a class="item" href="#f-${f.id}~${citySlug(c.c)}"><span class="when">${hhmm(s.t)}<small>${dayLabel(s.t)}</small></span><span class="what"><b>${esc(f.t)}</b><span>${esc(c.n)} · ${esc(f.l)}</span></span>${withCity ? `<span class="city-tag">${esc(c.c)}</span>` : ""}</a>`; }).join("")}</div>`;
 }
 
+function filmsByRank(shows) {
+  // most cinemas first, then most shows, then soonest
+  return [...groupBy(shows, s => s.f)].sort((a, b) => new Set(b[1].map(s => s.c)).size - new Set(a[1].map(s => s.c)).size || b[1].length - a[1].length || a[1][0].t - b[1][0].t);
+}
+
 function viewHome() {
   const cityCards = CITY_NAMES.map(c => {
     const sh = showsOfCity(c); if (!sh.length) return "";
@@ -428,38 +486,53 @@ function viewHome() {
     const today = sh.filter(s => dayKey(s.t) === TODAY).length;
     return `<a class="city" href="#c-${citySlug(c)}"><h3>${esc(c)}</h3><span class="n"><b>${films.size}</b> film · <b>${cins.size}</b> cinema</span><span class="n">${today ? `<b>${today}</b> spettacoli oggi` : `${sh.length} spettacoli in programma`}</span></a>`;
   }).join("");
-  const byFilm = [...groupBy(SH, s => s.f)].map(([f, sh]) => ({ f, sh, cins: new Set(sh.map(s => s.c)).size })).sort((a, b) => b.cins - a.cins || b.sh.length - a.sh.length).slice(0, 8);
+  const ranked = filmsByRank(SH);
   const today = SH.filter(s => dayKey(s.t) === TODAY);
   const upcoming = today.length >= 6 ? today : SH;
   return `
+  <section aria-labelledby="h-now"><h2 id="h-now">In programmazione</h2>
+    <p class="lede">I film in versione originale che girano di più in questo momento.</p>
+    ${posterWall(ranked.slice(0, 12))}
+    <a class="btn more" href="#film">Tutti i ${ranked.length} film in VO</a></section>
   <section aria-labelledby="h-cities"><h2 id="h-cities">Città</h2>
     <div class="cities">${cityCards}</div></section>
   <section aria-labelledby="h-next"><h2 id="h-next">${today.length >= 6 ? "Stasera in VO" : "Prossimi spettacoli"}</h2>
     <p class="lede">I prossimi spettacoli in versione originale in tutte le città.</p>
-    ${nextList(upcoming, 12, true)}</section>
-  <section aria-labelledby="h-top"><h2 id="h-top">I più programmati</h2>
-    <div class="list">${byFilm.map(({ f, sh, cins }) => { const F = FILM[f]; const cities = [...new Set(sh.map(s => CIN[s.c].c))]; return `<div class="row"><div class="t thumbed">${thumb(F)}<div class="tt"><h3><a href="#f-${F.id}">${esc(F.t)}</a></h3><span class="lang">${esc(subs(F))}</span></div></div><div class="side"><b>${plural(cins, "cinema", "cinema")}</b><br>${esc(cities.join(", "))}</div></div>`; }).join("")}</div></section>`;
+    ${nextList(upcoming, 12, true)}</section>`;
+}
+
+function viewAllFilms(citySl) {
+  let city = citySl ? cityBySlug(citySl) : null;
+  const sh = city ? showsOfCity(city) : SH;
+  const ranked = filmsByRank(sh);
+  const cities = CITY_NAMES.filter(c => showsOfCity(c).length);
+  return `
+  <div class="head">${crumbs([["Home", "#"], ["Tutti i film"]])}
+    <h1>${city ? `Film in VO a ${esc(city)}` : "Tutti i film in VO"}</h1>
+    <div class="facts"><span><b>${ranked.length}</b> film</span><span><b>${sh.length}</b> spettacoli</span></div>
+    <div class="filters" role="group" aria-label="Filtra per città"><a class="day" href="#film" aria-pressed="${!city}">Tutte</a>${cities.map(c => `<a class="day" href="#film~${citySlug(c)}" aria-pressed="${c === city}">${esc(c)}</a>`).join("")}</div></div>
+  <section aria-label="Film">${posterWall(ranked, city ? citySlug(city) : "")}</section>`;
 }
 
 function viewCity(city) {
   const sh = showsOfCity(city);
   const byCin = [...groupBy(sh, s => s.c)].sort((a, b) => b[1].length - a[1].length);
-  const films = [...groupBy(sh, s => s.f)].sort((a, b) => FILM[a[0]].t.localeCompare(FILM[b[0]].t, "it"));
+  const films = filmsByRank(sh);
   const quiet = CIN.filter((c, i) => c.c === city && !byCin.some(([ci]) => ci === i));
   const missing = (D.missing || {})[city] || [];
   return `
   <div class="head">${crumbs([["Home", "#"], [city]])}
     <h1>${esc(city)}</h1>
     <div class="facts"><span><b>${byCin.length}</b> cinema con film in VO</span><span><b>${films.length}</b> film</span><span><b>${sh.length}</b> spettacoli</span></div></div>
+  <section aria-labelledby="h-films"><h2 id="h-films">Film in VO a ${esc(city)}</h2>
+    ${posterWall(films, citySlug(city))}</section>
   <section aria-labelledby="h-cin"><h2 id="h-cin">Cinema</h2>
     <div class="list">${byCin.map(([ci, list]) => { const c = CIN[ci]; const fs = [...new Set(list.map(s => s.f))]; const todayN = list.filter(s => dayKey(s.t) === TODAY).length;
       return `<div class="row"><div class="t"><h3><a href="#s-${c.id}">${esc(c.n)}</a></h3><span class="sm">${esc([c.a, c.z].filter(Boolean).join(" · "))}</span>
         <span class="films-inline">${fs.slice(0, 5).map(f => `<a href="#f-${FILM[f].id}~${citySlug(city)}">${esc(FILM[f].t)}</a>`).join(", ")}${fs.length > 5 ? ` e altri ${fs.length - 5}` : ""}</span></div>
         <div class="side"><b>${plural(fs.length, "film", "film")}</b><br>prossimo ${esc(whenShort(list[0].t))}${todayN ? `<br>${todayN} oggi` : ""}</div></div>`; }).join("")}</div>
     ${quiet.length || missing.length ? `<p class="note">${quiet.length ? `<b>Nessun film in VO al momento:</b> ${quiet.map(c => esc(c.n)).join(", ")}. ` : ""}${missing.length ? `<b>Non ancora coperti:</b> ${missing.map(esc).join(", ")}.` : ""}</p>` : ""}</section>
-  <section aria-labelledby="h-films"><h2 id="h-films">Film in VO a ${esc(city)}</h2>
-    <div class="list">${films.map(([f, list]) => { const F = FILM[f]; const cins = [...new Set(list.map(s => s.c))];
-      return `<div class="row"><div class="t thumbed">${thumb(F)}<div class="tt"><h3><a href="#f-${F.id}~${citySlug(city)}">${esc(F.t)}</a></h3><span class="lang">${esc(subs(F))}</span><span class="sm">${cins.map(c => esc(CIN[c].n)).join(", ")}</span></div></div><div class="side">prossimo<br><b>${esc(whenShort(list[0].t))}</b></div></div>`; }).join("")}</div></section>`;
+`;
 }
 
 let cinDay = null;
@@ -471,7 +544,7 @@ function viewCinema(ci) {
   const filmsN = new Set(sh.map(s => s.f)).size;
   const dayBtns = `<div class="days" role="group" aria-label="Scegli il giorno">${days.map(([k, l]) => `<button type="button" class="day" data-day="${k}" aria-pressed="${k === cinDay}">${dayLabel(l[0].t)} <small>${dayDate(l[0].t)} · ${l.length}</small></button>`).join("")}${days.length > 1 ? `<button type="button" class="day" data-day="all" aria-pressed="${cinDay === "all"}">Tutti <small>${days.length} giorni</small></button>` : ""}</div>`;
   const block = list => [...groupBy(list, s => s.f)].map(([f, l]) => { const F = FILM[f]; const labs = [...new Set(l.map(s => s.lab).filter(Boolean))];
-    return `<div class="row"><div class="t thumbed">${thumb(F)}<div class="tt"><h3><a href="#f-${F.id}">${esc(F.t)}</a> ${labs.map(x => `<span class="badge">${esc(x)}</span>`).join(" ")}</h3><span class="lang">${esc(subs(F))}</span></div></div><div class="times">${l.map(tixHtml).join("")}</div></div>`; }).join("");
+    return `<div class="row"><div class="t thumbed">${thumb(F)}<div class="tt"><h3><a href="#f-${F.id}">${esc(F.t)}</a> ${labs.map(x => `<span class="badge">${esc(x)}</span>`).join(" ")}</h3>${credit(F) ? `<span class="credit">${credit(F)}</span>` : ""}<span class="lang">${esc(subs(F))}</span><div class="times">${l.map(tixHtml).join("")}</div></div></div></div>`; }).join("");
   const body = cinDay === "all"
     ? days.map(([k, l]) => `<h3 class="city-h" style="font-size:22px">${dayLabel(l[0].t)} <small>${dayDate(l[0].t)}</small></h3><div class="list">${block(l)}</div>`).join("")
     : `<div class="list">${block((days.find(([k]) => k === cinDay) || [, []])[1])}</div>`;
@@ -494,16 +567,20 @@ function viewFilm(fi, citySl) {
   const shown = city ? cities.filter(([c]) => c === city) : cities;
   const cinN = new Set(sh.map(s => s.c)).size;
   const filt = cities.length > 1 ? `<div class="filters" role="group" aria-label="Filtra per città"><a class="day" href="#f-${F.id}" aria-pressed="${!city}">Tutte <small>${sh.length}</small></a>${cities.map(([c, l]) => `<a class="day" href="#f-${F.id}~${citySlug(c)}" aria-pressed="${c === city}">${esc(c)} <small>${l.length}</small></a>`).join("")}</div>` : "";
+  const plot = F.o ? `<p class="plot">${esc(F.o)}</p>` : F.in ? `<p class="plot">${esc(F.in)} <span class="src">(da Wikipedia)</span></p>` : "";
+  const next = sh[0];
+  route.band = `${F.p ? `<div class="bg" style="background-image:url('${esc(F.p).replace(/'/g, "%27")}')"></div>` : ""}
+  <div class="wrap">${crumbs([["Home", "#"], ...(city ? [[city, "#c-" + citySlug(city)]] : []), [F.t]])}
+    <div class="film-head" style="${F.p ? "" : "grid-template-columns:minmax(0,1fr)"}">${F.p ? `<img class="poster" src="${esc(F.p)}" alt="Locandina di ${esc(F.t)}" width="240" height="360">` : ""}
+      <div class="fh-text"><div class="fh-top"><h1>${esc(F.t)}</h1>
+        ${F.ot ? `<div class="orig">Titolo originale: <i>${esc(F.ot)}</i></div>` : ""}
+        ${credit(F) || F.g ? `<div class="orig">${[credit(F), F.g ? esc(F.g) : ""].filter(Boolean).join(" · ")}</div>` : ""}
+        <div class="facts"><span><span class="badge vo">VO</span> <b>${esc(F.l)}</b>${F.s ? " · " + esc(F.s) : ""}</span><span>in <b>${plural(cinN, "cinema", "cinema")}</b></span><span><b>${sh.length}</b> spettacoli</span></div></div>
+        ${plot}
+        <div class="actions">${next ? `<button type="button" class="btn primary" data-scroll="where">Orari e prenotazione</button>` : ""}${F.wp ? `<a class="btn" href="https://it.wikipedia.org/wiki/${encodeURIComponent(F.wp.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia ↗</a>` : ""}</div>
+      </div></div></div>`;
   return `
-  <div class="head">${crumbs([["Home", "#"], ...(city ? [[city, "#c-" + citySlug(city)]] : []), [F.t]])}
-    <div class="film-head" style="${F.p ? "" : "grid-template-columns:minmax(0,1fr)"}">${F.p ? `<img class="poster" src="${esc(F.p)}" alt="Locandina di ${esc(F.t)}" width="200" height="300">` : ""}
-      <div class="fh-text"><h1>${esc(F.t)}</h1>
-        ${F.ot || F.y || F.d ? `<div class="orig">${[F.ot ? `Titolo originale: <i>${esc(F.ot)}</i>` : "", F.d ? `Regia di <i>${esc(F.d)}</i>` : "", F.y || "", F.rt ? F.rt + " min" : "", F.g ? esc(F.g) : ""].filter(Boolean).join(" · ")}</div>` : ""}
-        <div class="facts"><span><span class="badge vo">VO</span> <b>${esc(F.l)}</b>${F.s ? " · " + esc(F.s) : ""}</span><span>in <b>${plural(cinN, "cinema", "cinema")}</b></span><span><b>${sh.length}</b> spettacoli</span></div>
-        ${F.o ? `<p class="plot">${esc(F.o)}</p>` : F.in ? `<p class="plot">${esc(F.in)} <span class="lang">(da Wikipedia)</span></p>` : ""}
-        ${F.wp ? `<div class="actions"><a class="btn" href="https://it.wikipedia.org/wiki/${encodeURIComponent(F.wp.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia ↗</a></div>` : ""}
-      </div></div></div>
-  <section aria-labelledby="h-where"><h2 id="h-where">Dove e quando</h2>
+  <section aria-labelledby="h-where" id="where"><h2 id="h-where">Dove e quando</h2>
     ${filt}
     ${sh.length ? `<p class="howto">Tocca un orario per prenotare sul sito del cinema.</p>` : `<p class="note">Nessuno spettacolo in programma.</p>`}
     ${shown.map(([c, l]) => `<div><h3 class="city-h">${esc(c)} <small>${plural(new Set(l.map(s => s.c)).size, "cinema", "cinema")}</small></h3>
@@ -519,15 +596,20 @@ const topEl = document.getElementById("top"), hero = document.getElementById("he
 function route() {
   const h = decodeURIComponent(location.hash.replace(/^#/, ""));
   let html, title = "Film OV", isHome = false, ci;
+  route.band = "";
   if (!h) { html = viewHome(); isHome = true; }
   else if (h.startsWith("c-") && cityBySlug(h.slice(2))) { const c = cityBySlug(h.slice(2)); html = viewCity(c); title = `Film in VO a ${c} · Film OV`; }
   else if (h.startsWith("s-") && (ci = cinById(h.slice(2))) >= 0) { if (route.lastCin !== ci) cinDay = null; route.lastCin = ci; html = viewCinema(ci); title = `${CIN[ci].n} · Film OV`; }
+  else if (h === "film" || h.startsWith("film~")) { const cs = h.split("~")[1]; html = viewAllFilms(cs); title = "Tutti i film in VO · Film OV"; }
   else if (h.startsWith("f-")) { const [id, cs] = h.slice(2).split("~"); const fi = filmById(id); if (fi >= 0) { html = viewFilm(fi, cs); title = `${FILM[fi].t} in VO · Film OV`; } else html = viewNotFound(); }
   else html = viewNotFound();
   topEl.classList.toggle("home", isHome);
   hero.hidden = !isHome;
   (isHome ? document.getElementById("slotHero") : document.getElementById("slotBar")).appendChild(form);
   view.innerHTML = html;
+  const band = document.getElementById("band");
+  band.innerHTML = route.band; band.hidden = !route.band;
+  route.lastHash = location.hash;
   document.title = title;
   if (!route.keepScroll) window.scrollTo(0, 0);
   route.keepScroll = false;
@@ -536,6 +618,10 @@ view.addEventListener("click", e => {
   const b = e.target.closest("button.day[data-day]");
   if (!b) return;
   cinDay = b.dataset.day; route.keepScroll = true; route();
+});
+document.getElementById("band").addEventListener("click", e => {
+  const b = e.target.closest("[data-scroll]");
+  if (b) document.getElementById(b.dataset.scroll)?.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
 });
 window.addEventListener("hashchange", route);
 
