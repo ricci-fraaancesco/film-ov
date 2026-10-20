@@ -96,3 +96,10 @@ def test_subtitles():
     assert subtitle_info("Versione originale con sottotitoli in italiano e inglese") == "sub IT+EN"
     assert subtitle_info("Coreano con sottotitoli in Inglese") == "sub EN"
     assert subtitle_info("Russo") == ""
+
+
+def test_barberini_labels():
+    assert is_ov("THE SOCIAL - V.O", "ORIGINALVERSION", "Lingua originale con sott. in italiano")[0] is True
+    assert is_ov("NAZA", "IN ITALIANO", "Italiano")[0] is False
+    assert clean_title("THE SOCIAL - V.O") == "THE SOCIAL"
+    assert clean_title("KLARA E IL SOLE (KLARA AND THE SUN) - V. O.") == "KLARA E IL SOLE (KLARA AND THE SUN)"

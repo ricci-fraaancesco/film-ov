@@ -102,8 +102,14 @@ STOREFRONTS: dict[str, dict] = {
             "tibur": ("Cinema Tibur", "Roma"),
         },
     },
-    # TODO: Barberini (multisala.barberini.18tickets.it returns 404 at root),
-    # Troisi, Greenwich: storefront URLs still to confirm.
+    "barberini.18tickets.it": {
+        "pages": ["https://cinema.barberini.18tickets.it/"],
+        "venues": {
+            "cinema": ("Multisala Barberini", "Roma"),
+        },
+    },
+    # TODO: Troisi (18tickets, storefront to confirm). Greenwich uses its own site
+    # (multisalagreenwichroma.com), so it needs a separate adapter.
 }
 
 # --------------------------------------------------------------------------
@@ -113,7 +119,7 @@ RE_DUBBED = re.compile(r"doppiag|doppiat", re.I)
 RE_SILENT = re.compile(r"^\s*muto\s*$", re.I)
 RE_OV_TITLE = re.compile(
     r"(^|[\s\-\(])v\.\s?o\.?(\s?s\.?)?($|[\s\)])"
-    r"|original (language|version)|lingua originale|versione originale|\bvos\b",
+    r"|original\s?(language|version)|lingua originale|versione originale|\bvos\b",
     re.I,
 )
 RE_OV_LANG = re.compile(r"sottotitol|originale|subtit", re.I)

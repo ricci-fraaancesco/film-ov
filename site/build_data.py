@@ -97,6 +97,7 @@ VENUE = {
  ("Roma","Multisala Lux"): ("Via Massaciuccoli 31", "Africano", "https://www.cinemadiroma.it"),
  ("Roma","Odeon Multiscreen"): ("Piazza Stefano Jacini 22", "Vigna Stelluti", "https://www.cinemadiroma.it"),
  ("Roma","Cinema Intrastevere"): ("Vicolo Moroni 3/a", "Trastevere", "https://www.cinemadiroma.it"),
+ ("Roma","Multisala Barberini"): ("Piazza Barberini 24-26", "Barberini", "https://www.cinemabarberini.it"),
  ("Roma","Cinema Tibur"): ("Via degli Etruschi 36", "San Lorenzo", "https://www.cinemadiroma.it"),
  ("Bologna","Cinema Lumière"): ("Via Azzo Gardino 65", "Piazzetta Pasolini", "https://www.cinetecadibologna.it"),
  ("Bologna","Cinema Modernissimo"): ("Piazza Re Enzo 1", "Centro", "https://www.cinetecadibologna.it"),
@@ -192,7 +193,7 @@ for f in film_list:
     used.add(fid); f['id'] = fid
     if not f['al']: del f['al']
 data = {"updated": datetime.now(ZoneInfo("Europe/Rome")).replace(microsecond=0).isoformat(), "cities": cities, "cinemas": cin_list, "films": film_list, "shows": shows,
-        "missing": {"Roma": ["Barberini", "Troisi", "Greenwich", "Nuovo Sacher", "Farnese", "Nuovo Cinema Aquila"]}}
+        "missing": {"Roma": ["Troisi", "Greenwich", "Nuovo Sacher", "Farnese", "Nuovo Cinema Aquila"]}}
 out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
 html = (HERE / 'template.html').read_text(encoding='utf-8')
 page = html.replace('__DATA__', json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/'))
