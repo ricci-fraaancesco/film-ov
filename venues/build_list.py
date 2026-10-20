@@ -60,8 +60,16 @@ def ascii_lower(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", s).strip()
 
 
-def name_key(name: str) -> str:
-    words = [w for w in ascii_lower(name.replace("★", "")).split() if w not in GENERIC]
+BRANDS = {"tsc": "the space cinema", "uci cinemas": "uci", "cinemas": "", "cinemax": "cinemax"}
+
+
+def name_key(name: str, city: str = "", province: str = "") -> str:
+    """'TSC Roma Moderno (RM)' and 'The Space Cinema - Moderno Roma' -> 'space moderno'."""
+    n = ascii_lower(name.replace("★", ""))
+    for k, v in BRANDS.items():
+        n = re.sub(rf"\b{k}\b", v, n)
+    drop = set(GENERIC) | set(ascii_lower(city).split()) | ({province.lower()} if province else set())
+    words = [w for w in n.split() if w not in drop]
     return " ".join(words) or ascii_lower(name)
 
 
@@ -98,8 +106,8 @@ def slug(*parts: str) -> str:
     return re.sub(r"-+", "-", "-".join(ascii_lower(p).replace(" ", "-") for p in parts if p)).strip("-")
 
 
-def same_name(a: str, b: str) -> bool:
-    ka, kb = name_key(a), name_key(b)
+def same_name(a: str, b: str, city_a: str = "", city_b: str = "", prov_a: str = "", prov_b: str = "") -> bool:
+    ka, kb = name_key(a, city_a, prov_a), name_key(b, city_b, prov_b)
     if not ka or not kb:
         return False
     if ka == kb:
@@ -199,6 +207,47 @@ def fetch_osm() -> list[dict]:
     return rows
 
 
+NOMINATIM = "https://nominatim.openstreetmap.org/reverse"
+
+
+def fill_towns(osm: list[dict], cache_path: Path, fetch=None, delay: float = 1.1) -> int:
+    """Find the town and postcode of OSM cinemas that have none, from their coordinates.
+    Uses OpenStreetMap's Nominatim, 1 request per second, each cinema only once ever
+    (answers are kept in data/osm_towns.json)."""
+    try:
+        cache = json.loads(cache_path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        cache = {}
+    if fetch is None:
+        def fetch(lat, lon):
+            r = http_get(NOMINATIM, params={"format": "jsonv2", "lat": lat, "lon": lon, "zoom": 18, "addressdetails": 1})
+            return r.json().get("address", {})
+    asked = 0
+    for r in osm:
+        if r.get("city") or not r.get("lat"):
+            continue
+        key = r["osm_id"]
+        if key not in cache:
+            try:
+                cache[key] = fetch(r["lat"], r["lon"])
+            except Exception as e:
+                print(f"  town for {key}: ERROR {e}", file=sys.stderr)
+                continue
+            asked += 1
+            time.sleep(delay)
+        a = cache[key]
+        r["city"] = a.get("city") or a.get("town") or a.get("village") or a.get("municipality") or ""
+        r["postcode"] = r.get("postcode") or a.get("postcode", "")
+        iso = a.get("ISO3166-2-lvl6", "")
+        if iso.startswith("IT-") and len(iso) == 5:
+            r["province"] = r.get("province") or iso[3:]
+        if not r.get("address") and a.get("road"):
+            r["address"] = " ".join(x for x in [a.get("road", ""), a.get("house_number", "")] if x)
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=0), encoding="utf-8")
+    return asked
+
+
 def our_cinemas() -> list[dict]:
     """The cinemas the scraper already reads, with their booking page."""
     import ov18tickets as mod  # scraper/ is on sys.path (see top of file)
@@ -227,20 +276,23 @@ class VenueList:
         if not cands and rec.get("postcode"):
             cands = [r for r in self.rows if r.get("postcode") == rec["postcode"]]
         if not cands and not ck:
-            # no city and no usable postcode (common in OpenStreetMap): accept a match only
-            # when the name is distinctive and exactly one cinema in Italy has it
+            # no city and no usable postcode: accept a match only when the name is
+            # distinctive and exactly one cinema in Italy has it
             nk = name_key(rec["name"])
             if len(nk) >= 6 and " " in nk:
-                hits = [r for r in self.rows if name_key(r["name"]) == nk]
+                hits = [r for r in self.rows if name_key(r["name"], r.get("city", "")) == nk]
                 return hits[0] if len(hits) == 1 else None
             return None
+        # 1. same address in the same town: same cinema ('Sala 1' and 'Sala 2' in Via Verdi 24)
         sk = street_key(rec.get("address", ""))
+        if sk and len(sk) > 4 and re.search(r"\d", sk):
+            for r in cands:
+                if street_key(r.get("address", "")) == sk:
+                    return r
+        # 2. same name once generic words, the town and the province are removed
         for r in cands:
-            if sk and len(sk) > 4 and street_key(r.get("address", "")) == sk and (
-                    same_name(r["name"], rec["name"]) or SequenceMatcher(None, name_key(r["name"]), name_key(rec["name"])).ratio() > 0.6):
-                return r
-        for r in cands:
-            if same_name(r["name"], rec["name"]):
+            if same_name(r["name"], rec["name"], r.get("city", ""), rec.get("city", ""),
+                         r.get("province", ""), rec.get("province", "")):
                 return r
         return None
 
@@ -332,6 +384,9 @@ def main(argv=None) -> int:
     cr = safe("cinemarevolution", fetch_cr)
     mm = safe("moviemedia", fetch_mm)
     osm = [] if a.no_osm else safe("osm", fetch_osm)
+    if osm:
+        asked = safe("osm_towns", lambda: [fill_towns(osm, a.out.parent / "osm_towns.json")])
+        print(f"  towns looked up for OSM cinemas: {asked[0] if asked else 0}", file=sys.stderr)
     ours = safe("filmov", our_cinemas)
     if not cr and not osm:
         a.out.parent.mkdir(parents=True, exist_ok=True)

@@ -42,6 +42,7 @@ jobs:
           git config user.name "film-ov-bot"
           git config user.email "film-ov-bot@users.noreply.github.com"
           git add data/venues_stats.json
+          [ -f data/osm_towns.json ] && git add data/osm_towns.json
           [ -f data/venues.csv ] && git add data/venues.csv
           git commit -m "Lista cinema del $(date -u +%Y-%m-%d)" || echo "No changes"
           git pull --rebase -q && git push

@@ -71,3 +71,27 @@ def test_our_cinemas_load():
     names = {o["name"] for o in ours}
     assert "Multisala Barberini" in names and "Cinema Lumière" in names
     assert all(o["platform"] == "18tickets" and o["booking_url"].startswith("https://") for o in ours)
+
+
+def test_same_address_and_brand_names():
+    vl = VenueList()
+    vl.add({"name": "TSC Bologna (BO)", "city": "Bologna", "province": "BO", "address": "Viale Europa, 5"}, "cinemarevolution")
+    assert vl.add({"name": "The Space Cinema", "city": "Bologna", "address": "Viale Europa 5"}, "osm") == "merged"
+    vl.add({"name": "Sala 1", "city": "Roma", "address": "Via Giuseppe Verdi, 24"}, "cinemarevolution")
+    assert vl.add({"name": "Sala 2", "city": "Roma", "address": "Via Giuseppe Verdi, 24"}, "cinemarevolution") == "merged"
+    vl.add({"name": "Cinema Eden Roma", "city": "Roma", "address": "Piazza Cola di Rienzo 74"}, "cinemarevolution")
+    assert vl.add({"name": "Eden Film Center", "city": "ROMA", "province": "RM"}, "moviemedia") == "merged"
+    assert vl.add({"name": "Odeon", "city": "Roma"}, "osm") == "new"
+
+
+def test_fill_towns_once(tmp_path):
+    from build_list import fill_towns
+    calls = []
+    def fetch(lat, lon):
+        calls.append((lat, lon))
+        return {"town": "Ciampino", "postcode": "00043", "ISO3166-2-lvl6": "IT-RM", "road": "Via Roma", "house_number": "3"}
+    osm = [{"name": "Il Piccolissimo", "city": "", "lat": "41.79", "lon": "12.60", "osm_id": "node/9", "address": ""}]
+    assert fill_towns(osm, tmp_path / "t.json", fetch=fetch, delay=0) == 1
+    assert osm[0]["city"] == "Ciampino" and osm[0]["province"] == "RM" and osm[0]["address"] == "Via Roma 3"
+    osm2 = [{"name": "Il Piccolissimo", "city": "", "lat": "41.79", "lon": "12.60", "osm_id": "node/9", "address": ""}]
+    assert fill_towns(osm2, tmp_path / "t.json", fetch=fetch, delay=0) == 0 and len(calls) == 1
