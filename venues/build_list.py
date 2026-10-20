@@ -185,7 +185,15 @@ def parse_osm(data: dict) -> list[dict]:
 
 
 def fetch_osm() -> list[dict]:
-    r = http_get(OVERPASS, params={"data": OSM_QUERY})
+    import requests
+
+    for attempt in range(3):  # Overpass is a shared free service: retry politely when busy
+        r = requests.post(OVERPASS, data={"data": OSM_QUERY}, headers={"User-Agent": USER_AGENT}, timeout=300)
+        if r.status_code in (429, 504) and attempt < 2:
+            time.sleep(60 * (attempt + 1))
+            continue
+        r.raise_for_status()
+        break
     rows = parse_osm(r.json())
     print(f"  OpenStreetMap: {len(rows)} cinemas with a name", file=sys.stderr)
     return rows
@@ -193,11 +201,7 @@ def fetch_osm() -> list[dict]:
 
 def our_cinemas() -> list[dict]:
     """The cinemas the scraper already reads, with their booking page."""
-    import importlib.util
-
-    spec = importlib.util.spec_from_file_location("ov18tickets", HERE.parent / "scraper" / "ov18tickets.py")
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
+    import ov18tickets as mod  # scraper/ is on sys.path (see top of file)
     venue_info = {}
     bd = (HERE.parent / "site" / "build_data.py").read_text(encoding="utf-8")
     for m in re.finditer(r'\("([^"]+)","([^"]+)"\): \("([^"]*)", "([^"]*)", "([^"]*)"\)', bd):
@@ -314,10 +318,28 @@ def main(argv=None) -> int:
     if a.out.exists():
         with open(a.out, encoding="utf-8") as fh:
             previous = {r["id"]: r for r in csv.DictReader(fh)}
-    cr = fetch_cr()
-    mm = fetch_mm()
-    osm = [] if a.no_osm else fetch_osm()
-    rows, stats = build(cr, mm, osm, our_cinemas(), previous)
+    errors = {}
+
+    def safe(name, fn):
+        import traceback
+        try:
+            return fn()
+        except Exception as e:  # one source failing must not lose the others
+            errors[name] = f"{type(e).__name__}: {e}"[:500]
+            traceback.print_exc()
+            return []
+
+    cr = safe("cinemarevolution", fetch_cr)
+    mm = safe("moviemedia", fetch_mm)
+    osm = [] if a.no_osm else safe("osm", fetch_osm)
+    ours = safe("filmov", our_cinemas)
+    if not cr and not osm:
+        a.out.parent.mkdir(parents=True, exist_ok=True)
+        (a.out.parent / "venues_stats.json").write_text(json.dumps({"errors": errors}, indent=2), encoding="utf-8")
+        print(json.dumps({"errors": errors}, indent=2))
+        _summary(f"Lista cinema: nessuna fonte disponibile\n\n```\n{json.dumps(errors, indent=2)}\n```\n")
+        return 1
+    rows, stats = build(cr, mm, osm, ours, previous)
     a.out.parent.mkdir(parents=True, exist_ok=True)
     with open(a.out, "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=FIELDS)
@@ -328,10 +350,19 @@ def main(argv=None) -> int:
                "with_website": sum(1 for r in rows if r["website"]),
                "with_coordinates": sum(1 for r in rows if r["lat"]),
                "arenas": sum(1 for r in rows if r["kind"] == "arena"),
-               "by_status": {s: sum(1 for r in rows if r["status"] == s) for s in sorted({r["status"] for r in rows})}}
+               "by_status": {s: sum(1 for r in rows if r["status"] == s) for s in sorted({r["status"] for r in rows})},
+               "errors": errors}
     (a.out.parent / "venues_stats.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
     print(json.dumps(summary, indent=2, ensure_ascii=False))
+    _summary("Lista cinema\n\n```\n" + json.dumps(summary, indent=2, ensure_ascii=False) + "\n```\n")
     return 0
+
+
+def _summary(text: str) -> None:
+    import os
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as fh:
+            fh.write(text)
 
 
 if __name__ == "__main__":

@@ -63,3 +63,11 @@ def test_manual_work_is_kept():
     again, _ = build(parse_cr_page(CR_HTML), [], [], [], prev)
     r = next(x for x in again if x["id"] == pid)
     assert r["status"] == "no_website" and r["note"] == "checked by hand"
+
+
+def test_our_cinemas_load():
+    from build_list import our_cinemas
+    ours = our_cinemas()
+    names = {o["name"] for o in ours}
+    assert "Multisala Barberini" in names and "Cinema Lumière" in names
+    assert all(o["platform"] == "18tickets" and o["booking_url"].startswith("https://") for o in ours)
