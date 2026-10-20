@@ -1,0 +1,74 @@
+name: Aggiornamento notturno
+
+on:
+  schedule:
+    - cron: "23 2 * * *"   # every night at 02:23 UTC (03:23 or 04:23 in Italy)
+  workflow_dispatch:        # lets you start it by hand from the Actions tab
+
+permissions:
+  contents: write   # save the new data in the repo
+  issues: write     # open an issue when something looks wrong
+  pages: write      # publish the website
+  id-token: write
+
+concurrency:
+  group: nightly
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Test the parser
+        run: cd scraper && python -m pytest -q
+
+      - name: Read the cinema pages
+        run: python scraper/ov18tickets.py live --out data
+
+      - name: Safety check (do not publish an empty site)
+        run: |
+          n=$(python -c "import json;print(json.load(open('data/run_stats.json'))['ov_shows'])")
+          echo "OV shows found: $n"
+          if [ "$n" -lt 50 ]; then echo "Too few shows, keeping yesterday's site."; exit 1; fi
+
+      - name: Build the website
+        run: python site/build_data.py --csv data/ov_showtimes.csv --out public
+
+      - name: Save the new data in the repo
+        run: |
+          git config user.name "film-ov-bot"
+          git config user.email "film-ov-bot@users.noreply.github.com"
+          git add data
+          git commit -m "Dati del $(date -u +%Y-%m-%d)" || echo "No changes"
+          git push
+
+      - name: Open an issue if a cinema disappeared
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -s data/alerts.txt ]; then
+            gh issue create --title "Controllare: problemi nel run del $(date -u +%Y-%m-%d)" --body-file data/alerts.txt
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
