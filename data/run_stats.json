@@ -1,25 +1,25 @@
 {
-  "run_at": "2026-10-20T16:06:21.487261+02:00",
-  "ov_shows": 363,
+  "run_at": "2026-10-20T18:03:50.626087+02:00",
+  "ov_shows": 434,
   "ov_per_venue": {
-    "Bologna / Cinema Lumière": 11,
-    "Bologna / Cinema Modernissimo": 26,
-    "Bologna / Cinema Odeon": 9,
+    "Bologna / Cinema Lumière": 59,
+    "Bologna / Cinema Modernissimo": 25,
+    "Bologna / Cinema Odeon": 14,
     "Bologna / Europa Cinema": 12,
     "Bologna / Pop Up Cinema Arlecchino": 3,
     "Bologna / Pop Up Cinema Jolly": 3,
-    "Bologna / Pop Up Cinema Medica": 22,
-    "Bologna / Rialto Studios": 5,
-    "Bologna / Roma d'Essai": 2,
+    "Bologna / Pop Up Cinema Medica": 21,
+    "Bologna / Rialto Studios": 9,
+    "Bologna / Roma d'Essai": 7,
     "Bologna / Sala Cervi": 17,
     "Firenze / Cinema Fiorella": 7,
     "Firenze / Cinema Flora": 26,
     "Napoli / Cinema Metropolitan": 4,
     "Roma / Giulio Cesare": 10,
-    "Roma / Multisala Barberini": 92,
+    "Roma / Multisala Barberini": 104,
     "Roma / Multisala Lux": 48,
     "Roma / Nuovo Olimpia": 51,
-    "Roma / Quattro Fontane": 15
+    "Roma / Quattro Fontane": 14
   },
   "errors": {}
 }

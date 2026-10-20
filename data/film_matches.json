@@ -1337,6 +1337,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "possible love ga neung han sa rang": {
+  "qid": "Q137843740",
+  "title_it": "Possible Love",
+  "original_title": "가능한 사랑",
+  "year": 2026,
+  "runtime": null,
+  "imdb": "tt37803364",
+  "tmdb": "1483525",
+  "itwiki": "Possible Love",
+  "directors": [
+   "Lee Chang-dong"
+  ],
+  "languages": [
+   "coreano"
+  ],
+  "intro": "Possible Love è un film del 2026 diretto, co-sceneggiato e co-prodotto da Lee Chang-dong.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "POSSIBLE LOVE (GA-NEUNG-HAN SA-RANG)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "pranzo alle otto dinner at eight": {
   "qid": "Q722648",
   "title_it": "Pranzo alle otto",
