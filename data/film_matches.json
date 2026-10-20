@@ -26,6 +26,7 @@
   "score": 1.15,
   "query": "ANDREJ RUBLËV",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "auber 89": {
@@ -59,6 +60,7 @@
   "score": 1.05,
   "query": "BALCANICA",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "bardo la falsa cronaca di alcune verita": {
@@ -81,6 +83,7 @@
   "score": 1.12,
   "query": "BARDO - LA FALSA CRONACA DI ALCUNE VERITA'",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "benita": {
@@ -113,6 +116,7 @@
   "score": 1.15,
   "query": "CHINA BLUE",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "clayface": {
@@ -137,9 +141,10 @@
   ],
   "intro": "Codice penale è un film del 1930 diretto da Howard Hawks.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "CODICE PENALE (THE CRIMINAL CODE)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "coyote vs acme": {
@@ -162,6 +167,7 @@
   "score": 1.15,
   "query": "COYOTE VS ACME",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "dead lover": {
@@ -184,6 +190,7 @@
   "score": 1.15,
   "query": "DEAD LOVER",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "digger": {
@@ -206,6 +213,7 @@
   "score": 1.15,
   "query": "DIGGER",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "dollhouse": {
@@ -228,6 +236,7 @@
   "score": 1.15,
   "query": "DOLLHOUSE",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "don t worry darling": {
@@ -250,6 +259,7 @@
   "score": 1.15,
   "query": "DON'T WORRY DARLING",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "donne the women": {
@@ -269,9 +279,10 @@
   ],
   "intro": "Donne è un film del 1939 diretto da George Cukor.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "DONNE (THE WOMEN)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "dracula di bram stoker": {
@@ -298,6 +309,7 @@
   "score": 1.15,
   "query": "DRACULA DI BRAM STOKER",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "dune part three": {
@@ -306,25 +318,26 @@
   "query": "DUNE: PART THREE"
  },
  "dune parte tre": {
-  "qid": "Q60834962",
-  "title_it": "Dune",
-  "original_title": "Dune",
-  "year": 2021,
-  "runtime": 155,
-  "imdb": "tt1160419",
-  "tmdb": "438631",
-  "itwiki": "Dune (film 2021)",
+  "qid": "Q124714245",
+  "title_it": "Dune - Parte tre",
+  "original_title": "Dune: Part Three",
+  "year": 2026,
+  "runtime": null,
+  "imdb": "tt31378509",
+  "tmdb": "1170608",
+  "itwiki": "Dune - Parte tre",
   "directors": [
    "Denis Villeneuve"
   ],
   "languages": [
    "inglese"
   ],
-  "intro": "Dune è un film del 2021 co-sceneggiato, diretto e co-prodotto da Denis Villeneuve.",
+  "intro": "Dune - Parte tre è un film del 2026 co-sceneggiato, diretto e co-prodotto da Denis Villeneuve.",
   "confidence": "high",
-  "score": 1.07,
+  "score": 1.15,
   "query": "DUNE - PARTE TRE",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "essi vivono": {
@@ -347,6 +360,7 @@
   "score": 1.15,
   "query": "ESSI VIVONO",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "f come falso verita e menzogna f for fake": {
@@ -371,6 +385,7 @@
   "score": 1.12,
   "query": "F COME FALSO - VERITÀ E MENZOGNA (F FOR FAKE)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "falstaff campanadas a medianoche": {
@@ -393,6 +408,7 @@
   "score": 1.12,
   "query": "FALSTAFF (CAMPANADAS A MEDIANOCHE)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "fatherland": {
@@ -415,6 +431,7 @@
   "score": 1.15,
   "query": "FATHERLAND",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "gli esclusi a child is waiting": {
@@ -434,9 +451,10 @@
   ],
   "intro": "Gli esclusi è un film del 1963 diretto da John Cassavetes e prodotto da Stanley Kramer.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "GLI ESCLUSI (A CHILD IS WAITING)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "happiness felicita": {
@@ -460,6 +478,7 @@
   "score": 1.15,
   "query": "HAPPINESS - FELICITA'",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "hereditary le radici del male": {
@@ -482,6 +501,7 @@
   "score": 1.15,
   "query": "HEREDITARY - LE RADICI DEL MALE",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "hope": {
@@ -505,6 +525,7 @@
   "score": 1.15,
   "query": "HOPE",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "i diavoli": {
@@ -527,6 +548,7 @@
   "score": 1.15,
   "query": "I DIAVOLI",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "i diavoli the devils": {
@@ -546,9 +568,10 @@
   ],
   "intro": "I diavoli è un film del 1971 co-prodotto, scritto e diretto da Ken Russell, liberamente tratto dall'omonima trasposizione teatrale di John Whiting del romanzo storico I diavoli di Loudun di Aldous Huxley, basato sulla reale vicenda della presunta possessione demoniaca di massa d'un convento d'Orsoline della cittadina francese di Loudun nel 1634.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "I DIAVOLI (THE DEVILS)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "il braccio violento della legge": {
@@ -571,6 +594,7 @@
   "score": 1.15,
   "query": "IL BRACCIO VIOLENTO DELLA LEGGE",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "il casanova di federico fellini": {
@@ -594,6 +618,7 @@
   "score": 1.15,
   "query": "IL CASANOVA DI FEDERICO FELLINI",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "il dottor stranamore": {
@@ -618,9 +643,10 @@
   ],
   "intro": "Il signore resta a pranzo è un film del 1942 diretto da William Keighley.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "IL SIGNORE RESTA A PRANZO (THE MAN WHO CAME TO DINNER)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "il tempo di anne": {
@@ -643,6 +669,7 @@
   "score": 1.15,
   "query": "IL TEMPO DI ANNE",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "insectasy": {
@@ -663,6 +690,7 @@
   "score": 1.05,
   "query": "INSECTASY",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "it ends": {
@@ -685,6 +713,7 @@
   "score": 1.15,
   "query": "IT ENDS",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "jennifer s body": {
@@ -707,6 +736,7 @@
   "score": 1.15,
   "query": "JENNIFER'S BODY",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "l amore bugiardo gone girl": {
@@ -729,6 +759,7 @@
   "score": 1.15,
   "query": "L'AMORE BUGIARDO - GONE GIRL",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "l infernale quinlan": {
@@ -752,6 +783,7 @@
   "score": 1.15,
   "query": "L'INFERNALE QUINLAN",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "l infernale quinlan touch of evil": {
@@ -772,9 +804,10 @@
   ],
   "intro": "L'infernale Quinlan è un film del 1958 scritto, diretto e interpretato da Orson Welles, liberamente tratto dal romanzo Badge of Evil di Whit Masterson.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "L'INFERNALE QUINLAN (TOUCH OF EVIL)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "la gradiva": {
@@ -798,6 +831,7 @@
   "score": 1.15,
   "query": "LA GRADIVA",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "la la land": {
@@ -820,6 +854,7 @@
   "score": 1.15,
   "query": "LA LA LAND",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "la signora ammazzatutti serial mom": {
@@ -839,9 +874,10 @@
   ],
   "intro": "La signora ammazzatutti è un film del 1994 scritto e diretto da John Waters.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "LA SIGNORA AMMAZZATUTTI (SERIAL MOM)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "leviticus": {
@@ -864,6 +900,7 @@
   "score": 1.15,
   "query": "LEVITICUS",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "m il mostro di dusseldorf": {
@@ -886,6 +923,7 @@
   "score": 1.15,
   "query": "M - IL MOSTRO DI DUSSELDORF",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "maratona halloween creature a sorpresa": {
@@ -910,9 +948,10 @@
   ],
   "intro": "Mariti (Husbands) è un film del 1970 diretto da John Cassavetes.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "MARITI (HUSBANDS)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "midsummer formula": {
@@ -940,6 +979,7 @@
   "score": 1.15,
   "query": "MIKEY AND NICKY",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "minnie and moskowitz minnie and moskowitz": {
@@ -962,6 +1002,7 @@
   "score": 1.12,
   "query": "MINNIE & MOSKOWITZ (MINNIE AND MOSKOWITZ)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "my fair lady": {
@@ -984,6 +1025,7 @@
   "score": 1.15,
   "query": "MY FAIR LADY",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "nata ieri born yesterday": {
@@ -1003,9 +1045,10 @@
   ],
   "intro": "Nata ieri è un film del 1950 diretto da George Cukor.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "NATA IERI (BORN YESTERDAY)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "naza": {
@@ -1030,6 +1073,7 @@
   "score": 1.15,
   "query": "NAZA",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "nel bel mezzo di un gelido inverno in the bleak midwinter": {
@@ -1052,6 +1096,7 @@
   "score": 1.12,
   "query": "NEL BEL MEZZO DI UN GELIDO INVERNO (IN THE BLEAK MIDWINTER)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "ombre shadows": {
@@ -1071,9 +1116,10 @@
   ],
   "intro": "Ombre (Shadows) è un film del 1959 scritto e diretto da John Cassavetes.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "OMBRE (SHADOWS)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "ou vivre insist": {
@@ -1103,9 +1149,10 @@
   ],
   "intro": "Palcoscenico è un film del 1937 diretto da Gregory La Cava.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "PALCOSCENICO (STAGE DOOR)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "palestina 36": {
@@ -1126,9 +1173,10 @@
   ],
   "intro": "Palestina 36 - Quando tutto ebbe inizio è un film del 2025 diretto e sceneggiato da Anne-Marie Jasir.",
   "confidence": "high",
-  "score": 1.067,
+  "score": 1.12,
   "query": "PALESTINA 36",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "pos processo crime": {
@@ -1156,6 +1204,7 @@
   "score": 1.15,
   "query": "POSSIBLE LOVE",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "pranzo alle otto dinner at eight": {
@@ -1175,9 +1224,10 @@
   ],
   "intro": "Pranzo alle otto è un film del 1933 diretto da George Cukor.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "PRANZO ALLE OTTO (DINNER AT EIGHT)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "primetime": {
@@ -1200,6 +1250,7 @@
   "score": 1.15,
   "query": "PRIMETIME",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "ragazze in uniforme": {
@@ -1222,6 +1273,7 @@
   "score": 1.15,
   "query": "RAGAZZE IN UNIFORME",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "ragazze interrotte girl interrupted": {
@@ -1241,9 +1293,10 @@
   ],
   "intro": "Ragazze interrotte è un film drammatico del 1999 diretto da James Mangold, con Winona Ryder e Angelina Jolie come protagoniste.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "RAGAZZE INTERROTTE (GIRL, INTERRUPTED)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "ritorno a buenos aires": {
@@ -1266,6 +1319,7 @@
   "score": 1.15,
   "query": "RITORNO A BUENOS AIRES",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "ritorno alla vita counsellor at law": {
@@ -1285,9 +1339,10 @@
   ],
   "intro": "Ritorno alla vita è un film del 1933 diretto da William Wyler.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "RITORNO ALLA VITA (COUNSELLOR AT LAW)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "serpico": {
@@ -1312,6 +1367,7 @@
   "score": 1.15,
   "query": "SERPICO",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "sheep in the box": {
@@ -1334,6 +1390,7 @@
   "score": 0.9,
   "query": "SHEEP IN THE BOX",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "stati di allucinazione": {
@@ -1357,6 +1414,7 @@
   "score": 1.15,
   "query": "STATI DI ALLUCINAZIONE",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "strange journey the story of rocky horror": {
@@ -1379,6 +1437,7 @@
   "score": 1.15,
   "query": "STRANGE JOURNEY: THE STORY OF ROCKY HORROR",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "stray kids world tour run it il live viewing": {
@@ -1406,6 +1465,7 @@
   "score": 1.1,
   "query": "SUMMER BLOOMS",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "taxi driver": {
@@ -1428,6 +1488,7 @@
   "score": 1.15,
   "query": "TAXI DRIVER",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "the brood": {
@@ -1450,6 +1511,7 @@
   "score": 1.1,
   "query": "THE BROOD",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "the clearing": {
@@ -1470,6 +1532,7 @@
   "score": 0.95,
   "query": "THE CLEARING",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "the glorious dead": {
@@ -1497,6 +1560,7 @@
   "score": 1.15,
   "query": "THE INVITE – IL PIACERE È TUTTO NOSTRO",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "the matrix": {
@@ -1520,6 +1584,7 @@
   "score": 1.15,
   "query": "THE MATRIX",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "the rocky horror picture show": {
@@ -1542,6 +1607,7 @@
   "score": 1.15,
   "query": "THE ROCKY HORROR PICTURE SHOW",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "the rocky horror picture show 50 anniversary": {
@@ -1564,6 +1630,7 @@
   "score": 1.12,
   "query": "THE ROCKY HORROR PICTURE SHOW - 50° ANNIVERSARY",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "the vanishing": {
@@ -1582,10 +1649,11 @@
    "inglese"
   ],
   "intro": "The Vanishing - Scomparsa è un film del 1993 diretto da George Sluizer.",
-  "confidence": "high",
+  "confidence": "medium",
   "score": 1.1,
   "query": "THE VANISHING",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "the virgin of the quarry lake": {
@@ -1608,6 +1676,7 @@
   "score": 1.076,
   "query": "THE VIRGIN OF THE QUARRY LAKE",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "tracking edith": {
@@ -1633,6 +1702,7 @@
   "score": 1.1,
   "query": "TRACKING EDITH",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "trainspotting": {
@@ -1655,6 +1725,7 @@
   "score": 1.15,
   "query": "TRAINSPOTTING",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "un ora sola ti vorrei": {
@@ -1679,6 +1750,7 @@
   "score": 1.15,
   "query": "UN'ORA SOLA TI VORREI",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "un uomo da marciapiede midnight cowboy": {
@@ -1698,9 +1770,10 @@
   ],
   "intro": "Un uomo da marciapiede è un film del 1969 diretto da John Schlesinger e interpretato da Dustin Hoffman e Jon Voight, basato sull'omonimo romanzo del 1965 di James Leo Herlihy.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "UN UOMO DA MARCIAPIEDE (MIDNIGHT COWBOY)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "una moglie": {
@@ -1725,9 +1798,10 @@
   ],
   "intro": "Ventesimo secolo è un film di Howard Hawks del 1934, interpretato da un mostro sacro del teatro come John Barrymore nel ruolo di un impresario di Broadway, geniale ma senza scrupoli, e da una delle più brillanti attrici della commedia Usa, Carole Lombard.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "VENTESIMO SECOLO (TWENTIETH CENTURY)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "volti faces": {
@@ -1747,9 +1821,10 @@
   ],
   "intro": "Volti (Faces) è un film del 1968 scritto e diretto da John Cassavetes.",
   "confidence": "high",
-  "score": 1.12,
+  "score": 1.15,
   "query": "VOLTI (FACES)",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "wild horse nine": {
@@ -1772,6 +1847,7 @@
   "score": 0.9,
   "query": "WILD HORSE NINE",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  },
  "wilde horse nine": {
@@ -1799,6 +1875,7 @@
   "score": 1.15,
   "query": "WITTGENSTEIN",
   "source": "search",
+  "version": 2,
   "checked": "2026-10-20"
  }
 }

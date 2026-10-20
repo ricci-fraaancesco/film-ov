@@ -6,6 +6,7 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 ## Medium confidence
 
 - SHEEP IN THE BOX -> [Sheep in the Box (2026, Hirokazu Kore-eda)](https://www.wikidata.org/wiki/Q137640905)
+- THE VANISHING -> [The Vanishing - Scomparsa (1993, George Sluizer)](https://www.wikidata.org/wiki/Q616301)
 - WILD HORSE NINE -> [Wild Horse Nine (2026, Martin McDonagh)](https://www.wikidata.org/wiki/Q133341572)
 
 ## No match
