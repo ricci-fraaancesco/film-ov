@@ -1,0 +1,45 @@
+name: Lista dei cinema
+
+# Rebuilds data/venues.csv from the public lists and OpenStreetMap.
+# Runs when the list code changes, on the 1st of each month, or by hand.
+on:
+  push:
+    branches: [main]
+    paths: ["venues/**", ".github/workflows/venues.yml"]
+  schedule:
+    - cron: "41 3 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: venues
+  cancel-in-progress: false
+
+jobs:
+  build-list:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Tests
+        run: cd venues && python -m pytest -q
+
+      - name: Build the list
+        run: python venues/build_list.py --out data/venues.csv
+
+      - name: Save the list
+        run: |
+          git config user.name "film-ov-bot"
+          git config user.email "film-ov-bot@users.noreply.github.com"
+          git add data/venues.csv data/venues_stats.json
+          git commit -m "Lista cinema del $(date -u +%Y-%m-%d)" || echo "No changes"
+          git pull --rebase -q && git push
