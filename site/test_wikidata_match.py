@@ -124,3 +124,20 @@ def test_both_halves_make_a_full_match():
     c = [cand("Q_p", ["Pranzo alle otto", "Dinner at Eight"], 1933, ["George Cukor"], 30)]
     best, conf, _ = choose(c, query_variants("PRANZO ALLE OTTO (DINNER AT EIGHT)"), {})
     assert best["qid"] == "Q_p" and conf == "high"
+
+
+def test_director_spelling_variants():
+    assert same_person("Martin Mc Donagh", "Martin McDonagh")
+    assert same_person("Hirokazu Koreeda", "Hirokazu Kore-eda")
+
+
+def test_same_title_no_director_other_year_rejected():
+    c = [cand("Q2020", ["The Clearing"], 2020, [], 5)]
+    best, _, _ = choose(c, query_variants("THE CLEARING"), {"director": "Sabine Groenewegen", "year": 2026})
+    assert best is None
+
+
+def test_no_director_on_wikidata_is_medium():
+    c = [cand("Q1", ["Some Film"], 2024, [], 5)]
+    _, conf, _ = choose(c, query_variants("SOME FILM"), {"director": "Jane Doe", "year": 2026})
+    assert conf == "medium"

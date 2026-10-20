@@ -46,7 +46,7 @@ USER_AGENT = "FilmOV/0.1 (https://github.com/ricci-fraaancesco/film-ov; film lis
 # film project (films not released yet are often filed as this), animated feature film
 FILM_CLASSES = ["Q11424", "Q93204", "Q202866", "Q24862", "Q506240", "Q1268687", "Q18011172", "Q29168811"]
 RETRY_DAYS = 7
-MATCHER_VERSION = 2  # bump to re-check all automatic matches after a change in the rules
+MATCHER_VERSION = 3  # bump to re-check all automatic matches after a change in the rules
 ACCEPT = 0.82
 HIGH = 0.95
 
@@ -89,8 +89,8 @@ def same_person(a: str, b: str) -> bool:
     a, b = norm(a), norm(b)
     if not a or not b:
         return False
-    if a == b:
-        return True
+    if a == b or a.replace(" ", "") == b.replace(" ", ""):
+        return True  # "Martin Mc Donagh" = "Martin McDonagh", "Kore eda" = "Koreeda"
     ta, tb = a.split(), b.split()
     # same surname and same first initial: "A. G. Inarritu" vs "Alejandro Gonzalez Inarritu"
     return ta[-1] == tb[-1] and ta[0][0] == tb[0][0]
@@ -126,6 +126,8 @@ def choose(cands: list[dict], variants: list[str], hint: dict) -> tuple[dict | N
         hy, cy = hint.get("year"), c.get("year")
         if kind == "half" and hy and cy and abs(int(hy) - int(cy)) > 2:
             continue  # 'Dune - Parte tre' (2026) is not 'Dune' (2021)
+        if hint.get("director") and not c.get("directors") and hy and cy and abs(int(hy) - int(cy)) > 3:
+            continue  # nothing confirms it and the year disagrees: a different film with the same title
         scored.append((round(base + delta, 3), dmatch, c.get("sitelinks", 0), kind, c))
     if not scored:
         return None, "none", 0.0
@@ -140,6 +142,9 @@ def choose(cands: list[dict], variants: list[str], hint: dict) -> tuple[dict | N
         return best, "medium", s  # two films, same title, same director (remakes): let a human pick
     if kind == "half" and not dmatch:
         return best, "medium", s
+    year_ok = hint.get("year") and best.get("year") and abs(int(hint["year"]) - int(best["year"])) <= 1
+    if hint.get("director") and not best.get("directors") and not year_ok:
+        return best, "medium", s  # the cinema names a director but Wikidata has none to compare
     if not rivals or dmatch or links >= 3 * max(r[2] for r in rivals):
         return best, "high", s
     return best, "medium", s
@@ -279,7 +284,7 @@ def match_title(wd: Wikidata, title: str, hint: dict) -> dict:
     cand, conf, score = best
     today = date.today().isoformat()
     if not cand:
-        return {"qid": None, "checked": today, "query": variants[0]}
+        return {"qid": None, "checked": today, "query": variants[0], "version": MATCHER_VERSION}
     wd.label(cand["language_ids"])
     rec = {k: cand[k] for k in ("qid", "title_it", "original_title", "year", "runtime", "imdb", "tmdb", "itwiki")}
     rec["directors"] = cand.get("directors", [])
@@ -287,6 +292,10 @@ def match_title(wd: Wikidata, title: str, hint: dict) -> dict:
     rec["intro"] = wd.intro(cand["itwiki"]) if cand.get("itwiki") else ""
     rec.update({"confidence": conf, "score": score, "query": variants[0], "source": "search",
                 "version": MATCHER_VERSION, "checked": today})
+    if conf == "medium":  # other candidates, to make a manual fix easy
+        others = sorted((c for c in pool.values() if c["qid"] != cand["qid"] and title_score(c["names"], variants)[0] >= ACCEPT),
+                        key=lambda c: -c.get("sitelinks", 0))[:3]
+        rec["alternatives"] = [{"qid": c["qid"], "title": c["title_it"], "year": c.get("year"), "directors": c.get("directors", [])} for c in others]
     return rec
 
 
@@ -331,8 +340,14 @@ def write_review(cache: dict, titles: dict[str, str], path: Path) -> str:
              "Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata id",
              "(Q-number, from the wikidata.org/wiki/Q... link) as value, or null if it is not a film.", "",
              "## Medium confidence", ""]
-    lines += [f"- {t} -> [{v['title_it']} ({v.get('year') or '?'}, {', '.join(v.get('directors') or []) or 'regista ?'})]"
-              f"(https://www.wikidata.org/wiki/{v['qid']})" for t, v in med] or ["- none"]
+    for t, v in med:
+        lines.append(f"- {t} -> [{v['title_it']} ({v.get('year') or '?'}, {', '.join(v.get('directors') or []) or 'regista ?'})]"
+                     f"(https://www.wikidata.org/wiki/{v['qid']}) `{v['qid']}`")
+        for a in v.get("alternatives", []):
+            lines.append(f"  - or [{a['title']} ({a.get('year') or '?'}, {', '.join(a.get('directors') or []) or 'regista ?'})]"
+                         f"(https://www.wikidata.org/wiki/{a['qid']}) `{a['qid']}`")
+    if not med:
+        lines.append("- none")
     lines += ["", "## No match", ""] + ([f"- {t}" for t in none] or ["- none"])
     text = "\n".join(lines) + "\n"
     path.write_text(text, encoding="utf-8")
@@ -370,7 +385,7 @@ def main(argv=None) -> int:
                     cache[key] = record_for_qid(wd, oid, title)
                 continue
             stale_none = cur and not cur.get("qid") and today - date.fromisoformat(cur["checked"]) >= timedelta(days=RETRY_DAYS)
-            outdated = cur and cur.get("source") == "search" and cur.get("version", 1) < MATCHER_VERSION
+            outdated = cur and cur.get("source") in ("search", None) and cur.get("version", 1) < MATCHER_VERSION
             if cur is None or stale_none or outdated or (cur.get("source") == "override"):
                 cache[key] = match_title(wd, title, hints.get(key, {}))
                 looked += 1
