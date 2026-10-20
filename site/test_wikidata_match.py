@@ -89,3 +89,38 @@ def test_candidate_from_entity():
     assert c["year"] == 1959 and c["runtime"] == 81 and c["imdb"] == "tt0053270"
     assert c["director_ids"] == ["Q51511"] and c["language_ids"] == ["Q1860"]
     assert c["itwiki"] == "Ombre (film 1959)" and c["sitelinks"] == 2
+
+
+def test_half_title_with_other_year_is_rejected():
+    c = [cand("Q_dune1", ["Dune"], 2021, ["Denis Villeneuve"], 90)]
+    best, conf, _ = choose(c, query_variants("DUNE - PARTE TRE"), {"director": "Denis Villeneuve", "year": 2026})
+    assert best is None
+
+
+def test_part3_found_when_present():
+    c = [cand("Q_dune1", ["Dune"], 2021, ["Denis Villeneuve"], 90),
+         cand("Q_dune3", ["Dune - Parte tre", "Dune: Part Three"], 2026, ["Denis Villeneuve"], 20)]
+    best, conf, _ = choose(c, query_variants("DUNE - PARTE TRE"), {"director": "Denis Villeneuve", "year": 2026})
+    assert best["qid"] == "Q_dune3" and conf == "high"
+    best, conf, _ = choose(c, query_variants("DUNE: PART THREE"), {"director": "Denis Villeneuve", "year": 2026})
+    assert best["qid"] == "Q_dune3"
+
+
+def test_long_italian_title_matches_short_cinema_title():
+    long = "Il dottor Stranamore - Ovvero: come ho imparato a non preoccuparmi e ad amare la bomba"
+    c = [cand("Q_s", [long, "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb"], 1964, ["Stanley Kubrick"], 90)]
+    best, conf, _ = choose(c, query_variants("IL DOTTOR STRANAMORE"), {"director": "Stanley Kubrick", "year": 1964})
+    assert best["qid"] == "Q_s" and conf == "high"
+
+
+def test_remakes_by_same_director_go_to_review():
+    c = [cand("Q88", ["Il mistero della donna scomparsa", "The Vanishing", "Spoorloos"], 1988, ["George Sluizer"], 30),
+         cand("Q93", ["The Vanishing - Scomparsa", "The Vanishing"], 1993, ["George Sluizer"], 35)]
+    _, conf, _ = choose(c, query_variants("THE VANISHING"), {"director": "George Sluizer", "year": 2026})
+    assert conf == "medium"
+
+
+def test_both_halves_make_a_full_match():
+    c = [cand("Q_p", ["Pranzo alle otto", "Dinner at Eight"], 1933, ["George Cukor"], 30)]
+    best, conf, _ = choose(c, query_variants("PRANZO ALLE OTTO (DINNER AT EIGHT)"), {})
+    assert best["qid"] == "Q_p" and conf == "high"

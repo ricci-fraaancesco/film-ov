@@ -42,9 +42,11 @@ from films import film_key, norm, query_variants  # noqa: E402
 WD_API = "https://www.wikidata.org/w/api.php"
 WP_SUMMARY = "https://it.wikipedia.org/api/rest_v1/page/summary/"
 USER_AGENT = "FilmOV/0.1 (https://github.com/ricci-fraaancesco/film-ov; film listings bot)"
-# instance of: film, documentary film, animated film, short film, television film, concert film
-FILM_CLASSES = ["Q11424", "Q93204", "Q202866", "Q24862", "Q506240", "Q1268687"]
+# instance of: film, documentary film, animated film, short film, television film, concert film,
+# film project (films not released yet are often filed as this), animated feature film
+FILM_CLASSES = ["Q11424", "Q93204", "Q202866", "Q24862", "Q506240", "Q1268687", "Q18011172", "Q29168811"]
 RETRY_DAYS = 7
+MATCHER_VERSION = 2  # bump to re-check all automatic matches after a change in the rules
 ACCEPT = 0.82
 HIGH = 0.95
 
@@ -59,17 +61,28 @@ def similarity(a: str, b: str) -> float:
     return SequenceMatcher(None, a, b).ratio()
 
 
-def title_score(names: list[str], variants: list[str]) -> float:
-    """Best similarity between a variant of the cinema title and any title of the candidate.
-    Partial variants weigh a bit less, so 'HAPPINESS - FELICITA'' prefers the film whose
-    full Italian title is 'Happiness - Felicità' over a film called just 'Felicità'."""
-    best = 0.0
-    for i, v in enumerate(variants):
-        w = 1.0 if i == 0 else 0.97
-        for n in names:
-            if n:
-                best = max(best, similarity(v, n) * w)
-    return best
+def main_title(name: str) -> str:
+    """'Il dottor Stranamore - Ovvero: come ho imparato...' -> 'Il dottor Stranamore'."""
+    m = re.match(r"^(.{3,}?)\s*(?:\s[-–]\s|:\s)(.{12,})$", name)
+    return m.group(1) if m else ""
+
+
+def title_score(names: list[str], variants: list[str]) -> tuple[float, str]:
+    """Similarity between the cinema title and a candidate's titles.
+    Returns (score, kind). kind is 'full' when the whole cinema title matches a whole
+    title of the candidate (or both halves of 'A (B)' / 'A - B' match), 'half' when only
+    a part matches: 'DUNE - PARTE TRE' vs 'Dune' is only a 'half' match."""
+    full_names = [n for n in names if n]
+    part_names = [m for m in (main_title(n) for n in full_names) if m]
+    s_full = max((similarity(variants[0], n) for n in full_names), default=0.0)
+    halves = variants[1:]
+    half_hits = [max((similarity(h, n) for n in full_names), default=0.0) for h in halves]
+    if len(halves) >= 2 and sum(1 for x in half_hits[:2] if x >= 0.9) == 2:
+        return max(s_full, sum(half_hits[:2]) / 2), "full"
+    s_part = max(half_hits + [similarity(variants[0], n) for n in part_names], default=0.0) * 0.97
+    if s_full >= s_part:
+        return s_full, "full"
+    return s_part, "half"
 
 
 def same_person(a: str, b: str) -> bool:
@@ -106,20 +119,27 @@ def evidence(cand: dict, hint: dict) -> tuple[float, bool]:
 def choose(cands: list[dict], variants: list[str], hint: dict) -> tuple[dict | None, str, float]:
     scored = []
     for c in cands:
-        base = title_score(c["names"], variants)
+        base, kind = title_score(c["names"], variants)
         if base < ACCEPT:
             continue
         delta, dmatch = evidence(c, hint)
-        scored.append((round(base + delta, 3), dmatch, c.get("sitelinks", 0), c))
+        hy, cy = hint.get("year"), c.get("year")
+        if kind == "half" and hy and cy and abs(int(hy) - int(cy)) > 2:
+            continue  # 'Dune - Parte tre' (2026) is not 'Dune' (2021)
+        scored.append((round(base + delta, 3), dmatch, c.get("sitelinks", 0), kind, c))
     if not scored:
         return None, "none", 0.0
     scored.sort(key=lambda x: (x[0], x[2]), reverse=True)
-    s, dmatch, links, best = scored[0]
+    s, dmatch, links, kind, best = scored[0]
     if s < ACCEPT:
         return None, "none", s
     if s < HIGH:
         return best, "medium", s
-    rivals = [x for x in scored[1:] if x[0] >= HIGH]
+    rivals = [x for x in scored[1:] if x[0] >= s - 0.05]
+    if any(r[1] for r in rivals) and dmatch:
+        return best, "medium", s  # two films, same title, same director (remakes): let a human pick
+    if kind == "half" and not dmatch:
+        return best, "medium", s
     if not rivals or dmatch or links >= 3 * max(r[2] for r in rivals):
         return best, "high", s
     return best, "medium", s
@@ -244,6 +264,18 @@ def match_title(wd: Wikidata, title: str, hint: dict) -> dict:
         best = choose(list(pool.values()), variants, hint)
         if best[1] == "high":
             break
+    surname = (re.split(r",| e | and ", hint.get("director") or "")[0].split() or [""])[-1]
+    if best[1] != "high" and len(surname) > 2:
+        # Italian descriptions say "film del 1974 diretto da John Cassavetes", so the surname helps the search
+        ids = [i for i in wd.search_films(f"{variants[0]} {surname}") if i not in pool]
+        if ids:
+            for qid, e in wd.entities(ids, "labels|claims|sitelinks").items():
+                if "missing" not in e:
+                    pool[qid] = candidate_from(qid, e)
+            wd.label([d for c in pool.values() for d in c["director_ids"]])
+            for c in pool.values():
+                c["directors"] = [wd.labels.get(d, "") for d in c["director_ids"]]
+            best = choose(list(pool.values()), variants, hint)
     cand, conf, score = best
     today = date.today().isoformat()
     if not cand:
@@ -253,7 +285,8 @@ def match_title(wd: Wikidata, title: str, hint: dict) -> dict:
     rec["directors"] = cand.get("directors", [])
     rec["languages"] = [wd.labels.get(l, "") for l in cand["language_ids"]]
     rec["intro"] = wd.intro(cand["itwiki"]) if cand.get("itwiki") else ""
-    rec.update({"confidence": conf, "score": score, "query": variants[0], "source": "search", "checked": today})
+    rec.update({"confidence": conf, "score": score, "query": variants[0], "source": "search",
+                "version": MATCHER_VERSION, "checked": today})
     return rec
 
 
@@ -337,13 +370,27 @@ def main(argv=None) -> int:
                     cache[key] = record_for_qid(wd, oid, title)
                 continue
             stale_none = cur and not cur.get("qid") and today - date.fromisoformat(cur["checked"]) >= timedelta(days=RETRY_DAYS)
-            if cur is None or stale_none or (cur.get("source") == "override"):
+            outdated = cur and cur.get("source") == "search" and cur.get("version", 1) < MATCHER_VERSION
+            if cur is None or stale_none or outdated or (cur.get("source") == "override"):
                 cache[key] = match_title(wd, title, hints.get(key, {}))
                 looked += 1
                 m = cache[key]
                 print(f"  {title!r} -> {m.get('title_it')} ({m.get('year')}, {', '.join(m.get('directors') or [])}) [{m.get('confidence', 'none')}]")
         except Exception as e:  # one bad title must not stop the run
             print(f"  {title!r}: ERROR {e}", file=sys.stderr)
+
+    # typos: 'WILDE HORSE NINE' reuses the match of 'WILD HORSE NINE' if the director agrees
+    matched_keys = [k for k in titles if cache.get(k, {}).get("qid") and cache[k].get("source") != "similar-title"]
+    for key in titles:
+        cur = cache.get(key, {})
+        if cur.get("qid") or cur.get("source") == "override" or key in overrides:
+            continue
+        best = max(matched_keys, key=lambda k: SequenceMatcher(None, key, k).ratio(), default=None)
+        if best and len(key) >= 6 and SequenceMatcher(None, key, best).ratio() >= 0.92:
+            rec, h = cache[best], hints.get(key, {})
+            if not h.get("director") or any(same_person(h["director"].split(",")[0], d) for d in rec.get("directors", [])):
+                cache[key] = {**rec, "confidence": "medium", "source": "similar-title", "query": titles[key]}
+                print(f"  {titles[key]!r} -> same film as {titles[best]!r}")
 
     cache_p.write_text(json.dumps(dict(sorted(cache.items())), indent=1, ensure_ascii=False), encoding="utf-8")
     if not over_p.exists():
