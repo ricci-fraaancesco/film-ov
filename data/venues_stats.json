@@ -1,5 +1,5 @@
 {
-  "venues": 1733,
+  "venues": 999,
   "sources": {
     "ours": {
       "rows": 24,
@@ -17,19 +17,20 @@
       "merged": 120
     },
     "osm": {
-      "rows": 1365,
-      "new": 734,
-      "merged": 631
+      "rows": 0,
+      "new": 0,
+      "merged": 0
     }
   },
-  "with_address": 1705,
-  "with_website": 485,
-  "with_coordinates": 1334,
-  "arenas": 159,
+  "with_address": 928,
+  "with_website": 302,
+  "with_coordinates": 0,
+  "arenas": 140,
   "by_status": {
     "active": 24,
-    "closed": 11,
-    "to_check": 1698
+    "to_check": 975
   },
-  "errors": {}
+  "errors": {
+    "osm": "HTTPError: 502 Server Error: Bad Gateway for url: https://overpass-api.de/api/interpreter"
+  }
 }
