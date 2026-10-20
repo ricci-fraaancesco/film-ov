@@ -1,5 +1,5 @@
 {
-  "venues": 1734,
+  "venues": 1733,
   "sources": {
     "ours": {
       "rows": 24,
@@ -18,18 +18,18 @@
     },
     "osm": {
       "rows": 1365,
-      "new": 735,
-      "merged": 630
+      "new": 734,
+      "merged": 631
     }
   },
-  "with_address": 1694,
+  "with_address": 1705,
   "with_website": 485,
   "with_coordinates": 1334,
   "arenas": 159,
   "by_status": {
     "active": 24,
     "closed": 11,
-    "to_check": 1699
+    "to_check": 1698
   },
   "errors": {}
 }
