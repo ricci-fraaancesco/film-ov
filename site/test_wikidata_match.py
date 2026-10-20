@@ -141,3 +141,9 @@ def test_no_director_on_wikidata_is_medium():
     c = [cand("Q1", ["Some Film"], 2024, [], 5)]
     _, conf, _ = choose(c, query_variants("SOME FILM"), {"director": "Jane Doe", "year": 2026})
     assert conf == "medium"
+
+
+def test_non_latin_director_is_ignored():
+    c = [cand("Q1", ["Sheep in the Box"], 2026, ["Hirokazu Kore-eda"], 5)]
+    _, conf, _ = choose(c, query_variants("SHEEP IN THE BOX"), {"director": "是枝裕和", "year": 2026})
+    assert conf == "high"

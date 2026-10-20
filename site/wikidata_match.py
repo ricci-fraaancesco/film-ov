@@ -46,7 +46,7 @@ USER_AGENT = "FilmOV/0.1 (https://github.com/ricci-fraaancesco/film-ov; film lis
 # film project (films not released yet are often filed as this), animated feature film
 FILM_CLASSES = ["Q11424", "Q93204", "Q202866", "Q24862", "Q506240", "Q1268687", "Q18011172", "Q29168811"]
 RETRY_DAYS = 7
-MATCHER_VERSION = 3  # bump to re-check all automatic matches after a change in the rules
+MATCHER_VERSION = 4  # bump to re-check all automatic matches after a change in the rules
 ACCEPT = 0.82
 HIGH = 0.95
 
@@ -99,7 +99,8 @@ def same_person(a: str, b: str) -> bool:
 def evidence(cand: dict, hint: dict) -> tuple[float, bool]:
     """Score adjustment from the cinema's director and year. Returns (delta, director_matched)."""
     delta, dmatch = 0.0, False
-    hd = [d.strip() for d in re.split(r",| e | and ", hint.get("director") or "") if d.strip()]
+    # names in non-Latin scripts (是枝裕和) cannot be compared with the Wikidata labels: ignore them
+    hd = [d.strip() for d in re.split(r",| e | and ", hint.get("director") or "") if norm(d)]
     if hd and cand.get("directors"):
         if any(same_person(h, d) for h in hd for d in cand["directors"]):
             delta += 0.10
