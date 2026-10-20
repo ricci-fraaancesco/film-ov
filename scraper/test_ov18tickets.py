@@ -103,3 +103,21 @@ def test_barberini_labels():
     assert is_ov("NAZA", "IN ITALIANO", "Italiano")[0] is False
     assert clean_title("THE SOCIAL - V.O") == "THE SOCIAL"
     assert clean_title("KLARA E IL SOLE (KLARA AND THE SUN) - V. O.") == "KLARA E IL SOLE (KLARA AND THE SUN)"
+
+
+def test_add_venues_from_list(tmp_path):
+    import ov18tickets as m
+    p = tmp_path / "venues.csv"
+    p.write_text("name,city,status,platform,booking_url\n"
+                 "Cinema Nuovo,Torino,active,18tickets,https://nuovo.cinetorino.18tickets.it/\n"
+                 "Lumiere copy,Bologna,active,18tickets,https://lumiere.cinetecabologna.18tickets.it/\n"
+                 "Pending,Milano,to_check,18tickets,https://x.y.18tickets.it/\n", encoding="utf-8")
+    before = {k: {"pages": list(v["pages"]), "venues": dict(v["venues"])} for k, v in m.STOREFRONTS.items()}
+    try:
+        assert m.add_venues_from_list(p) == 1
+        assert m.STOREFRONTS["cinetorino.18tickets.it"]["pages"] == ["https://nuovo.cinetorino.18tickets.it/"]
+        assert m.venue_for("cinetorino.18tickets.it", "nuovo") == ("Cinema Nuovo", "Torino")
+        assert m.STOREFRONTS["cinetecabologna.18tickets.it"]["venues"]["lumiere"] == ("Cinema Lumière", "Bologna")
+    finally:
+        m.STOREFRONTS.clear()
+        m.STOREFRONTS.update(before)

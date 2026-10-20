@@ -24,6 +24,12 @@ def load(name):
         return {}
 
 MATCHES = load('film_matches.json')   # Wikidata, written by wikidata_match.py
+VENUES_CSV = {}
+try:
+    with open(Path(args.data) / 'venues.csv', encoding='utf-8') as fh:
+        VENUES_CSV = {(v['city'].lower(), v['name'].lower()): v for v in csv.DictReader(fh)}
+except FileNotFoundError:
+    pass
 PAGES = load('film_pages.json')       # cinema film pages, written by the scraper
 
 def match_for(raw):
@@ -153,9 +159,12 @@ for r in rows:
     if not f.get('g') and page.get('genre'): f['g'] = page['genre']
     alt = tcase(strip_edition(raw))
     if norm(alt) not in (norm(f['t']), norm(f.get('ot', ''))) and alt not in f['al']: f['al'].append(alt)
-    if (r['city'], r['cinema']) not in cin_idx:  # venue not in VENUE yet: still show it
+    if (r['city'], r['cinema']) not in cin_idx:  # venue not in VENUE: take its address from data/venues.csv
         cin_idx[(r['city'], r['cinema'])] = len(cin_list)
-        cin_list.append({"id": slug(r['cinema']), "n": r['cinema'], "c": r['city'], "a": "", "z": "", "w": ""})
+        v = VENUES_CSV.get((r['city'].lower(), r['cinema'].lower()), {})
+        cid = slug(r['cinema'])
+        if any(c['id'] == cid for c in cin_list): cid = slug(r['cinema'] + '-' + r['city'])
+        cin_list.append({"id": cid, "n": r['cinema'], "c": r['city'], "a": v.get('address', ''), "z": "", "w": v.get('website', '')})
         cities.setdefault(r['city'], {"en": ""})
     ci = cin_idx[(r['city'], r['cinema'])]
     ts = int(datetime.fromisoformat(r['starts_at']).timestamp() // 60)

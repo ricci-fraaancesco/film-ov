@@ -199,6 +199,44 @@ class Show:
     director: str = ""
 
 
+def add_venues_from_list(path: Path) -> int:
+    """Add the 18tickets cinemas activated in data/venues.csv (by the website check or by
+    hand) to STOREFRONTS. Cinemas configured above keep their settings."""
+    import csv as _csv
+
+    if not path or not Path(path).exists():
+        return 0
+    added = 0
+    with open(path, encoding="utf-8") as fh:
+        for r in _csv.DictReader(fh):
+            if r.get("status") != "active" or r.get("platform") != "18tickets" or not r.get("booking_url"):
+                continue
+            host = (urlparse_host(r["booking_url"]))
+            parts = host.split(".")
+            if not host.endswith("18tickets.it") or len(parts) < 3:
+                continue
+            storefront = ".".join(parts[-3:])
+            sub = ".".join(parts[:-3])
+            cfg = STOREFRONTS.setdefault(storefront, {"pages": [], "venues": {}})
+            if sub and sub in cfg["venues"]:
+                continue
+            if not sub and cfg["pages"]:
+                continue
+            cfg["venues"][sub or "main"] = (r["name"], r["city"])
+            page = f"https://{host}/"
+            root = f"https://{storefront}/"
+            if page not in cfg["pages"] and root not in cfg["pages"]:
+                cfg["pages"].append(page)
+            added += 1
+    return added
+
+
+def urlparse_host(url: str) -> str:
+    from urllib.parse import urlparse
+
+    return (urlparse(url).hostname or "").lower()
+
+
 def venue_for(storefront: str, sub: str) -> tuple[str, str]:
     venues = STOREFRONTS.get(storefront, {}).get("venues", {})
     return venues.get(sub, (sub.title(), "?"))
@@ -454,8 +492,11 @@ def main(argv=None):
     ap.add_argument("--out", type=Path, default=Path("data"))
     ap.add_argument("--now", help="ISO datetime used as 'now' (for replays)")
     ap.add_argument("--skip-film-pages", action="store_true", help="do not fetch film pages (faster)")
+    ap.add_argument("--venues", type=Path, help="data/venues.csv: also read the 18tickets cinemas activated there")
     a = ap.parse_args(argv)
 
+    if a.venues:
+        print(f"  cinemas added from {a.venues}: {add_venues_from_list(a.venues)}", file=sys.stderr)
     shows, errors = run_live() if a.mode == "live" else run_replay(a.raw)
     if a.mode == "live" and not a.skip_film_pages:
         fetch_film_pages(shows, a.out / "film_pages.json")

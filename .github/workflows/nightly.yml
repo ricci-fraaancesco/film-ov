@@ -37,7 +37,7 @@ jobs:
           (cd site && python -m pytest -q)
 
       - name: Read the cinema pages
-        run: python scraper/ov18tickets.py live --out data
+        run: python scraper/ov18tickets.py live --out data --venues data/venues.csv
 
       - name: Safety check (do not publish an empty site)
         run: |
@@ -70,7 +70,7 @@ jobs:
           git config user.email "film-ov-bot@users.noreply.github.com"
           git add data
           git commit -m "Dati del $(date -u +%Y-%m-%d)" || echo "No changes"
-          git push
+          git pull --rebase -q && git push
 
       - name: Open an issue if a cinema disappeared
         env:
