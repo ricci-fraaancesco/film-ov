@@ -48,8 +48,21 @@ jobs:
       - name: Match films on Wikidata
         run: python site/wikidata_match.py --csv data/ov_showtimes.csv --data data
 
-      - name: Build the website
-        run: python site/build_data.py --csv data/ov_showtimes.csv --data data --out public
+      - name: Restore the poster cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/posters
+          key: posters-${{ github.run_id }}
+          restore-keys: posters-
+
+      - name: Build the website (posters are copied here, each downloaded from the cinema only once)
+        run: python site/build_data.py --csv data/ov_showtimes.csv --data data --out public --poster-cache .cache/posters
+
+      - name: Save the poster cache
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/posters
+          key: posters-${{ github.run_id }}
 
       - name: Save the new data in the repo
         run: |

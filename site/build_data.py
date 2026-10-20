@@ -10,10 +10,12 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--csv', default='data/ov_showtimes.csv')
 ap.add_argument('--out', default='public')
 ap.add_argument('--data', default='data', help='folder with film_matches.json and film_pages.json (optional)')
+ap.add_argument('--poster-cache', default='', help='folder for poster copies; if set, posters are copied and served from the site')
 args = ap.parse_args()
 HERE = Path(__file__).parent
 import sys; sys.path.insert(0, str(HERE))
 from films import film_key, norm, strip_edition
+from posters import poster_name, sync as sync_posters
 
 def load(name):
     try:
@@ -166,6 +168,17 @@ for r in rows:
     shows.append([ci, fi, ts, screen, tcase(lab) if lab else '', fmt, r['booking_url'].replace('https://','').replace('#theater-init','')])
 
 shows.sort(key=lambda s: s[2])
+
+# posters: use our own copy (made by posters.py) when we have it, otherwise the cinema's URL
+POSTER_DIR = Path(args.out) / 'posters'
+if args.poster_cache:  # one poster per film page, each downloaded only once ever
+    st = sync_posters({f['p'] for f in film_list if f.get('p')}, Path(args.poster_cache), POSTER_DIR)
+    print(f"Posters: {st['wanted']} in use, {st['downloaded']} downloaded now, {st['cached']} from cache, {st['failed']} failed")
+for f in film_list:
+    if f.get('p'):
+        stem = poster_name(f['p'])
+        if (POSTER_DIR / f"{stem}-m.webp").exists():
+            f['p'], f['ps'] = f"posters/{stem}-m.webp", f"posters/{stem}-s.webp"
 
 # language from Wikidata when the cinema only says "lingua originale"; stable unique page ids
 used = set()

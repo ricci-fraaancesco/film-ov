@@ -299,7 +299,7 @@ const showsOfCity = c => SH.filter(s => CIN[s.c].c === c);
 const subs = f => [f.l, f.s].filter(Boolean).join(" · ");
 const tixHtml = s => `<a class="tix" href="${esc(s.u)}" target="_blank" rel="noopener" title="Prenota: ${esc(FILM[s.f].t)}, ${esc(whenShort(s.t))}, ${esc(CIN[s.c].n)}"><b>${hhmm(s.t)}</b><span>${esc(s.sc + (s.fmt && !s.sc.toLowerCase().includes(s.fmt) ? " · " + s.fmt : ""))}</span></a>`;
 const initial = F => esc((F.t.replace(/^(the|il|lo|la|i|gli|le|l'|un|una)\s+/i, "")[0] || "?").toUpperCase());
-const thumb = F => F.p ? `<img class="thumb" src="${esc(F.p)}" alt="" loading="lazy" width="46" height="69" data-ph="${initial(F)}">` : `<span class="thumb" aria-hidden="true">${initial(F)}</span>`;
+const thumb = F => F.p ? `<img class="thumb" src="${esc(F.ps || F.p)}" alt="" loading="lazy" width="46" height="69" data-ph="${initial(F)}">` : `<span class="thumb" aria-hidden="true">${initial(F)}</span>`;
 document.addEventListener("error", e => { const el = e.target; if (el.tagName === "IMG" && el.parentElement && el.parentElement.classList.contains("pimg")) { const ph = el.parentElement.querySelector(".ph"); if (ph) ph.hidden = false; el.remove(); return; } if (el.tagName === "IMG" && el.dataset.ph !== undefined) { const sp = document.createElement("span"); sp.className = el.className; sp.setAttribute("aria-hidden", "true"); sp.textContent = el.dataset.ph; el.replaceWith(sp); } else if (el.tagName === "IMG" && el.classList.contains("poster")) { const head = el.closest(".film-head"); el.remove(); if (head) head.style.gridTemplateColumns = "minmax(0, 1fr)"; } }, true);
 const director1 = F => (F.d || "").split(",")[0].trim();
 const credit = F => [F.d ? `Regia di <i>${esc(F.d)}</i>` : "", F.y || "", F.rt ? F.rt + " min" : ""].filter(Boolean).join(" · ");
@@ -438,7 +438,7 @@ function renderResults() {
       const href = e.type === "film" ? "#f-" + FILM[e.fi].id + (r.city ? "~" + citySlug(r.city) : "") : e.href;
       const sub = e.type === "film" ? filmSub(e, r.city) : e.sub;
       const i = opts.length; opts.push(href);
-      html += `<a class="opt" role="option" id="opt${i}" href="${href}" aria-selected="false">${e.type === "film" && FILM[e.fi].p ? `<img class="ic" src="${esc(FILM[e.fi].p)}" alt="" loading="lazy" data-ph="F">` : `<span class="ic" aria-hidden="true">${ICON[e.type]}</span>`}<span class="tx"><span class="lb">${highlight(e.label, r.toks)}</span><span class="sb">${esc(sub)}</span></span></a>`;
+      html += `<a class="opt" role="option" id="opt${i}" href="${href}" aria-selected="false">${e.type === "film" && FILM[e.fi].p ? `<img class="ic" src="${esc(FILM[e.fi].ps || FILM[e.fi].p)}" alt="" loading="lazy" data-ph="F">` : `<span class="ic" aria-hidden="true">${ICON[e.type]}</span>`}<span class="tx"><span class="lb">${highlight(e.label, r.toks)}</span><span class="sb">${esc(sub)}</span></span></a>`;
     }
   }
   resEl.innerHTML = html;
