@@ -1,0 +1,35 @@
+{
+  "venues": 2034,
+  "sources": {
+    "ours": {
+      "rows": 24,
+      "new": 24,
+      "merged": 0
+    },
+    "cr": {
+      "rows": 1181,
+      "new": 914,
+      "merged": 267
+    },
+    "mm": {
+      "rows": 191,
+      "new": 72,
+      "merged": 119
+    },
+    "osm": {
+      "rows": 1365,
+      "new": 1024,
+      "merged": 341
+    }
+  },
+  "with_address": 1317,
+  "with_website": 489,
+  "with_coordinates": 1343,
+  "arenas": 179,
+  "by_status": {
+    "active": 24,
+    "closed": 10,
+    "to_check": 2000
+  },
+  "errors": {}
+}
