@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: main
 
       - uses: actions/setup-python@v6
         with:
@@ -36,13 +38,21 @@ jobs:
       - name: Build the list
         run: python venues/build_list.py --out data/venues.csv
 
-      - name: Save the list
+      - name: Save the list (rebuilt again on the newest list if another job saved in between)
         if: always()
         run: |
           git config user.name "film-ov-bot"
           git config user.email "film-ov-bot@users.noreply.github.com"
-          git add data/venues_stats.json
-          [ -f data/osm_towns.json ] && git add data/osm_towns.json
-          [ -f data/venues.csv ] && git add data/venues.csv
-          git commit -m "Lista cinema del $(date -u +%Y-%m-%d)" || echo "No changes"
-          git pull --rebase -q && git push
+          for attempt in 1 2 3; do
+            git add data/venues_stats.json
+            [ -f data/venues.csv ] && git add data/venues.csv
+            [ -f data/osm_towns.json ] && git add data/osm_towns.json
+            git commit -q -m "Lista cinema del $(date -u +%Y-%m-%d)" || { echo "No changes"; exit 0; }
+            git push -q && exit 0
+            echo "Someone saved in between, rebuilding on the newest list ($attempt)"
+            cp data/osm_towns.json /tmp/osm_towns.json 2>/dev/null || true
+            git fetch -q origin main && git reset -q --hard origin/main
+            cp /tmp/osm_towns.json data/osm_towns.json 2>/dev/null || true
+            python venues/build_list.py --out data/venues.csv
+          done
+          exit 1

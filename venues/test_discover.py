@@ -1,7 +1,7 @@
 """Tests for the website / platform check (no network)."""
 from collections import Counter
 
-from discover import analyse, check, run, storefront_of
+from discover import analyse, apply_updates, check, diff_rows, run, storefront_of
 
 HOME = """<html><body>
 <a href="/programmazione/">Programmazione</a>
@@ -99,3 +99,17 @@ def test_group_storefront_needs_review():
     one = FakeFetch({"https://cinemabo.it/": '<a href="https://ccb.18tickets.it/">Acquista</a>', "https://ccb.18tickets.it/": STOREFRONT})
     up = check({"website": "https://cinemabo.it/"}, one)
     assert up["status"] == "active" and up["booking_url"] == "https://odeon.ccb.18tickets.it/"
+
+
+def test_updates_survive_a_newer_list():
+    before = [{"id": "a", "status": "to_check", "website": "https://a.it", "platform": "", "booking_url": "", "note": "", "last_checked": ""},
+              {"id": "b", "status": "to_check", "website": "", "platform": "", "booking_url": "", "note": "", "last_checked": ""}]
+    after = [dict(before[0], status="active", platform="18tickets", booking_url="https://a.x.18tickets.it/", last_checked="t"),
+             dict(before[1], status="no_website", last_checked="t")]
+    upd = diff_rows(before, after)
+    assert upd["a"]["status"] == "active" and "website" not in upd["a"]
+    # meanwhile the list was rebuilt (new cinema c) and a person fixed b by hand
+    newer = [dict(before[0]), dict(before[1], status="manual_review", note="by hand"),
+             {"id": "c", "status": "to_check", "website": "", "platform": "", "booking_url": "", "note": "", "last_checked": ""}]
+    assert apply_updates(newer, upd) == 1
+    assert newer[0]["status"] == "active" and newer[1]["status"] == "manual_review" and newer[2]["status"] == "to_check"

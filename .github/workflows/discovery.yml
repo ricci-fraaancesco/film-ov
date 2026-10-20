@@ -27,6 +27,8 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: main   # the latest list, not the commit that started the run
 
       - uses: actions/setup-python@v6
         with:
@@ -39,14 +41,20 @@ jobs:
         run: cd venues && python -m pytest -q
 
       - name: Check the next cinemas
-        run: python venues/discover.py --venues data/venues.csv --batch ${{ github.event.inputs.batch || '150' }}
+        run: python venues/discover.py --venues data/venues.csv --batch ${{ github.event.inputs.batch || '150' }} --updates-out /tmp/updates.json
 
-      - name: Save the results
-        if: always()
+      - name: Save the results (applied to the newest list, so other jobs never clash)
         run: |
           git config user.name "film-ov-bot"
           git config user.email "film-ov-bot@users.noreply.github.com"
-          git add data/venues.csv
-          [ -f data/discovery_report.md ] && git add data/discovery_report.md
-          git commit -m "Controllo siti cinema del $(date -u +%Y-%m-%d)" || echo "No changes"
-          git pull --rebase -q && git push
+          cp data/discovery_report.md /tmp/report.md
+          for attempt in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python venues/discover.py --venues data/venues.csv --apply /tmp/updates.json
+            cp /tmp/report.md data/discovery_report.md
+            git add data/venues.csv data/discovery_report.md
+            git commit -q -m "Controllo siti cinema del $(date -u +%Y-%m-%d)" || { echo "No changes"; exit 0; }
+            git push -q && exit 0
+            echo "Someone saved in between, trying again ($attempt)"; sleep 10
+          done
+          exit 1

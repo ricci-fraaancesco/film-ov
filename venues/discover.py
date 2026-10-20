@@ -309,20 +309,65 @@ def write_report(rows: list[dict], counts: Counter, path: Path, now: str) -> str
     return text
 
 
+TRACKED = ("status", "platform", "booking_url", "website", "note", "last_checked")
+
+
+def read_csv(path: Path) -> tuple[list[str], list[dict]]:
+    with open(path, encoding="utf-8") as fh:
+        reader = csv.DictReader(fh)
+        return reader.fieldnames, list(reader)
+
+
+def write_csv(path: Path, fields: list[str], rows: list[dict]) -> None:
+    with open(path, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=fields)
+        w.writeheader()
+        w.writerows(rows)
+
+
+def diff_rows(before: list[dict], after: list[dict]) -> dict[str, dict]:
+    """Only what this run changed, per cinema id: {id: {field: new value}}."""
+    old = {r["id"]: r for r in before}
+    out = {}
+    for r in after:
+        o = old.get(r["id"], {})
+        ch = {k: r.get(k, "") for k in TRACKED if r.get(k, "") != o.get(k, "")}
+        if ch:
+            out[r["id"]] = ch
+    return out
+
+
+def apply_updates(rows: list[dict], updates: dict[str, dict]) -> int:
+    """Apply a run's changes to a (possibly newer) list. Rows that a person set to
+    something other than to_check / no_website in the meantime are left alone."""
+    n = 0
+    for r in rows:
+        u = updates.get(r["id"])
+        if u and r.get("status") in ("to_check", "no_website", ""):
+            r.update(u)
+            n += 1
+    return n
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--venues", type=Path, default=Path("data/venues.csv"))
     ap.add_argument("--batch", type=int, default=150)
+    ap.add_argument("--updates-out", type=Path, help="also write this run's changes as JSON")
+    ap.add_argument("--apply", type=Path, help="only apply a JSON of changes to --venues, then exit")
     a = ap.parse_args(argv)
-    with open(a.venues, encoding="utf-8") as fh:
-        reader = csv.DictReader(fh)
-        fields, rows = reader.fieldnames, list(reader)
+    fields, rows = read_csv(a.venues)
+    if a.apply:
+        n = apply_updates(rows, json.loads(a.apply.read_text(encoding="utf-8")))
+        write_csv(a.venues, fields, rows)
+        print(f"applied changes to {n} cinemas")
+        return 0
+    before = [dict(r) for r in rows]
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     counts = run(rows, Fetcher(), a.batch, now)
-    with open(a.venues, "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=fields)
-        w.writeheader()
-        w.writerows(rows)
+    write_csv(a.venues, fields, rows)
+    if a.updates_out:
+        a.updates_out.write_text(json.dumps(diff_rows(before, rows), ensure_ascii=False, indent=0), encoding="utf-8")
     report = write_report(rows, counts, a.venues.parent / "discovery_report.md", now)
     print(report)
     import os
