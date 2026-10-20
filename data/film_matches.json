@@ -517,6 +517,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "gli intoccabili the untouchables": {
+  "qid": "Q108525",
+  "title_it": "The Untouchables - Gli intoccabili",
+  "original_title": "The Untouchables",
+  "year": 1987,
+  "runtime": 119,
+  "imdb": "tt0094226",
+  "tmdb": "117",
+  "itwiki": "The Untouchables - Gli intoccabili",
+  "directors": [
+   "Brian De Palma"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "The Untouchables - Gli intoccabili è un film del 1987 diretto da Brian De Palma e scritto da David Mamet.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "GLI INTOCCABILI (THE UNTOUCHABLES)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "happiness felicita": {
   "qid": "Q1426532",
   "title_it": "Happiness - Felicità",
@@ -814,6 +837,29 @@
   "confidence": "high",
   "score": 1.15,
   "query": "JENNIFER'S BODY",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "klara e il sole klara and the sun": {
+  "qid": "Q124409386",
+  "title_it": "Klara e il Sole",
+  "original_title": "Klara and the Sun",
+  "year": 2026,
+  "runtime": null,
+  "imdb": "tt14371256",
+  "tmdb": "858035",
+  "itwiki": "Klara e il Sole (film)",
+  "directors": [
+   "Taika Waititi"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Klara e il Sole è un film del 2026 diretto da Taika Waititi.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "KLARA E IL SOLE (KLARA AND THE SUN)",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
@@ -1383,6 +1429,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "ragione e sentimento sense and sensibility": {
+  "qid": "Q135436961",
+  "title_it": "Sense and Sensibility",
+  "original_title": "Sense and Sensibility",
+  "year": 2026,
+  "runtime": 132,
+  "imdb": "tt13609648",
+  "tmdb": "1503762",
+  "itwiki": null,
+  "directors": [
+   "Georgia Oakley"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "RAGIONE E SENTIMENTO (SENSE AND SENSIBILITY)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "ritorno a buenos aires": {
   "qid": "Q140680798",
   "title_it": "Ritorno a Buenos Aires",
@@ -1704,6 +1773,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "the social": {
+  "qid": "Q136387857",
+  "title_it": "The Social - Il prezzo della verità",
+  "original_title": "The Social Reckoning",
+  "year": 2026,
+  "runtime": 112,
+  "imdb": "tt37510326",
+  "tmdb": "1281331",
+  "itwiki": "The Social - Il prezzo della verità",
+  "directors": [
+   "Aaron Sorkin"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "The Social - Il prezzo della verità è un film del 2026 scritto e diretto da Aaron Sorkin.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "THE SOCIAL",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "the vanishing": {
   "qid": "Q1895379",
   "title_it": "Il mistero della donna scomparsa",
@@ -1961,6 +2053,29 @@
   "query": "WILDE HORSE NINE",
   "source": "similar-title",
   "version": 3,
+  "checked": "2026-10-20"
+ },
+ "wildwood": {
+  "qid": "Q123058740",
+  "title_it": "WIldwood - I segreti del bosco proibito",
+  "original_title": "Wildwood",
+  "year": 2026,
+  "runtime": 132,
+  "imdb": "tt2056785",
+  "tmdb": "791523",
+  "itwiki": "Wildwood - I segreti del bosco proibito",
+  "directors": [
+   "Travis Knight"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Wildwood - I segreti del bosco proibito (Wildwood) è un film d'animazione del 2026 diretto da Travis Knight.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "WILDWOOD",
+  "source": "search",
+  "version": 4,
   "checked": "2026-10-20"
  },
  "wittgenstein": {
