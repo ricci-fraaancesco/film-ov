@@ -27,8 +27,14 @@
   "with_coordinates": 0,
   "arenas": 140,
   "by_status": {
-    "active": 24,
-    "to_check": 975
+    "active": 39,
+    "adapter_missing": 67,
+    "needs_review": 18,
+    "no_booking_link": 30,
+    "no_website": 694,
+    "to_check": 131,
+    "unknown_platform": 5,
+    "website_down": 15
   },
   "errors": {
     "osm": "HTTPError: 502 Server Error: Bad Gateway for url: https://overpass-api.de/api/interpreter"
