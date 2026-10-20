@@ -3,7 +3,7 @@
   "qid": null,
   "checked": "2026-10-20",
   "query": "AMAZING MONSTER",
-  "version": 3
+  "version": 4
  },
  "andrej rublev": {
   "qid": "Q503046",
@@ -27,14 +27,14 @@
   "score": 1.15,
   "query": "ANDREJ RUBLËV",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "auber 89": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "AUBER 89",
-  "version": 3
+  "version": 4
  },
  "avengers doomsday": {
   "qid": "Q113244839",
@@ -57,14 +57,14 @@
   "score": 1.15,
   "query": "AVENGERS: DOOMSDAY",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "az zeeb": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "AZ ZEEB",
-  "version": 3
+  "version": 4
  },
  "balcanica": {
   "qid": "Q141282275",
@@ -82,7 +82,7 @@
   "score": 1.05,
   "query": "BALCANICA",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "bardo la falsa cronaca di alcune verita": {
@@ -105,20 +105,20 @@
   "score": 1.12,
   "query": "BARDO - LA FALSA CRONACA DI ALCUNE VERITA'",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "benita": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "BENITA",
-  "version": 3
+  "version": 4
  },
  "cara a cara": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "CARA A CARA",
-  "version": 3
+  "version": 4
  },
  "china blue": {
   "qid": "Q734116",
@@ -140,7 +140,7 @@
   "score": 1.15,
   "query": "CHINA BLUE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "clayface": {
@@ -163,7 +163,7 @@
   "score": 1.15,
   "query": "CLAYFACE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "codice penale the criminal code": {
@@ -186,7 +186,7 @@
   "score": 1.15,
   "query": "CODICE PENALE (THE CRIMINAL CODE)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "coyote vs acme": {
@@ -209,7 +209,7 @@
   "score": 1.15,
   "query": "COYOTE VS ACME",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "dead lover": {
@@ -232,7 +232,7 @@
   "score": 1.15,
   "query": "DEAD LOVER",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "digger": {
@@ -255,7 +255,7 @@
   "score": 1.15,
   "query": "DIGGER",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "dollhouse": {
@@ -278,7 +278,7 @@
   "score": 1.15,
   "query": "DOLLHOUSE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "don t worry darling": {
@@ -301,7 +301,7 @@
   "score": 1.15,
   "query": "DON'T WORRY DARLING",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "donne the women": {
@@ -324,7 +324,7 @@
   "score": 1.15,
   "query": "DONNE (THE WOMEN)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "dracula di bram stoker": {
@@ -351,7 +351,7 @@
   "score": 1.15,
   "query": "DRACULA DI BRAM STOKER",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "dune part three": {
@@ -374,7 +374,7 @@
   "score": 1.15,
   "query": "DUNE: PART THREE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "dune parte tre": {
@@ -397,7 +397,7 @@
   "score": 1.15,
   "query": "DUNE - PARTE TRE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "essi vivono": {
@@ -420,7 +420,7 @@
   "score": 1.15,
   "query": "ESSI VIVONO",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "f come falso verita e menzogna f for fake": {
@@ -445,7 +445,7 @@
   "score": 1.12,
   "query": "F COME FALSO - VERITÀ E MENZOGNA (F FOR FAKE)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "falstaff campanadas a medianoche": {
@@ -468,7 +468,7 @@
   "score": 1.12,
   "query": "FALSTAFF (CAMPANADAS A MEDIANOCHE)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "fatherland": {
@@ -491,7 +491,7 @@
   "score": 1.15,
   "query": "FATHERLAND",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "gli esclusi a child is waiting": {
@@ -514,7 +514,7 @@
   "score": 1.15,
   "query": "GLI ESCLUSI (A CHILD IS WAITING)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "happiness felicita": {
@@ -538,7 +538,7 @@
   "score": 1.15,
   "query": "HAPPINESS - FELICITA'",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "hereditary le radici del male": {
@@ -561,7 +561,7 @@
   "score": 1.15,
   "query": "HEREDITARY - LE RADICI DEL MALE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "hope": {
@@ -585,7 +585,7 @@
   "score": 1.15,
   "query": "HOPE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "i diavoli": {
@@ -608,7 +608,7 @@
   "score": 1.15,
   "query": "I DIAVOLI",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "i diavoli the devils": {
@@ -631,7 +631,7 @@
   "score": 1.15,
   "query": "I DIAVOLI (THE DEVILS)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "il braccio violento della legge": {
@@ -654,7 +654,7 @@
   "score": 1.15,
   "query": "IL BRACCIO VIOLENTO DELLA LEGGE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "il casanova di federico fellini": {
@@ -678,7 +678,7 @@
   "score": 1.15,
   "query": "IL CASANOVA DI FEDERICO FELLINI",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "il dottor stranamore": {
@@ -702,7 +702,7 @@
   "score": 1.12,
   "query": "IL DOTTOR STRANAMORE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "il signore resta a pranzo the man who came to dinner": {
@@ -725,7 +725,7 @@
   "score": 1.15,
   "query": "IL SIGNORE RESTA A PRANZO (THE MAN WHO CAME TO DINNER)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "il tempo di anne": {
@@ -748,7 +748,7 @@
   "score": 1.15,
   "query": "IL TEMPO DI ANNE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "insectasy": {
@@ -769,7 +769,7 @@
   "score": 1.05,
   "query": "INSECTASY",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "it ends": {
@@ -792,7 +792,7 @@
   "score": 1.15,
   "query": "IT ENDS",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "jennifer s body": {
@@ -815,7 +815,7 @@
   "score": 1.15,
   "query": "JENNIFER'S BODY",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "l amore bugiardo gone girl": {
@@ -838,7 +838,7 @@
   "score": 1.15,
   "query": "L'AMORE BUGIARDO - GONE GIRL",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "l infernale quinlan": {
@@ -862,7 +862,7 @@
   "score": 1.15,
   "query": "L'INFERNALE QUINLAN",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "l infernale quinlan touch of evil": {
@@ -886,7 +886,7 @@
   "score": 1.15,
   "query": "L'INFERNALE QUINLAN (TOUCH OF EVIL)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "la gradiva": {
@@ -910,7 +910,7 @@
   "score": 1.15,
   "query": "LA GRADIVA",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "la la land": {
@@ -933,7 +933,7 @@
   "score": 1.15,
   "query": "LA LA LAND",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "la signora ammazzatutti serial mom": {
@@ -956,7 +956,7 @@
   "score": 1.15,
   "query": "LA SIGNORA AMMAZZATUTTI (SERIAL MOM)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "leviticus": {
@@ -979,7 +979,7 @@
   "score": 1.15,
   "query": "LEVITICUS",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "m il mostro di dusseldorf": {
@@ -1002,14 +1002,14 @@
   "score": 1.15,
   "query": "M - IL MOSTRO DI DUSSELDORF",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "maratona halloween creature a sorpresa": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "MARATONA HALLOWEEN: CREATURE A SORPRESA",
-  "version": 3
+  "version": 4
  },
  "mariti husbands": {
   "qid": "Q2721763",
@@ -1031,14 +1031,14 @@
   "score": 1.15,
   "query": "MARITI (HUSBANDS)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "midsummer formula": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "MIDSUMMER FORMULA",
-  "version": 3
+  "version": 4
  },
  "mikey and nicky": {
   "qid": "Q3313626",
@@ -1060,7 +1060,7 @@
   "score": 1.15,
   "query": "MIKEY AND NICKY",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "minnie and moskowitz minnie and moskowitz": {
@@ -1083,7 +1083,7 @@
   "score": 1.12,
   "query": "MINNIE & MOSKOWITZ (MINNIE AND MOSKOWITZ)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "my fair lady": {
@@ -1106,7 +1106,7 @@
   "score": 1.15,
   "query": "MY FAIR LADY",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "nata ieri born yesterday": {
@@ -1129,7 +1129,7 @@
   "score": 1.15,
   "query": "NATA IERI (BORN YESTERDAY)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "naza": {
@@ -1154,7 +1154,7 @@
   "score": 1.15,
   "query": "NAZA",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "nel bel mezzo di un gelido inverno in the bleak midwinter": {
@@ -1177,7 +1177,7 @@
   "score": 1.12,
   "query": "NEL BEL MEZZO DI UN GELIDO INVERNO (IN THE BLEAK MIDWINTER)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "ombre shadows": {
@@ -1200,20 +1200,20 @@
   "score": 1.15,
   "query": "OMBRE (SHADOWS)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "ou vivre insist": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "OÙ VIVRE INSIST",
-  "version": 3
+  "version": 4
  },
  "ozzy and black sabbath back to the beginning": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "OZZY & BLACK SABBATH: BACK TO THE BEGINNING",
-  "version": 3
+  "version": 4
  },
  "palcoscenico stage door": {
   "qid": "Q1020603",
@@ -1235,7 +1235,7 @@
   "score": 1.15,
   "query": "PALCOSCENICO (STAGE DOOR)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "palestina 36": {
@@ -1259,14 +1259,14 @@
   "score": 1.12,
   "query": "PALESTINA 36",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "pos processo crime": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "PÒS PROCESSO CRIME",
-  "version": 3
+  "version": 4
  },
  "possible love": {
   "qid": "Q137843740",
@@ -1288,7 +1288,7 @@
   "score": 1.15,
   "query": "POSSIBLE LOVE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "pranzo alle otto dinner at eight": {
@@ -1311,7 +1311,7 @@
   "score": 1.15,
   "query": "PRANZO ALLE OTTO (DINNER AT EIGHT)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "primetime": {
@@ -1334,7 +1334,7 @@
   "score": 1.15,
   "query": "PRIMETIME",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "ragazze in uniforme": {
@@ -1357,7 +1357,7 @@
   "score": 1.15,
   "query": "RAGAZZE IN UNIFORME",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "ragazze interrotte girl interrupted": {
@@ -1380,7 +1380,7 @@
   "score": 1.15,
   "query": "RAGAZZE INTERROTTE (GIRL, INTERRUPTED)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "ritorno a buenos aires": {
@@ -1403,7 +1403,7 @@
   "score": 1.15,
   "query": "RITORNO A BUENOS AIRES",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "ritorno alla vita counsellor at law": {
@@ -1426,7 +1426,7 @@
   "score": 1.15,
   "query": "RITORNO ALLA VITA (COUNSELLOR AT LAW)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "serpico": {
@@ -1451,7 +1451,7 @@
   "score": 1.15,
   "query": "SERPICO",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "sheep in the box": {
@@ -1470,13 +1470,12 @@
    "giapponese"
   ],
   "intro": "Sheep in the Box è un film del 2026 diretto, sceneggiato e montato da Hirokazu Kore'eda.",
-  "confidence": "medium",
-  "score": 0.9,
+  "confidence": "high",
+  "score": 1.05,
   "query": "SHEEP IN THE BOX",
   "source": "search",
-  "version": 3,
-  "checked": "2026-10-20",
-  "alternatives": []
+  "version": 4,
+  "checked": "2026-10-20"
  },
  "stati di allucinazione": {
   "qid": "Q1194524",
@@ -1499,7 +1498,7 @@
   "score": 1.15,
   "query": "STATI DI ALLUCINAZIONE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "strange journey the story of rocky horror": {
@@ -1522,14 +1521,14 @@
   "score": 1.15,
   "query": "STRANGE JOURNEY: THE STORY OF ROCKY HORROR",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "stray kids world tour run it il live viewing": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "STRAY KIDS WORLD TOUR \"RUN IT\": - IL LIVE VIEWING",
-  "version": 3
+  "version": 4
  },
  "summer blooms": {
   "qid": "Q55421839",
@@ -1551,7 +1550,7 @@
   "score": 1.1,
   "query": "SUMMER BLOOMS",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "taxi driver": {
@@ -1574,7 +1573,7 @@
   "score": 1.15,
   "query": "TAXI DRIVER",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "the brood": {
@@ -1597,20 +1596,20 @@
   "score": 1.1,
   "query": "THE BROOD",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "the clearing": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "THE CLEARING",
-  "version": 3
+  "version": 4
  },
  "the glorious dead": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "THE GLORIOUS DEAD",
-  "version": 3
+  "version": 4
  },
  "the invite il piacere e tutto nostro": {
   "qid": "Q134083296",
@@ -1632,7 +1631,7 @@
   "score": 1.15,
   "query": "THE INVITE – IL PIACERE È TUTTO NOSTRO",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "the matrix": {
@@ -1656,7 +1655,7 @@
   "score": 1.15,
   "query": "THE MATRIX",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "the rocky horror picture show": {
@@ -1679,7 +1678,7 @@
   "score": 1.15,
   "query": "THE ROCKY HORROR PICTURE SHOW",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "the rocky horror picture show 50 anniversary": {
@@ -1702,57 +1701,32 @@
   "score": 1.12,
   "query": "THE ROCKY HORROR PICTURE SHOW - 50° ANNIVERSARY",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "the vanishing": {
-  "qid": "Q616301",
-  "title_it": "The Vanishing - Scomparsa",
-  "original_title": "The Vanishing",
-  "year": 1993,
-  "runtime": 109,
-  "imdb": "tt0108473",
-  "tmdb": "1644",
-  "itwiki": "The Vanishing - Scomparsa",
+  "qid": "Q1895379",
+  "title_it": "Il mistero della donna scomparsa",
+  "original_title": "Spoorlos",
+  "year": 1988,
+  "runtime": 103,
+  "imdb": "tt0096163",
+  "tmdb": "8740",
+  "itwiki": "Il mistero della donna scomparsa",
   "directors": [
    "George Sluizer"
   ],
   "languages": [
-   "inglese"
+   "francese",
+   "inglese",
+   "olandese"
   ],
-  "intro": "The Vanishing - Scomparsa è un film del 1993 diretto da George Sluizer.",
-  "confidence": "medium",
-  "score": 1.1,
+  "intro": "Il mistero della donna scomparsa (Spoorloos) è un film del 1988 diretto da George Sluizer",
+  "confidence": "high",
+  "score": 1.0,
   "query": "THE VANISHING",
-  "source": "search",
-  "version": 3,
-  "checked": "2026-10-20",
-  "alternatives": [
-   {
-    "qid": "Q1895379",
-    "title": "Il mistero della donna scomparsa",
-    "year": 1988,
-    "directors": [
-     "George Sluizer"
-    ]
-   },
-   {
-    "qid": "Q29514859",
-    "title": "The Vanishing - Il mistero del faro",
-    "year": 2018,
-    "directors": [
-     "Kristoffer Nyholm"
-    ]
-   },
-   {
-    "qid": "Q123307638",
-    "title": "The Vanishing",
-    "year": 1993,
-    "directors": [
-     "George Sluizer"
-    ]
-   }
-  ]
+  "source": "override",
+  "checked": "2026-10-20"
  },
  "the virgin of the quarry lake": {
   "qid": "Q131428552",
@@ -1774,7 +1748,7 @@
   "score": 1.076,
   "query": "THE VIRGIN OF THE QUARRY LAKE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "tracking edith": {
@@ -1800,7 +1774,7 @@
   "score": 1.1,
   "query": "TRACKING EDITH",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "trainspotting": {
@@ -1823,7 +1797,7 @@
   "score": 1.15,
   "query": "TRAINSPOTTING",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "un ora sola ti vorrei": {
@@ -1848,7 +1822,7 @@
   "score": 1.15,
   "query": "UN'ORA SOLA TI VORREI",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "un uomo da marciapiede midnight cowboy": {
@@ -1871,7 +1845,7 @@
   "score": 1.15,
   "query": "UN UOMO DA MARCIAPIEDE (MIDNIGHT COWBOY)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "una moglie": {
@@ -1894,7 +1868,7 @@
   "score": 1.15,
   "query": "UNA MOGLIE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "ventesimo secolo twentieth century": {
@@ -1917,7 +1891,7 @@
   "score": 1.15,
   "query": "VENTESIMO SECOLO (TWENTIETH CENTURY)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "volti faces": {
@@ -1940,7 +1914,7 @@
   "score": 1.15,
   "query": "VOLTI (FACES)",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "wild horse nine": {
@@ -1963,7 +1937,7 @@
   "score": 1.15,
   "query": "WILD HORSE NINE",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  },
  "wilde horse nine": {
@@ -2009,7 +1983,7 @@
   "score": 1.15,
   "query": "WITTGENSTEIN",
   "source": "search",
-  "version": 3,
+  "version": 4,
   "checked": "2026-10-20"
  }
 }
