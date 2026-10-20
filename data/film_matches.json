@@ -1,4 +1,69 @@
 {
+ "1997 fuga da new york escape from new york": {
+  "qid": "Q403033",
+  "title_it": "1997: Fuga da New York",
+  "original_title": "Escape from New York",
+  "year": 1981,
+  "runtime": 99,
+  "imdb": "tt0082340",
+  "tmdb": "1103",
+  "itwiki": "1997: Fuga da New York",
+  "directors": [
+   "John Carpenter"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "1997: Fuga da New York è un film del 1981 diretto da John Carpenter, con Kurt Russell, Lee Van Cleef, Ernest Borgnine, Donald Pleasence, Isaac Hayes ed Harry Dean Stanton.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "1997: FUGA DA NEW YORK (ESCAPE FROM NEW YORK)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "2001 odissea nello spazio 2001 a space odyssey": {
+  "qid": "Q103474",
+  "title_it": "2001: Odissea nello spazio",
+  "original_title": "2001: A Space Odyssey",
+  "year": 1968,
+  "runtime": 143,
+  "imdb": "tt0062622",
+  "tmdb": "62",
+  "itwiki": "2001: Odissea nello spazio",
+  "directors": [
+   "Stanley Kubrick"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "2001: Odissea nello spazio è un film del 1968 co-scritto, prodotto e diretto da Stanley Kubrick, che ha curato anche parte degli effetti speciali.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "2001: ODISSEA NELLO SPAZIO (2001 A SPACE ODYSSEY)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "agata the writer": {
+  "qid": "Q141654900",
+  "title_it": "Agata the Writer",
+  "original_title": "",
+  "year": 2026,
+  "runtime": null,
+  "imdb": "tt43086591",
+  "tmdb": null,
+  "itwiki": null,
+  "directors": [],
+  "languages": [],
+  "intro": "",
+  "confidence": "high",
+  "score": 1.05,
+  "query": "AGATA THE WRITER",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "amazing monster": {
   "qid": null,
   "checked": "2026-10-20",
@@ -114,6 +179,52 @@
   "query": "BENITA",
   "version": 4
  },
+ "bersaglio di notte night moves": {
+  "qid": "Q1218655",
+  "title_it": "Bersaglio di notte",
+  "original_title": "Night Moves",
+  "year": 1975,
+  "runtime": 99,
+  "imdb": "tt0073453",
+  "tmdb": "32042",
+  "itwiki": "Bersaglio di notte",
+  "directors": [
+   "Arthur Penn"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Bersaglio di notte è un film del 1975 diretto da Arthur Penn.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "BERSAGLIO DI NOTTE (NIGHT MOVES)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "blow up the blow up": {
+  "qid": "Q658204",
+  "title_it": "Blow-Up",
+  "original_title": "Blowup",
+  "year": 1966,
+  "runtime": 111,
+  "imdb": "tt0060176",
+  "tmdb": "1052",
+  "itwiki": "Blow-Up",
+  "directors": [
+   "Michelangelo Antonioni"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Blow-Up è un film del 1966 diretto da Michelangelo Antonioni, ispirato al racconto Le bave del diavolo dell'argentino Julio Cortázar.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "BLOW-UP (THE BLOW-UP)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "cara a cara": {
   "qid": null,
   "checked": "2026-10-20",
@@ -139,6 +250,29 @@
   "confidence": "high",
   "score": 1.15,
   "query": "CHINA BLUE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "christine la macchina infernale christine": {
+  "qid": "Q753449",
+  "title_it": "Christine - La macchina infernale",
+  "original_title": "Christine",
+  "year": 1983,
+  "runtime": 110,
+  "imdb": "tt0085333",
+  "tmdb": "8769",
+  "itwiki": "Christine - La macchina infernale",
+  "directors": [
+   "John Carpenter"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Christine - La macchina infernale (Christine) è un film del 1983 diretto da John Carpenter, basato sull'omonimo romanzo di Stephen King dello stesso anno.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "CHRISTINE - LA MACCHINA INFERNALE (CHRISTINE)",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
@@ -212,6 +346,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "dark star": {
+  "qid": "Q506580",
+  "title_it": "Dark Star",
+  "original_title": "Dark Star",
+  "year": 1974,
+  "runtime": 83,
+  "imdb": "tt0069945",
+  "tmdb": "1410",
+  "itwiki": "Dark Star (film)",
+  "directors": [
+   "John Carpenter"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Dark Star è un film di fantascienza statunitense del 1974 diretto da John Carpenter, suo esordio alla regia di un lungometraggio.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "DARK STAR",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "dead lover": {
   "qid": "Q131920948",
   "title_it": "Dead Lover",
@@ -254,6 +411,29 @@
   "confidence": "high",
   "score": 1.15,
   "query": "DIGGER",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "distretto 13 le brigate della morte assault on precinct 13": {
+  "qid": "Q434718",
+  "title_it": "Distretto 13 - Le brigate della morte",
+  "original_title": "Assault on Precinct 13",
+  "year": 1976,
+  "runtime": 91,
+  "imdb": "tt0074156",
+  "tmdb": "17814",
+  "itwiki": "Distretto 13 - Le brigate della morte",
+  "directors": [
+   "John Carpenter"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Distretto 13 - Le brigate della morte è un film del 1976 scritto e diretto da John Carpenter.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "DISTRETTO 13 – LE BRIGATE DELLA MORTE (ASSAULT ON PRECINCT 13)",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
@@ -323,6 +503,29 @@
   "confidence": "high",
   "score": 1.15,
   "query": "DONNE (THE WOMEN)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "dr who and the daleks": {
+  "qid": "Q3038433",
+  "title_it": "Dr. Who and the Daleks",
+  "original_title": "Dr. Who and the Daleks",
+  "year": 1965,
+  "runtime": 88,
+  "imdb": "tt0059126",
+  "tmdb": "26581",
+  "itwiki": "Dr. Who and the Daleks",
+  "directors": [
+   "Gordon Flemyng"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Dr. Who and the Daleks è un film di fantascienza del 1965 diretto da Gordon Flemyng.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "DR. WHO AND THE DALEKS",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
@@ -494,6 +697,52 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "gangster story bonnie and clyde": {
+  "qid": "Q181776",
+  "title_it": "Gangster Story",
+  "original_title": "Bonnie and Clyde",
+  "year": 1967,
+  "runtime": 107,
+  "imdb": "tt0061418",
+  "tmdb": "475",
+  "itwiki": "Gangster Story",
+  "directors": [
+   "Arthur Penn"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Gangster Story è un film del 1967, diretto da Arthur Penn, che narra la vera storia di Bonnie e Clyde, coppia criminale che imperversò negli Stati Uniti tra il 1930 ed il 1934.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "GANGSTER STORY (BONNIE AND CLYDE)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "get shorty": {
+  "qid": "Q261923",
+  "title_it": "Get Shorty",
+  "original_title": "Get Shorty",
+  "year": 1995,
+  "runtime": 101,
+  "imdb": "tt0113161",
+  "tmdb": "8012",
+  "itwiki": "Get Shorty",
+  "directors": [
+   "Barry Sonnenfeld"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Get Shorty è un film del 1995, diretto da Barry Sonnenfeld, con John Travolta e Gene Hackman.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "GET SHORTY",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "gli esclusi a child is waiting": {
   "qid": "Q1304726",
   "title_it": "Gli esclusi",
@@ -536,6 +785,75 @@
   "confidence": "high",
   "score": 1.12,
   "query": "GLI INTOCCABILI (THE UNTOUCHABLES)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "gli spietati unforgiven": {
+  "qid": "Q104137",
+  "title_it": "Gli spietati",
+  "original_title": "Unforgiven",
+  "year": 1992,
+  "runtime": 130,
+  "imdb": "tt0105695",
+  "tmdb": "33",
+  "itwiki": "Gli spietati",
+  "directors": [
+   "Clint Eastwood"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Gli spietati (Unforgiven) è un film western del 1992 diretto, prodotto e interpretato da Clint Eastwood e vincitore di quattro Premi Oscar nel 1993.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "GLI SPIETATI (UNFORGIVEN)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "grosso guaio a chinatown big trouble in little china": {
+  "qid": "Q859494",
+  "title_it": "Grosso guaio a Chinatown",
+  "original_title": "Big Trouble in Little China",
+  "year": 1986,
+  "runtime": 99,
+  "imdb": "tt0090728",
+  "tmdb": "6978",
+  "itwiki": "Grosso guaio a Chinatown",
+  "directors": [
+   "John Carpenter"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Grosso guaio a Chinatown è un film statunitense del 1986 diretto da John Carpenter.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "GROSSO GUAIO A CHINATOWN (BIG TROUBLE IN LITTLE CHINA)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "halloween la notte delle streghe halloween": {
+  "qid": "Q221103",
+  "title_it": "Halloween - La notte delle streghe",
+  "original_title": "Halloween",
+  "year": 1978,
+  "runtime": 92,
+  "imdb": "tt0077651",
+  "tmdb": "948",
+  "itwiki": "Halloween - La notte delle streghe",
+  "directors": [
+   "John Carpenter"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Halloween - La notte delle streghe (Halloween) è un film del 1978 co-scritto, diretto e musicato da John Carpenter.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "HALLOWEEN - LA NOTTE DELLE STREGHE (HALLOWEEN)",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
@@ -634,6 +952,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "i diavoli ed rest 4k": {
+  "qid": "Q655996",
+  "title_it": "I diavoli",
+  "original_title": "The Devils",
+  "year": 1971,
+  "runtime": 111,
+  "imdb": "tt0066993",
+  "tmdb": "31767",
+  "itwiki": "I diavoli",
+  "directors": [
+   "Ken Russell"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "I diavoli è un film del 1971 co-prodotto, scritto e diretto da Ken Russell, liberamente tratto dall'omonima trasposizione teatrale di John Whiting del romanzo storico I diavoli di Loudun di Aldous Huxley, basato sulla reale vicenda della presunta possessione demoniaca di massa d'un convento d'Orsoline della cittadina francese di Loudun nel 1634.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "I DIAVOLI (ED. REST. 4K)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "i diavoli the devils": {
   "qid": "Q655996",
   "title_it": "I diavoli",
@@ -657,6 +998,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "i tenenbaum the royal tenenbaums": {
+  "qid": "Q935105",
+  "title_it": "I Tenenbaum",
+  "original_title": "The Royal Tenenbaums",
+  "year": 2001,
+  "runtime": 108,
+  "imdb": "tt0265666",
+  "tmdb": "9428",
+  "itwiki": "I Tenenbaum",
+  "directors": [
+   "Wes Anderson"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "I Tenenbaum è un film del 2001 diretto da Wes Anderson.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "I TENENBAUM (THE ROYAL TENENBAUMS)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "il braccio violento della legge": {
   "qid": "Q220735",
   "title_it": "Il braccio violento della legge",
@@ -676,6 +1040,29 @@
   "confidence": "high",
   "score": 1.15,
   "query": "IL BRACCIO VIOLENTO DELLA LEGGE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "il braccio violento della legge the french connection": {
+  "qid": "Q220735",
+  "title_it": "Il braccio violento della legge",
+  "original_title": "The French Connection",
+  "year": 1971,
+  "runtime": 104,
+  "imdb": "tt0067116",
+  "tmdb": "1051",
+  "itwiki": "Il braccio violento della legge",
+  "directors": [
+   "William Friedkin"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Il braccio violento della legge è un film del 1971 diretto da William Friedkin, e interpretato da Gene Hackman, Roy Scheider e Fernando Rey.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "IL BRACCIO VIOLENTO DELLA LEGGE (THE FRENCH CONNECTION)",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
@@ -728,6 +1115,52 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "il seme della follia in the mounth of madness": {
+  "qid": "Q1214972",
+  "title_it": "Il seme della follia",
+  "original_title": "In the Mouth of Madness",
+  "year": 1994,
+  "runtime": 95,
+  "imdb": "tt0113409",
+  "tmdb": "2654",
+  "itwiki": "Il seme della follia (film 1994)",
+  "directors": [
+   "John Carpenter"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Il seme della follia è un film horror del 1994 diretto da John Carpenter e ispirato ai racconti e romanzi di Howard Phillips Lovecraft.",
+  "confidence": "high",
+  "score": 1.139,
+  "query": "IL SEME DELLA FOLLIA (IN THE MOUNTH OF MADNESS)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "il signore del male prince of darkness": {
+  "qid": "Q601013",
+  "title_it": "Il signore del male",
+  "original_title": "Prince of Darkness",
+  "year": 1987,
+  "runtime": 102,
+  "imdb": "tt0093777",
+  "tmdb": "8852",
+  "itwiki": "Il signore del male",
+  "directors": [
+   "John Carpenter"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Il signore del male è un film del 1987 scritto e diretto da John Carpenter.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "IL SIGNORE DEL MALE (PRINCE OF DARKNESS)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "il signore resta a pranzo the man who came to dinner": {
   "qid": "Q2307466",
   "title_it": "Il signore resta a pranzo",
@@ -747,6 +1180,29 @@
   "confidence": "high",
   "score": 1.15,
   "query": "IL SIGNORE RESTA A PRANZO (THE MAN WHO CAME TO DINNER)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "il socio the firm": {
+  "qid": "Q821692",
+  "title_it": "Il socio",
+  "original_title": "The Firm",
+  "year": 1993,
+  "runtime": 148,
+  "imdb": "tt0106918",
+  "tmdb": "37233",
+  "itwiki": "Il socio (film)",
+  "directors": [
+   "Sydney Pollack"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Il socio è un film del 1993 diretto da Sydney Pollack, tratto dal best seller omonimo dello scrittore statunitense John Grisham.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "IL SOCIO (THE FIRM)",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
@@ -910,6 +1366,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "l avventura del poseidon the poseidon adventure": {
+  "qid": "Q874496",
+  "title_it": "L'avventura del Poseidon",
+  "original_title": "The Poseidon Adventure",
+  "year": 1972,
+  "runtime": 112,
+  "imdb": "tt0069113",
+  "tmdb": "551",
+  "itwiki": "L'avventura del Poseidon",
+  "directors": [
+   "Ronald Neame"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "L'avventura del Poseidon è un film del 1972 diretto da Ronald Neame.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "L'AVVENTURA DEL POSEIDON (THE POSEIDON ADVENTURE)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "l infernale quinlan": {
   "qid": "Q778161",
   "title_it": "L'infernale Quinlan",
@@ -954,6 +1433,77 @@
   "confidence": "high",
   "score": 1.15,
   "query": "L'INFERNALE QUINLAN (TOUCH OF EVIL)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "la casa delle donne la maison des femmes": {
+  "qid": "Q138417077",
+  "title_it": "La Maison des femmes",
+  "original_title": "La Maison des femmes",
+  "year": 2025,
+  "runtime": 110,
+  "imdb": "tt35455708",
+  "tmdb": "1318417",
+  "itwiki": null,
+  "directors": [
+   "Q141162816"
+  ],
+  "languages": [
+   "francese"
+  ],
+  "intro": "",
+  "confidence": "medium",
+  "score": 0.87,
+  "query": "LA CASA DELLE DONNE (LA MAISON DES FEMMES)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20",
+  "alternatives": []
+ },
+ "la cosa the thing": {
+  "qid": "Q210756",
+  "title_it": "La cosa",
+  "original_title": "The Thing",
+  "year": 1982,
+  "runtime": 109,
+  "imdb": "tt0084787",
+  "tmdb": "1091",
+  "itwiki": "La cosa (film 1982)",
+  "directors": [
+   "John Carpenter"
+  ],
+  "languages": [
+   "norvegese",
+   "inglese"
+  ],
+  "intro": "La cosa è un film del 1982 diretto da John Carpenter.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "LA COSA (THE THING)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "la fuga di logan": {
+  "qid": "Q503018",
+  "title_it": "La fuga di Logan",
+  "original_title": "Logan's Run",
+  "year": 1976,
+  "runtime": 120,
+  "imdb": "tt0074812",
+  "tmdb": "10803",
+  "itwiki": "La fuga di Logan (film)",
+  "directors": [
+   "Michael Anderson"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "La fuga di Logan è un film di fantascienza del 1976, diretto da Michael Anderson, tratto dal romanzo omonimo di William F.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "LA FUGA DI LOGAN",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
@@ -1051,6 +1601,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "lo spaventapasseri scarecrow": {
+  "qid": "Q1344329",
+  "title_it": "Lo spaventapasseri",
+  "original_title": "Scarecrow",
+  "year": 1973,
+  "runtime": 112,
+  "imdb": "tt0070643",
+  "tmdb": "31587",
+  "itwiki": "Lo spaventapasseri (film 1973)",
+  "directors": [
+   "Jerry Schatzberg"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Lo spaventapasseri (Scarecrow) è un film drammatico del 1973 diretto da Jerry Schatzberg, con protagonisti Gene Hackman e Al Pacino.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "LO SPAVENTAPASSERI (SCARECROW)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "m il mostro di dusseldorf": {
   "qid": "Q127021",
   "title_it": "M - Il mostro di Düsseldorf",
@@ -1073,6 +1646,26 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "making marie antoinette": {
+  "qid": "Q141247887",
+  "title_it": "Making Marie Antoinette",
+  "original_title": "",
+  "year": null,
+  "runtime": null,
+  "imdb": "tt43656794",
+  "tmdb": "1754364",
+  "itwiki": "Making Marie Antoinette",
+  "directors": [],
+  "languages": [],
+  "intro": "Making Marie Antoinette è un documentario del 2026 diretto da Eleanor Coppola, realizzato in coproduzione tra Stati Uniti e Italia.",
+  "confidence": "medium",
+  "score": 1.0,
+  "query": "MAKING MARIE ANTOINETTE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20",
+  "alternatives": []
  },
  "maratona halloween creature a sorpresa": {
   "qid": null,
@@ -1151,6 +1744,55 @@
   "confidence": "high",
   "score": 1.12,
   "query": "MINNIE & MOSKOWITZ (MINNIE AND MOSKOWITZ)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "mississippi burning le radici dell odio": {
+  "qid": "Q918367",
+  "title_it": "Mississippi Burning - Le radici dell'odio",
+  "original_title": "Mississippi Burning",
+  "year": 1988,
+  "runtime": 127,
+  "imdb": "tt0095647",
+  "tmdb": "1632",
+  "itwiki": "Mississippi Burning - Le radici dell'odio",
+  "directors": [
+   "Alan Parker"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Mississippi Burning - Le radici dell'odio è un film del 1988, diretto da Alan Parker e interpretato da Gene Hackman, Willem Dafoe e Frances McDormand, ispirato all'assassinio degli attivisti per i diritti civili del Mississippi, avvenuto nella contea di Neshoba, Mississippi, nella notte tra il 21 e 22 giugno 1964, da parte di un gruppo di appartenenti al Ku Klux Klan, capeggiati dal vicesceriffo e coperti dallo sceriffo.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "MISSISSIPPI BURNING - LE RADICI DELL'ODIO",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "morte a venezia": {
+  "qid": "Q742308",
+  "title_it": "Morte a Venezia",
+  "original_title": "Morte a Venezia",
+  "year": 1971,
+  "runtime": 130,
+  "imdb": "tt0067445",
+  "tmdb": "6619",
+  "itwiki": "Morte a Venezia (film)",
+  "directors": [
+   "Luchino Visconti"
+  ],
+  "languages": [
+   "inglese",
+   "italiano",
+   "polacco",
+   "francese"
+  ],
+  "intro": "Morte a Venezia è un film drammatico del 1971 diretto da Luchino Visconti, tratto dal romanzo La morte a Venezia dello scrittore tedesco Thomas Mann.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "MORTE A VENEZIA",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
@@ -1331,6 +1973,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "piume di struzzo the birdcage": {
+  "qid": "Q1160005",
+  "title_it": "Piume di struzzo",
+  "original_title": "The Birdcage",
+  "year": 1996,
+  "runtime": 114,
+  "imdb": "tt0115685",
+  "tmdb": "11000",
+  "itwiki": "Piume di struzzo",
+  "directors": [
+   "Mike Nichols"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Piume di struzzo è un film del 1996 diretto da Mike Nichols, tratto dall'opera teatrale La cage aux folles di Jean Poiret e remake del celebre film Il vizietto (1978) di Édouard Molinaro.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "PIUME DI STRUZZO (THE BIRDCAGE)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "pos processo crime": {
   "qid": null,
   "checked": "2026-10-20",
@@ -1379,6 +2044,29 @@
   "confidence": "high",
   "score": 1.12,
   "query": "POSSIBLE LOVE (GA-NEUNG-HAN SA-RANG)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "potere assoluto absolute power": {
+  "qid": "Q332497",
+  "title_it": "Potere assoluto",
+  "original_title": "Absolute Power",
+  "year": 1997,
+  "runtime": 121,
+  "imdb": "tt0118548",
+  "tmdb": "66",
+  "itwiki": "Potere assoluto (film 1997)",
+  "directors": [
+   "Clint Eastwood"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Potere assoluto è un film del 1997, diretto e interpretato da Clint Eastwood, basato sul romanzo omonimo di David Baldacci.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "POTERE ASSOLUTO (ABSOLUTE POWER)",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
@@ -1474,6 +2162,12 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "ragione e sentimento": {
+  "qid": null,
+  "checked": "2026-10-20",
+  "query": "RAGIONE E SENTIMENTO",
+  "version": 4
  },
  "ragione e sentimento sense and sensibility": {
   "qid": "Q135436961",
@@ -1720,6 +2414,29 @@
   "query": "THE CLEARING",
   "version": 4
  },
+ "the fog": {
+  "qid": "Q500403",
+  "title_it": "Fog",
+  "original_title": "The Fog",
+  "year": 1980,
+  "runtime": 90,
+  "imdb": "tt0080749",
+  "tmdb": "790",
+  "itwiki": "Fog",
+  "directors": [
+   "John Carpenter"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Fog è un film del 1980 diretto da John Carpenter e da lui scritto con la produttrice Debra Hill.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "THE FOG",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "the glorious dead": {
   "qid": null,
   "checked": "2026-10-20",
@@ -1772,6 +2489,12 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "the pickers": {
+  "qid": null,
+  "checked": "2026-10-20",
+  "query": "THE PICKERS",
+  "version": 4
  },
  "the rocky horror picture show": {
   "qid": "Q751921",
@@ -1838,6 +2561,29 @@
   "confidence": "high",
   "score": 1.12,
   "query": "THE SOCIAL",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "the social il prezzo della verita": {
+  "qid": "Q136387857",
+  "title_it": "The Social - Il prezzo della verità",
+  "original_title": "The Social Reckoning",
+  "year": 2026,
+  "runtime": 112,
+  "imdb": "tt37510326",
+  "tmdb": "1281331",
+  "itwiki": "The Social - Il prezzo della verità",
+  "directors": [
+   "Aaron Sorkin"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "The Social - Il prezzo della verità è un film del 2026 scritto e diretto da Aaron Sorkin.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "THE SOCIAL - IL PREZZO DELLA VERITA'",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
@@ -2143,6 +2889,96 @@
   "confidence": "high",
   "score": 1.15,
   "query": "WITTGENSTEIN",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "youth hard times pinyin qing chun ku": {
+  "qid": "Q127786431",
+  "title_it": "Qīngchūn: Kǔ",
+  "original_title": "",
+  "year": 2024,
+  "runtime": 227,
+  "imdb": "tt33029373",
+  "tmdb": "1315054",
+  "itwiki": "Qīngchūn: Kǔ",
+  "directors": [
+   "Wang Bing"
+  ],
+  "languages": [],
+  "intro": "Qīngchūn: Kǔ è un film del 2024 diretto da Wang Bing.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "YOUTH: HARD TIMES (PINYIN: QING CHUN KU)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "youth homecoming qing chun gui": {
+  "qid": "Q127786185",
+  "title_it": "Qīngchūn: Guī",
+  "original_title": "Youth (Homecoming)",
+  "year": 2024,
+  "runtime": 152,
+  "imdb": "tt33029375",
+  "tmdb": "1319196",
+  "itwiki": "Qīngchūn: Guī",
+  "directors": [
+   "Wang Bing"
+  ],
+  "languages": [
+   "cinese standard"
+  ],
+  "intro": "Qīngchūn: Guī è un film del 2024 diretto da Wang Bing.",
+  "confidence": "high",
+  "score": 1.13,
+  "query": "YOUTH: HOMECOMING (QING CHUN: GUI)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "youth spring qingchun": {
+  "qid": "Q117706339",
+  "title_it": "Qīngchūn",
+  "original_title": "",
+  "year": 2023,
+  "runtime": 212,
+  "imdb": "tt8469104",
+  "tmdb": "493514",
+  "itwiki": "Qīngchūn",
+  "directors": [
+   "Wang Bing"
+  ],
+  "languages": [
+   "cinese standard"
+  ],
+  "intro": "Qīngchūn è un film del 2023 diretto da Wang Bing.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "YOUTH: SPRING (QINGCHUN)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "zabriskie point": {
+  "qid": "Q139078",
+  "title_it": "Zabriskie Point",
+  "original_title": "Zabriskie Point",
+  "year": 1970,
+  "runtime": 107,
+  "imdb": "tt0066601",
+  "tmdb": "2998",
+  "itwiki": "Zabriskie Point (film)",
+  "directors": [
+   "Michelangelo Antonioni"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Zabriskie Point è un film del 1970 diretto da Michelangelo Antonioni.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "ZABRISKIE POINT",
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"

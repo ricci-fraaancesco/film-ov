@@ -5,6 +5,8 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 
 ## Medium confidence
 
+- LA CASA DELLE DONNE (LA MAISON DES FEMMES) -> [La Maison des femmes (2025, Q141162816)](https://www.wikidata.org/wiki/Q138417077) `Q138417077`
+- MAKING MARIE ANTOINETTE -> [Making Marie Antoinette (?, regista ?)](https://www.wikidata.org/wiki/Q141247887) `Q141247887`
 - WILDE HORSE NINE -> [Wild Horse Nine (2026, Martin McDonagh)](https://www.wikidata.org/wiki/Q133341572) `Q133341572`
 
 ## No match
@@ -19,6 +21,8 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - OZZY & BLACK SABBATH: BACK TO THE BEGINNING
 - OÙ VIVRE INSIST
 - PÒS PROCESSO CRIME
+- RAGIONE E SENTIMENTO
 - STRAY KIDS WORLD TOUR "RUN IT": - IL LIVE VIEWING
 - THE CLEARING
 - THE GLORIOUS DEAD
+- THE PICKERS
