@@ -46,6 +46,6 @@ jobs:
         run: |
           git config user.name "film-ov-bot"
           git config user.email "film-ov-bot@users.noreply.github.com"
-          git add data preview
+          git add -f data preview
           git commit -m "Prova: dati e anteprima del $(date -u +%Y-%m-%d)" || echo "No changes"
           git push
