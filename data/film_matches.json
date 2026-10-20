@@ -774,6 +774,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "il tempo di anne lol 2": {
+  "qid": "Q135224617",
+  "title_it": "Il Tempo di Anne",
+  "original_title": "LOL 2.0",
+  "year": 2026,
+  "runtime": null,
+  "imdb": "tt36841139",
+  "tmdb": "1477170",
+  "itwiki": null,
+  "directors": [
+   "Lisa Azuelos"
+  ],
+  "languages": [
+   "francese"
+  ],
+  "intro": "",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "IL TEMPO DI ANNE (LOL 2)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "insectasy": {
   "qid": "Q140745390",
   "title_it": "Insectasy",
