@@ -249,7 +249,9 @@ def check(row: dict, fetch: Fetcher) -> dict:
             if len(subs) != 1:  # a group storefront: we must know which of its cinemas this is
                 return {**upd, "status": "needs_review", "platform": "18tickets", "booking_url": root,
                         "note": f"18tickets di gruppo ({', '.join(sorted(subs))[:80]}): scegliere il cinema"}
-            root = f"https://{next(iter(subs))}.{storefront}/"
+            only = next(iter(subs))
+            if only != "main":  # "main" = the storefront's own address, keep it as it is
+                root = f"https://{only}.{storefront}/"
         if shows:
             return {**upd, "status": "active", "platform": "18tickets", "booking_url": root,
                     "note": f"18tickets letto: {films} film, {shows} spettacoli"}
@@ -280,11 +282,19 @@ def run(rows: list[dict], fetch: Fetcher, batch: int, now: str) -> Counter:
         if r.get("status") == "to_check" and not r.get("website"):
             r["status"], r["last_checked"] = "no_website", now
     counts = Counter()
+    used = {r["booking_url"]: r for r in rows if r.get("status") == "active" and r.get("booking_url")}
     for i, r in enumerate(todo, 1):
         try:
             upd = check(r, fetch)
         except Exception as e:  # never stop the batch for one cinema
             upd = {"status": "needs_review", "note": f"errore: {type(e).__name__}"[:120]}
+        if upd.get("status") == "active":
+            other = used.get(upd.get("booking_url"))
+            if other is not None and other is not r:  # never put two cinemas on one storefront page
+                upd = {**upd, "status": "needs_review",
+                       "note": f"stessa pagina 18tickets di {other['name']} ({other['city']}): verificare"}
+            else:
+                used[upd["booking_url"]] = r
         for k in FIELDS_UPDATED:
             if upd.get(k):
                 r[k] = upd[k]

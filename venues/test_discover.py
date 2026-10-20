@@ -113,3 +113,17 @@ def test_updates_survive_a_newer_list():
              {"id": "c", "status": "to_check", "website": "", "platform": "", "booking_url": "", "note": "", "last_checked": ""}]
     assert apply_updates(newer, upd) == 1
     assert newer[0]["status"] == "active" and newer[1]["status"] == "manual_review" and newer[2]["status"] == "to_check"
+
+
+def test_main_storefront_and_shared_page():
+    main_sf = STOREFRONT.replace("odeon.ccb.18tickets.it", "jollyroma.18tickets.it")
+    f = FakeFetch({"https://jolly.it/": '<a href="https://jollyroma.18tickets.it/">Acquista</a>', "https://jollyroma.18tickets.it/": main_sf})
+    up = check({"website": "https://jolly.it/"}, f)
+    assert up["status"] == "active" and up["booking_url"] == "https://jollyroma.18tickets.it/"
+    rows = [
+        {"id": "v", "name": "Visionario", "city": "Udine", "sources": "cinemarevolution", "website": "", "status": "active", "platform": "18tickets", "booking_url": "https://odeon.ccb.18tickets.it/", "note": "", "last_checked": "", "region": ""},
+        {"id": "c", "name": "Centrale", "city": "Udine", "sources": "cinemarevolution", "website": "https://centrale.it/", "status": "to_check", "platform": "", "booking_url": "", "note": "", "last_checked": "", "region": ""},
+    ]
+    f2 = FakeFetch({"https://centrale.it/": '<a href="https://odeon.ccb.18tickets.it/film/1/x">Acquista</a>', "https://odeon.ccb.18tickets.it/": STOREFRONT})
+    run(rows, f2, batch=5, now="t")
+    assert rows[1]["status"] == "needs_review" and "Visionario" in rows[1]["note"]

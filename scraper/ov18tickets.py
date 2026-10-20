@@ -217,9 +217,11 @@ def add_venues_from_list(path: Path) -> int:
                 continue
             storefront = ".".join(parts[-3:])
             sub = ".".join(parts[:-3])
+            if sub == "main":
+                sub = ""
             cfg = STOREFRONTS.setdefault(storefront, {"pages": [], "venues": {}})
-            if sub and sub in cfg["venues"]:
-                continue
+            if (sub or "main") in cfg["venues"]:
+                continue  # already read for another cinema: never mix two cinemas on one page
             if not sub and cfg["pages"]:
                 continue
             cfg["venues"][sub or "main"] = (r["name"], r["city"])
