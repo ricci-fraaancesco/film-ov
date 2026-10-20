@@ -1,5 +1,5 @@
 """Fixture tests for the 18tickets parser. Run: python -m pytest -q"""
-from ov18tickets import parse_storefront_html, is_ov, clean_title, subtitle_info
+from ov18tickets import parse_storefront_html, parse_film_page, is_ov, clean_title, subtitle_info
 
 FIXTURE = """
 <html><body>
@@ -7,8 +7,9 @@ FIXTURE = """
 <div class="row"><div class="col">
   <h6><a class="movie__title" href="/film/115813">DIGGER - V. O.</a></h6>
 </div>
+  <div class="movie__images"><a class="movie__title" href="/film/115813"><img class="img-fluid img-thumbnail" src="https://cdn.18tickets.net/ccb/uploads/film/playbill/115813/standard_x.jpg"></a></div>
   <span class="film-label">V.O.S.</span>
-  <p class="movie__option"><strong>Director:</strong> Someone</p>
+  <p class="movie__option"><strong>Director:</strong> Alejandro G. Iñárritu</p>
   <p class="movie__option"><strong>Language:</strong> inglese con sottotitoli in italiano</p>
   <a data-time="1792437000000" href="https://rialto.ccb.18tickets.it/film/115813/919e9ea6-e0c8-4a88-881b-047bb01826a9#theater-init"><ul><li>21:10 Rialto 2</li></ul></a>
   <a data-time="1792523400000" href="https://rialto.ccb.18tickets.it/film/115813/7b64b4a4-d335-4214-b413-296d543efe09#theater-init"><ul><li>21:10 Rialto 2</li></ul></a>
@@ -43,6 +44,31 @@ def test_parse_fixture():
     assert s.date == "2026-10-19" and s.time == "21:10"
     assert s.booking_url.startswith("https://rialto.ccb.18tickets.it/film/115813/")
     assert s.subtitles == "sub IT"
+    assert s.film_url == "https://ccb.18tickets.it/film/115813"
+    assert s.poster.endswith("/115813/standard_x.jpg")
+    assert s.director == "Alejandro G. Iñárritu"
+
+
+FILM_PAGE = """
+<html><head>
+<meta property="og:description" content="Short version">
+<meta property="og:image" content="https://cdn.18tickets.net/ccb/uploads/film/playbill/115813/standard_x.jpg">
+</head><body>
+<p class="movie__option"><strong>Genre:</strong> Commedia</p>
+<p class="movie__option"><strong>Director:</strong> Alejandro G. Iñárritu</p>
+<p class="movie__option"><strong>Year:</strong> 2026</p>
+<div class="collapse"><div class="card-body">L'uomo più potente del mondo intraprende una missione disperata.</div></div>
+</body></html>
+"""
+
+
+def test_film_page():
+    info = parse_film_page(FILM_PAGE, "https://ccb.18tickets.it/film/115813")
+    assert info["year"] == 2026
+    assert info["director"] == "Alejandro G. Iñárritu"
+    assert info["genre"] == "Commedia"
+    assert info["synopsis"].startswith("L'uomo più potente")
+    assert info["poster"].endswith("standard_x.jpg")
 
 
 def test_is_ov_rules():

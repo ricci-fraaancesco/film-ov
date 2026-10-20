@@ -1,0 +1,51 @@
+name: Prova su un branch
+
+# Runs the whole pipeline on a wip/ branch without publishing the site.
+# Results (data/ and preview/index.html) are committed back to the branch for review.
+on:
+  push:
+    branches: ["wip/**"]
+    paths-ignore: ["data/**", "preview/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Tests
+        run: |
+          (cd scraper && python -m pytest -q)
+          (cd site && python -m pytest -q)
+
+      - name: Read the cinema pages
+        run: python scraper/ov18tickets.py live --out data
+
+      - name: Match films on Wikidata
+        run: python site/wikidata_match.py --csv data/ov_showtimes.csv --data data
+
+      - name: Build a preview
+        run: python site/build_data.py --csv data/ov_showtimes.csv --data data --out preview
+
+      - name: Save results on the branch
+        run: |
+          git config user.name "film-ov-bot"
+          git config user.email "film-ov-bot@users.noreply.github.com"
+          git add data preview
+          git commit -m "Prova: dati e anteprima del $(date -u +%Y-%m-%d)" || echo "No changes"
+          git push

@@ -188,6 +188,9 @@ class Show:
     is_ov: bool
     ov_reason: str
     subtitles: str = ""
+    film_url: str = ""    # the film's page on the storefront (synopsis, year, poster)
+    poster: str = ""      # poster image published by the cinema
+    director: str = ""
 
 
 def venue_for(storefront: str, sub: str) -> tuple[str, str]:
@@ -195,7 +198,8 @@ def venue_for(storefront: str, sub: str) -> tuple[str, str]:
     return venues.get(sub, (sub.title(), "?"))
 
 
-def make_show(storefront, sub, film_id, title, language, label, epoch_s, screen, uuid) -> Show:
+def make_show(storefront, sub, film_id, title, language, label, epoch_s, screen, uuid,
+              film_url="", poster="", director="") -> Show:
     cinema, city = venue_for(storefront, sub)
     dt = datetime.fromtimestamp(float(epoch_s), tz=timezone.utc).astimezone(ROME)
     ov, reason = is_ov(title, label, language)
@@ -217,15 +221,18 @@ def make_show(storefront, sub, film_id, title, language, label, epoch_s, screen,
         is_ov=ov,
         ov_reason=reason,
         subtitles=subtitle_info(language),
+        film_url=film_url or f"https://{storefront}/film/{film_id}",
+        poster=poster,
+        director=director,
     )
 
 
 # --------------------------------------------------------------------------
 # HTML parsing (live mode)
 # --------------------------------------------------------------------------
-def parse_storefront_html(html: str, storefront: str) -> list[Show]:
+def parse_storefront_html(html: str, storefront: str, page_url: str = "") -> list[Show]:
     from bs4 import BeautifulSoup
-    from urllib.parse import urlparse
+    from urllib.parse import urlparse, urljoin
 
     soup = BeautifulSoup(html, "html.parser")
     txt = lambda el: re.sub(r"\s+", " ", el.get_text(" ")).strip() if el else ""
@@ -246,6 +253,11 @@ def parse_storefront_html(html: str, storefront: str) -> list[Show]:
             key = txt(strong).rstrip(":")
             opts[key] = txt(p).replace(txt(strong), "", 1).strip()
         language = opts.get("Language") or opts.get("Lingua") or ""
+        director = opts.get("Director") or opts.get("Regia") or ""
+        base = page_url or f"https://{storefront}/"
+        film_url = urljoin(base, a.get("href", ""))
+        img = block.select_one(".movie__images img") or block.find("img")
+        poster = urljoin(base, img.get("src") or img.get("data-src") or "") if img else ""
 
         for s in block.select("a[data-time]"):
             href = s.get("href", "")
@@ -260,8 +272,70 @@ def parse_storefront_html(html: str, storefront: str) -> list[Show]:
             # dedupe: the same screening appears in several homepage sections
             key = f"{sub}|{film_id}|{uuid}"
             if key not in shows:
-                shows[key] = make_show(storefront, sub, film_id, title, language, label, epoch_s, screen, uuid)
+                shows[key] = make_show(storefront, sub, film_id, title, language, label, epoch_s, screen, uuid,
+                                       film_url, poster, director)
     return list(shows.values())
+
+
+# --------------------------------------------------------------------------
+# Film pages: synopsis, year, genre, director, poster. One request per film,
+# cached in data/film_pages.json and refreshed after FILM_PAGE_MAX_AGE days.
+# --------------------------------------------------------------------------
+FILM_PAGE_MAX_AGE = 30
+FILM_PAGES_PER_RUN = 150
+
+
+def parse_film_page(html: str, url: str = "") -> dict:
+    from bs4 import BeautifulSoup
+    from urllib.parse import urljoin
+
+    soup = BeautifulSoup(html, "html.parser")
+    txt = lambda el: re.sub(r"\s+", " ", el.get_text(" ")).strip() if el else ""
+    meta = lambda prop: (soup.find("meta", attrs={"property": prop}) or {}).get("content", "") or ""
+    opts = {}
+    for p in soup.select("p.movie__option"):
+        strong = p.find("strong")
+        key = txt(strong).rstrip(":")
+        opts.setdefault(key, txt(p).replace(txt(strong), "", 1).strip())
+    synopsis = txt(soup.select_one(".collapse .card-body")) or meta("og:description").strip()
+    year = opts.get("Year") or opts.get("Anno") or ""
+    poster = meta("og:image")
+    if not poster:
+        img = soup.select_one(".movie__images img")
+        poster = img.get("src", "") if img else ""
+    return {
+        "synopsis": synopsis,
+        "year": int(year) if year.strip().isdigit() else None,
+        "director": opts.get("Director") or opts.get("Regia") or "",
+        "genre": opts.get("Genre") or opts.get("Genere") or "",
+        "poster": urljoin(url, poster) if poster else "",
+    }
+
+
+def fetch_film_pages(shows: list[Show], cache_path: Path, today: datetime | None = None) -> dict:
+    today = today or datetime.now(ROME)
+    try:
+        cache = json.loads(cache_path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        cache = {}
+    urls = sorted({s.film_url for s in shows if s.is_ov and s.film_url})
+    todo = []
+    for u in urls:
+        c = cache.get(u)
+        if not c or (today - datetime.fromisoformat(c["checked"])).days >= FILM_PAGE_MAX_AGE:
+            todo.append(u)
+    for u in todo[:FILM_PAGES_PER_RUN]:
+        try:
+            info = parse_film_page(fetch(u), u)
+            info["checked"] = today.isoformat(timespec="seconds")
+            cache[u] = info
+        except Exception as e:
+            print(f"  film page {u}: ERROR {e}", file=sys.stderr)
+        time.sleep(REQUEST_DELAY_S)
+    print(f"  film pages: {len(todo[:FILM_PAGES_PER_RUN])} fetched, {len(urls)} in use", file=sys.stderr)
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(dict(sorted(cache.items())), indent=1, ensure_ascii=False), encoding="utf-8")
+    return cache
 
 
 def fetch(url: str) -> str:
@@ -279,7 +353,7 @@ def run_live() -> tuple[list[Show], dict]:
         for page in cfg["pages"]:
             try:
                 html = fetch(page)
-                got = parse_storefront_html(html, storefront)
+                got = parse_storefront_html(html, storefront, page)
                 all_shows.extend(got)
                 print(f"  {page}: {len(got)} shows", file=sys.stderr)
             except Exception as e:  # keep going, monitoring will flag it
@@ -327,7 +401,7 @@ def run_replay(raw_dir: Path) -> tuple[list[Show], dict]:
 # --------------------------------------------------------------------------
 CSV_FIELDS = ["city", "cinema", "date", "time", "title", "language", "subtitles", "screen",
               "label", "booking_url", "film_id", "title_raw", "venue_sub", "storefront",
-              "starts_at", "ov_reason"]
+              "starts_at", "ov_reason", "film_url", "poster", "director"]
 
 
 def dedupe(shows: list[Show]) -> list[Show]:
@@ -373,9 +447,12 @@ def main(argv=None):
     ap.add_argument("--raw", type=Path, default=Path("raw"))
     ap.add_argument("--out", type=Path, default=Path("data"))
     ap.add_argument("--now", help="ISO datetime used as 'now' (for replays)")
+    ap.add_argument("--skip-film-pages", action="store_true", help="do not fetch film pages (faster)")
     a = ap.parse_args(argv)
 
     shows, errors = run_live() if a.mode == "live" else run_replay(a.raw)
+    if a.mode == "live" and not a.skip_film_pages:
+        fetch_film_pages(shows, a.out / "film_pages.json")
     now = datetime.fromisoformat(a.now).astimezone(ROME) if a.now else None
     stats = write_outputs(shows, errors, a.out, now)
     print(json.dumps(stats, indent=2, ensure_ascii=False))

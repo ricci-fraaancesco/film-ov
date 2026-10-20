@@ -9,20 +9,24 @@ from zoneinfo import ZoneInfo
 ap = argparse.ArgumentParser()
 ap.add_argument('--csv', default='data/ov_showtimes.csv')
 ap.add_argument('--out', default='public')
-ap.add_argument('--data', default='data', help='folder with tmdb_cache.json (optional)')
+ap.add_argument('--data', default='data', help='folder with film_matches.json and film_pages.json (optional)')
 args = ap.parse_args()
 HERE = Path(__file__).parent
 import sys; sys.path.insert(0, str(HERE))
-from films import film_key, norm, strip_edition, LANG_IT
+from films import film_key, norm, strip_edition
 
-try:
-    TMDB = json.loads((Path(args.data) / 'tmdb_cache.json').read_text(encoding='utf-8'))
-except (FileNotFoundError, json.JSONDecodeError):
-    TMDB = {}
+def load(name):
+    try:
+        return json.loads((Path(args.data) / name).read_text(encoding='utf-8'))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
 
-def tmdb_for(raw):
-    m = TMDB.get(film_key(raw))
-    return m if m and m.get('id') else None
+MATCHES = load('film_matches.json')   # Wikidata, written by wikidata_match.py
+PAGES = load('film_pages.json')       # cinema film pages, written by the scraper
+
+def match_for(raw):
+    m = MATCHES.get(film_key(raw))
+    return m if m and m.get('qid') else None
 
 def short(text, n=480):
     text = (text or '').strip()
@@ -117,16 +121,17 @@ for (city, name), (addr, area, web) in VENUE.items():
 film_list = []; film_idx = {}; shows = []
 for r in rows:
     raw = r['title']
-    m = tmdb_for(raw)
-    # films are grouped by TMDB id when we have one, otherwise by the cleaned cinema title
-    key = ('tmdb', m['id']) if m else ('title', film_key(ALIAS.get(raw, raw)))
+    m = match_for(raw)
+    # films are grouped by Wikidata id when we have one, otherwise by the cleaned cinema title
+    key = ('wd', m['qid']) if m else ('title', film_key(ALIAS.get(raw, raw)))
     if key not in film_idx:
         film_idx[key] = len(film_list)
         if m:
-            t = m['title'] or m['original_title']
-            rec = {"t": t, "ot": m['original_title'] if norm(m.get('original_title') or '') != norm(t) else '',
-                   "y": m.get('year'), "p": m.get('poster_path') or '', "o": short(m.get('overview')),
-                   "tm": m['id'], "rt": m.get('runtime') or 0, "_ol": m.get('original_language')}
+            t = m['title_it']
+            ot = m.get('original_title') or ''
+            rec = {"t": t, "ot": ot if norm(ot) != norm(t) else '', "y": m.get('year'), "rt": m.get('runtime') or 0,
+                   "d": ', '.join(m.get('directors') or []), "wd": m['qid'], "wp": m.get('itwiki') or '',
+                   "in": m.get('intro') or '', "_ol": (m.get('languages') or [''])[0]}
         else:
             rec = {"t": tcase(strip_edition(ALIAS.get(raw, raw)))}
         rec["al"] = []  # other titles used by the cinemas, for search
@@ -137,6 +142,12 @@ for r in rows:
     if 'l' not in f: f['l'], f['s'], f['lr'] = lg, sb, r['language']
     if f['l'] == 'Lingua originale' and lg != 'Lingua originale': f['l'] = lg
     if not f['s'] and sb: f['s'] = sb
+    page = PAGES.get(r.get('film_url', ''), {})
+    if not f.get('p') and (page.get('poster') or r.get('poster')): f['p'] = page.get('poster') or r.get('poster')
+    if not f.get('o') and page.get('synopsis'): f['o'] = short(page['synopsis'])
+    if not f.get('d') and (r.get('director') or page.get('director')): f['d'] = r.get('director') or page.get('director')
+    if not f.get('y') and page.get('year'): f['y'] = page['year']
+    if not f.get('g') and page.get('genre'): f['g'] = page['genre']
     alt = tcase(strip_edition(raw))
     if norm(alt) not in (norm(f['t']), norm(f.get('ot', ''))) and alt not in f['al']: f['al'].append(alt)
     if (r['city'], r['cinema']) not in cin_idx:  # venue not in VENUE yet: still show it
@@ -153,12 +164,12 @@ for r in rows:
 
 shows.sort(key=lambda s: s[2])
 
-# language from TMDB when the cinema only says "lingua originale"; stable unique page ids
+# language from Wikidata when the cinema only says "lingua originale"; stable unique page ids
 used = set()
 for f in film_list:
-    ol = f.pop('_ol', None)
-    if f['l'] == 'Lingua originale' and ol in LANG_IT and ol != 'it':
-        f['l'] = LANG_IT[ol]
+    ol = f.pop('_ol', '') or ''
+    if f['l'] == 'Lingua originale' and ol and not ol.lower().startswith('italian'):
+        f['l'] = ol[:1].upper() + ol[1:]
     fid = slug(f['t']) or 'film'
     if fid in used and f.get('y'): fid = f"{fid}-{f['y']}"
     while fid in used: fid += '-2'

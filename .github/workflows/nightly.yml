@@ -28,8 +28,10 @@ jobs:
       - name: Install
         run: pip install -r requirements.txt
 
-      - name: Test the parser
-        run: cd scraper && python -m pytest -q
+      - name: Test the parser and the film matcher
+        run: |
+          (cd scraper && python -m pytest -q)
+          (cd site && python -m pytest -q)
 
       - name: Read the cinema pages
         run: python scraper/ov18tickets.py live --out data
@@ -40,8 +42,11 @@ jobs:
           echo "OV shows found: $n"
           if [ "$n" -lt 50 ]; then echo "Too few shows, keeping yesterday's site."; exit 1; fi
 
+      - name: Match films on Wikidata
+        run: python site/wikidata_match.py --csv data/ov_showtimes.csv --data data
+
       - name: Build the website
-        run: python site/build_data.py --csv data/ov_showtimes.csv --out public
+        run: python site/build_data.py --csv data/ov_showtimes.csv --data data --out public
 
       - name: Save the new data in the repo
         run: |
