@@ -1,14 +1,7 @@
-# Controllo dei siti dei cinema (2026-10-20)
+# Controllo dei siti dei cinema (2026-10-21)
 
 ## Questa notte
 
-- adapter_missing: 61
-- no_booking_link: 27
-- needs_review: 17
-- website_down: 10
-- unknown_platform: 8
-- active: 7
-- social_only: 1
 
 ## Totale per stato
 
