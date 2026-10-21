@@ -1,1 +1,1 @@
-fetch error uci:theatres: HTTPError('403 Client Error: Forbidden for url: https://backend.ucicinemas.it/api/theatres')
+faenza / cinedream: 3 OV shows last run, 0 now
