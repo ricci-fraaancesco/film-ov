@@ -209,8 +209,18 @@ page = html.replace('__DATA__', json.dumps(data, ensure_ascii=False, separators=
 # GitHub Pages needs a full HTML document
 doc = ('<!doctype html><html lang="it"><head><meta charset="utf-8">'
        '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+       # Not launched yet: keep search engines and AI crawlers out (see also robots.txt below)
+       '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">'
        '<meta name="description" content="Tutti i film in versione originale nei cinema di Roma e Bologna, con orari e link per prenotare.">'
        '<style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>'
        '</head><body>' + page + '</body></html>')
 (out / 'index.html').write_text(doc, encoding='utf-8')
+# Block every crawler, search engines and AI bots alike. The named bots are covered by "*" too,
+# but some only look for their own name, so they are listed explicitly.
+AI_BOTS = ["GPTBot", "ChatGPT-User", "OAI-SearchBot", "ClaudeBot", "Claude-User", "Claude-SearchBot", "anthropic-ai",
+           "Google-Extended", "GoogleOther", "Applebot-Extended", "PerplexityBot", "Perplexity-User", "CCBot",
+           "Bytespider", "Amazonbot", "meta-externalagent", "FacebookBot", "cohere-ai", "Diffbot", "Omgilibot",
+           "Timpibot", "YouBot", "DuckAssistBot", "MistralAI-User", "ImagesiftBot"]
+robots = "User-agent: *\nDisallow: /\n\n" + "".join(f"User-agent: {b}\nDisallow: /\n\n" for b in AI_BOTS)
+(out / 'robots.txt').write_text(robots, encoding='utf-8')
 print(f"{len(film_list)} films, {len(shows)} shows -> {out / 'index.html'}")
