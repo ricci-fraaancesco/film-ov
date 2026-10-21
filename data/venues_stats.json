@@ -23,18 +23,19 @@
     }
   },
   "with_address": 928,
-  "with_website": 302,
+  "with_website": 309,
   "with_coordinates": 0,
   "arenas": 140,
   "by_status": {
-    "active": 44,
-    "adapter_missing": 128,
-    "needs_review": 37,
+    "active": 124,
+    "adapter_missing": 59,
+    "manual_review": 8,
+    "needs_review": 49,
     "no_booking_link": 57,
-    "no_website": 694,
+    "no_website": 667,
     "social_only": 1,
     "unknown_platform": 13,
-    "website_down": 25
+    "website_down": 21
   },
   "errors": {
     "osm": "HTTPError: 502 Server Error: Bad Gateway for url: https://overpass-api.de/api/interpreter"
