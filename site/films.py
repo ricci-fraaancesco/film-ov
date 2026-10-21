@@ -5,7 +5,8 @@ import unicodedata
 # Tags the cinemas add to a title that are not part of the film's name
 EDITION_TAGS = re.compile(
     r"\s*\((ed\.?\s*spec\.?|ried\.?|restaurato|versione restaurata|director'?s cut|4k)\)\s*"
-    r"|\s*\|\s*70\s*mm\b|\s*-\s*70\s*mm\b",
+    r"|\s*\|\s*70\s*mm\b|\s*-\s*70\s*mm\b"
+    r"|\s*\((?:19|20)\d{2}\)\s*$",  # "Ragione E Sentimento (2026)" (Webtic)
     re.I,
 )
 

@@ -39,6 +39,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROME = ZoneInfo("Europe/Rome")
+sys.path.insert(0, str(Path(__file__).parent))  # webtic.py, uci.py, langs.py live next to this file
 USER_AGENT = "FilmOV-bot/0.1 (+mailto:rcc.francesco@gmail.com; OV listings, 1 request/5s)"
 REQUEST_DELAY_S = 5
 
@@ -364,7 +365,7 @@ def fetch_film_pages(shows: list[Show], cache_path: Path, today: datetime | None
         cache = json.loads(cache_path.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError):
         cache = {}
-    urls = sorted({s.film_url for s in shows if s.is_ov and s.film_url})
+    urls = sorted({s.film_url for s in shows if s.is_ov and s.film_url and "18tickets." in s.film_url})
     todo = []
     for u in urls:
         c = cache.get(u)
@@ -407,6 +408,91 @@ def run_live() -> tuple[list[Show], dict]:
                 print(f"  {page}: ERROR {e}", file=sys.stderr)
             time.sleep(REQUEST_DELAY_S)
     return all_shows, errors
+
+
+# --------------------------------------------------------------------------
+# Other platforms: Webtic (cinemas activated in data/venues.csv) and UCI (the whole chain)
+# --------------------------------------------------------------------------
+PLATFORM_DELAY_S = 2
+
+
+def json_getter(delay: float = PLATFORM_DELAY_S):
+    import requests
+
+    s = requests.Session()
+    s.headers.update({"User-Agent": USER_AGENT, "Accept": "application/json", "Accept-Language": "it-IT,it;q=0.9"})
+
+    def get_json(url, params=None):
+        r = s.get(url, params=params, timeout=60)
+        r.raise_for_status()
+        time.sleep(delay)
+        return r.json()
+    return get_json
+
+
+def webtic_cinemas(venues_path: Path) -> list[dict]:
+    import csv as _csv
+    from webtic import local_id_from_url
+
+    out = []
+    if venues_path and Path(venues_path).exists():
+        with open(venues_path, encoding="utf-8") as fh:
+            for r in _csv.DictReader(fh):
+                if r.get("platform") == "webtic" and r.get("status") == "active":
+                    lid = local_id_from_url(r.get("booking_url", ""))
+                    if lid and all(o["lid"] != lid for o in out):
+                        out.append({"lid": lid, "name": r["name"], "city": r["city"]})
+    return out
+
+
+def run_platforms(venues_path: Path | None, pages_path: Path, get_json=None, uci: bool = True) -> tuple[list[Show], dict]:
+    import uci as uci_mod
+    import webtic
+
+    get_json = get_json or json_getter()
+    shows, errors, pages = [], {}, {}
+    for c in webtic_cinemas(venues_path):
+        try:
+            got, pg, _ = webtic.read_cinema(get_json, c["lid"], c["name"], c["city"])
+            shows += got
+            pages.update(pg)
+            print(f"  webtic {c['lid']} {c['city']} / {c['name']}: {len(got)} shows", file=sys.stderr)
+        except Exception as e:
+            errors[f"webtic:{c['lid']}"] = repr(e)[:200]
+            print(f"  webtic {c['lid']}: ERROR {e}", file=sys.stderr)
+    if uci:
+        try:
+            theatres = uci_mod.theatres(get_json)
+        except Exception as e:
+            errors["uci:theatres"] = repr(e)[:200]
+            theatres = []
+        for t in theatres:
+            try:
+                got, pg = uci_mod.parse_programming(get_json(f"{uci_mod.API}/theatres/{t['slug']}/programming"), t)
+                shows += got
+                for k, v in pg.items():
+                    pages.setdefault(k, v)
+                print(f"  uci {t['city']} / {t['name']}: {len(got)} shows, {sum(1 for x in got if x.is_ov)} OV", file=sys.stderr)
+            except Exception as e:
+                errors[f"uci:{t['slug']}"] = repr(e)[:200]
+                print(f"  uci {t['slug']}: ERROR {e}", file=sys.stderr)
+        try:
+            cache = json.loads(pages_path.read_text(encoding="utf-8")) if pages_path.exists() else {}
+        except json.JSONDecodeError:
+            cache = {}
+        uci_mod.add_directors(get_json, {k: v for k, v in pages.items() if k.startswith(uci_mod.SITE)}, cache)
+    # film details go into the same cache the site build reads (data/film_pages.json)
+    if pages:
+        try:
+            cache = json.loads(pages_path.read_text(encoding="utf-8")) if pages_path.exists() else {}
+        except json.JSONDecodeError:
+            cache = {}
+        now = datetime.now(ROME).isoformat(timespec="seconds")
+        for k, v in pages.items():
+            cache[k] = {**{x: y for x, y in v.items() if x != "uci_slug"}, "checked": now}
+        pages_path.parent.mkdir(parents=True, exist_ok=True)
+        pages_path.write_text(json.dumps(dict(sorted(cache.items())), indent=1, ensure_ascii=False), encoding="utf-8")
+    return shows, errors
 
 
 # --------------------------------------------------------------------------
@@ -494,12 +580,17 @@ def main(argv=None):
     ap.add_argument("--out", type=Path, default=Path("data"))
     ap.add_argument("--now", help="ISO datetime used as 'now' (for replays)")
     ap.add_argument("--skip-film-pages", action="store_true", help="do not fetch film pages (faster)")
-    ap.add_argument("--venues", type=Path, help="data/venues.csv: also read the 18tickets cinemas activated there")
+    ap.add_argument("--venues", type=Path, help="data/venues.csv: also read the 18tickets and Webtic cinemas activated there")
+    ap.add_argument("--no-platforms", action="store_true", help="read 18tickets only (skip Webtic and UCI)")
     a = ap.parse_args(argv)
 
     if a.venues:
         print(f"  cinemas added from {a.venues}: {add_venues_from_list(a.venues)}", file=sys.stderr)
     shows, errors = run_live() if a.mode == "live" else run_replay(a.raw)
+    if a.mode == "live" and not a.no_platforms:
+        more, errs = run_platforms(a.venues, a.out / "film_pages.json")
+        shows += more
+        errors.update(errs)
     if a.mode == "live" and not a.skip_film_pages:
         fetch_film_pages(shows, a.out / "film_pages.json")
     now = datetime.fromisoformat(a.now).astimezone(ROME) if a.now else None

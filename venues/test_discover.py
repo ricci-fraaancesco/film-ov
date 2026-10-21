@@ -66,14 +66,15 @@ def test_check_activates_18tickets():
 def test_check_other_cases():
     assert check({"website": ""}, FakeFetch({}))["status"] == "no_website"
     assert check({"website": "https://www.facebook.com/cinemax"}, FakeFetch({}))["status"] == "social_only"
-    up = check({"website": "https://www.ucicinemas.it/cinema/lazio/roma/uci-cinemas-roma-est/"}, FakeFetch({}))
-    assert up["status"] == "adapter_missing" and up["platform"] == "uci"
+    up = check({"website": "https://www.thespacecinema.it/i-nostri-cinema/roma-moderno"}, FakeFetch({}))
+    assert up["status"] == "adapter_missing" and up["platform"] == "thespace"
     assert check({"website": "cinemadown.it"}, FakeFetch({}))["status"] == "website_down"
     nothing = FakeFetch({"http://cinemavuoto.it": "<html><a href='/chi-siamo'>Chi siamo</a></html>"})
     assert check({"website": "cinemavuoto.it"}, nothing)["status"] == "no_booking_link"
     wt = FakeFetch({"https://cinemawt.it/": '<a href="https://www.webtic.it/#/shopping?action=loadLocal&localId=5013">Biglietti</a>'})
     up = check({"website": "https://cinemawt.it/"}, wt)
-    assert up["status"] == "adapter_missing" and up["platform"] == "webtic" and "localId=5013" in up["booking_url"]
+    # Webtic is now test-read; this fake has no network, so the read fails and goes to review
+    assert up["status"] == "needs_review" and up["platform"] == "webtic" and "Webtic non letto" in up["note"]
 
 
 def test_run_order_and_no_website_queue():
@@ -127,3 +128,31 @@ def test_main_storefront_and_shared_page():
     f2 = FakeFetch({"https://centrale.it/": '<a href="https://odeon.ccb.18tickets.it/film/1/x">Acquista</a>', "https://odeon.ccb.18tickets.it/": STOREFRONT})
     run(rows, f2, batch=5, now="t")
     assert rows[1]["status"] == "needs_review" and "Visionario" in rows[1]["note"]
+
+
+def test_webtic_cinema_is_test_read_and_activated(monkeypatch):
+    import webtic
+    calls = []
+
+    def fake_read(get_json, lid, cinema="", city=""):
+        calls.append(lid)
+        from ov18tickets import Show
+        s = Show("webtic.it", lid, "", "", "wt1-1", "X", "X", "Italiano", "", "2026-10-22T21:00:00+02:00", "2026-10-22", "21:00", "A", "u", False, "")
+        return [s], {}, {"DistrictAbbreviation": "MI", "Description": "MULTISALA ORFEO", "Town": "Milano"}
+    monkeypatch.setattr(webtic, "read_cinema", fake_read)
+    f = FakeFetch({"https://orfeo.it/": '<a href="https://www.webtic.it/app/shopping/loadLocal/MI/5351">Acquista</a>'})
+    f.s, f.delay = None, 0
+    up = check({"website": "https://orfeo.it/"}, f)
+    assert calls == ["5351"] and up["status"] == "active" and up["platform"] == "webtic"
+    assert up["booking_url"] == "https://www.webtic.it/app/shopping/loadLocal/MI/5351" and "1 film" in up["note"]
+    script_only = FakeFetch({"https://ci.it/": '<script src="https://secure.webtic.it/angwt/js/webapi/jquery.webtic.api.4.0.js"></script>'})
+    up = check({"website": "https://ci.it/"}, script_only)
+    assert up["status"] == "needs_review" and "non trovato" in up["note"]
+    embed = FakeFetch({"https://ci2.it/": '<script src="https://secure.webtic.it/angwt/js/webapi/jquery.webtic.api.4.0.js"></script><script>webtic.init({localId=5221})</script>'})
+    embed.s, embed.delay = None, 0
+    assert check({"website": "https://ci2.it/"}, embed)["status"] == "active" and calls[-1] == "5221"
+
+
+def test_uci_is_active():
+    up = check({"website": "https://www.ucicinemas.it/cinema/lazio/roma/uci-cinemas-roma-est/"}, FakeFetch({}))
+    assert up["status"] == "active" and up["platform"] == "uci"

@@ -77,6 +77,7 @@ NOT_BOOKING = r"(^|\.)(google\.[a-z.]+|goo\.gl|youtube\.com|youtu\.be|twitter\.c
 BOOKING_WORDS = r"acquist|bigliett|prenot|ticket|compra|booking|buy|cassa|online"
 PAGE_WORDS = [r"programm", r"orari", r"bigliett|acquist|prenot", r"in.?sala|film|cartellon|calendar"]
 CONFIRMED = ("filmov", "cinemarevolution", "moviemedia")
+CHAINS_READ = {"uci"}  # chains with an adapter that reads all their cinemas
 
 
 def host_of(url: str) -> str:
@@ -139,11 +140,13 @@ def analyse(html: str, base_url: str) -> dict:
             continue
         if tag == "a" and not re.search(NOT_BOOKING, h) and re.search(BOOKING_WORDS, (url + " " + text).lower()):
             unknown[h] += 1
+    from webtic import local_ids_in_text
+    webtic_ids = local_ids_in_text(html) if re.search(r"webtic", html, re.I) else []
     best_pages = []
     for _, u in sorted(pages, key=lambda x: -x[0]):
         if u not in best_pages and u.rstrip("/") != base_url.rstrip("/"):
             best_pages.append(u)
-    return {"platforms": found, "unknown": dict(unknown), "pages": best_pages[:3]}
+    return {"platforms": found, "unknown": dict(unknown), "pages": best_pages[:3], "webtic_ids": webtic_ids}
 
 
 def storefront_of(url: str) -> tuple[str, str, str]:
@@ -203,6 +206,34 @@ def test_18tickets(fetch: Fetcher, page_url: str) -> tuple[int, int, set[str]]:
     return len({s.film_id for s in shows}), len(shows), {s.venue_sub for s in shows}
 
 
+def check_webtic(fetch: "Fetcher", url: str, ids: list[str]) -> dict:
+    """Test read of a Webtic cinema: with a programme it becomes active."""
+    import webtic
+
+    lid = webtic.local_id_from_url(url) or (ids[0] if len(set(ids)) == 1 else None)
+    if not lid:
+        why = f"più numeri Webtic sulla pagina: {', '.join(sorted(set(ids)))[:60]}" if ids else "numero del cinema Webtic non trovato"
+        return {"status": "needs_review", "platform": "webtic", "booking_url": url, "note": why}
+
+    def get_json(u, params=None):
+        import requests
+        r = fetch.s.get(u, params=params, timeout=30)
+        r.raise_for_status()
+        time.sleep(fetch.delay)
+        return r.json()
+    try:
+        shows, _, local = webtic.read_cinema(get_json, lid)
+    except Exception as e:
+        return {"status": "needs_review", "platform": "webtic", "booking_url": url, "note": f"Webtic non letto: {type(e).__name__}"[:120]}
+    district = (local.get("DistrictAbbreviation") or "XX").upper()
+    page = f"https://www.webtic.it/app/shopping/loadLocal/{district}/{lid}"
+    if not shows:
+        return {"status": "needs_review", "platform": "webtic", "booking_url": page, "note": "Webtic senza spettacoli in programma"}
+    films = len({s.film_id for s in shows})
+    return {"status": "active", "platform": "webtic", "booking_url": page,
+            "note": f"Webtic letto: {films} film, {len(shows)} spettacoli ({(local.get('Description') or '').title()}, {local.get('Town', '')})"}
+
+
 # ---------------------------------------------------------------- one cinema
 def check(row: dict, fetch: Fetcher) -> dict:
     """Returns the fields to update for this cinema."""
@@ -214,7 +245,9 @@ def check(row: dict, fetch: Fetcher) -> dict:
         return {"status": "social_only", "note": "solo pagina social"}
     chain = match(CHAINS, h)
     if chain:
-        return {"status": "adapter_missing", "platform": chain, "booking_url": site}
+        # UCI is read as a whole chain by scraper/uci.py, so its cinemas count as active
+        return {"status": "active" if chain in CHAINS_READ else "adapter_missing", "platform": chain, "booking_url": site}
+    wt_ids: list[str] = []
     if match(PLATFORMS, h):  # the 'website' is already a booking page
         found, unknown, pages, final = {match(PLATFORMS, h): site}, {}, [], site
     else:
@@ -226,6 +259,7 @@ def check(row: dict, fetch: Fetcher) -> dict:
             return {"status": "website_down", "note": f"sito non raggiungibile: {type(e).__name__}"[:120]}
         a = analyse(html, final)
         found, unknown, pages = a["platforms"], Counter(a["unknown"]), a["pages"]
+        wt_ids = list(a.get("webtic_ids", []))
         for p in pages:
             if found:
                 break
@@ -236,6 +270,7 @@ def check(row: dict, fetch: Fetcher) -> dict:
             b = analyse(phtml, purl)
             found.update({k: v for k, v in b["platforms"].items() if k not in found})
             unknown.update(b["unknown"])
+            wt_ids += [i for i in b.get("webtic_ids", []) if i not in wt_ids]
     upd = {"website": final if final != site and host_of(final) else ""}
     if "18tickets" in found:
         url = found["18tickets"]
@@ -257,6 +292,8 @@ def check(row: dict, fetch: Fetcher) -> dict:
                     "note": f"18tickets letto: {films} film, {shows} spettacoli"}
         return {**upd, "status": "needs_review", "platform": "18tickets", "booking_url": root,
                 "note": "18tickets senza spettacoli o con più cinema: scegliere la pagina giusta"}
+    if "webtic" in found:
+        return {**upd, **check_webtic(fetch, found["webtic"], wt_ids)}
     if found:
         p, url = next(iter(found.items()))
         return {**upd, "status": "adapter_missing", "platform": p, "booking_url": url}

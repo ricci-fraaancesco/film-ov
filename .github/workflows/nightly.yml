@@ -1,8 +1,9 @@
 name: Aggiornamento notturno
 
 on:
-  schedule:
-    - cron: "23 2 * * *"   # every night at 02:23 UTC (03:23 or 04:23 in Italy)
+  workflow_run:             # every night, right after the website check of the cinemas
+    workflows: ["Controllo siti dei cinema"]
+    types: [completed]
   workflow_dispatch:        # lets you start it by hand from the Actions tab
   push:                     # publish right away when the code or the design changes
     branches: [main]
