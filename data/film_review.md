@@ -5,29 +5,57 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 
 ## Medium confidence
 
+- (O.V.) The Rocky Horror Picture Show -> [The Rocky Horror Picture Show (1975, Jim Sharman)](https://www.wikidata.org/wiki/Q751921) `Q751921`
 - CARAVAGGIO - MORNING GLORIES -> [Caravaggio (film 2026) (2025, regista ?)](https://www.wikidata.org/wiki/Q136813984) `Q136813984`
   - or [La gloria del mattino (1933, Lowell Sherman)](https://www.wikidata.org/wiki/Q572789) `Q572789`
   - or [Il buongiorno del mattino (2010, Roger Michell)](https://www.wikidata.org/wiki/Q856602) `Q856602`
   - or [Caravaggio (1986, Derek Jarman)](https://www.wikidata.org/wiki/Q1035443) `Q1035443`
+- L'UOMO DI CENERE (RI? ES-SED) -> [L'uomo di cenere (1986, Nūrī Būzīd)](https://www.wikidata.org/wiki/Q1985728) `Q1985728`
 - LA CASA DELLE DONNE (LA MAISON DES FEMMES) -> [La Maison des femmes (2025, Q141162816)](https://www.wikidata.org/wiki/Q138417077) `Q138417077`
 - MAKING MARIE ANTOINETTE -> [Making Marie Antoinette (?, regista ?)](https://www.wikidata.org/wiki/Q141247887) `Q141247887`
+- THE ROCKY HORROR PICTURES SHOW -> [The Rocky Horror Picture Show (1975, Jim Sharman)](https://www.wikidata.org/wiki/Q751921) `Q751921`
 - WILDE HORSE NINE -> [Wild Horse Nine (2026, Martin McDonagh)](https://www.wikidata.org/wiki/Q133341572) `Q133341572`
+- the razor's edge -> [The Razor's Edge (?, regista ?)](https://www.wikidata.org/wiki/Q130748763) `Q130748763`
+  - or [Il filo del rasoio (1946, Edmund Goulding)](https://www.wikidata.org/wiki/Q759322) `Q759322`
+  - or [Il filo del rasoio (1984, John Byrum)](https://www.wikidata.org/wiki/Q504101) `Q504101`
+  - or [Razor's Edge: The Legacy of Iranian Actresses (2016, Bahman Maghsoudlou)](https://www.wikidata.org/wiki/Q60738687) `Q60738687`
 
 ## No match
 
+- (Kor) Bts W.T. 'Arirang' In Buen. A Live
+- (Kor) Bts W.T. 'Arirang' In Sao P. Live
+- (Kor) Stray Kids Wt - Run It
+- (Kor) Stray Kids Wt <run it=""> Live View</run>
+- (Lingua Originale) Avengers: Doomsday
+- (O.V) L'Infernale Quinlan Director'S Cut
+- (O.V.) 2001 : Odissea Nello Spazio 4k
+- (O.V.) Digger
+- (O.V.) Forgotten Island (2026)
+- (O.V.) Matrix 4k
+- (O.V.) Naza
+- (O.V.) Primetime
+- (O.V.) Ragione E Sentimento (2026)
+- (O.V.) Sense And Sensibility (2026)
+- (O.V.) Strange Journey:The Story Of Roc.
+- (Ov) Fatherland
+- (Vos) Matrix 4k
 - AMAZING MONSTER
 - AUBER 89
 - AZ ZEEB
 - BENITA
+- Bts - World Tour Arirang Live Viewing
 - CARA A CARA
 - DRACULA DI BRAM STOKER 4K (RIED. 2026)
 - IL BIANCO SI LAVA A NOVANTA
+- Lo Straniero (V.Originale Sub Ita)
 - MAKING MARIE ANTONIETTE
 - MARATONA HALLOWEEN: CREATURE A SORPRESA
 - MATRIX 4K
+- MATRIX 4K V.O.
 - MIDSUMMER FORMULA
 - OZZY & BLACK SABBATH: BACK TO THE BEGINNING
 - OÙ VIVRE INSIST
+- PRIMETIME V.O. (1H50')
 - PÒS PROCESSO CRIME
 - RAGIONE E SENTIMENTO
 - STRAY KIDS WORLD TOUR "RUN IT": - IL LIVE VIEWING
@@ -35,5 +63,13 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - THE GLORIOUS DEAD
 - THE PICKERS
 - URCHIN in V.O.
+- Vos Avengers: Doomsday
+- Vos Digger
+- Vos Naza
+- Vos Sense And Sensibility (2026)
+- Vos Wild Horse Nine Anteprima
 - WILDWOOD ORIGINAL VERSION
 - WILWOOD - ISEGRETI DEL BOSCO PROIBITO - 2026 O.V.
+- report to mother
+- trenque lauquen 1a parte
+- trenque lauquen 2a parte

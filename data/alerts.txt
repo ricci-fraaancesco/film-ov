@@ -1,2 +1,1 @@
-Spoltore / Multiplex Arca: 1 OV shows last run, 0 now
 fetch error uci:theatres: HTTPError('403 Client Error: Forbidden for url: https://backend.ucicinemas.it/api/theatres')

@@ -225,6 +225,12 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "bts world tour arirang live viewing": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "Bts - World Tour Arirang Live Viewing",
+  "version": 4
+ },
  "cara a cara": {
   "qid": null,
   "checked": "2026-10-20",
@@ -909,6 +915,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "good boy v originale sub ita": {
+  "qid": "Q130744998",
+  "title_it": "Good Boy",
+  "original_title": "Good Boy",
+  "year": 2025,
+  "runtime": 110,
+  "imdb": "tt34381258",
+  "tmdb": "1381027",
+  "itwiki": "Good Boy (film 2025 Komasa)",
+  "directors": [
+   "Jan Komasa"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Good Boy è un film del 2025 diretto da Jan Komasa ed interpretato da Stephen Graham, Andrea Riseborough, Anson Boon e Kit Rakusen.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "Good Boy (V.Originale Sub Ita)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
+ },
  "grosso guaio a chinatown big trouble in little china": {
   "qid": "Q859494",
   "title_it": "Grosso guaio a Chinatown",
@@ -1540,6 +1569,30 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "kor bts w t arirang in buen a live": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(Kor) Bts W.T. 'Arirang' In Buen. A Live",
+  "version": 4
+ },
+ "kor bts w t arirang in sao p live": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(Kor) Bts W.T. 'Arirang' In Sao P. Live",
+  "version": 4
+ },
+ "kor stray kids wt run it": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(Kor) Stray Kids Wt - Run It",
+  "version": 4
+ },
+ "kor stray kids wt run it live view run": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(Kor) Stray Kids Wt <run it=\"\"> Live View</run>",
+  "version": 4
+ },
  "l amore bugiardo gone girl": {
   "qid": "Q14920425",
   "title_it": "L'amore bugiardo - Gone Girl",
@@ -1562,6 +1615,29 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "l amore che rimane v originale sub ita": {
+  "qid": "Q131750758",
+  "title_it": "L'amore che rimane",
+  "original_title": "Ástin Sem Eftir Er",
+  "year": 2025,
+  "runtime": 109,
+  "imdb": "tt33381401",
+  "tmdb": "1258509",
+  "itwiki": "L'amore che rimane",
+  "directors": [
+   "Hlynur Pálmason"
+  ],
+  "languages": [
+   "islandese"
+  ],
+  "intro": "L'amore che rimane è un film del 2025 diretto e sceneggiato da Hlynur Pálmason.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "L'Amore Che Rimane (V.Originale Sub Ita)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "l avventura del poseidon the poseidon adventure": {
   "qid": "Q874496",
@@ -1633,6 +1709,30 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "l uomo di cenere ri es sed": {
+  "qid": "Q1985728",
+  "title_it": "L'uomo di cenere",
+  "original_title": "ريح السد",
+  "year": 1986,
+  "runtime": 109,
+  "imdb": "tt0091470",
+  "tmdb": "195839",
+  "itwiki": "L'uomo di cenere",
+  "directors": [
+   "Nūrī Būzīd"
+  ],
+  "languages": [
+   "arabo"
+  ],
+  "intro": "L'uomo di cenere è un film del 1986 scritto e diretto da Nuri Buzid, al suo esordio alla regia di un lungometraggio.",
+  "confidence": "medium",
+  "score": 0.87,
+  "query": "L'UOMO DI CENERE (RI? ES-SED)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21",
+  "alternatives": []
  },
  "la casa delle donne la maison des femmes": {
   "qid": "Q138417077",
@@ -1798,6 +1898,12 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "lingua originale avengers doomsday": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(Lingua Originale) Avengers: Doomsday",
+  "version": 4
+ },
  "lo spaventapasseri scarecrow": {
   "qid": "Q1344329",
   "title_it": "Lo spaventapasseri",
@@ -1843,6 +1949,12 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-21"
+ },
+ "lo straniero v originale sub ita": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "Lo Straniero (V.Originale Sub Ita)",
+  "version": 4
  },
  "m il mostro di dusseldorf": {
   "qid": "Q127021",
@@ -1949,6 +2061,12 @@
   "qid": null,
   "checked": "2026-10-21",
   "query": "MATRIX 4K",
+  "version": 4
+ },
+ "matrix 4k v o": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "MATRIX 4K V.O.",
   "version": 4
  },
  "midsummer formula": {
@@ -2238,6 +2356,113 @@
   "version": 4,
   "checked": "2026-10-21"
  },
+ "o v 2001 odissea nello spazio 4k": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(O.V.) 2001 : Odissea Nello Spazio 4k",
+  "version": 4
+ },
+ "o v digger": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(O.V.) Digger",
+  "version": 4
+ },
+ "o v forgotten island": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(O.V.) Forgotten Island",
+  "version": 4
+ },
+ "o v l infernale quinlan": {
+  "qid": "Q778161",
+  "title_it": "L'infernale Quinlan",
+  "original_title": "Touch of Evil",
+  "year": 1958,
+  "runtime": 93,
+  "imdb": "tt0052311",
+  "tmdb": "1480",
+  "itwiki": "L'infernale Quinlan",
+  "directors": [
+   "Orson Welles"
+  ],
+  "languages": [
+   "inglese",
+   "spagnolo"
+  ],
+  "intro": "L'infernale Quinlan è un film del 1958 scritto, diretto e interpretato da Orson Welles, liberamente tratto dal romanzo Badge of Evil di Whit Masterson.",
+  "confidence": "high",
+  "score": 1.055,
+  "query": "(O.V) L'Infernale Quinlan",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
+ },
+ "o v l infernale quinlan director s cut": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(O.V) L'Infernale Quinlan Director'S Cut",
+  "version": 4
+ },
+ "o v matrix 4k": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(O.V.) Matrix 4k",
+  "version": 4
+ },
+ "o v naza": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(O.V.) Naza",
+  "version": 4
+ },
+ "o v primetime": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(O.V.) Primetime",
+  "version": 4
+ },
+ "o v ragione e sentimento": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(O.V.) Ragione E Sentimento",
+  "version": 4
+ },
+ "o v sense and sensibility": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(O.V.) Sense And Sensibility",
+  "version": 4
+ },
+ "o v strange journey the story of roc": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(O.V.) Strange Journey:The Story Of Roc.",
+  "version": 4
+ },
+ "o v the rocky horror picture show": {
+  "qid": "Q751921",
+  "title_it": "The Rocky Horror Picture Show",
+  "original_title": "The Rocky Horror Picture Show",
+  "year": 1975,
+  "runtime": 100,
+  "imdb": "tt0073629",
+  "tmdb": "36685",
+  "itwiki": "The Rocky Horror Picture Show",
+  "directors": [
+   "Jim Sharman"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "The Rocky Horror Picture Show è un film del 1975 co-sceneggiato e diretto da Jim Sharman.",
+  "confidence": "medium",
+  "score": 1.15,
+  "query": "(O.V.) The Rocky Horror Picture Show",
+  "source": "similar-title",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
  "ombre shadows": {
   "qid": "Q1535980",
   "title_it": "Ombre",
@@ -2265,6 +2490,12 @@
   "qid": null,
   "checked": "2026-10-20",
   "query": "OÙ VIVRE INSIST",
+  "version": 4
+ },
+ "ov fatherland": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(Ov) Fatherland",
   "version": 4
  },
  "ozzy and black sabbath back to the beginning": {
@@ -2464,6 +2695,12 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "primetime v o 1h50": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "PRIMETIME V.O. (1H50')",
+  "version": 4
+ },
  "ragazze in uniforme": {
   "qid": "Q161845",
   "title_it": "Ragazze in uniforme",
@@ -2538,6 +2775,12 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "report to mother": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "report to mother",
+  "version": 4
  },
  "ritorno a buenos aires": {
   "qid": "Q140680798",
@@ -2632,6 +2875,29 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "sheep in the box v originale sub ita": {
+  "qid": "Q137640905",
+  "title_it": "Sheep in the Box",
+  "original_title": "箱の中の羊",
+  "year": 2026,
+  "runtime": 126,
+  "imdb": "tt38551209",
+  "tmdb": "1553969",
+  "itwiki": "Sheep in the Box",
+  "directors": [
+   "Hirokazu Kore-eda"
+  ],
+  "languages": [
+   "giapponese"
+  ],
+  "intro": "Sheep in the Box è un film del 2026 diretto, sceneggiato e montato da Hirokazu Kore'eda.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "Sheep In The Box (V.Originale Sub Ita)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "speak no evil": {
   "qid": "Q110040047",
@@ -2916,6 +3182,53 @@
   "query": "THE PICKERS",
   "version": 4
  },
+ "the razor s edge": {
+  "qid": "Q130748763",
+  "title_it": "The Razor's Edge",
+  "original_title": "The Razor's Edge",
+  "year": null,
+  "runtime": null,
+  "imdb": "tt32360501",
+  "tmdb": "1299018",
+  "itwiki": null,
+  "directors": [],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "",
+  "confidence": "medium",
+  "score": 1.0,
+  "query": "the razor's edge",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21",
+  "alternatives": [
+   {
+    "qid": "Q759322",
+    "title": "Il filo del rasoio",
+    "year": 1946,
+    "directors": [
+     "Edmund Goulding"
+    ]
+   },
+   {
+    "qid": "Q504101",
+    "title": "Il filo del rasoio",
+    "year": 1984,
+    "directors": [
+     "John Byrum"
+    ]
+   },
+   {
+    "qid": "Q60738687",
+    "title": "Razor's Edge: The Legacy of Iranian Actresses",
+    "year": 2016,
+    "directors": [
+     "Bahman Maghsoudlou"
+    ]
+   }
+  ]
+ },
  "the rocky horror picture show": {
   "qid": "Q751921",
   "title_it": "The Rocky Horror Picture Show",
@@ -2959,6 +3272,29 @@
   "score": 1.12,
   "query": "THE ROCKY HORROR PICTURE SHOW - 50° ANNIVERSARY",
   "source": "search",
+  "version": 4,
+  "checked": "2026-10-20"
+ },
+ "the rocky horror pictures show": {
+  "qid": "Q751921",
+  "title_it": "The Rocky Horror Picture Show",
+  "original_title": "The Rocky Horror Picture Show",
+  "year": 1975,
+  "runtime": 100,
+  "imdb": "tt0073629",
+  "tmdb": "36685",
+  "itwiki": "The Rocky Horror Picture Show",
+  "directors": [
+   "Jim Sharman"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "The Rocky Horror Picture Show è un film del 1975 co-sceneggiato e diretto da Jim Sharman.",
+  "confidence": "medium",
+  "score": 1.15,
+  "query": "THE ROCKY HORROR PICTURES SHOW",
+  "source": "similar-title",
   "version": 4,
   "checked": "2026-10-20"
  },
@@ -3104,6 +3440,18 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "trenque lauquen 1a parte": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "trenque lauquen 1a parte",
+  "version": 4
+ },
+ "trenque lauquen 2a parte": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "trenque lauquen 2a parte",
+  "version": 4
+ },
  "un ora sola ti vorrei": {
   "qid": "Q93891113",
   "title_it": "Un'ora sola ti vorrei",
@@ -3227,6 +3575,65 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "vos avengers doomsday": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "Vos Avengers: Doomsday",
+  "version": 4
+ },
+ "vos digger": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "Vos Digger",
+  "version": 4
+ },
+ "vos dune part three": {
+  "qid": "Q124714245",
+  "title_it": "Dune - Parte tre",
+  "original_title": "Dune: Part Three",
+  "year": 2026,
+  "runtime": null,
+  "imdb": "tt31378509",
+  "tmdb": "1170608",
+  "itwiki": "Dune - Parte tre",
+  "directors": [
+   "Denis Villeneuve"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Dune - Parte tre è un film del 2026 co-sceneggiato, diretto e co-prodotto da Denis Villeneuve.",
+  "confidence": "high",
+  "score": 1.032,
+  "query": "Vos Dune - Part Three",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
+ },
+ "vos matrix 4k": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "(Vos) Matrix 4k",
+  "version": 4
+ },
+ "vos naza": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "Vos Naza",
+  "version": 4
+ },
+ "vos sense and sensibility": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "Vos Sense And Sensibility",
+  "version": 4
+ },
+ "vos wild horse nine anteprima": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "Vos Wild Horse Nine Anteprima",
+  "version": 4
+ },
  "wild horse nine": {
   "qid": "Q133341572",
   "title_it": "Wild Horse Nine",
@@ -3330,6 +3737,29 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "yellow letters v originale sub ita": {
+  "qid": "Q136163095",
+  "title_it": "Yellow Letters",
+  "original_title": "",
+  "year": 2026,
+  "runtime": 127,
+  "imdb": "tt32888226",
+  "tmdb": "1315657",
+  "itwiki": "Yellow Letters",
+  "directors": [
+   "İlker Çatak"
+  ],
+  "languages": [
+   "turco"
+  ],
+  "intro": "Yellow Letters è un film del 2026 diretto da İlker Çatak.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "Yellow Letters (V.Originale Sub Ita)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "youth hard times pinyin qing chun ku": {
   "qid": "Q127786431",
