@@ -625,6 +625,12 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "dracula di bram stoker 4k ried 2026": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "DRACULA DI BRAM STOKER 4K (RIED. 2026)",
+  "version": 4
+ },
  "dune part three": {
   "qid": "Q124714245",
   "title_it": "Dune - Parte tre",
@@ -764,6 +770,29 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "ferro 3 la casa vuota bin jip": {
+  "qid": "Q489818",
+  "title_it": "Ferro 3 - La casa vuota",
+  "original_title": "빈집",
+  "year": 2004,
+  "runtime": 90,
+  "imdb": "tt0423866",
+  "tmdb": "1280",
+  "itwiki": "Ferro 3 - La casa vuota",
+  "directors": [
+   "Kim Ki-duk"
+  ],
+  "languages": [
+   "coreano"
+  ],
+  "intro": "Ferro 3 - La casa vuota è un film del 2004 scritto, diretto, prodotto e montato da Kim Ki-duk.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "FERRO 3 - LA CASA VUOTA (BIN JIP)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "gangster story bonnie and clyde": {
   "qid": "Q181776",
@@ -950,6 +979,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "hard to be a god": {
+  "qid": "Q4204793",
+  "title_it": "Trudno byt' bogom",
+  "original_title": "Трудно быть богом",
+  "year": 2013,
+  "runtime": 177,
+  "imdb": "tt2328813",
+  "tmdb": "110402",
+  "itwiki": "Trudno byt' bogom",
+  "directors": [
+   "Aleksej Jur'evič German"
+  ],
+  "languages": [
+   "russo"
+  ],
+  "intro": "È difficile essere un dio è un film del 2013 diretto da Aleksej Jur'evič German.",
+  "confidence": "high",
+  "score": 1.05,
+  "query": "HARD TO BE A GOD",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
+ },
  "hereditary le radici del male": {
   "qid": "Q47524071",
   "title_it": "Hereditary - Le radici del male",
@@ -996,6 +1048,30 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "i colori della passione the mill and the cross": {
+  "qid": "Q1215008",
+  "title_it": "I colori della passione",
+  "original_title": "Młyn i krzyż",
+  "year": 2011,
+  "runtime": 96,
+  "imdb": "tt1324055",
+  "tmdb": "57829",
+  "itwiki": "I colori della passione",
+  "directors": [
+   "Lech Majewski"
+  ],
+  "languages": [
+   "inglese",
+   "spagnolo"
+  ],
+  "intro": "I colori della passione è un film del 2011 diretto da Lech Majewski con Rutger Hauer, Charlotte Rampling e Michael York.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "I COLORI DELLA PASSIONE (THE MILL AND THE CROSS)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "i diavoli": {
   "qid": "Q655996",
@@ -1211,6 +1287,30 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "il settimo sigillo det sjunde inseglet": {
+  "qid": "Q217189",
+  "title_it": "Il settimo sigillo",
+  "original_title": "Det sjunde inseglet",
+  "year": 1957,
+  "runtime": 96,
+  "imdb": "tt0050976",
+  "tmdb": "490",
+  "itwiki": "Il settimo sigillo",
+  "directors": [
+   "Ingmar Bergman"
+  ],
+  "languages": [
+   "svedese",
+   "latino"
+  ],
+  "intro": "Il settimo sigillo è un film svedese in bianco e nero del 1957, scritto e diretto da Ingmar Bergman e interpretato, tra gli altri, da Max von Sydow, Bengt Ekerot e Bibi Andersson.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "IL SETTIMO SIGILLO (DET SJUNDE INSEGLET)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "il signore del male prince of darkness": {
   "qid": "Q601013",
@@ -1721,6 +1821,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "lo specchio": {
+  "qid": "Q838149",
+  "title_it": "Lo specchio",
+  "original_title": "Зеркало",
+  "year": 1975,
+  "runtime": 108,
+  "imdb": "tt0072443",
+  "tmdb": "1396",
+  "itwiki": "Lo specchio (film 1975)",
+  "directors": [
+   "Andrej Arsen'evič Tarkovskij"
+  ],
+  "languages": [
+   "russo"
+  ],
+  "intro": "Lo specchio è un film del 1975 diretto da Andrej Tarkovskij.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "LO SPECCHIO",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
+ },
  "m il mostro di dusseldorf": {
   "qid": "Q127021",
   "title_it": "M - Il mostro di Düsseldorf",
@@ -1799,6 +1922,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "marketa lazarova": {
+  "qid": "Q614960",
+  "title_it": "Marketa Lazarová",
+  "original_title": "Marketa Lazarová",
+  "year": 1967,
+  "runtime": 162,
+  "imdb": "tt0063278",
+  "tmdb": "25904",
+  "itwiki": "Marketa Lazarová",
+  "directors": [
+   "František Vláčil"
+  ],
+  "languages": [
+   "ceco"
+  ],
+  "intro": "Marketa Lazarová è un film del 1967, diretto da František Vláčil, basato sul romanzo Il cavalier bandito e la sposa del cielo di Vladislav Vančura.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "MARKETA LAZAROVA",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
+ },
  "matrix 4k": {
   "qid": null,
   "checked": "2026-10-21",
@@ -1856,6 +2002,29 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "minotaur nel labirinto del potere": {
+  "qid": "Q137612975",
+  "title_it": "Minotaure",
+  "original_title": "",
+  "year": 2026,
+  "runtime": 135,
+  "imdb": "tt37118301",
+  "tmdb": "848700",
+  "itwiki": "Minotaure (film)",
+  "directors": [
+   "Andrej Petrovič Zvjagincev"
+  ],
+  "languages": [
+   "russo"
+  ],
+  "intro": "Minotaure è un film del 2026 diretto da Andrej Zvjagincev.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "MINOTAUR - NEL LABIRINTO DEL POTERE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "mississippi burning le radici dell odio": {
   "qid": "Q918367",
@@ -1925,6 +2094,29 @@
   "confidence": "high",
   "score": 1.15,
   "query": "MULHOLLAND DRIVE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
+ },
+ "museum hours": {
+  "qid": "Q16253440",
+  "title_it": "Museum Hours",
+  "original_title": "Museum Hours",
+  "year": 2012,
+  "runtime": 107,
+  "imdb": "tt2268732",
+  "tmdb": "128133",
+  "itwiki": null,
+  "directors": [
+   "Jem Cohen"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "MUSEUM HOURS",
   "source": "search",
   "version": 4,
   "checked": "2026-10-21"
@@ -2022,6 +2214,29 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "non sarai sola you won t be alone": {
+  "qid": "Q104880088",
+  "title_it": "Non sarai sola",
+  "original_title": "You Won't Be Alone",
+  "year": 2022,
+  "runtime": null,
+  "imdb": "tt8296030",
+  "tmdb": "883083",
+  "itwiki": "Non sarai sola",
+  "directors": [
+   "Goran Stolevski"
+  ],
+  "languages": [
+   "macedone"
+  ],
+  "intro": "Non sarai sola è un film del 2022 diretto da Goran Stolevski.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "NON SARAI SOLA (YOU WON'T BE ALONE)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "ombre shadows": {
   "qid": "Q1535980",
@@ -2417,6 +2632,31 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "speak no evil": {
+  "qid": "Q110040047",
+  "title_it": "Speak No Evil",
+  "original_title": "Speak No Evil",
+  "year": 2022,
+  "runtime": 105,
+  "imdb": "tt14253846",
+  "tmdb": "833339",
+  "itwiki": "Speak No Evil (film 2022)",
+  "directors": [
+   "Christian Tafdrup"
+  ],
+  "languages": [
+   "inglese",
+   "danese",
+   "olandese"
+  ],
+  "intro": "Speak No Evil (Gæsterne) è un film del 2022 diretto da Christian Tafdrup.",
+  "confidence": "high",
+  "score": 1.1,
+  "query": "SPEAK NO EVIL",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "stati di allucinazione": {
   "qid": "Q1194524",
@@ -3055,6 +3295,12 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "wildwood original version": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "WILDWOOD ORIGINAL VERSION",
+  "version": 4
  },
  "wilwood isegreti del bosco proibito 2026 o v": {
   "qid": null,

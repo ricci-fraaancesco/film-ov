@@ -20,6 +20,7 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - AZ ZEEB
 - BENITA
 - CARA A CARA
+- DRACULA DI BRAM STOKER 4K (RIED. 2026)
 - IL BIANCO SI LAVA A NOVANTA
 - MAKING MARIE ANTONIETTE
 - MARATONA HALLOWEEN: CREATURE A SORPRESA
@@ -34,4 +35,5 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - THE GLORIOUS DEAD
 - THE PICKERS
 - URCHIN in V.O.
+- WILDWOOD ORIGINAL VERSION
 - WILWOOD - ISEGRETI DEL BOSCO PROIBITO - 2026 O.V.
