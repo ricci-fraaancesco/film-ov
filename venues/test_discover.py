@@ -153,6 +153,6 @@ def test_webtic_cinema_is_test_read_and_activated(monkeypatch):
     assert check({"website": "https://ci2.it/"}, embed)["status"] == "active" and calls[-1] == "5221"
 
 
-def test_uci_is_active():
+def test_uci_is_not_read():
     up = check({"website": "https://www.ucicinemas.it/cinema/lazio/roma/uci-cinemas-roma-est/"}, FakeFetch({}))
-    assert up["status"] == "active" and up["platform"] == "uci"
+    assert up["status"] == "adapter_missing" and up["platform"] == "uci"

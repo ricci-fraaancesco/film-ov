@@ -111,7 +111,7 @@ def test_run_platforms(tmp_path):
         return {"data": {"directors": [{"name": "Georgia Oakley"}]}}
 
     pages = tmp_path / "film_pages.json"
-    shows, errors = run_platforms(venues, pages, get_json=get_json)
+    shows, errors = run_platforms(venues, pages, get_json=get_json, uci=True)
     assert not errors and len(shows) == 5
     import json
     cache = json.loads(pages.read_text())

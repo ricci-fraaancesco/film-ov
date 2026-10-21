@@ -88,7 +88,7 @@ def street_key(addr: str) -> str:
 def smart_title(s: str) -> str:
     """'CINEMA MODERNO' -> 'Cinema Moderno'; keeps names that already have mixed case."""
     s = re.sub(r"\s+", " ", (s or "").replace("★", "")).strip()
-    if not s or (s != s.upper()):
+    if not s or (s != s.upper() and s != s.lower()):
         return s
     small = {"di", "del", "della", "dei", "delle", "e", "a", "al", "in", "da"}
     out = []

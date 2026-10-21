@@ -445,11 +445,17 @@ def webtic_cinemas(venues_path: Path) -> list[dict]:
     return out
 
 
-def run_platforms(venues_path: Path | None, pages_path: Path, get_json=None, uci: bool = True) -> tuple[list[Show], dict]:
+# UCI's back end answers 403 to automated requests from servers (21 Oct 2026). We respect
+# that: the adapter stays off until UCI agrees to it (run with --uci to try).
+UCI_ENABLED = False
+
+
+def run_platforms(venues_path: Path | None, pages_path: Path, get_json=None, uci: bool | None = None) -> tuple[list[Show], dict]:
     import uci as uci_mod
     import webtic
 
     get_json = get_json or json_getter()
+    uci = UCI_ENABLED if uci is None else uci
     shows, errors, pages = [], {}, {}
     for c in webtic_cinemas(venues_path):
         try:
@@ -582,13 +588,14 @@ def main(argv=None):
     ap.add_argument("--skip-film-pages", action="store_true", help="do not fetch film pages (faster)")
     ap.add_argument("--venues", type=Path, help="data/venues.csv: also read the 18tickets and Webtic cinemas activated there")
     ap.add_argument("--no-platforms", action="store_true", help="read 18tickets only (skip Webtic and UCI)")
+    ap.add_argument("--uci", action="store_true", help="also read UCI (off by default, see UCI_ENABLED)")
     a = ap.parse_args(argv)
 
     if a.venues:
         print(f"  cinemas added from {a.venues}: {add_venues_from_list(a.venues)}", file=sys.stderr)
     shows, errors = run_live() if a.mode == "live" else run_replay(a.raw)
     if a.mode == "live" and not a.no_platforms:
-        more, errs = run_platforms(a.venues, a.out / "film_pages.json")
+        more, errs = run_platforms(a.venues, a.out / "film_pages.json", uci=True if a.uci else None)
         shows += more
         errors.update(errs)
     if a.mode == "live" and not a.skip_film_pages:
