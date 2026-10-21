@@ -1,4 +1,12 @@
 {
+ "https://arca.multicinema.18tickets.it/film/197662?ref_date=2026-10-21": {
+  "synopsis": "Edimburgo. Mark Renton, ladruncolo per necessità, ha scelto un'onesta e sincera tossicodipendenza. Begbie, uno psicopatico violento e alcolizzato spaventa perfino i suoi amici, ma non si sognerebbe nemmeno di toccare la droga. Spud, un disperato, ma amabile eroinomane. Sick Boy, un narciso dalle conoscenze enciclopediche su Sean Connery, in grado di tenere sotto controllo la propria dipendenza dall'eroina. Poi c'è Tommy che non si droga, è un maniaco delle escursioni all'aria aperta e di Iggy Pop. Ai margini della storia, ci sono le ragazze del gruppo.",
+  "year": 1996,
+  "director": "Danny Boyle",
+  "genre": "Crime, Dramma",
+  "poster": "https://cdn.18tickets.net/ariston/uploads/film/playbill/197662/standard_8673765f-f6c8-449f-992d-4051ac14da46.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
  "https://arlecchino.cinetecadimilano.18tickets.it/film/105450": {
   "synopsis": "L'amore tra una ragazza benestante e uno studente ribelle di Los Angeles che ruba un aereo alla ricerca della libertà. Finale profetico esplosivo in forma di apocalisse capitalistica. La sproporzione tra idee e apparato figurativo, tra esilità della storia e terribilità della conclusione irritò la critica americana, ma l'esilità (la superficialità) non è soltanto della storia: è l'invenzione registica che bisogna mettere in discussione, è la pregnanza figurativa che manca, sostituita da una compiaciuta lussuria fotografica (Alfio Contini). È il film di un provinciale che punta al grandioso. Sam Shepard collaborò alla sceneggiatura. Una buona colonna rock con (fra gli altri) Pink Floyd, Grateful Dead e Rolling Stones.",
   "year": 1970,
@@ -1175,6 +1183,38 @@
   "poster": "https://cdn.18tickets.net/iris/uploads/film/playbill/98321/standard_b5240777-1f88-4dbf-b1c1-0732aa4d107f.jpeg",
   "checked": "2026-10-20T13:10:43+02:00"
  },
+ "https://dbdessai.18tickets.it/film/202370": {
+  "synopsis": "La storia segue le vicende delle sorelle Elinor e Marianne Dashwood che, insieme alla madre e alla sorella minore Margaret, si ritrovano improvvisamente in ristrettezze economiche dopo la morte del padre, la cui eredità passa interamente al fratellastro John a causa delle leggi dell’epoca. Sfrattate dalla loro casa di famiglia nel Sussex, le donne Dashwood si trasferiscono in un modesto cottage nel Devonshire. Qui le due sorelle maggiori, profondamente diverse per temperamento – Elinor è guidata dalla prudenza e dal controllo delle emozioni (sense, la ragione), Marianne dall’impulso e dalla passione romantica (sensibility, il sentimento) –, dovranno navigare tra le rigide convenzioni sociali e i dolori dei loro rispettivi e tormentati primi amori, incarnati dalle figure di Edward Ferrars, John Willoughby e del colonnello Brandon.",
+  "year": 2026,
+  "director": "Georgia Oakley",
+  "genre": "Dramma, Romance",
+  "poster": "https://cdn.18tickets.net/ariston/uploads/film/playbill/202370/standard_e97cbc9d-724d-4f1a-a966-118a68cfeca2.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://dbdessai.18tickets.it/film/202382": {
+  "synopsis": "Wildwood, nei dintorni di Portland, è un posto da cui tenersi lontani e che dovrebbe rimanere nascosto a tutti. Prue McKeel, tuttavia, è costretta a raggiungerlo dopo che il fratellino Mac è stato rapito da uno stormo di corvi e trasportato nei meandri della foresta. Insieme allo sfortunato compagno di classe Curtis, Prue corre a salvare Mac da un pericolo che sembra uscito dalle pagine di una favola.",
+  "year": 2026,
+  "director": "Travis Knight",
+  "genre": "Animazione, Avventura, Fantasy",
+  "poster": "https://cdn.18tickets.net/ariston/uploads/film/playbill/202382/standard_680e94f3-5b8e-46ca-99db-8fbaff78488c.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://italiabelluno.18tickets.it/film/130754": {
+  "synopsis": "Utilizzando filmati di interrogatori mai visti prima, questa indagine su Benjamin Netanyahu e la sua cerchia ristretta fornisce uno sguardo risoluto sul mondo privato dietro i titoli dei giornali. La meschina vanità e il senso di diritto portano alla corruzione e alla riluttanza dei Netanyahu a rinunciare al potere. L’estrema destra intuisce un’opportunità nella debolezza di Bibi, e le tessere del domino cadono.",
+  "year": 2026,
+  "director": "Alexis Bloom",
+  "genre": "Documentario",
+  "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/130754/standard_7c2c16d1-becf-4282-8ac1-c6973a037c8b.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://italiabelluno.18tickets.it/film/136827": {
+  "synopsis": "Nel 2006 il giornalista Chris Hansen si prepara a fare la storia della televisione con To Catch a Predator, il controverso format che, attraverso operazioni sotto copertura e telecamere nascoste, porta davanti al pubblico predatori sessuali colti sul fatto. Mentre il programma diventa un fenomeno nazionale guadagnando la prima serata e il suo conduttore il beniamino degli spettatori, il confine tra informazione, giustizia e spettacolo si fa sempre più ambiguo.",
+  "year": 2026,
+  "director": "L. Oppenheim",
+  "genre": "Drammatico",
+  "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/136827/standard_54bf7215-16c8-4cd0-a86f-05c0e2f9c114.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
  "https://lux.cdr.18tickets.it/film/100136": {
   "synopsis": "Neo believes that Morpheus, an elusive figure considered to be the most dangerous man alive, can answer his question -- What is the Matrix? Neo is contacted by Trinity, a beautiful stranger who leads him into an underworld where he meets Morpheus. They fight a brutal battle for their lives against a cadre of viciously intelligent secret agents. It is a truth that could cost Neo something more precious than his life.",
   "year": 1999,
@@ -1271,6 +1311,70 @@
   "poster": "https://cdn.18tickets.net/iris/uploads/film/playbill/99972/standard_a6f1a349-c913-4cdc-a35f-f36584784631.jpg",
   "checked": "2026-10-20T13:10:43+02:00"
  },
+ "https://metropolis.18tickets.it/film/100324": {
+  "synopsis": "Edimburgo. Mark Renton, ladruncolo per necessità, ha scelto un'onesta e sincera tossicodipendenza. Begbie, uno psicopatico violento e alcolizzato spaventa perfino i suoi amici, ma non si sognerebbe nemmeno di toccare la droga. Spud, un disperato, ma amabile eroinomane. Sick Boy, un narciso dalle conoscenze enciclopediche su Sean Connery, in grado di tenere sotto controllo la propria dipendenza dall'eroina. Poi c'è Tommy che non si droga, è un maniaco delle escursioni all'aria aperta e di Iggy Pop. Ai margini della storia, ci sono le ragazze del gruppo.",
+  "year": 1996,
+  "director": "Danny Boyle",
+  "genre": "Dramma, Crime",
+  "poster": "https://cdn.18tickets.net/greenwich/uploads/film/playbill/100324/standard_11738f42-2db5-4f70-b199-71b166ae0f9b.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://metropolis.18tickets.it/film/102271": {
+  "synopsis": "Janet e Brad, due fidanzati molto pudichi, trovano rifugio da un temporale in un castello inquietante. Il non meno inquietante maggiordomo Riff Raff li introduce al padrone di casa, il Dr. Frank-N-Furter, abbigliato solo di tacchi a spillo, calze a rete, baby doll e guanti di pizzo. Sono capitati in un'occasione molto speciale: la convention dei trans-vestiti della Transilvania, il fatidico momento in cui Frank-N-Furter darà vita a Rocky, la perfetta creatura sessuale. I due fidanzatini sono sconvolti dai bizzarri personaggi che abitano il castello ma sono costretti a rimanere per la notte, che segnerà la loro iniziazione al sesso.",
+  "year": 1975,
+  "director": "Jim Sharman",
+  "genre": "Fantascienza, Horror",
+  "poster": "https://cdn.18tickets.net/greenwich/uploads/film/playbill/102271/standard_d4ddffc9-a4a0-42c0-a7e9-8b954ea9741b.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://metropolis.18tickets.it/film/92206": {
+  "synopsis": "Nel corso di conversazioni segrete sui tetti di Tel Aviv, di notte, i meccanismi alla base della sistematica e calcolata uccisione di massa di civili palestinesi a Gaza a opera di Israele vengono svelati dalle stesse persone che li hanno progettati e gestiti.",
+  "year": 2026,
+  "director": "Yuval Abraham, Rachel Szor",
+  "genre": "Documentario",
+  "poster": "https://cdn.18tickets.net/greenwich/uploads/film/playbill/92206/standard_30a3424a-01fb-4a9b-9df5-109eb34a4070.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://metropolis.18tickets.it/film/95836": {
+  "synopsis": "In tarda notte, una limousine percorre Mulholland Drive; al suo interno c'è una donna dai capelli scuri e due uomini; improvvisamente, l'auto si ferma ed uno dei due uomini punta una pistola contro la donna; subito dopo, però, dei pirati della strada si schiantano contro la limousine. La donna resta miracolosamente illesa, ma ha un'amnesia. Abbandona la scena dell'incidente e scende la collina che porta a Los Angeles, stendendosi nel giardino di un appartamento e mettendosi a dormire. Il giorno successivo, si sveglia e vede la proprietaria dell'appartamento, una donna di mezza età dai capelli rossi, che sta per partire.",
+  "year": 2001,
+  "director": "David Lynch",
+  "genre": "Thriller, Dramma",
+  "poster": "https://cdn.18tickets.net/greenwich/uploads/film/playbill/95836/standard_af54f625-f1d0-42c5-84a9-931ac9a1a19e.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://multicinemagalleria.18tickets.it/film/131085": {
+  "synopsis": "Gli universi si scontrano e la Saga del Multiverso inizia il suo capitolo finale. Gli amati eroi di tre universi distinti si troveranno su una rotta di collisione mortale e dovranno affrontare una minaccia esistenziale diversa da qualsiasi altra abbiano mai incontrato.",
+  "year": 2026,
+  "director": "Joe Russo, Anthony Russo",
+  "genre": "Avventura, Azione",
+  "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/131085/standard_e9fa97b8-5b0b-4f62-9d90-039d517cb0b8.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://multicinemagalleria.18tickets.it/film/134122": {
+  "synopsis": "Nel 2006 il giornalista Chris Hansen si prepara a fare la storia della televisione con To Catch a Predator, il controverso format che, attraverso operazioni sotto copertura e telecamere nascoste, smaschera in diretta tv predatori sessuali colti sul fatto. Mentre il programma diventa un fenomeno nazionale e il suo conduttore un’icona del pubblico, il confine tra informazione, giustizia e spettacolo si fa sempre più ambiguo e il cortocircuito fra cronaca, intrattenimento e voyeurismo televisivo sempre più insostenibile.",
+  "year": 2026,
+  "director": "Lance Oppenheim",
+  "genre": "Thriller, Dramma",
+  "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/134122/standard_fc10460b-0c0a-4aeb-9234-dc304481d94f.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://multicinemagalleria.18tickets.it/film/134592": {
+  "synopsis": "Cile, 1973. Chris e Lee sono due agenti della CIA distaccati in Sud America, costretti ad affrontare un complicato viaggio da Santiago all'Isola di Pasqua che metterà a dura prova la loro fiducia reciproca.",
+  "year": 2026,
+  "director": "Martin Mc Donagh",
+  "genre": "Commedia, Thriller, Crime",
+  "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/134592/standard_215dc966-32e7-40d2-b158-95148c4df4da.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://multicinemagalleria.18tickets.it/film/136464": {
+  "synopsis": "Le sorelle Elinor e Marianne Dashwood, insieme alla madre e alla sorella minore Margaret, si ritrovano improvvisamente in ristrettezze economiche dopo la morte del padre, la cui eredità passa interamente al fratellastro John a causa delle leggi dell’epoca. Sfrattate dalla loro casa di famiglia nel Sussex, le donne Dashwood si trasferiscono in un modesto cottage nel Devonshire. Qui le due sorelle maggiori, profondamente diverse per temperamento, dovranno navigare tra le rigide convenzioni sociali e i dolori dei loro rispettivi e tormentati primi amori.",
+  "year": 2026,
+  "director": "Georgia Oakley",
+  "genre": "Dramma, Romance",
+  "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/136464/standard_00a4396e-2d6b-4484-9958-683a7c65f36b.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
  "https://multisala.impero.18tickets.it/film/147310": {
   "synopsis": "In *Avengers: Doomsday*, beloved heroes from three distinct universes will find themselves on a deadly collision course and must face an unprecedented existential threat.",
   "year": 2026,
@@ -1286,6 +1390,62 @@
   "genre": "Dramma, Romance",
   "poster": "https://cdn.18tickets.net/impero/uploads/film/playbill/154570/standard_c544f373-acf3-4606-83f2-864054193c54.jpg",
   "checked": "2026-10-20T18:52:08+02:00"
+ },
+ "https://odeonvicenza.18tickets.it/film/148499": {
+  "synopsis": "Cinque anni di lavorazione per seguire le tracce di una vita ancora avvolta nel mistero. Il film attraversa i luoghi e le opere di Caravaggio, in un viaggio attraverso Roma, Napoli, Malta e la Sicilia, per ricostruire la vita e l’opera di uno degli artisti più enigmatici e rivoluzionari della storia dell’arte.",
+  "year": 2026,
+  "director": "D. Bickerstaff, P. Grabs",
+  "genre": "Documentario",
+  "poster": "https://cdn.18tickets.net/impero/uploads/film/playbill/148499/standard_b2558a45-f648-4baa-bfe2-e58ee52974e4.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://odeonvicenza.18tickets.it/film/152060": {
+  "synopsis": "Il rapporto tra lo scrittore Thomas Mann (Hanns Zischler) e sua figlia Erika (Sandra Hüller), attrice, giornalista e pilota di rally. A bordo di una Buick nera intraprendono un viaggio attraverso una Germania in macerie: da Francoforte, sotto l'influenza statunitense, fino a Weimar, controllata dai sovietici. Per la prima volta dopo la guerra, Mann torna nella sua nativa Germania, dopo aver preso la difficile decisione di fuggire negli Stati Uniti per mettersi in salvo.",
+  "year": 2026,
+  "director": "Paweł Pawlikowski",
+  "genre": "Drammatico",
+  "poster": "https://cdn.18tickets.net/impero/uploads/film/playbill/152060/standard_ce5b559d-7986-47e0-9ec5-cf4df5a0c271.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://odeonvicenza.18tickets.it/film/152062": {
+  "synopsis": "Cinque anni di lavorazione per seguire le tracce di una vita ancora avvolta nel mistero. Il film attraversa i luoghi e le opere di Caravaggio, in un viaggio attraverso Roma, Napoli, Malta e la Sicilia, per ricostruire la vita e l’opera di uno degli artisti più enigmatici e rivoluzionari della storia dell’arte.",
+  "year": 2026,
+  "director": "D. Bickerstaff, P. Grabs",
+  "genre": "Documentario",
+  "poster": "https://cdn.18tickets.net/impero/uploads/film/playbill/152062/standard_5f7d7ccd-8d0a-46b4-8175-b4f1db14d924.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://odeonvicenza.18tickets.it/film/152063": {
+  "synopsis": "La vicenda è ambientata in Francia agli inizi del XVII secolo: ristabilita la pace dopo le guerre di religione, il cardinale Richelieu, per consolidare il potere regio, invia il barone di Laubardemont a Loudun, nel Poitou, con l'incarico di abbatterne le fortificazioni. Il prete Urbano Grandier, a cui l'appena deceduto governatore Sainte-Marthe ha concesso i pieni poteri fino all'elezione del suo successore, si oppone all'abbattimento delle mura cosciente che questo sarebbe stato il primo passo per la totale revoca delle libertà e dell'autonomia cittadina.",
+  "year": 1971,
+  "director": "Ken Russell",
+  "genre": "Grottesco, Horror",
+  "poster": "https://cdn.18tickets.net/impero/uploads/film/playbill/152063/standard_325ab204-e2e0-4088-819c-b90e4eb48afa.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://odeonvicenza.18tickets.it/film/155360": {
+  "synopsis": "Urchin segue Mike, un senzatetto ruvido e irrequieto a Londra, intrappolato in un ciclo di autodistruzione mentre tenta di rimettere in sesto la propria vita. Crudo e assurdo, il film racconta gli strani schemi che continuano a riportarci indietro.",
+  "year": 2026,
+  "director": "Harris Dickinson",
+  "genre": "Drammatico",
+  "poster": "https://cdn.18tickets.net/impero/uploads/film/playbill/155360/standard_faf58d05-1a70-4f17-9e74-5595b991f663.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://odeonvicenza.18tickets.it/film/155393": {
+  "synopsis": "Nel 2005, Sofia Coppola ha girato il suo terzo lungometraggio, \"Marie Antoinette\", con Kirsten Dunst e Jason Schwartzman, alla Reggia di Versailles, ottenendo un permesso di ripresa mai concesso prima a nessuna produzione. Sua madre, l’acclamata documentarista Eleanor Coppola, l’ha accompagnata sul set, realizzando circa ottanta ore di riprese dedicate al percorso della figlia durante la realizzazione del film. Quest’anno, in occasione del 20° anniversario dell’uscita di \"Marie Antoinette\" e per esaudire il desiderio della madre, Sofia Coppola ha montato quel materiale inedito.",
+  "year": 2026,
+  "director": "Eleanor Coppola",
+  "genre": "Documentario",
+  "poster": "https://cdn.18tickets.net/impero/uploads/film/playbill/155393/standard_5315f691-f2b0-406c-a841-57efe3b4174c.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://odeonvicenza.18tickets.it/film/155493": {
+  "synopsis": "Poco prima del colpo di Stato cileno del 1973, gli agenti della CIA Chris e Lee vengono inviati da Santiago all’Isola di Pasqua dal loro capo, MJ. Tra le emblematiche statue dell’isola, mentre i due compagni di lunga data si confrontano con i propri oscuri trascorsi e con le cospirazioni del presente, il legame stretto da Chris con due studentesse ribelli rischia di far prendere una piega imprevista al soggiorno di tutti in questo remoto paradiso.",
+  "year": 2026,
+  "director": "Martin Mc Donagh",
+  "genre": "Commedia",
+  "poster": "https://cdn.18tickets.net/impero/uploads/film/playbill/155493/standard_a76bcfed-ff9d-4e82-946e-a9186d045ccd.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
  },
  "https://popupcinema.18tickets.it/film/104592": {
   "synopsis": "Il matrimonio di Joe e Angela è ormai logorato dalla routine, ma quando invitano a cena i loro enigmatici vicini di casa, una coppia affascinante e spregiudicata, la serata – e la loro relazione – prenderà una piega inaspettata.",
@@ -1342,6 +1502,38 @@
   "genre": "Horror, Thriller, Mistero",
   "poster": "https://cdn.18tickets.net/ccb/uploads/film/playbill/18299/standard_89697362-4679-4aca-b2f3-d1d6a2a4633d.jpg",
   "checked": "2026-10-20T13:10:43+02:00"
+ },
+ "https://rougeetnoirpalermo.18tickets.it/film/101941": {
+  "synopsis": "Edimburgo. Mark Renton, ladruncolo per necessità, ha scelto un'onesta e sincera tossicodipendenza. Begbie, uno psicopatico violento e alcolizzato spaventa perfino i suoi amici, ma non si sognerebbe nemmeno di toccare la droga. Spud, un disperato, ma amabile eroinomane. Sick Boy, un narciso dalle conoscenze enciclopediche su Sean Connery, in grado di tenere sotto controllo la propria dipendenza dall'eroina. Poi c'è Tommy che non si droga, è un maniaco delle escursioni all'aria aperta e di Iggy Pop. Ai margini della storia, ci sono le ragazze del gruppo.",
+  "year": 1996,
+  "director": "Danny Boyle",
+  "genre": "Dramma, Crime",
+  "poster": "https://cdn.18tickets.net/greenwich/uploads/film/playbill/101941/standard_318b2b98-f9ae-4363-b9bd-38550d46fbdb.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://rougeetnoirpalermo.18tickets.it/film/102007": {
+  "synopsis": "Quando l’aspirante modella Jesse si trasferisce a Los Angeles, la sua giovinezza e vitalità vengono fagocitate da un gruppo di donne ossessionate dalla bellezza,disposte ad usare ogni mezzo per prenderle ciò che ha.",
+  "year": 2016,
+  "director": "Nicolas Winding Refn",
+  "genre": "Horror, Thriller",
+  "poster": "https://cdn.18tickets.net/greenwich/uploads/film/playbill/102007/standard_18169136-26a8-4a45-8761-4b19355fc110.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://rougeetnoirpalermo.18tickets.it/film/103426": {
+  "synopsis": "Un operaio licenziato e sua moglie incontrano una regista di documentari e suo marito, e si ritrovano a confrontarsi con i loro desideri nascosti.",
+  "year": 2026,
+  "director": "Lee Chang Dong",
+  "genre": "Dramma",
+  "poster": "https://cdn.18tickets.net/greenwich/uploads/film/playbill/103426/standard_676adfe8-45ec-409d-b232-82f2e854ac85.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://visionario.cec.18tickets.it/film/121055": {
+  "synopsis": "IL MATRIMONIO DI JOE E ANGELA ATTRAVERSA UN MOMENTO DI PROFONDA CRISI. QUANDO INVITANO A CENA I MISTERIOSI VICINI DEL PIANO SUPERIORE, HAWK E PIÑA, UNA SERATA APPARENTEMENTE ORDINARIA PRENDE UNA PIEGA",
+  "year": 2026,
+  "director": "O. Wilde",
+  "genre": "Commedia",
+  "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/121055/standard_2e2c095d-e436-43be-81bd-80d617838c38.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
  },
  "https://visionario.cec.18tickets.it/film/121317": {
   "synopsis": "Paul Atreides è diventato Imperatore dell’universo. Ma il suo dominio è minacciato dai numerosi nemici e pur avendo previsto questo futuro, Paul lo considera il meno distruttivo possibile per l’umanità. Sposato con la principessa Irulan ma innamorato di Chani, Paul non riesce ad avere figli a causa di un complotto delle Bene Gesserit. Intanto queste, insieme alla Gilda Spaziale e ai Tleilaxu, tramano per eliminarlo.",
@@ -1446,5 +1638,37 @@
   "genre": "Dramma, Romance",
   "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/137058/standard_428d16a4-f7de-474d-84f3-f3f924990db7.jpg",
   "checked": "2026-10-20T18:52:08+02:00"
+ },
+ "https://visionario.cec.18tickets.it/film/137262": {
+  "synopsis": "La storia di Klara, un'Amica Artificiale il cui unico desiderio è trovare la casa perfetta. Quando Klara incontra Josie, le due scoprono fin da subito una forte affinità e, sebbene la ragazza viva un rapporto conflittuale con la madre segnato da un grave lutto, lo stupore innocente e l'incrollabile lealtà di Klara inizieranno a sanare le ferite della famiglia, riportando la luce nel complicato mondo di Josie.",
+  "year": 2026,
+  "director": "Taika Waititi",
+  "genre": "Commedia, Fantascienza, Dramma",
+  "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/137262/standard_9b72091c-0815-4b7f-aa5d-2cc22f4084a5.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://visionario.cec.18tickets.it/film/137849": {
+  "synopsis": "La storia di una donna, Bronja, che lotta contro un cancro. Una lotta lunga che chi inizia mette in conto di poter perdere. Invece Bronja non solo sopravvive, ma resiste mentre sono la sua famiglia e il mondo che ha intorno a disgregarsi. La persona più fragile, più debole, più a rischio, sembra essere l’unica a resistere alle difficoltà della vita.",
+  "year": 2025,
+  "director": "M. Naberšnik",
+  "genre": "Drammatico",
+  "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/137849/standard_8ef2d8dd-949f-4e61-943c-afd455c8084c.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://visionario.cec.18tickets.it/film/137854": {
+  "synopsis": "La storia di una donna, Bronja, che lotta contro un cancro. Una lotta lunga che chi inizia mette in conto di poter perdere. Invece Bronja non solo sopravvive, ma resiste mentre sono la sua famiglia e il mondo che ha intorno a disgregarsi. La persona più fragile, più debole, più a rischio, sembra essere l’unica a resistere alle difficoltà della vita.",
+  "year": 2025,
+  "director": "M. Naberšnik",
+  "genre": "Drammatico",
+  "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/137854/standard_1d51b924-f32a-4022-ba50-fd7434f58924.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
+ },
+ "https://visionario.cec.18tickets.it/film/137915": {
+  "synopsis": "AVETE MAI FATTO UN SOGNO COSÌ VIVIDO DA ESSERE ASSOLUTAMENTE CERTI CHE FOSSE REALE? E SE NON RIUSCISTE A SVEGLIARVI? COME FARESTE A DISTINGUERE IL SOGNO DALLA REALTÀ?",
+  "year": 1999,
+  "director": "L. Wachowski, L. Wachowski",
+  "genre": "Fantascienza",
+  "poster": "https://cdn.18tickets.net/fvg/uploads/film/playbill/137915/standard_084172cf-6a42-4ae2-b62d-854a094d5b4d.jpg",
+  "checked": "2026-10-21T04:54:41+02:00"
  }
 }

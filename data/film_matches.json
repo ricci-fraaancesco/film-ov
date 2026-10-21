@@ -231,6 +231,74 @@
   "query": "CARA A CARA",
   "version": 4
  },
+ "caravaggio": {
+  "qid": "Q136813984",
+  "title_it": "Caravaggio (film 2026)",
+  "original_title": "Caravaggio",
+  "year": 2025,
+  "runtime": null,
+  "imdb": "tt38351366",
+  "tmdb": "1496903",
+  "itwiki": "Caravaggio (film 2026)",
+  "directors": [],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Caravaggio è un film drammatico-documentario britannico del 2025 diretto da David Bickerstaff e Phil Grabsky e interpretato da Jack Bannell.",
+  "confidence": "high",
+  "score": 1.05,
+  "query": "CARAVAGGIO",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
+ },
+ "caravaggio morning glories": {
+  "qid": "Q136813984",
+  "title_it": "Caravaggio (film 2026)",
+  "original_title": "Caravaggio",
+  "year": 2025,
+  "runtime": null,
+  "imdb": "tt38351366",
+  "tmdb": "1496903",
+  "itwiki": "Caravaggio (film 2026)",
+  "directors": [],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Caravaggio è un film drammatico-documentario britannico del 2025 diretto da David Bickerstaff e Phil Grabsky e interpretato da Jack Bannell.",
+  "confidence": "medium",
+  "score": 1.02,
+  "query": "CARAVAGGIO - MORNING GLORIES",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21",
+  "alternatives": [
+   {
+    "qid": "Q572789",
+    "title": "La gloria del mattino",
+    "year": 1933,
+    "directors": [
+     "Lowell Sherman"
+    ]
+   },
+   {
+    "qid": "Q856602",
+    "title": "Il buongiorno del mattino",
+    "year": 2010,
+    "directors": [
+     "Roger Michell"
+    ]
+   },
+   {
+    "qid": "Q1035443",
+    "title": "Caravaggio",
+    "year": 1986,
+    "directors": [
+     "Derek Jarman"
+    ]
+   }
+  ]
+ },
  "china blue": {
   "qid": "Q734116",
   "title_it": "China Blue",
@@ -1021,6 +1089,12 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "il bianco si lava a novanta": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "IL BIANCO SI LAVA A NOVANTA",
+  "version": 4
+ },
  "il braccio violento della legge": {
   "qid": "Q220735",
   "title_it": "Il braccio violento della legge",
@@ -1319,6 +1393,29 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "klara e il sole": {
+  "qid": "Q124409386",
+  "title_it": "Klara e il Sole",
+  "original_title": "Klara and the Sun",
+  "year": 2026,
+  "runtime": null,
+  "imdb": "tt14371256",
+  "tmdb": "858035",
+  "itwiki": "Klara e il Sole (film)",
+  "directors": [
+   "Taika Waititi"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Klara e il Sole è un film del 2026 diretto da Taika Waititi.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "KLARA E IL SOLE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "klara e il sole klara and the sun": {
   "qid": "Q124409386",
@@ -1667,6 +1764,12 @@
   "checked": "2026-10-20",
   "alternatives": []
  },
+ "making marie antoniette": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "MAKING MARIE ANTONIETTE",
+  "version": 4
+ },
  "maratona halloween creature a sorpresa": {
   "qid": null,
   "checked": "2026-10-20",
@@ -1695,6 +1798,12 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "matrix 4k": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "MATRIX 4K",
+  "version": 4
  },
  "midsummer formula": {
   "qid": null,
@@ -1796,6 +1905,29 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "mulholland drive": {
+  "qid": "Q272608",
+  "title_it": "Mulholland Drive",
+  "original_title": "Mulholland Drive",
+  "year": 2001,
+  "runtime": 147,
+  "imdb": "tt0166924",
+  "tmdb": "1018",
+  "itwiki": "Mulholland Drive",
+  "directors": [
+   "David Lynch"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Mulholland Drive è un film del 2001 scritto e diretto da David Lynch e interpretato, tra gli altri, da Naomi Watts, Laura Harring, Justin Theroux, Ann Miller e Robert Forster.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "MULHOLLAND DRIVE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "my fair lady": {
   "qid": "Q201215",
@@ -2385,6 +2517,31 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "the bibi files": {
+  "qid": "Q130266010",
+  "title_it": "The Bibi Files",
+  "original_title": "The Bibi Files",
+  "year": 2024,
+  "runtime": 115,
+  "imdb": "tt33338697",
+  "tmdb": "1353263",
+  "itwiki": "The Bibi Files",
+  "directors": [
+   "Alexis Bloom"
+  ],
+  "languages": [
+   "inglese",
+   "ebraico",
+   "arabo"
+  ],
+  "intro": "The Bibi Files è un film documentario statunitense del 2024 diretto da Alexis Bloom.",
+  "confidence": "high",
+  "score": 1.1,
+  "query": "THE BIBI FILES",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
+ },
  "the brood": {
   "qid": "Q389911",
   "title_it": "Brood - La covata malefica",
@@ -2489,6 +2646,29 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "the neon demon": {
+  "qid": "Q19750881",
+  "title_it": "The Neon Demon",
+  "original_title": "The Neon Demon",
+  "year": 2016,
+  "runtime": 118,
+  "imdb": "tt1974419",
+  "tmdb": "301365",
+  "itwiki": "The Neon Demon",
+  "directors": [
+   "Nicolas Winding Refn"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "The Neon Demon è un film del 2016 scritto e diretto da Nicolas Winding Refn.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "THE NEON DEMON",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-21"
  },
  "the pickers": {
   "qid": null,
@@ -2755,6 +2935,12 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "urchin in v o": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "URCHIN in V.O.",
+  "version": 4
+ },
  "ventesimo secolo twentieth century": {
   "qid": "Q1788051",
   "title_it": "Ventesimo secolo",
@@ -2869,6 +3055,12 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "wilwood isegreti del bosco proibito 2026 o v": {
+  "qid": null,
+  "checked": "2026-10-21",
+  "query": "WILWOOD - ISEGRETI DEL BOSCO PROIBITO - 2026 O.V.",
+  "version": 4
  },
  "wittgenstein": {
   "qid": "Q178068",
