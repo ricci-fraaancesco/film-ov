@@ -147,10 +147,10 @@ img { max-width: 100%; display: block; }
 .compact summary .btn-o { width: 100%; }
 
 /* posters: the cinema's image, or a dark tile with the title as a subtitle */
-.pos { position: relative; flex: 0 0 auto; width: 66px; height: 94px; border-radius: 4px; overflow: hidden; background: var(--ink); display: block; }
+.pos { position: relative; flex: 0 0 auto; width: 80px; height: 114px; border-radius: 4px; overflow: hidden; background: var(--ink); display: block; }
 .pos img { width: 100%; height: 100%; object-fit: cover; }
 .pos .ph { position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: center; padding: 6px; text-align: center;
-  font: italic 700 10px/1.25 Arimo, Arial, sans-serif; color: var(--yellow); text-shadow: var(--sub-shadow); overflow: hidden; overflow-wrap: anywhere; }
+  font: italic 700 11px/1.25 Arimo, Arial, sans-serif; color: var(--yellow); text-shadow: var(--sub-shadow); overflow: hidden; overflow-wrap: anywhere; }
 .pos-l { width: 100%; height: auto; aspect-ratio: 2 / 3; }
 .pos-l .ph { font-size: 13px; padding: 10px; }
 .pos-xs { width: 40px; height: 58px; }
@@ -246,6 +246,9 @@ img { max-width: 100%; display: block; }
   .cinrow, .frow { flex-direction: row; align-items: center; flex-wrap: wrap; }
   .cinrow .row-top, .frow .row-top { flex: 0 0 240px; flex-direction: column; gap: 2px; }
   .ptiles { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .card .pos { width: 100px; height: 143px; }
+  .card .pos .ph { font-size: 12px; padding: 8px; }
+  .fhero { grid-template-columns: 140px minmax(0, 1fr); }
   .near { max-width: 720px; }
   .search { margin-top: 40px; border-radius: var(--r); }
 }

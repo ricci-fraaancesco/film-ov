@@ -197,7 +197,11 @@ def chips(S, shows, film_title="") -> str:
 def poster(S: Site, f, cls="pos", small=True) -> str:
     src = S.poster_src(f, small)
     if src:
-        return f'<span class="{cls}"><img src="{e(src)}" alt="" loading="lazy" decoding="async"><span class="ph" hidden>{e(f["t"])}</span></span>'
+        # our own copies come in 120 and 480 px: let sharp screens take the bigger one
+        srcset = ""
+        if f.get("ps") and f.get("p") and not f["p"].startswith("http"):
+            srcset = f' srcset="{e(S.u(f["ps"]))} 120w, {e(S.u(f["p"]))} 480w" sizes="{"100px" if small else "(min-width: 1024px) 180px, 33vw"}"'
+        return f'<span class="{cls}"><img src="{e(src)}"{srcset} alt="" loading="lazy" decoding="async"><span class="ph" hidden>{e(f["t"])}</span></span>'
     return f'<span class="{cls} noimg"><span class="ph">{e(f["t"])}</span></span>'
 
 
