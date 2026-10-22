@@ -149,6 +149,8 @@ for r in rows:
             ot = m.get('original_title') or ''
             rec = {"t": t, "ot": ot if norm(ot) != norm(t) else '', "y": m.get('year'), "rt": m.get('runtime') or 0,
                    "d": ', '.join(m.get('directors') or []), "wd": m['qid'], "wp": m.get('itwiki') or '',
+                   "te": re.sub(r"\s*\((\d{4} )?(film|tv series|documentary)[^)]*\)$", "", m.get('title_en') or '', flags=re.I),
+                   "we": m.get('enwiki') or '', "ien": m.get('intro_en') or '',
                    "in": m.get('intro') or '', "_ol": (m.get('languages') or [''])[0]}
         else:
             rec = {"t": tcase(strip_edition(ALIAS.get(raw, raw)))}

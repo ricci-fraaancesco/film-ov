@@ -33,6 +33,8 @@ img { max-width: 100%; display: block; }
 .topnav { display: none; gap: 4px; }
 .topnav a { min-height: 44px; padding: 0 12px; display: flex; align-items: center; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 8px; }
 .topnav a:hover { background: var(--mute); }
+.lang { min-width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; text-decoration: none; border-radius: 8px; }
+.lang:hover { background: var(--mute); }
 .icon-btn { width: 44px; height: 44px; border: 0; background: transparent; color: var(--ink); display: flex; align-items: center; justify-content: center; border-radius: 8px; cursor: pointer; }
 .icon-btn:hover { background: var(--mute); }
 .ftr { margin-top: 48px; background: var(--ink); color: #E8E8E3; font-size: 13px; }

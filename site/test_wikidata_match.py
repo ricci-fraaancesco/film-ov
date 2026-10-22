@@ -147,3 +147,29 @@ def test_non_latin_director_is_ignored():
     c = [cand("Q1", ["Sheep in the Box"], 2026, ["Hirokazu Kore-eda"], 5)]
     _, conf, _ = choose(c, query_variants("SHEEP IN THE BOX"), {"director": "是枝裕和", "year": 2026})
     assert conf == "high"
+
+
+def test_add_english_backfills_once():
+    from wikidata_match import add_english, candidate_from
+
+    class FakeWD:
+        calls = []
+
+        def entities(self, ids, props, langs="it|en"):
+            self.calls.append(tuple(ids))
+            return {"Q1": {"labels": {"en": {"value": "The Devils"}}, "sitelinks": {"enwiki": {"title": "The Devils (film)"}}},
+                    "Q2": {"labels": {}, "sitelinks": {}}}
+
+        def intro(self, title, base=None):
+            assert "en.wikipedia" in base
+            return "The Devils is a 1971 film."
+
+    recs = [{"qid": "Q1", "title_it": "I diavoli"}, {"qid": "Q2", "title_it": "X"}, {"qid": None}, {"qid": "Q3", "title_en": "Done"}]
+    wd = FakeWD()
+    assert add_english(wd, recs) == 2
+    assert recs[0]["title_en"] == "The Devils" and recs[0]["intro_en"] == "The Devils is a 1971 film."
+    assert recs[1]["title_en"] == "" and recs[1]["enwiki"] is None
+    assert wd.calls == [("Q1", "Q2")]
+    assert add_english(wd, recs) == 0  # nothing left to do
+    c = candidate_from("Q9", {"labels": {"it": {"value": "I diavoli"}, "en": {"value": "The Devils"}}, "claims": {}, "sitelinks": {"enwiki": {"title": "The Devils"}}})
+    assert c["title_en"] == "The Devils" and c["enwiki"] == "The Devils"

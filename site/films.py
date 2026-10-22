@@ -5,6 +5,7 @@ import unicodedata
 # Tags the cinemas add to a title that are not part of the film's name
 EDITION_TAGS = re.compile(
     r"\s*\((ed\.?\s*spec\.?|ried\.?|restaurato|versione restaurata|director'?s cut|4k)\)\s*"
+    r"|\s+(?:in\s+)?4k(?:\s+restaurato)?\s*$"  # "2001: Odissea nello spazio 4K"
     r"|\s*\|\s*70\s*mm\b|\s*-\s*70\s*mm\b"
     r"|\s*\((?:19|20)\d{2}\)\s*$"  # "Ragione E Sentimento (2026)" (Webtic)
     # original-version markers: "(Ov) Fatherland", "(O.V.) Ragione e sentimento", "Dune - V.O.", "Dune (VOS)"
@@ -34,8 +35,19 @@ def norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", s).strip()
 
 
+EXTRA_TAGS = re.compile(
+    r"\s*\((?:[^()]*\b(?:ried|riedizione|rest|restaurat\w*|spec|4k)\b[^()]*)\)"  # "(RIED. 2026)", "(ED. REST. 4K)"
+    r"|^\s*(?:vos|v\.o\.s?\.?|o\.v\.)\s+"  # "Vos Matrix", "V.O. Matrix"
+    r"|\s+(?:v\.o\.s?\.?|o\.v\.)\s*$",  # "MATRIX 4K V.O."
+    re.I)
+
+
 def strip_edition(title: str) -> str:
-    return re.sub(r"\s+", " ", EDITION_TAGS.sub(" ", title)).strip(" -–")
+    prev = None
+    while prev != title:  # several tags can follow each other: "MATRIX 4K V.O."
+        prev = title
+        title = re.sub(r"\s+", " ", EXTRA_TAGS.sub(" ", EDITION_TAGS.sub(" ", title))).strip(" -–")
+    return title
 
 
 def film_key(title: str) -> str:

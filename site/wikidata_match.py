@@ -41,6 +41,7 @@ from films import film_key, norm, query_variants  # noqa: E402
 
 WD_API = "https://www.wikidata.org/w/api.php"
 WP_SUMMARY = "https://it.wikipedia.org/api/rest_v1/page/summary/"
+WP_SUMMARY_EN = "https://en.wikipedia.org/api/rest_v1/page/summary/"
 USER_AGENT = "FilmOV/0.1 (https://github.com/ricci-fraaancesco/film-ov; film listings bot)"
 # instance of: film, documentary film, animated film, short film, television film, concert film,
 # film project (films not released yet are often filed as this), animated feature film
@@ -203,8 +204,8 @@ class Wikidata:
             lab = e.get("labels", {})
             self.labels[qid] = (lab.get("it") or lab.get("en") or lab.get("mul") or {}).get("value", qid)
 
-    def intro(self, itwiki_title: str) -> str:
-        d = self._get(WP_SUMMARY + quote(itwiki_title.replace(" ", "_"), safe=""))
+    def intro(self, itwiki_title: str, base: str = WP_SUMMARY) -> str:
+        d = self._get(base + quote(itwiki_title.replace(" ", "_"), safe=""))
         return first_sentence(d.get("extract", "")) if d.get("type") == "standard" else ""
 
 
@@ -250,6 +251,8 @@ def candidate_from(qid: str, e: dict) -> dict:
         "imdb": first("P345"),
         "tmdb": first("P4947"),
         "itwiki": e.get("sitelinks", {}).get("itwiki", {}).get("title"),
+        "title_en": en,
+        "enwiki": e.get("sitelinks", {}).get("enwiki", {}).get("title"),
         "sitelinks": len(e.get("sitelinks", {})),
     }
 
@@ -287,10 +290,11 @@ def match_title(wd: Wikidata, title: str, hint: dict) -> dict:
     if not cand:
         return {"qid": None, "checked": today, "query": variants[0], "version": MATCHER_VERSION}
     wd.label(cand["language_ids"])
-    rec = {k: cand[k] for k in ("qid", "title_it", "original_title", "year", "runtime", "imdb", "tmdb", "itwiki")}
+    rec = {k: cand[k] for k in ("qid", "title_it", "original_title", "year", "runtime", "imdb", "tmdb", "itwiki", "title_en", "enwiki")}
     rec["directors"] = cand.get("directors", [])
     rec["languages"] = [wd.labels.get(l, "") for l in cand["language_ids"]]
     rec["intro"] = wd.intro(cand["itwiki"]) if cand.get("itwiki") else ""
+    rec["intro_en"] = wd.intro(cand["enwiki"], WP_SUMMARY_EN) if cand.get("enwiki") else ""
     rec.update({"confidence": conf, "score": score, "query": variants[0], "source": "search",
                 "version": MATCHER_VERSION, "checked": today})
     if conf == "medium":  # other candidates, to make a manual fix easy
@@ -306,12 +310,33 @@ def record_for_qid(wd: Wikidata, qid: str, title: str) -> dict:
         return {"qid": None, "source": "override", "checked": date.today().isoformat(), "error": f"{qid} not found"}
     c = candidate_from(qid, e)
     wd.label(c["director_ids"] + c["language_ids"])
-    rec = {k: c[k] for k in ("qid", "title_it", "original_title", "year", "runtime", "imdb", "tmdb", "itwiki")}
+    rec = {k: c[k] for k in ("qid", "title_it", "original_title", "year", "runtime", "imdb", "tmdb", "itwiki", "title_en", "enwiki")}
     rec["directors"] = [wd.labels.get(d, "") for d in c["director_ids"]]
     rec["languages"] = [wd.labels.get(l, "") for l in c["language_ids"]]
     rec["intro"] = wd.intro(c["itwiki"]) if c.get("itwiki") else ""
+    rec["intro_en"] = wd.intro(c["enwiki"], WP_SUMMARY_EN) if c.get("enwiki") else ""
     rec.update({"confidence": "high", "score": 1.0, "query": title, "source": "override", "checked": date.today().isoformat()})
     return rec
+
+
+def add_english(wd: Wikidata, records: list[dict]) -> int:
+    """Records matched before English titles existed get title_en, enwiki and intro_en once."""
+    need = [r for r in records if r.get("qid") and "title_en" not in r]
+    if not need:
+        return 0
+    ents = wd.entities(sorted({r["qid"] for r in need}), "labels|sitelinks", "en")
+    for r in need:
+        e = ents.get(r["qid"], {})
+        if not e or "missing" in e:
+            continue
+        r["title_en"] = e.get("labels", {}).get("en", {}).get("value", "")
+        r["enwiki"] = e.get("sitelinks", {}).get("enwiki", {}).get("title")
+        try:
+            r["intro_en"] = wd.intro(r["enwiki"], WP_SUMMARY_EN) if r["enwiki"] else ""
+        except Exception as ex:  # the title is what matters; the intro can wait
+            r.pop("title_en", None)
+            print(f"  {r['qid']}: English intro failed ({ex}), will retry", file=sys.stderr)
+    return sum(1 for r in need if "title_en" in r)
 
 
 # ---------------------------------------------------------------- main
@@ -395,6 +420,8 @@ def main(argv=None) -> int:
         except Exception as e:  # one bad title must not stop the run
             print(f"  {title!r}: ERROR {e}", file=sys.stderr)
 
+    looked_en = add_english(wd, [cache[k] for k in titles if k in cache])
+
     # typos: 'WILDE HORSE NINE' reuses the match of 'WILD HORSE NINE' if the director agrees
     matched_keys = [k for k in titles if cache.get(k, {}).get("qid") and cache[k].get("source") != "similar-title"]
     for key in titles:
@@ -413,7 +440,7 @@ def main(argv=None) -> int:
         over_p.write_text(json.dumps({"_help": "cinema title -> Wikidata Q-id, or null if it is not a film"}, indent=1) + "\n", encoding="utf-8")
     review = write_review(cache, titles, a.data / "film_review.md")
     matched = sum(1 for k in titles if cache.get(k, {}).get("qid"))
-    summary = f"Wikidata: {matched}/{len(titles)} titles matched, {looked} looked up in this run, {wd.calls} requests."
+    summary = f"Wikidata: {matched}/{len(titles)} titles matched, {looked} looked up in this run, {looked_en} English titles added, {wd.calls} requests."
     print(summary)
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as fh:
