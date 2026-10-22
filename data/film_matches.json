@@ -45,6 +45,12 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "2001 odissea nello spazio 4k": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "2001 : Odissea Nello Spazio 4k",
+  "version": 4
+ },
  "agata the writer": {
   "qid": "Q141654900",
   "title_it": "Agata the Writer",
@@ -840,6 +846,12 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-21"
+ },
+ "forgotten island": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "Forgotten Island",
+  "version": 4
  },
  "gangster story bonnie and clyde": {
   "qid": "Q181776",
@@ -1739,6 +1751,12 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "l infernale quinlan director s cut": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "L'Infernale Quinlan Director'S Cut",
+  "version": 4
+ },
  "l infernale quinlan touch of evil": {
   "qid": "Q778161",
   "title_it": "L'infernale Quinlan",
@@ -1786,6 +1804,39 @@
   "version": 4,
   "checked": "2026-10-21",
   "alternatives": []
+ },
+ "la bambola": {
+  "qid": "Q136945628",
+  "title_it": "La bambola",
+  "original_title": "La Poupée",
+  "year": 2026,
+  "runtime": 80,
+  "imdb": "tt36749000",
+  "tmdb": "1309396",
+  "itwiki": null,
+  "directors": [
+   "Q139545734"
+  ],
+  "languages": [
+   "francese"
+  ],
+  "intro": "",
+  "confidence": "medium",
+  "score": 0.9,
+  "query": "La Bambola",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-22",
+  "alternatives": [
+   {
+    "qid": "Q3820632",
+    "title": "La Bambola",
+    "year": 1991,
+    "directors": [
+     "Ninì Grassia"
+    ]
+   }
+  ]
  },
  "la casa delle donne la maison des femmes": {
   "qid": "Q138417077",
@@ -2954,6 +3005,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "sense and sensibility": {
+  "qid": "Q135436961",
+  "title_it": "Ragione e sentimento",
+  "original_title": "Sense and Sensibility",
+  "year": 2026,
+  "runtime": 132,
+  "imdb": "tt13609648",
+  "tmdb": "1503762",
+  "itwiki": null,
+  "directors": [
+   "Georgia Oakley"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "Sense And Sensibility",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-22"
+ },
  "serpico": {
   "qid": "Q657079",
   "title_it": "Serpico",
@@ -3097,6 +3171,12 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "strange journey the story of roc": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "Strange Journey:The Story Of Roc.",
+  "version": 4
  },
  "strange journey the story of rocky horror": {
   "qid": "Q133306127",
@@ -3672,6 +3752,29 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "urchin": {
+  "qid": "Q132322745",
+  "title_it": "Urchin",
+  "original_title": "Urchin",
+  "year": 2025,
+  "runtime": 99,
+  "imdb": "tt35715953",
+  "tmdb": "1283320",
+  "itwiki": "Urchin (film)",
+  "directors": [
+   "Harris Dickinson"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Urchin è un film drammatico del 2025, scritto e diretto da Harris Dickinson, al suo esordio alla regia di un lungometraggio.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "Urchin",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-22"
  },
  "urchin in v o": {
   "qid": null,
