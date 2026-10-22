@@ -31,21 +31,28 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - (O.V.) 2001 : Odissea Nello Spazio 4k
 - (O.V.) Digger
 - (O.V.) Forgotten Island (2026)
+- (O.V.) La Bambola
 - (O.V.) Matrix 4k
 - (O.V.) Naza
 - (O.V.) Primetime
 - (O.V.) Ragione E Sentimento (2026)
 - (O.V.) Sense And Sensibility (2026)
 - (O.V.) Strange Journey:The Story Of Roc.
+- (O.V.) Urchin
 - (Ov) Fatherland
 - (Vos) Matrix 4k
 - AMAZING MONSTER
 - AUBER 89
 - AZ ZEEB
+- Amanti, lader e dutur,,,,
 - BENITA
 - Bts - World Tour Arirang Live Viewing
 - CARA A CARA
+- Concerto Gospels
 - DRACULA DI BRAM STOKER 4K (RIED. 2026)
+- Doppia Coppia
+- Gin,Whiskey,Vodka?
+- Giovanni Chiamato Francesco
 - IL BIANCO SI LAVA A NOVANTA
 - Lo Straniero (V.Originale Sub Ita)
 - MAKING MARIE ANTONIETTE
@@ -53,6 +60,8 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - MATRIX 4K
 - MATRIX 4K V.O.
 - MIDSUMMER FORMULA
+- No. Non E' L'Avaro Di Moliere
+- Notre Dame Ananke
 - OZZY & BLACK SABBATH: BACK TO THE BEGINNING
 - OÙ VIVRE INSIST
 - PRIMETIME V.O. (1H50')
@@ -63,6 +72,7 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - THE GLORIOUS DEAD
 - THE PICKERS
 - URCHIN in V.O.
+- Veleno Per Topi
 - Vos Avengers: Doomsday
 - Vos Digger
 - Vos Naza

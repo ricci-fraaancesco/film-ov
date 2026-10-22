@@ -64,6 +64,12 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "amanti lader e dutur": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "Amanti, lader e dutur,,,,",
+  "version": 4
+ },
  "amazing monster": {
   "qid": null,
   "checked": "2026-10-20",
@@ -397,6 +403,12 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "concerto gospels": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "Concerto Gospels",
+  "version": 4
+ },
  "coyote vs acme": {
   "qid": "Q106392679",
   "title_it": "Coyote vs. Acme",
@@ -580,6 +592,12 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "doppia coppia": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "Doppia Coppia",
+  "version": 4
  },
  "dr who and the daleks": {
   "qid": "Q3038433",
@@ -845,6 +863,18 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "gin whiskey vodka": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "Gin,Whiskey,Vodka?",
+  "version": 4
+ },
+ "giovanni chiamato francesco": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "Giovanni Chiamato Francesco",
+  "version": 4
  },
  "gli esclusi a child is waiting": {
   "qid": "Q1304726",
@@ -2333,6 +2363,12 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "no non e l avaro di moliere": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "No. Non E' L'Avaro Di Moliere",
+  "version": 4
+ },
  "non sarai sola you won t be alone": {
   "qid": "Q104880088",
   "title_it": "Non sarai sola",
@@ -2355,6 +2391,12 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-21"
+ },
+ "notre dame ananke": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "Notre Dame Ananke",
+  "version": 4
  },
  "o v 2001 odissea nello spazio 4k": {
   "qid": null,
@@ -2402,6 +2444,12 @@
   "qid": null,
   "checked": "2026-10-21",
   "query": "(O.V) L'Infernale Quinlan Director'S Cut",
+  "version": 4
+ },
+ "o v la bambola": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "(O.V.) La Bambola",
   "version": 4
  },
  "o v matrix 4k": {
@@ -2462,6 +2510,12 @@
   "source": "similar-title",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "o v urchin": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "(O.V.) Urchin",
+  "version": 4
  },
  "ombre shadows": {
   "qid": "Q1535980",
@@ -3527,6 +3581,12 @@
   "qid": null,
   "checked": "2026-10-21",
   "query": "URCHIN in V.O.",
+  "version": 4
+ },
+ "veleno per topi": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "Veleno Per Topi",
   "version": 4
  },
  "ventesimo secolo twentieth century": {
