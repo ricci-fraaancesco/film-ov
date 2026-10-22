@@ -20,7 +20,36 @@
   "query": "1997: FUGA DA NEW YORK (ESCAPE FROM NEW YORK)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Escape from New York",
+  "enwiki": "Escape from New York",
+  "intro_en": "Escape from New York is a 1981 American independent science fiction action film co-written, co-scored, and directed by John Carpenter."
+ },
+ "2001 odissea nello spazio": {
+  "qid": "Q103474",
+  "title_it": "2001: Odissea nello spazio",
+  "original_title": "2001: A Space Odyssey",
+  "year": 1968,
+  "runtime": 143,
+  "imdb": "tt0062622",
+  "tmdb": "62",
+  "itwiki": "2001: Odissea nello spazio",
+  "title_en": "2001: A Space Odyssey",
+  "enwiki": "2001: A Space Odyssey",
+  "directors": [
+   "Stanley Kubrick"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "2001: Odissea nello spazio è un film del 1968 co-scritto, prodotto e diretto da Stanley Kubrick, che ha curato anche parte degli effetti speciali.",
+  "intro_en": "2001: A Space Odyssey is a 1968 epic science fiction film produced and directed by Stanley Kubrick, who co-wrote the screenplay with Arthur C.",
+  "confidence": "high",
+  "score": 1.1,
+  "query": "2001 : Odissea Nello Spazio",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-22"
  },
  "2001 odissea nello spazio 2001 a space odyssey": {
   "qid": "Q103474",
@@ -43,7 +72,10 @@
   "query": "2001: ODISSEA NELLO SPAZIO (2001 A SPACE ODYSSEY)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "2001: A Space Odyssey",
+  "enwiki": "2001: A Space Odyssey",
+  "intro_en": "2001: A Space Odyssey is a 1968 epic science fiction film produced and directed by Stanley Kubrick, who co-wrote the screenplay with Arthur C."
  },
  "2001 odissea nello spazio 4k": {
   "qid": null,
@@ -105,7 +137,10 @@
   "query": "ANDREJ RUBLËV",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Andrei Rublev",
+  "enwiki": "Andrei Rublev (film)",
+  "intro_en": "Andrei Rublev is a 1966 Soviet epic biographical historical drama film directed by Andrei Tarkovsky who co-wrote it with Andrei Konchalovsky."
  },
  "auber 89": {
   "qid": null,
@@ -135,7 +170,10 @@
   "query": "AVENGERS: DOOMSDAY",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Avengers: Doomsday",
+  "enwiki": "Avengers: Doomsday",
+  "intro_en": "Avengers: Doomsday is an upcoming American superhero film based on the Marvel Comics superhero team the Avengers."
  },
  "az zeeb": {
   "qid": null,
@@ -212,7 +250,10 @@
   "query": "BERSAGLIO DI NOTTE (NIGHT MOVES)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Night Moves",
+  "enwiki": "Night Moves (1975 film)",
+  "intro_en": "Night Moves is a 1975 American neo-noir thriller film directed by Arthur Penn from a screenplay by Alan Sharp."
  },
  "blow up the blow up": {
   "qid": "Q658204",
@@ -235,7 +276,10 @@
   "query": "BLOW-UP (THE BLOW-UP)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Blowup",
+  "enwiki": "Blowup",
+  "intro_en": "Blowup is a 1966 psychological mystery film directed by Michelangelo Antonioni, co-written by Antonioni, Tonino Guerra and Edward Bond and produced by Carlo Ponti."
  },
  "bts world tour arirang live viewing": {
   "qid": null,
@@ -338,7 +382,10 @@
   "query": "CHINA BLUE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Crimes of Passion",
+  "enwiki": "Crimes of Passion (1984 film)",
+  "intro_en": "Crimes of Passion is a 1984 American erotic thriller film directed by Ken Russell and starring Kathleen Turner, Anthony Perkins, and John Laughlin."
  },
  "christine la macchina infernale christine": {
   "qid": "Q753449",
@@ -361,7 +408,10 @@
   "query": "CHRISTINE - LA MACCHINA INFERNALE (CHRISTINE)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Christine",
+  "enwiki": "Christine (1983 film)",
+  "intro_en": "Christine is a 1983 American supernatural horror film co-scored and directed by John Carpenter, and adapted from Stephen King's 1983 novel."
  },
  "claudine": {
   "qid": "Q1440046",
@@ -384,7 +434,10 @@
   "query": "CLAUDINE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-22"
+  "checked": "2026-10-22",
+  "title_en": "Claudine",
+  "enwiki": "Claudine (film)",
+  "intro_en": "Claudine is a 1974 American romantic comedy-drama film, directed by John Berry."
  },
  "clayface": {
   "qid": "Q131460936",
@@ -407,7 +460,10 @@
   "query": "CLAYFACE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Clayface",
+  "enwiki": "Clayface (film)",
+  "intro_en": "Clayface is a 2026 American body horror film based on the eponymous character from DC Comics."
  },
  "codice penale the criminal code": {
   "qid": "Q1129567",
@@ -430,7 +486,10 @@
   "query": "CODICE PENALE (THE CRIMINAL CODE)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Criminal Code",
+  "enwiki": "The Criminal Code",
+  "intro_en": "The Criminal Code is a 1931 American pre-Code romantic crime drama film directed by Howard Hawks and starring Walter Huston and Phillips Holmes."
  },
  "concerto gospels": {
   "qid": null,
@@ -482,7 +541,10 @@
   "query": "DARK STAR",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Dark Star",
+  "enwiki": "Dark Star (film)",
+  "intro_en": "Dark Star is a 1974 American independent science fiction comedy film produced, scored and directed by John Carpenter and co-written with Dan O'Bannon."
  },
  "dead lover": {
   "qid": "Q131920948",
@@ -505,7 +567,10 @@
   "query": "DEAD LOVER",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Dead Lover",
+  "enwiki": "Dead Lover",
+  "intro_en": "Dead Lover is a 2025 Canadian comedy film directed, co-written, produced by and starring Grace Glowicki, co-writer Ben Petrie, Leah Doz, and Lowen Morrow."
  },
  "digger": {
   "qid": "Q129677718",
@@ -528,7 +593,10 @@
   "query": "DIGGER",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Digger",
+  "enwiki": "Digger (2026 film)",
+  "intro_en": "Digger is a 2026 American satirical black comedy film co-written, directed, and co-produced by Alejandro González Iñárritu."
  },
  "distretto 13 le brigate della morte assault on precinct 13": {
   "qid": "Q434718",
@@ -551,7 +619,10 @@
   "query": "DISTRETTO 13 – LE BRIGATE DELLA MORTE (ASSAULT ON PRECINCT 13)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Assault on Precinct 13",
+  "enwiki": "Assault on Precinct 13 (1976 film)",
+  "intro_en": "Assault on Precinct 13 is a 1976 American independent action-thriller film written, directed, scored, and edited by John Carpenter."
  },
  "dollhouse": {
   "qid": "Q133728943",
@@ -574,7 +645,10 @@
   "query": "DOLLHOUSE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Dollhouse",
+  "enwiki": null,
+  "intro_en": ""
  },
  "don t worry darling": {
   "qid": "Q100801718",
@@ -597,7 +671,10 @@
   "query": "DON'T WORRY DARLING",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Don't Worry Darling",
+  "enwiki": "Don't Worry Darling",
+  "intro_en": "Don't Worry Darling is a 2022 American psychological thriller film directed by Olivia Wilde from a screenplay by Katie Silberman, based on a spec script by brothers Carey Van Dyke and Shane Van Dyke."
  },
  "donne the women": {
   "qid": "Q348678",
@@ -620,7 +697,10 @@
   "query": "DONNE (THE WOMEN)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Women",
+  "enwiki": "The Women (1939 film)",
+  "intro_en": "The Women is a 1939 American comedy-drama film directed by George Cukor."
  },
  "doppia coppia": {
   "qid": null,
@@ -649,7 +729,10 @@
   "query": "DR. WHO AND THE DALEKS",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Dr. Who and the Daleks",
+  "enwiki": "Dr. Who and the Daleks",
+  "intro_en": "Dr. Who and the Daleks is a 1965 British science fiction film directed by Gordon Flemyng and written by Milton Subotsky, and the first of two films based on the British science-fiction television series Doctor Who."
  },
  "dracula di bram stoker": {
   "qid": "Q107325",
@@ -676,7 +759,10 @@
   "query": "DRACULA DI BRAM STOKER",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Bram Stoker's Dracula",
+  "enwiki": "Bram Stoker's Dracula (1992 film)",
+  "intro_en": "Bram Stoker's Dracula is a 1992 American Gothic horror film co-produced and directed by Francis Ford Coppola and written by James V."
  },
  "dracula di bram stoker 4k ried 2026": {
   "qid": null,
@@ -705,7 +791,10 @@
   "query": "DUNE: PART THREE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Dune: Part Three",
+  "enwiki": "Dune: Part Three",
+  "intro_en": "Dune: Part Three is an upcoming American epic space opera film directed by Denis Villeneuve, from a screenplay he wrote with Brian K."
  },
  "dune parte tre": {
   "qid": "Q124714245",
@@ -728,7 +817,10 @@
   "query": "DUNE - PARTE TRE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Dune: Part Three",
+  "enwiki": "Dune: Part Three",
+  "intro_en": "Dune: Part Three is an upcoming American epic space opera film directed by Denis Villeneuve, from a screenplay he wrote with Brian K."
  },
  "essi vivono": {
   "qid": "Q72909",
@@ -751,7 +843,10 @@
   "query": "ESSI VIVONO",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "They Live",
+  "enwiki": "They Live",
+  "intro_en": "They Live is a 1988 American science fiction action horror film written, directed, and scored by John Carpenter, and starring Roddy Piper, Keith David, and Meg Foster."
  },
  "f come falso verita e menzogna f for fake": {
   "qid": "Q2251852",
@@ -776,7 +871,10 @@
   "query": "F COME FALSO - VERITÀ E MENZOGNA (F FOR FAKE)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "F for Fake",
+  "enwiki": "F for Fake",
+  "intro_en": "F for Fake is a 1973 docudrama film co-written, directed by, and starring Orson Welles who worked on the film alongside François Reichenbach, Oja Kodar, and Gary Graver."
  },
  "falstaff campanadas a medianoche": {
   "qid": "Q2529482",
@@ -799,7 +897,10 @@
   "query": "FALSTAFF (CAMPANADAS A MEDIANOCHE)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Chimes at Midnight",
+  "enwiki": "Chimes at Midnight",
+  "intro_en": "Chimes at Midnight is a 1965 period comedy-drama film written, directed by, and starring Orson Welles."
  },
  "fatherland": {
   "qid": "Q135825188",
@@ -822,7 +923,10 @@
   "query": "FATHERLAND",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Fatherland",
+  "enwiki": "Fatherland (2026 film)",
+  "intro_en": "Fatherland is a 2026 biographical film directed by Paweł Pawlikowski, who co-wrote the screenplay with Hendrik Handloegten."
  },
  "ferro 3 la casa vuota bin jip": {
   "qid": "Q489818",
@@ -845,7 +949,10 @@
   "query": "FERRO 3 - LA CASA VUOTA (BIN JIP)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "3-Iron",
+  "enwiki": "3-Iron",
+  "intro_en": "3-Iron (Korean: 빈집) is a 2004 romantic drama film written, produced and directed by Kim Ki-duk."
  },
  "forgotten island": {
   "qid": null,
@@ -874,7 +981,10 @@
   "query": "GANGSTER STORY (BONNIE AND CLYDE)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Bonnie and Clyde",
+  "enwiki": "Bonnie and Clyde (film)",
+  "intro_en": "Bonnie and Clyde is a 1967 American biographical crime drama film directed by Arthur Penn and starring Warren Beatty and Faye Dunaway as Clyde Barrow and Bonnie Parker, outlaws and romantic partners in the Great Depression-era American South."
  },
  "get shorty": {
   "qid": "Q261923",
@@ -897,7 +1007,10 @@
   "query": "GET SHORTY",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Get Shorty",
+  "enwiki": "Get Shorty (film)",
+  "intro_en": "Get Shorty is a 1995 American gangster comedy film directed by Barry Sonnenfeld and written by Scott Frank, based on Elmore Leonard's 1990 novel."
  },
  "gin whiskey vodka": {
   "qid": null,
@@ -932,7 +1045,10 @@
   "query": "GLI ESCLUSI (A CHILD IS WAITING)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "A Child Is Waiting",
+  "enwiki": "A Child Is Waiting",
+  "intro_en": "A Child Is Waiting is a 1963 American drama film directed by John Cassavetes, produced by Stanley Kramer, and written by Abby Mann based on his 1957 Studio One teleplay of the same name."
  },
  "gli intoccabili the untouchables": {
   "qid": "Q108525",
@@ -955,7 +1071,10 @@
   "query": "GLI INTOCCABILI (THE UNTOUCHABLES)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Untouchables",
+  "enwiki": "The Untouchables (film)",
+  "intro_en": "The Untouchables is a 1987 American crime film directed by Brian De Palma, produced by Art Linson and written by David Mamet."
  },
  "gli spietati unforgiven": {
   "qid": "Q104137",
@@ -978,7 +1097,10 @@
   "query": "GLI SPIETATI (UNFORGIVEN)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Unforgiven",
+  "enwiki": "Unforgiven",
+  "intro_en": "Unforgiven is a 1992 American revisionist Western film produced and directed by Clint Eastwood from a screenplay by David Webb Peoples."
  },
  "good boy v originale sub ita": {
   "qid": "Q130744998",
@@ -1001,7 +1123,10 @@
   "query": "Good Boy (V.Originale Sub Ita)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "Good Boy",
+  "enwiki": "Good Boy (2025 Komasa film)",
+  "intro_en": "The Good Boy is a 2025 black comedy thriller film directed by Jan Komasa."
  },
  "grosso guaio a chinatown big trouble in little china": {
   "qid": "Q859494",
@@ -1024,7 +1149,10 @@
   "query": "GROSSO GUAIO A CHINATOWN (BIG TROUBLE IN LITTLE CHINA)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Big Trouble in Little China",
+  "enwiki": "Big Trouble in Little China",
+  "intro_en": "Big Trouble in Little China is a 1986 American fantasy action-comedy film directed by John Carpenter, and starring Kurt Russell, Kim Cattrall, Dennis Dun and James Hong."
  },
  "halloween la notte delle streghe halloween": {
   "qid": "Q221103",
@@ -1047,7 +1175,10 @@
   "query": "HALLOWEEN - LA NOTTE DELLE STREGHE (HALLOWEEN)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Halloween",
+  "enwiki": "Halloween (1978 film)",
+  "intro_en": "Halloween is a 1978 American slasher film directed and scored by John Carpenter, who co-wrote it with producer Debra Hill."
  },
  "happiness felicita": {
   "qid": "Q1426532",
@@ -1071,7 +1202,10 @@
   "query": "HAPPINESS - FELICITA'",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Happiness",
+  "enwiki": "Happiness (1998 film)",
+  "intro_en": "Happiness is a 1998 American black comedy-drama film written and directed by Todd Solondz."
  },
  "hard to be a god": {
   "qid": "Q4204793",
@@ -1094,7 +1228,10 @@
   "query": "HARD TO BE A GOD",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "Hard to Be a God",
+  "enwiki": "Hard to Be a God (2013 film)",
+  "intro_en": "Hard to Be a God is a 2013 Russian epic medieval science fiction film directed by Aleksei German who co-wrote the screenplay with Svetlana Karmalita."
  },
  "hereditary le radici del male": {
   "qid": "Q47524071",
@@ -1117,7 +1254,10 @@
   "query": "HEREDITARY - LE RADICI DEL MALE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Hereditary",
+  "enwiki": "Hereditary (film)",
+  "intro_en": "Hereditary is a 2018 American supernatural psychological horror film written and directed by Ari Aster in his feature directorial debut."
  },
  "hope": {
   "qid": "Q117429496",
@@ -1141,7 +1281,10 @@
   "query": "HOPE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Hope",
+  "enwiki": "Hope (2026 film)",
+  "intro_en": "Hope (Korean: 호프) is a 2026 South Korean epic science fiction monster film written, directed, and co-produced by Na Hong-jin."
  },
  "i colori della passione the mill and the cross": {
   "qid": "Q1215008",
@@ -1165,7 +1308,10 @@
   "query": "I COLORI DELLA PASSIONE (THE MILL AND THE CROSS)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "The Mill and the Cross",
+  "enwiki": "The Mill and the Cross",
+  "intro_en": "The Mill and the Cross is a 2011 drama film co-written, produced, shot, scored and directed by Lech Majewski and starring Rutger Hauer, Charlotte Rampling, and Michael York."
  },
  "i diavoli": {
   "qid": "Q655996",
@@ -1188,7 +1334,10 @@
   "query": "I DIAVOLI",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Devils",
+  "enwiki": "The Devils (film)",
+  "intro_en": "The Devils is a 1971 historical psychological horror-drama film written, produced and directed by Ken Russell, and starring Vanessa Redgrave and Oliver Reed."
  },
  "i diavoli ed rest 4k": {
   "qid": "Q655996",
@@ -1234,7 +1383,10 @@
   "query": "I DIAVOLI (THE DEVILS)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Devils",
+  "enwiki": "The Devils (film)",
+  "intro_en": "The Devils is a 1971 historical psychological horror-drama film written, produced and directed by Ken Russell, and starring Vanessa Redgrave and Oliver Reed."
  },
  "i tenenbaum the royal tenenbaums": {
   "qid": "Q935105",
@@ -1257,7 +1409,10 @@
   "query": "I TENENBAUM (THE ROYAL TENENBAUMS)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Royal Tenenbaums",
+  "enwiki": "The Royal Tenenbaums",
+  "intro_en": "The Royal Tenenbaums is a 2001 American black comedy-drama film directed by Wes Anderson and co-written by him and Owen Wilson."
  },
  "il bianco si lava a novanta": {
   "qid": null,
@@ -1286,7 +1441,10 @@
   "query": "IL BRACCIO VIOLENTO DELLA LEGGE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The French Connection",
+  "enwiki": "The French Connection (film)",
+  "intro_en": "The French Connection is a 1971 American neo-noir action thriller film directed by William Friedkin and starring Gene Hackman, Roy Scheider, and Fernando Rey."
  },
  "il braccio violento della legge the french connection": {
   "qid": "Q220735",
@@ -1309,7 +1467,10 @@
   "query": "IL BRACCIO VIOLENTO DELLA LEGGE (THE FRENCH CONNECTION)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The French Connection",
+  "enwiki": "The French Connection (film)",
+  "intro_en": "The French Connection is a 1971 American neo-noir action thriller film directed by William Friedkin and starring Gene Hackman, Roy Scheider, and Fernando Rey."
  },
  "il casanova di federico fellini": {
   "qid": "Q18429",
@@ -1333,7 +1494,10 @@
   "query": "IL CASANOVA DI FEDERICO FELLINI",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Fellini's Casanova",
+  "enwiki": "Fellini's Casanova",
+  "intro_en": "Fellini's Casanova is a 1976 Italian film directed by Federico Fellini from a screenplay he co-wrote with Bernardino Zapponi, adapted from the autobiography of 18th-century Venetian adventurer and writer Giacomo Casanova, played by Donald Sutherland."
  },
  "il dottor stranamore": {
   "qid": "Q105702",
@@ -1357,7 +1521,10 @@
   "query": "IL DOTTOR STRANAMORE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Dr. Strangelove",
+  "enwiki": "Dr. Strangelove",
+  "intro_en": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb is a 1964 political satire black comedy film co-written, produced, and directed by Stanley Kubrick."
  },
  "il seme della follia in the mounth of madness": {
   "qid": "Q1214972",
@@ -1404,7 +1571,10 @@
   "query": "IL SETTIMO SIGILLO (DET SJUNDE INSEGLET)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "The Seventh Seal",
+  "enwiki": "The Seventh Seal",
+  "intro_en": "The Seventh Seal is a 1957 Swedish historical fantasy film written and directed by Ingmar Bergman."
  },
  "il signore del male prince of darkness": {
   "qid": "Q601013",
@@ -1427,7 +1597,10 @@
   "query": "IL SIGNORE DEL MALE (PRINCE OF DARKNESS)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Prince of Darkness",
+  "enwiki": "Prince of Darkness (film)",
+  "intro_en": "Prince of Darkness is a 1987 American supernatural horror film written, directed, and co-scored by John Carpenter."
  },
  "il signore resta a pranzo the man who came to dinner": {
   "qid": "Q2307466",
@@ -1450,7 +1623,10 @@
   "query": "IL SIGNORE RESTA A PRANZO (THE MAN WHO CAME TO DINNER)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Man Who Came to Dinner",
+  "enwiki": "The Man Who Came to Dinner (1941 film)",
+  "intro_en": "The Man Who Came to Dinner is a 1941 American screwball comedy film directed by William Keighley, and starring Bette Davis, Ann Sheridan and, as the titular character, Monty Woolley."
  },
  "il socio the firm": {
   "qid": "Q821692",
@@ -1473,7 +1649,10 @@
   "query": "IL SOCIO (THE FIRM)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Firm",
+  "enwiki": "The Firm (1993 film)",
+  "intro_en": "The Firm is a 1993 American legal thriller film directed by Sydney Pollack, and starring Tom Cruise, Jeanne Tripplehorn, Gene Hackman, Ed Harris, Holly Hunter, Hal Holbrook, David Strathairn and Gary Busey."
  },
  "il tempo di anne": {
   "qid": "Q135224617",
@@ -1496,7 +1675,10 @@
   "query": "IL TEMPO DI ANNE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "LOL 2.0",
+  "enwiki": null,
+  "intro_en": ""
  },
  "il tempo di anne lol 2": {
   "qid": "Q135224617",
@@ -1519,7 +1701,10 @@
   "query": "IL TEMPO DI ANNE (LOL 2)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "LOL 2.0",
+  "enwiki": null,
+  "intro_en": ""
  },
  "insectasy": {
   "qid": "Q140745390",
@@ -1540,7 +1725,10 @@
   "query": "INSECTASY",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Insectasy",
+  "enwiki": "Insectasy",
+  "intro_en": "Insectasy is a Canadian drama film, written and directed by Angus Silver and released in 2026."
  },
  "it ends": {
   "qid": "Q133546293",
@@ -1563,7 +1751,10 @@
   "query": "IT ENDS",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "It Ends",
+  "enwiki": "It Ends",
+  "intro_en": "It Ends is a 2025 American road horror thriller film written, directed, and edited by Alexander Ullom, in his directorial debut and starring Phinehas Yoon, Akira Jackson, Noah Toth, and Mitchell Cole."
  },
  "jennifer s body": {
   "qid": "Q861640",
@@ -1586,7 +1777,10 @@
   "query": "JENNIFER'S BODY",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Jennifer's Body",
+  "enwiki": "Jennifer's Body",
+  "intro_en": "Jennifer's Body is a 2009 American comedy horror film directed by Karyn Kusama and written by Diablo Cody."
  },
  "klara e il sole": {
   "qid": "Q124409386",
@@ -1609,7 +1803,10 @@
   "query": "KLARA E IL SOLE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "Klara and the Sun",
+  "enwiki": "Klara and the Sun (film)",
+  "intro_en": "Klara and the Sun is a 2026 dystopian science fiction film directed by Taika Waititi and written by Waititi and Dahvi Waller, based on Kazuo Ishiguro's 2021 novel."
  },
  "klara e il sole klara and the sun": {
   "qid": "Q124409386",
@@ -1632,7 +1829,10 @@
   "query": "KLARA E IL SOLE (KLARA AND THE SUN)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Klara and the Sun",
+  "enwiki": "Klara and the Sun (film)",
+  "intro_en": "Klara and the Sun is a 2026 dystopian science fiction film directed by Taika Waititi and written by Waititi and Dahvi Waller, based on Kazuo Ishiguro's 2021 novel."
  },
  "kor bts w t arirang in buen a live": {
   "qid": null,
@@ -1679,7 +1879,10 @@
   "query": "L'AMORE BUGIARDO - GONE GIRL",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Gone Girl",
+  "enwiki": "Gone Girl (film)",
+  "intro_en": "Gone Girl is a 2014 American psychological thriller film directed by David Fincher and written by Gillian Flynn, based on her 2012 novel."
  },
  "l amore che rimane v originale sub ita": {
   "qid": "Q131750758",
@@ -1702,7 +1905,10 @@
   "query": "L'Amore Che Rimane (V.Originale Sub Ita)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "The Love That Remains",
+  "enwiki": "The Love That Remains",
+  "intro_en": "The Love That Remains is a 2025 comedy-drama written and directed by Hlynur Pálmason."
  },
  "l avventura del poseidon the poseidon adventure": {
   "qid": "Q874496",
@@ -1725,7 +1931,10 @@
   "query": "L'AVVENTURA DEL POSEIDON (THE POSEIDON ADVENTURE)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Poseidon Adventure",
+  "enwiki": "The Poseidon Adventure (1972 film)",
+  "intro_en": "The Poseidon Adventure is a 1972 American disaster film directed by Ronald Neame, produced by Irwin Allen, and based on Paul Gallico's 1969 novel."
  },
  "l infernale quinlan": {
   "qid": "Q778161",
@@ -1749,7 +1958,10 @@
   "query": "L'INFERNALE QUINLAN",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Touch of Evil",
+  "enwiki": "Touch of Evil",
+  "intro_en": "Touch of Evil is a 1958 American film noir written and directed by Orson Welles, who also stars."
  },
  "l infernale quinlan director s cut": {
   "qid": null,
@@ -1779,7 +1991,10 @@
   "query": "L'INFERNALE QUINLAN (TOUCH OF EVIL)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Touch of Evil",
+  "enwiki": "Touch of Evil",
+  "intro_en": "Touch of Evil is a 1958 American film noir written and directed by Orson Welles, who also stars."
  },
  "l uomo di cenere ri es sed": {
   "qid": "Q1985728",
@@ -1803,7 +2018,10 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-21",
-  "alternatives": []
+  "alternatives": [],
+  "title_en": "Man of Ashes",
+  "enwiki": "Man of Ashes",
+  "intro_en": "Man of Ashes is a 1986 Tunisian drama film directed by Nouri Bouzid."
  },
  "la bambola": {
   "qid": "Q136945628",
@@ -1836,7 +2054,10 @@
      "Ninì Grassia"
     ]
    }
-  ]
+  ],
+  "title_en": "The Doll",
+  "enwiki": null,
+  "intro_en": ""
  },
  "la casa delle donne la maison des femmes": {
   "qid": "Q138417077",
@@ -1860,7 +2081,10 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20",
-  "alternatives": []
+  "alternatives": [],
+  "title_en": "A Place For Her",
+  "enwiki": "A Place for Her",
+  "intro_en": "A Place for Her is a 2025 French drama film written and directed by Mélisa Godet."
  },
  "la cosa the thing": {
   "qid": "Q210756",
@@ -1884,7 +2108,10 @@
   "query": "LA COSA (THE THING)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Thing",
+  "enwiki": "The Thing (1982 film)",
+  "intro_en": "The Thing is a 1982 American science fiction horror film directed by John Carpenter from a screenplay by Bill Lancaster."
  },
  "la fuga di logan": {
   "qid": "Q503018",
@@ -1931,7 +2158,10 @@
   "query": "LA GRADIVA",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "La Gradiva",
+  "enwiki": "La Gradiva",
+  "intro_en": "La Gradiva is a 2026 coming-of-age drama film directed by Marine Atlan in her feature film directorial debut, co-written with Anne Brouillet."
  },
  "la la land": {
   "qid": "Q20856802",
@@ -1954,7 +2184,10 @@
   "query": "LA LA LAND",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "La La Land",
+  "enwiki": "La La Land",
+  "intro_en": "La La Land is a 2016 American musical romantic comedy drama film written and directed by Damien Chazelle."
  },
  "la signora ammazzatutti serial mom": {
   "qid": "Q610670",
@@ -1977,7 +2210,10 @@
   "query": "LA SIGNORA AMMAZZATUTTI (SERIAL MOM)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Serial Mom",
+  "enwiki": "Serial Mom",
+  "intro_en": "Serial Mom is a 1994 American satirical black comedy crime film directed and written by John Waters and starring Kathleen Turner as the title character along with Sam Waterston, Ricki Lake, Matthew Lillard, and Suzanne Somers."
  },
  "la sposa turca gegen die wand": {
   "qid": "Q325648",
@@ -2003,7 +2239,10 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-22",
-  "alternatives": []
+  "alternatives": [],
+  "title_en": "Head-On",
+  "enwiki": "Head-On (film)",
+  "intro_en": "Head-On is a 2004 drama film written and directed by Fatih Akın."
  },
  "leviticus": {
   "qid": "Q137557964",
@@ -2026,7 +2265,10 @@
   "query": "LEVITICUS",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Leviticus",
+  "enwiki": "Leviticus (film)",
+  "intro_en": "Leviticus is a 2026 Australian coming-of-age romantic supernatural horror film written and directed by Adrian Chiarella in his feature directorial debut."
  },
  "lingua originale avengers doomsday": {
   "qid": null,
@@ -2055,7 +2297,10 @@
   "query": "LO SPAVENTAPASSERI (SCARECROW)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Scarecrow",
+  "enwiki": "Scarecrow (1973 film)",
+  "intro_en": "Scarecrow is a 1973 American road comedy-drama film directed by Jerry Schatzberg and starring Gene Hackman and Al Pacino."
  },
  "lo specchio": {
   "qid": "Q838149",
@@ -2078,7 +2323,10 @@
   "query": "LO SPECCHIO",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "The Mirror",
+  "enwiki": "Mirror (1975 film)",
+  "intro_en": "Mirror is a 1975 Soviet avant-garde drama film directed by Andrei Tarkovsky and written by Tarkovsky and Aleksandr Misharin."
  },
  "lo straniero v originale sub ita": {
   "qid": null,
@@ -2107,7 +2355,10 @@
   "query": "LOOK BACK",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-22"
+  "checked": "2026-10-22",
+  "title_en": "Look Back",
+  "enwiki": "Look Back (2026 film)",
+  "intro_en": "Look Back is a 2026 Japanese coming-of-age drama film written, directed, and edited by Hirokazu Kore-eda."
  },
  "m il mostro di dusseldorf": {
   "qid": "Q127021",
@@ -2130,7 +2381,10 @@
   "query": "M - IL MOSTRO DI DUSSELDORF",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "M",
+  "enwiki": "M (1931 film)",
+  "intro_en": "M is a 1931 German mystery thriller film directed by Fritz Lang and starring Peter Lorre as Hans Beckert, a serial killer who targets children, in his third screen role."
  },
  "making marie antoinette": {
   "qid": "Q141247887",
@@ -2150,7 +2404,10 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20",
-  "alternatives": []
+  "alternatives": [],
+  "title_en": "Making Marie Antoinette",
+  "enwiki": "Making Marie Antoinette",
+  "intro_en": "Making Marie Antoinette is a 2026 documentary film directed by Eleanor Coppola."
  },
  "making marie antoniette": {
   "qid": null,
@@ -2185,7 +2442,10 @@
   "query": "MARITI (HUSBANDS)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Husbands",
+  "enwiki": "Husbands (film)",
+  "intro_en": "Husbands is a 1970 American comedy-drama film written and directed by John Cassavetes."
  },
  "marketa lazarova": {
   "qid": "Q614960",
@@ -2208,7 +2468,38 @@
   "query": "MARKETA LAZAROVA",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "Marketa Lazarová",
+  "enwiki": "Marketa Lazarová",
+  "intro_en": "Marketa Lazarová is a 1967 Czechoslovak New Wave epic period drama film directed by František Vláčil."
+ },
+ "matrix": {
+  "qid": "Q83495",
+  "title_it": "Matrix",
+  "original_title": "The Matrix",
+  "year": 1999,
+  "runtime": 136,
+  "imdb": "tt0133093",
+  "tmdb": "603",
+  "itwiki": "Matrix",
+  "title_en": "The Matrix",
+  "enwiki": "The Matrix",
+  "directors": [
+   "Lana Wachowski",
+   "Lilly Wachowski"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Matrix è un film di fantascienza del 1999 in stile cyberpunk scritto e diretto dagli allora fratelli Andy e Larry Wachowski, reduci dal successo di Bound.",
+  "intro_en": "The Matrix is a 1999 science fiction–action film written and directed by the Wachowskis.",
+  "confidence": "medium",
+  "score": 0.9,
+  "query": "Matrix",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-22",
+  "alternatives": []
  },
  "matrix 4k": {
   "qid": null,
@@ -2249,7 +2540,10 @@
   "query": "MIKEY AND NICKY",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Mikey and Nicky",
+  "enwiki": "Mikey and Nicky",
+  "intro_en": "Mikey and Nicky is a 1976 American crime drama film written and directed by Elaine May."
  },
  "minnie and moskowitz minnie and moskowitz": {
   "qid": "Q2395265",
@@ -2272,7 +2566,10 @@
   "query": "MINNIE & MOSKOWITZ (MINNIE AND MOSKOWITZ)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Minnie and Moskowitz",
+  "enwiki": "Minnie and Moskowitz",
+  "intro_en": "Minnie and Moskowitz is a 1971 American romantic comedy-drama film written and directed by John Cassavetes and starring his wife Gena Rowlands and Seymour Cassel as the titular characters."
  },
  "minotaur nel labirinto del potere": {
   "qid": "Q137612975",
@@ -2295,7 +2592,10 @@
   "query": "MINOTAUR - NEL LABIRINTO DEL POTERE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "Minotaur",
+  "enwiki": "Minotaur (2026 film)",
+  "intro_en": "Minotaur is a 2026 Russian-language political thriller drama film directed and edited by Andrey Zvyagintsev, co-written with Simon Liashenko and based on the 1969 French film The Unfaithful Wife by Claude Chabrol."
  },
  "mississippi burning le radici dell odio": {
   "qid": "Q918367",
@@ -2318,7 +2618,10 @@
   "query": "MISSISSIPPI BURNING - LE RADICI DELL'ODIO",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Mississippi Burning",
+  "enwiki": "Mississippi Burning",
+  "intro_en": "Mississippi Burning is a 1988 American crime thriller film directed by Alan Parker and written by Chris Gerolmo that is loosely based on the 1964 investigation into the murders of Chaney, Goodman, and Schwerner in Neshoba County, Mississippi."
  },
  "morte a venezia": {
   "qid": "Q742308",
@@ -2344,7 +2647,10 @@
   "query": "MORTE A VENEZIA",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Death in Venice",
+  "enwiki": "Death in Venice (film)",
+  "intro_en": "Death in Venice is a 1971 historical drama film directed and produced by Italian filmmaker Luchino Visconti, and adapted by Visconti and Nicola Badalucco from the 1912 novella of the same name by German author Thomas Mann."
  },
  "mulholland drive": {
   "qid": "Q272608",
@@ -2390,7 +2696,10 @@
   "query": "MUSEUM HOURS",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "Museum Hours",
+  "enwiki": "Museum Hours",
+  "intro_en": "Museum Hours is a 2012 Austrian-American drama film written and directed by Jem Cohen."
  },
  "my fair lady": {
   "qid": "Q201215",
@@ -2413,7 +2722,10 @@
   "query": "MY FAIR LADY",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "My Fair Lady",
+  "enwiki": "My Fair Lady (film)",
+  "intro_en": "My Fair Lady is a 1964 American musical comedy drama film adapted from Lerner and Loewe's 1956 stage musical based on George Bernard Shaw's 1913 stage play Pygmalion."
  },
  "nata ieri born yesterday": {
   "qid": "Q375594",
@@ -2436,7 +2748,10 @@
   "query": "NATA IERI (BORN YESTERDAY)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Born Yesterday",
+  "enwiki": "Born Yesterday (1950 film)",
+  "intro_en": "Born Yesterday is a 1950 American romantic comedy-drama film directed by George Cukor, based on the 1946 stage play of the same name by Garson Kanin."
  },
  "naza": {
   "qid": "Q141168534",
@@ -2461,7 +2776,10 @@
   "query": "NAZA",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "NAZA",
+  "enwiki": "NAZA (film)",
+  "intro_en": "NAZA is a 2026 British documentary film written and directed by Yuval Abraham and Rachel Szor."
  },
  "nel bel mezzo di un gelido inverno in the bleak midwinter": {
   "qid": "Q2245295",
@@ -2484,7 +2802,10 @@
   "query": "NEL BEL MEZZO DI UN GELIDO INVERNO (IN THE BLEAK MIDWINTER)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "A Midwinter's Tale",
+  "enwiki": "In the Bleak Midwinter (film)",
+  "intro_en": "In the Bleak Midwinter is a 1995 British romantic comedy film written and directed by Kenneth Branagh."
  },
  "no non e l avaro di moliere": {
   "qid": null,
@@ -2513,7 +2834,10 @@
   "query": "NON SARAI SOLA (YOU WON'T BE ALONE)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "You Won't Be Alone",
+  "enwiki": "You Won't Be Alone",
+  "intro_en": "You Won't Be Alone is a 2022 dark fantasy horror drama film written and directed by Goran Stolevski."
  },
  "notre dame ananke": {
   "qid": null,
@@ -2661,7 +2985,10 @@
   "query": "OMBRE (SHADOWS)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Shadows",
+  "enwiki": "Shadows (1958 film)",
+  "intro_en": "Shadows is a 1958 American independent drama film directed by John Cassavetes about race relations during the Beat Generation years in New York City."
  },
  "ou vivre insist": {
   "qid": null,
@@ -2702,7 +3029,10 @@
   "query": "PALCOSCENICO (STAGE DOOR)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Stage Door",
+  "enwiki": "Stage Door",
+  "intro_en": "Stage Door is a 1937 American tragicomedy film directed by Gregory La Cava, and starring Katharine Hepburn, Ginger Rogers, Adolphe Menjou, Gail Patrick, Constance Collier, Andrea Leeds, Samuel S."
  },
  "palestina 36": {
   "qid": "Q132853314",
@@ -2726,7 +3056,10 @@
   "query": "PALESTINA 36",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Palestine 36",
+  "enwiki": "Palestine 36",
+  "intro_en": "Palestine 36 is a 2025 historical drama written and directed by Annemarie Jacir."
  },
  "piume di struzzo the birdcage": {
   "qid": "Q1160005",
@@ -2749,7 +3082,10 @@
   "query": "PIUME DI STRUZZO (THE BIRDCAGE)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Birdcage",
+  "enwiki": "The Birdcage",
+  "intro_en": "The Birdcage is a 1996 American comedy film produced and directed by Mike Nichols."
  },
  "pos processo crime": {
   "qid": null,
@@ -2778,7 +3114,10 @@
   "query": "POSSIBLE LOVE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Possible Love",
+  "enwiki": "Possible Love",
+  "intro_en": "Possible Love is a 2026 drama film directed by Lee Chang-dong, and co-written with Oh Jung-mi."
  },
  "possible love ga neung han sa rang": {
   "qid": "Q137843740",
@@ -2801,7 +3140,10 @@
   "query": "POSSIBLE LOVE (GA-NEUNG-HAN SA-RANG)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Possible Love",
+  "enwiki": "Possible Love",
+  "intro_en": "Possible Love is a 2026 drama film directed by Lee Chang-dong, and co-written with Oh Jung-mi."
  },
  "potere assoluto absolute power": {
   "qid": "Q332497",
@@ -2824,7 +3166,10 @@
   "query": "POTERE ASSOLUTO (ABSOLUTE POWER)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Absolute Power",
+  "enwiki": "Absolute Power (film)",
+  "intro_en": "Absolute Power is a 1997 American political thriller film produced by, directed by, and starring Clint Eastwood as a master jewel thief, Luther Whitney, who witnesses the killing of a woman by Secret Service agents."
  },
  "pranzo alle otto dinner at eight": {
   "qid": "Q722648",
@@ -2847,7 +3192,10 @@
   "query": "PRANZO ALLE OTTO (DINNER AT EIGHT)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Dinner at Eight",
+  "enwiki": "Dinner at Eight (1933 film)",
+  "intro_en": "Dinner at Eight is a 1933 American pre-Code comedy-drama film directed by George Cukor from a screenplay by Frances Marion and Herman J."
  },
  "primetime": {
   "qid": "Q133273688",
@@ -2870,7 +3218,10 @@
   "query": "PRIMETIME",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Primetime",
+  "enwiki": "Primetime (film)",
+  "intro_en": "Primetime is a 2026 American psychological thriller film written by Ajon Singh and directed by Lance Oppenheim."
  },
  "primetime v o 1h50": {
   "qid": null,
@@ -2922,7 +3273,10 @@
   "query": "RAGAZZE INTERROTTE (GIRL, INTERRUPTED)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Girl, Interrupted",
+  "enwiki": "Girl, Interrupted (film)",
+  "intro_en": "Girl, Interrupted is a 1999 American biographical drama film directed by James Mangold and written by Mangold, Lisa Loomer and Anna Hamilton Phelan, based on the 1993 memoir by Susanna Kaysen."
  },
  "ragione e sentimento": {
   "qid": null,
@@ -2951,7 +3305,10 @@
   "query": "RAGIONE E SENTIMENTO (SENSE AND SENSIBILITY)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Sense and Sensibility",
+  "enwiki": "Sense and Sensibility (2026 film)",
+  "intro_en": "Sense and Sensibility is a 2026 period romantic drama film directed by Georgia Oakley from a screenplay by Diana Reid."
  },
  "report to mother": {
   "qid": null,
@@ -2980,7 +3337,10 @@
   "query": "RITORNO A BUENOS AIRES",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Back to Buenos Aires",
+  "enwiki": "Back to Buenos Aires",
+  "intro_en": "Back to Buenos Aires is a 2026 historical-thriller film directed by Marco Bechis, co-written with Vijaya Bechis Boll."
  },
  "ritorno alla vita counsellor at law": {
   "qid": "Q2675288",
@@ -3003,7 +3363,10 @@
   "query": "RITORNO ALLA VITA (COUNSELLOR AT LAW)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Counsellor at Law",
+  "enwiki": "Counsellor at Law",
+  "intro_en": "Counsellor at Law is a 1933 American pre-Code drama film directed by William Wyler."
  },
  "sense and sensibility": {
   "qid": "Q135436961",
@@ -3026,7 +3389,10 @@
   "query": "Sense And Sensibility",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-22"
+  "checked": "2026-10-22",
+  "title_en": "Sense and Sensibility",
+  "enwiki": "Sense and Sensibility (2026 film)",
+  "intro_en": "Sense and Sensibility is a 2026 period romantic drama film directed by Georgia Oakley from a screenplay by Diana Reid."
  },
  "serpico": {
   "qid": "Q657079",
@@ -3051,7 +3417,10 @@
   "query": "SERPICO",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Serpico",
+  "enwiki": "Serpico",
+  "intro_en": "Serpico is a 1973 American biographical crime drama film directed by Sidney Lumet and starring Al Pacino in the title role, former New York City police officer Frank Serpico."
  },
  "sheep in the box": {
   "qid": "Q137640905",
@@ -3074,7 +3443,10 @@
   "query": "SHEEP IN THE BOX",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Sheep in the Box",
+  "enwiki": "Sheep in the Box",
+  "intro_en": "Sheep in the Box is a 2026 Japanese science fiction drama film written, directed and edited by Hirokazu Koreeda."
  },
  "sheep in the box v originale sub ita": {
   "qid": "Q137640905",
@@ -3097,7 +3469,10 @@
   "query": "Sheep In The Box (V.Originale Sub Ita)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "Sheep in the Box",
+  "enwiki": "Sheep in the Box",
+  "intro_en": "Sheep in the Box is a 2026 Japanese science fiction drama film written, directed and edited by Hirokazu Koreeda."
  },
  "soul kitchen": {
   "qid": "Q312538",
@@ -3121,7 +3496,10 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-22",
-  "alternatives": []
+  "alternatives": [],
+  "title_en": "Soul Kitchen",
+  "enwiki": "Soul Kitchen (film)",
+  "intro_en": "Soul Kitchen is a 2009 German comedy film directed by Fatih Akın, with a screenplay by Akın and Adam Bousdoukos, based on Bousdoukos' story on his own experiences as the owner of a Greek tavern named \"Taverna\", where Akın was a regular customer."
  },
  "speak no evil": {
   "qid": "Q110040047",
@@ -3146,7 +3524,10 @@
   "query": "SPEAK NO EVIL",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "Speak No Evil",
+  "enwiki": "Speak No Evil (2022 film)",
+  "intro_en": "Speak No Evil is a 2022 psychological horror thriller film directed by Christian Tafdrup from a screenplay he co-wrote with his brother Mads."
  },
  "stati di allucinazione": {
   "qid": "Q1194524",
@@ -3170,7 +3551,10 @@
   "query": "STATI DI ALLUCINAZIONE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Altered States",
+  "enwiki": "Altered States",
+  "intro_en": "Altered States is a 1980 American experimental surrealist science fiction horror film directed by Ken Russell, and adapted by playwright and screenwriter Paddy Chayefsky from his 1978 novel of the same name."
  },
  "strange journey the story of roc": {
   "qid": null,
@@ -3199,7 +3583,10 @@
   "query": "STRANGE JOURNEY: THE STORY OF ROCKY HORROR",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Strange Journey: The Story of Rocky Horror",
+  "enwiki": "Strange Journey: The Story of Rocky Horror",
+  "intro_en": "Strange Journey: The Story of Rocky Horror is a 2025 American documentary film about the 1975 musical film The Rocky Horror Picture Show, which became a cultural phenomenon."
  },
  "stray kids world tour run it il live viewing": {
   "qid": null,
@@ -3228,7 +3615,10 @@
   "query": "SUMMER BLOOMS",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Summer Blooms",
+  "enwiki": null,
+  "intro_en": ""
  },
  "taxi driver": {
   "qid": "Q47221",
@@ -3251,7 +3641,10 @@
   "query": "TAXI DRIVER",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Taxi Driver",
+  "enwiki": "Taxi Driver",
+  "intro_en": "Taxi Driver is a 1976 American neo-noir psychological drama film directed by Martin Scorsese and written by Paul Schrader."
  },
  "the bibi files": {
   "qid": "Q130266010",
@@ -3299,7 +3692,10 @@
   "query": "THE BROOD",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Brood",
+  "enwiki": "The Brood",
+  "intro_en": "The Brood is a 1979 Canadian psychological body horror film written and directed by David Cronenberg, and starring Oliver Reed, Samantha Eggar, and Art Hindle."
  },
  "the clearing": {
   "qid": null,
@@ -3328,7 +3724,10 @@
   "query": "THE FOG",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Fog",
+  "enwiki": "The Fog",
+  "intro_en": "The Fog is a 1980 American supernatural horror film directed and scored by John Carpenter, who co-wrote it with its producer Debra Hill."
  },
  "the glorious dead": {
   "qid": null,
@@ -3357,7 +3756,10 @@
   "query": "THE INVITE – IL PIACERE È TUTTO NOSTRO",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Invite",
+  "enwiki": "The Invite",
+  "intro_en": "The Invite is a 2026 American sex comedy drama film directed by Olivia Wilde from a screenplay by Will McCormack and Rashida Jones."
  },
  "the matrix": {
   "qid": "Q83495",
@@ -3381,7 +3783,10 @@
   "query": "THE MATRIX",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Matrix",
+  "enwiki": "The Matrix",
+  "intro_en": "The Matrix is a 1999 science fiction–action film written and directed by the Wachowskis."
  },
  "the neon demon": {
   "qid": "Q19750881",
@@ -3457,7 +3862,10 @@
      "Bahman Maghsoudlou"
     ]
    }
-  ]
+  ],
+  "title_en": "The Razor's Edge",
+  "enwiki": "The Razor's Edge (upcoming film)",
+  "intro_en": "The Razor's Edge is an upcoming American action thriller film written by Demian Lichtenstein and Vance Duplechin, directed by Lichtenstein and starring James Franco and Tommy Lee Jones."
  },
  "the rocky horror picture show": {
   "qid": "Q751921",
@@ -3480,7 +3888,10 @@
   "query": "THE ROCKY HORROR PICTURE SHOW",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Rocky Horror Picture Show",
+  "enwiki": "The Rocky Horror Picture Show",
+  "intro_en": "The Rocky Horror Picture Show is a 1975 musical comedy horror film produced by Lou Adler and Michael White, directed by Jim Sharman, and distributed by 20th Century Fox."
  },
  "the rocky horror picture show 50 anniversary": {
   "qid": "Q751921",
@@ -3503,7 +3914,10 @@
   "query": "THE ROCKY HORROR PICTURE SHOW - 50° ANNIVERSARY",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Rocky Horror Picture Show",
+  "enwiki": "The Rocky Horror Picture Show",
+  "intro_en": "The Rocky Horror Picture Show is a 1975 musical comedy horror film produced by Lou Adler and Michael White, directed by Jim Sharman, and distributed by 20th Century Fox."
  },
  "the rocky horror pictures show": {
   "qid": "Q751921",
@@ -3526,7 +3940,10 @@
   "query": "THE ROCKY HORROR PICTURES SHOW",
   "source": "similar-title",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Rocky Horror Picture Show",
+  "enwiki": "The Rocky Horror Picture Show",
+  "intro_en": "The Rocky Horror Picture Show is a 1975 musical comedy horror film produced by Lou Adler and Michael White, directed by Jim Sharman, and distributed by 20th Century Fox."
  },
  "the social": {
   "qid": "Q136387857",
@@ -3596,7 +4013,10 @@
   "score": 1.0,
   "query": "THE VANISHING",
   "source": "override",
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Vanishing",
+  "enwiki": "The Vanishing (1988 film)",
+  "intro_en": "The Vanishing is a 1988 psychological thriller film co-written and directed by George Sluizer, and starring Bernard-Pierre Donnadieu, Gene Bervoets, and Johanna ter Steege in her feature film debut."
  },
  "the virgin of the quarry lake": {
   "qid": "Q131428552",
@@ -3619,7 +4039,10 @@
   "query": "THE VIRGIN OF THE QUARRY LAKE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "The Virgin of Quarry Lake",
+  "enwiki": "The Virgin of the Quarry Lake",
+  "intro_en": "The Virgin of the Quarry Lake is a 2025 supernatural coming-of-age horror film directed by Laura Casabé, written by Benjamín Naishtat and based on two stories by Mariana Enríquez."
  },
  "tracking edith": {
   "qid": "Q42325232",
@@ -3645,7 +4068,10 @@
   "query": "TRACKING EDITH",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Tracking Edith",
+  "enwiki": null,
+  "intro_en": ""
  },
  "trainspotting": {
   "qid": "Q109135",
@@ -3705,7 +4131,10 @@
   "query": "UN'ORA SOLA TI VORREI",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "For One More Hour with You",
+  "enwiki": null,
+  "intro_en": ""
  },
  "un uomo da marciapiede midnight cowboy": {
   "qid": "Q61696",
@@ -3728,7 +4157,10 @@
   "query": "UN UOMO DA MARCIAPIEDE (MIDNIGHT COWBOY)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Midnight Cowboy",
+  "enwiki": "Midnight Cowboy",
+  "intro_en": "Midnight Cowboy is a 1969 American drama film directed by John Schlesinger, adapted by Waldo Salt from the 1965 novel by James Leo Herlihy."
  },
  "una moglie": {
   "qid": "Q1306380",
@@ -3751,7 +4183,10 @@
   "query": "UNA MOGLIE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "A Woman Under the Influence",
+  "enwiki": "A Woman Under the Influence",
+  "intro_en": "A Woman Under the Influence is a 1974 American drama film written and directed by John Cassavetes, and starring his wife Gena Rowlands and close friend Peter Falk."
  },
  "urchin": {
   "qid": "Q132322745",
@@ -3774,7 +4209,16 @@
   "query": "Urchin",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-22"
+  "checked": "2026-10-22",
+  "title_en": "Urchin",
+  "enwiki": "Urchin (2025 film)",
+  "intro_en": "Urchin is a 2025 British drama film written and directed by Harris Dickinson, in his feature-length directorial debut."
+ },
+ "urchin in": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "URCHIN in",
+  "version": 4
  },
  "urchin in v o": {
   "qid": null,
@@ -3809,7 +4253,10 @@
   "query": "VENTESIMO SECOLO (TWENTIETH CENTURY)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Twentieth Century",
+  "enwiki": "Twentieth Century (film)",
+  "intro_en": "Twentieth Century is a 1934 American pre-Code screwball comedy film directed by Howard Hawks and starring John Barrymore, Carole Lombard, Walter Connolly, and Roscoe Karns."
  },
  "volti faces": {
   "qid": "Q2241601",
@@ -3832,7 +4279,10 @@
   "query": "VOLTI (FACES)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Faces",
+  "enwiki": "Faces (1968 film)",
+  "intro_en": "Faces is a 1968 American drama film written, produced, and directed by John Cassavetes—his fourth directorial work."
  },
  "vos avengers doomsday": {
   "qid": null,
@@ -3914,7 +4364,16 @@
   "query": "WILD HORSE NINE",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Wild Horse Nine",
+  "enwiki": "Wild Horse Nine",
+  "intro_en": "Wild Horse Nine is a 2026 black comedy political thriller film written and directed by Martin McDonagh."
+ },
+ "wild horse nine anteprima": {
+  "qid": null,
+  "checked": "2026-10-22",
+  "query": "Wild Horse Nine Anteprima",
+  "version": 4
  },
  "wilde horse nine": {
   "qid": "Q133341572",
@@ -3937,7 +4396,10 @@
   "query": "WILDE HORSE NINE",
   "source": "similar-title",
   "version": 3,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Wild Horse Nine",
+  "enwiki": "Wild Horse Nine",
+  "intro_en": "Wild Horse Nine is a 2026 black comedy political thriller film written and directed by Martin McDonagh."
  },
  "wildwood": {
   "qid": "Q123058740",
@@ -3960,7 +4422,10 @@
   "query": "WILDWOOD",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Wildwood",
+  "enwiki": "Wildwood (film)",
+  "intro_en": "Wildwood is a 2026 American stop-motion adult animated epic dark fantasy film co-produced and directed by Travis Knight and written by Chris Butler, based on Colin Meloy and Carson Ellis's 2011 novel."
  },
  "wildwood original version": {
   "qid": null,
@@ -3995,7 +4460,10 @@
   "query": "WITTGENSTEIN",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Wittgenstein",
+  "enwiki": "Wittgenstein (film)",
+  "intro_en": "Wittgenstein is a 1993 experimental comedy-drama film co-written and directed by Derek Jarman, and produced by Tariq Ali."
  },
  "yellow letters v originale sub ita": {
   "qid": "Q136163095",
@@ -4018,7 +4486,10 @@
   "query": "Yellow Letters (V.Originale Sub Ita)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-21"
+  "checked": "2026-10-21",
+  "title_en": "Yellow Letters",
+  "enwiki": "Yellow Letters",
+  "intro_en": "Yellow Letters is a 2026 political drama film directed by İlker Çatak, who co-wrote the screenplay with Ayda Çatak and Enis Köstepen."
  },
  "youth hard times pinyin qing chun ku": {
   "qid": "Q127786431",
@@ -4039,7 +4510,10 @@
   "query": "YOUTH: HARD TIMES (PINYIN: QING CHUN KU)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Youth (Hard Times)",
+  "enwiki": "Youth (Hard Times)",
+  "intro_en": "Youth (Hard Times) (Chinese: 青春：苦; pinyin: qīng chūn ku) is a 2024 documentary film directed by Wang Bing."
  },
  "youth homecoming qing chun gui": {
   "qid": "Q127786185",
@@ -4062,7 +4536,10 @@
   "query": "YOUTH: HOMECOMING (QING CHUN: GUI)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Youth (Homecoming)",
+  "enwiki": "Youth (Homecoming)",
+  "intro_en": "Youth (Homecoming) (Chinese: 青春：归; pinyin: Qīngchūn: Gui) is a 2024 internationally co-produced documentary film directed by Wang Bing."
  },
  "youth spring qingchun": {
   "qid": "Q117706339",
@@ -4085,7 +4562,10 @@
   "query": "YOUTH: SPRING (QINGCHUN)",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Youth (Spring)",
+  "enwiki": "Youth (Spring)",
+  "intro_en": "Youth (Spring) (Chinese: 青春：春, romanized: qīng chūn: chūn; French: Jeunesse (Le Printemps)) is a 2023 documentary film directed by Wang Bing."
  },
  "zabriskie point": {
   "qid": "Q139078",
@@ -4108,6 +4588,9 @@
   "query": "ZABRISKIE POINT",
   "source": "search",
   "version": 4,
-  "checked": "2026-10-20"
+  "checked": "2026-10-20",
+  "title_en": "Zabriskie Point",
+  "enwiki": "Zabriskie Point (film)",
+  "intro_en": "Zabriskie Point is a 1970 American drama film directed by Michelangelo Antonioni and starring Mark Frechette, Daria Halprin, and Rod Taylor."
  }
 }

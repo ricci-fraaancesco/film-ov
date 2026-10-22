@@ -7,6 +7,7 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 
 - (O.V.) La Bambola -> [La bambola (2026, Q139545734)](https://www.wikidata.org/wiki/Q136945628) `Q136945628`
   - or [La Bambola (1991, Ninì Grassia)](https://www.wikidata.org/wiki/Q3820632) `Q3820632`
+- (Vos) Matrix 4k -> [Matrix (1999, Lana Wachowski, Lilly Wachowski)](https://www.wikidata.org/wiki/Q83495) `Q83495`
 - L'UOMO DI CENERE (RI? ES-SED) -> [L'uomo di cenere (1986, Nūrī Būzīd)](https://www.wikidata.org/wiki/Q1985728) `Q1985728`
 - LA CASA DELLE DONNE (LA MAISON DES FEMMES) -> [La Maison des femmes (2025, Q141162816)](https://www.wikidata.org/wiki/Q138417077) `Q138417077`
 - LA SPOSA TURCA (GEGEN DIE WAND) -> [La sposa turca (2004, Fatih Akın)](https://www.wikidata.org/wiki/Q325648) `Q325648`
@@ -27,10 +28,8 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - (Kor) Stray Kids Wt <run it=""> Live View</run>
 - (Lingua Originale) Avengers: Doomsday
 - (O.V) L'Infernale Quinlan Director'S Cut
-- (O.V.) 2001 : Odissea Nello Spazio 4k
 - (O.V.) Forgotten Island (2026)
 - (O.V.) Strange Journey:The Story Of Roc.
-- (Vos) Matrix 4k
 - AMAZING MONSTER
 - AUBER 89
 - AZ ZEEB
@@ -39,7 +38,6 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - Bts - World Tour Arirang Live Viewing
 - CARA A CARA
 - Concerto Gospels
-- DRACULA DI BRAM STOKER 4K (RIED. 2026)
 - Doppia Coppia
 - Gin,Whiskey,Vodka?
 - Giovanni Chiamato Francesco
@@ -47,7 +45,6 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - Lo Straniero (V.Originale Sub Ita)
 - MAKING MARIE ANTONIETTE
 - MARATONA HALLOWEEN: CREATURE A SORPRESA
-- MATRIX 4K V.O.
 - MIDSUMMER FORMULA
 - No. Non E' L'Avaro Di Moliere
 - Notre Dame Ananke
@@ -62,11 +59,6 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - THE PICKERS
 - URCHIN in V.O.
 - Veleno Per Topi
-- Vos Avengers: Doomsday
-- Vos Digger
-- Vos Matrix 4k
-- Vos Naza
-- Vos Sense And Sensibility (2026)
 - Vos Wild Horse Nine Anteprima
 - WILDWOOD ORIGINAL VERSION
 - report to mother
