@@ -96,6 +96,22 @@ def test_subtitles():
     assert subtitle_info("Versione originale con sottotitoli in italiano e inglese") == "sub IT+EN"
     assert subtitle_info("Coreano con sottotitoli in Inglese") == "sub EN"
     assert subtitle_info("Russo") == ""
+    # short forms seen in real data (Oct 2026)
+    assert subtitle_info("Lingua originale con sott. in italiano") == "sub IT"
+    assert subtitle_info("v.o.sott.it.") == "sub IT"
+    assert subtitle_info("tedesco sott. italiano") == "sub IT"
+    assert subtitle_info("Inglese sub. Ita") == "sub IT"
+    assert subtitle_info("Originale con sott. ita") == "sub IT"
+    assert subtitle_info("VERSIONE ORIGINALE (AMERICANO) CON SOTT. ITALIANO") == "sub IT"
+    # language says nothing: fall back to the label
+    assert subtitle_info("Italiano", "V.O. SOTT.") == "sub IT"
+    assert subtitle_info("Italiano", "V.O.S.") == "sub IT"
+    assert subtitle_info("Originale", "VOS €7") == "sub IT"
+    # no subtitle info anywhere stays unknown
+    assert subtitle_info("Lingua originale", "ORIGINALVERSION") == ""
+    assert subtitle_info("inglese", "Mod Original") == ""
+    assert subtitle_info("Italiano", "Primavisione") == ""
+    assert subtitle_info("Lingua originale", "JP, JP") == ""
 
 
 def test_barberini_labels():

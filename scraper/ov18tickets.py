@@ -159,18 +159,29 @@ def clean_title(title: str) -> str:
     return out
 
 
-def subtitle_info(language: str) -> str:
-    l = language.lower()
-    m = re.search(r"sottotitol\w*(.*)$", l)
+# "sottotitolato", "sott.", "sub.", "subtitles", and the V.O.S. abbreviation
+_SUB_MARK = re.compile(r"sottotitol\w*|subtitle\w*|\bsott\b\.?|\bsubs?\b\.?|\bv\.?\s?o\.?\s?s\b\.?")
+_SUB_IT = re.compile(r"italian|\bita?\b")
+_SUB_EN = re.compile(r"ingles|english|\beng?\b")
+
+
+def _subs_from(text: str) -> str:
+    m = _SUB_MARK.search((text or "").lower())
     if not m:
         return ""
-    after = m.group(1)
-    it, en = "italian" in after, "ingles" in after
+    after = text.lower()[m.end():]
+    it, en = bool(_SUB_IT.search(after)), bool(_SUB_EN.search(after))
     if it and en:
         return "sub IT+EN"
     if en:
         return "sub EN"
-    return "sub IT"
+    return "sub IT"  # Italian cinemas: subtitles with no language named are Italian
+
+
+def subtitle_info(language: str, label: str = "") -> str:
+    """'sub IT' / 'sub EN' / 'sub IT+EN', or '' when the cinema doesn't say.
+    The language field wins; the cinema's label is the fallback."""
+    return _subs_from(language) or _subs_from(label)
 
 
 # --------------------------------------------------------------------------
@@ -267,7 +278,7 @@ def make_show(storefront, sub, film_id, title, language, label, epoch_s, screen,
         booking_url=f"https://{sub}.{storefront}/film/{film_id}/{uuid}#theater-init",
         is_ov=ov,
         ov_reason=reason,
-        subtitles=subtitle_info(language),
+        subtitles=subtitle_info(language, label),
         film_url=film_url or f"https://{storefront}/film/{film_id}",
         poster=poster,
         director=director,
