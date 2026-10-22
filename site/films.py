@@ -6,7 +6,10 @@ import unicodedata
 EDITION_TAGS = re.compile(
     r"\s*\((ed\.?\s*spec\.?|ried\.?|restaurato|versione restaurata|director'?s cut|4k)\)\s*"
     r"|\s*\|\s*70\s*mm\b|\s*-\s*70\s*mm\b"
-    r"|\s*\((?:19|20)\d{2}\)\s*$",  # "Ragione E Sentimento (2026)" (Webtic)
+    r"|\s*\((?:19|20)\d{2}\)\s*$"  # "Ragione E Sentimento (2026)" (Webtic)
+    # original-version markers: "(Ov) Fatherland", "(O.V.) Ragione e sentimento", "Dune - V.O.", "Dune (VOS)"
+    r"|^\s*\((?:o\.?\s?v\.?|v\.?\s?o\.?s?\.?)\)\s*"
+    r"|\s*(?:[-–]\s*|\()(?:o\.?\s?v\.?|v\.?\s?o\.?s?\.?|versione originale|lingua originale|original version)\)?\s*$",
     re.I,
 )
 

@@ -1,5 +1,5 @@
-"""Build the website (one HTML file) from data/ov_showtimes.csv.
-Usage: python site/build_data.py --csv data/ov_showtimes.csv --out public
+"""Build the website (static pages, see render.py) from data/ov_showtimes.csv.
+Usage: python site/build_data.py --csv data/ov_showtimes.csv --out public [--base /film-ov/]
 """
 import argparse, csv, json, re, unicodedata
 from datetime import datetime
@@ -10,6 +10,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--csv', default='data/ov_showtimes.csv')
 ap.add_argument('--out', default='public')
 ap.add_argument('--data', default='data', help='folder with film_matches.json and film_pages.json (optional)')
+ap.add_argument('--base', default='/', help='URL path the site is served from, e.g. /film-ov/ on GitHub Pages')
 ap.add_argument('--poster-cache', default='', help='folder for poster copies; if set, posters are copied and served from the site')
 args = ap.parse_args()
 HERE = Path(__file__).parent
@@ -80,17 +81,18 @@ ALIAS = {
 FORMAT = {"DUNE - PARTE TRE | 70MM": "70mm"}
 
 def lang_short(lang):
-    l = lang.strip()
-    low = l.lower()
-    base = re.split(r'\s+con\s+|,\s*sottotitol', low)[0].strip()
-    if base in ('originale', 'versione originale', 'lingua originale', 'originale sottotitolato', 'originale sottotitolata', ''):
+    """'Inglese sottotitolato in italiano' / 'Inglese sub. ita' / 'Inglese con sottotitoli in italiano' -> ('Inglese', 'sott. ITA')"""
+    low = lang.strip().lower()
+    parts = re.split(r'\s+con\s+|,\s*|\s+(?=sottotitol|sub\b|sub\.)', low, maxsplit=1)
+    base, rest = parts[0].strip(), (parts[1] if len(parts) > 1 else '')
+    if base in ('originale', 'versione originale', 'lingua originale', 'originale sottotitolato', 'originale sottotitolata', 'o.v.', 'ov', 'v.o.', ''):
         base = 'lingua originale'
     base = base.replace('/', ', ').replace(' e ', ', ')
-    m = re.search(r'sottotitol\w*(.*)$', low)
     sub = ''
+    m = re.search(r'(sottotitol\w*|\bsub\b\.?)(.*)$', low)
     if m:
-        a = m.group(1)
-        it, en = 'italian' in a, 'ingles' in a
+        a = m.group(2)
+        it, en = bool(re.search(r'ital|\bita?\b', a)), bool(re.search(r'ingl|engl|\beng?\b', a))
         sub = 'sott. ITA + ENG' if it and en else ('sott. ENG' if en else 'sott. ITA')
     if base == 'lingua originale' and 'originale sottotitolat' in low: sub = sub or 'sott. ITA'
     return base[:1].upper() + base[1:], sub
@@ -120,12 +122,19 @@ VENUE = {
  ("Firenze","Cinema Flora"): ("", "", ""), ("Firenze","Cinema Fiorella"): ("", "", ""),
  ("Napoli","Cinema Metropolitan"): ("", "", ""),
 }
-cities = {"Roma": {"en": "Rome"}, "Bologna": {"en": ""}, "Firenze": {"en": "Florence"}, "Napoli": {"en": "Naples"}}
+
+def num(x):
+    try:
+        return float(x)
+    except (TypeError, ValueError):
+        return None
 
 cin_list = []; cin_idx = {}
 for (city, name), (addr, area, web) in VENUE.items():
     cin_idx[(city, name)] = len(cin_list)
-    cin_list.append({"id": slug(name), "n": name, "c": city, "a": addr, "z": area, "w": web})
+    v = VENUES_CSV.get((city.lower(), name.lower()), {})
+    cin_list.append({"id": slug(name), "n": name, "c": city, "a": addr or v.get('address', ''), "z": area, "w": web or v.get('website', ''),
+                     "lat": num(v.get('lat')), "lon": num(v.get('lon'))})
 
 film_list = []; film_idx = {}; shows = []
 for r in rows:
@@ -164,18 +173,19 @@ for r in rows:
         v = VENUES_CSV.get((r['city'].lower(), r['cinema'].lower()), {})
         cid = slug(r['cinema'])
         if any(c['id'] == cid for c in cin_list): cid = slug(r['cinema'] + '-' + r['city'])
-        cin_list.append({"id": cid, "n": r['cinema'], "c": r['city'], "a": v.get('address', ''), "z": "", "w": v.get('website', '')})
-        cities.setdefault(r['city'], {"en": ""})
+        cin_list.append({"id": cid, "n": r['cinema'], "c": r['city'], "a": v.get('address', ''), "z": "", "w": v.get('website', ''),
+                         "lat": num(v.get('lat')), "lon": num(v.get('lon'))})
     ci = cin_idx[(r['city'], r['cinema'])]
     ts = int(datetime.fromisoformat(r['starts_at']).timestamp() // 60)
-    lab = r['label'] if r['label'] and not re.fullmatch(r'v\.?o\.?s?\.?|vos|v\.o\. sott\.', r['label'], re.I) else ''
+    # labels that only say "original version" are not shown: the whole site is original version
+    lab = r['label'] if r['label'] and not re.search(r'^(v\.?\s?o\.?s?\.?|o\.?\s?v\.?|vos)(\s|\.|$)|original\s?version|versione originale|lingua originale|sott\.?\s?(it|en)', r['label'], re.I) else ''
     screen = re.sub(r'\s+', ' ', r['screen']).strip()
     if screen.isdigit(): screen = 'Sala ' + screen
     # "Mastroianni PRIMA VISIONE" -> "Mastroianni": the label is already shown as a badge
     cut = re.split(r"\s(?=[A-ZÀ-Ý']{4,}\b)", screen, maxsplit=1)[0].strip()
     if cut and cut != screen and not cut.isupper(): screen = cut
     fmt = FORMAT.get(raw, '')
-    shows.append([ci, fi, ts, screen, tcase(lab) if lab else '', fmt, r['booking_url'].replace('https://','').replace('#theater-init','')])
+    shows.append([ci, fi, ts, screen, tcase(lab) if lab else '', fmt, r['booking_url']])
 
 shows.sort(key=lambda s: s[2])
 
@@ -201,20 +211,11 @@ for f in film_list:
     while fid in used: fid += '-2'
     used.add(fid); f['id'] = fid
     if not f['al']: del f['al']
-data = {"updated": datetime.now(ZoneInfo("Europe/Rome")).replace(microsecond=0).isoformat(), "cities": cities, "cinemas": cin_list, "films": film_list, "shows": shows,
-        "missing": {"Roma": ["Troisi", "Greenwich", "Nuovo Sacher", "Farnese", "Nuovo Cinema Aquila"]}}
+data = {"updated": datetime.now(ZoneInfo("Europe/Rome")).replace(microsecond=0).isoformat(),
+        "cinemas": cin_list, "films": film_list, "shows": shows}
 out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
-html = (HERE / 'template.html').read_text(encoding='utf-8')
-page = html.replace('__DATA__', json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/'))
-# GitHub Pages needs a full HTML document
-doc = ('<!doctype html><html lang="it"><head><meta charset="utf-8">'
-       '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
-       # Not launched yet: keep search engines and AI crawlers out (see also robots.txt below)
-       '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">'
-       '<meta name="description" content="Tutti i film in versione originale nei cinema di Roma e Bologna, con orari e link per prenotare.">'
-       '<style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>'
-       '</head><body>' + page + '</body></html>')
-(out / 'index.html').write_text(doc, encoding='utf-8')
+import render
+stats = render.build(data, out, base=args.base)
 # Block every crawler, search engines and AI bots alike. The named bots are covered by "*" too,
 # but some only look for their own name, so they are listed explicitly.
 AI_BOTS = ["GPTBot", "ChatGPT-User", "OAI-SearchBot", "ClaudeBot", "Claude-User", "Claude-SearchBot", "anthropic-ai",
@@ -223,4 +224,5 @@ AI_BOTS = ["GPTBot", "ChatGPT-User", "OAI-SearchBot", "ClaudeBot", "Claude-User"
            "Timpibot", "YouBot", "DuckAssistBot", "MistralAI-User", "ImagesiftBot"]
 robots = "User-agent: *\nDisallow: /\n\n" + "".join(f"User-agent: {b}\nDisallow: /\n\n" for b in AI_BOTS)
 (out / 'robots.txt').write_text(robots, encoding='utf-8')
-print(f"{len(film_list)} films, {len(shows)} shows -> {out / 'index.html'}")
+print(f"{len(film_list)} films, {len(shows)} shows -> {stats['pages']} pages in {out} "
+      f"({stats['cities']} cities, {stats['cinemas']} cinemas, {stats['films']} films on now)")

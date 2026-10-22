@@ -59,7 +59,7 @@ jobs:
           restore-keys: posters-
 
       - name: Build the website (posters are copied here, each downloaded from the cinema only once)
-        run: python site/build_data.py --csv data/ov_showtimes.csv --data data --out public --poster-cache .cache/posters
+        run: python site/build_data.py --csv data/ov_showtimes.csv --data data --out public --base /film-ov/ --poster-cache .cache/posters
 
       - name: Save the poster cache
         uses: actions/cache/save@v4
