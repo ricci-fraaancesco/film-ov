@@ -357,6 +357,29 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "claudine": {
+  "qid": "Q1440046",
+  "title_it": "Claudine",
+  "original_title": "Claudine",
+  "year": 1974,
+  "runtime": 92,
+  "imdb": "tt0071334",
+  "tmdb": "55909",
+  "itwiki": "Claudine (film)",
+  "directors": [
+   "John Berry"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Claudine è un film del 1974, diretto dal regista John Berry.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "CLAUDINE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-22"
+ },
  "clayface": {
   "qid": "Q131460936",
   "title_it": "Clayface",
@@ -1905,6 +1928,32 @@
   "version": 4,
   "checked": "2026-10-20"
  },
+ "la sposa turca gegen die wand": {
+  "qid": "Q325648",
+  "title_it": "La sposa turca",
+  "original_title": "Gegen die Wand",
+  "year": 2004,
+  "runtime": 116,
+  "imdb": "tt0347048",
+  "tmdb": "363",
+  "itwiki": "La sposa turca",
+  "directors": [
+   "Fatih Akın"
+  ],
+  "languages": [
+   "tedesco",
+   "turco",
+   "inglese"
+  ],
+  "intro": "La sposa turca è un film del 2004 scritto e diretto da Fatih Akın.",
+  "confidence": "medium",
+  "score": 0.9,
+  "query": "LA SPOSA TURCA (GEGEN DIE WAND)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-22",
+  "alternatives": []
+ },
  "leviticus": {
   "qid": "Q137557964",
   "title_it": "Leviticus",
@@ -1985,6 +2034,29 @@
   "checked": "2026-10-21",
   "query": "Lo Straniero (V.Originale Sub Ita)",
   "version": 4
+ },
+ "look back": {
+  "qid": "Q137190293",
+  "title_it": "Look Back",
+  "original_title": "ルックバック",
+  "year": 2026,
+  "runtime": null,
+  "imdb": "tt39094466",
+  "tmdb": "1591675",
+  "itwiki": "Look Back (film 2026)",
+  "directors": [
+   "Hirokazu Kore-eda"
+  ],
+  "languages": [
+   "giapponese"
+  ],
+  "intro": "Look Back è un film del 2026 diretto, sceneggiato e montato da Hirokazu Kore'eda.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "LOOK BACK",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-22"
  },
  "m il mostro di dusseldorf": {
   "qid": "Q127021",
@@ -2952,6 +3024,30 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-21"
+ },
+ "soul kitchen": {
+  "qid": "Q312538",
+  "title_it": "Soul Kitchen",
+  "original_title": "Soul Kitchen",
+  "year": 2009,
+  "runtime": 100,
+  "imdb": "tt1244668",
+  "tmdb": "31175",
+  "itwiki": "Soul Kitchen",
+  "directors": [
+   "Fatih Akın"
+  ],
+  "languages": [
+   "tedesco"
+  ],
+  "intro": "Soul Kitchen è un film del 2009 diretto da Fatih Akın, scritto dallo stesso regista con la collaborazione dell'interprete protagonista Adam Bousdoukos.",
+  "confidence": "medium",
+  "score": 0.9,
+  "query": "SOUL KITCHEN",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-22",
+  "alternatives": []
  },
  "speak no evil": {
   "qid": "Q110040047",

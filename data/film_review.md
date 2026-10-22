@@ -6,13 +6,11 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 ## Medium confidence
 
 - (O.V.) The Rocky Horror Picture Show -> [The Rocky Horror Picture Show (1975, Jim Sharman)](https://www.wikidata.org/wiki/Q751921) `Q751921`
-- CARAVAGGIO - MORNING GLORIES -> [Caravaggio (film 2026) (2025, regista ?)](https://www.wikidata.org/wiki/Q136813984) `Q136813984`
-  - or [La gloria del mattino (1933, Lowell Sherman)](https://www.wikidata.org/wiki/Q572789) `Q572789`
-  - or [Il buongiorno del mattino (2010, Roger Michell)](https://www.wikidata.org/wiki/Q856602) `Q856602`
-  - or [Caravaggio (1986, Derek Jarman)](https://www.wikidata.org/wiki/Q1035443) `Q1035443`
 - L'UOMO DI CENERE (RI? ES-SED) -> [L'uomo di cenere (1986, Nūrī Būzīd)](https://www.wikidata.org/wiki/Q1985728) `Q1985728`
 - LA CASA DELLE DONNE (LA MAISON DES FEMMES) -> [La Maison des femmes (2025, Q141162816)](https://www.wikidata.org/wiki/Q138417077) `Q138417077`
+- LA SPOSA TURCA (GEGEN DIE WAND) -> [La sposa turca (2004, Fatih Akın)](https://www.wikidata.org/wiki/Q325648) `Q325648`
 - MAKING MARIE ANTOINETTE -> [Making Marie Antoinette (?, regista ?)](https://www.wikidata.org/wiki/Q141247887) `Q141247887`
+- SOUL KITCHEN -> [Soul Kitchen (2009, Fatih Akın)](https://www.wikidata.org/wiki/Q312538) `Q312538`
 - THE ROCKY HORROR PICTURES SHOW -> [The Rocky Horror Picture Show (1975, Jim Sharman)](https://www.wikidata.org/wiki/Q751921) `Q751921`
 - WILDE HORSE NINE -> [Wild Horse Nine (2026, Martin McDonagh)](https://www.wikidata.org/wiki/Q133341572) `Q133341572`
 - the razor's edge -> [The Razor's Edge (?, regista ?)](https://www.wikidata.org/wiki/Q130748763) `Q130748763`
