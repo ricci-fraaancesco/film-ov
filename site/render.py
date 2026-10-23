@@ -241,7 +241,9 @@ class Site:
 def sub_h1(line1: str, line2: str = "", cite: bool = False, tag: str = "h1") -> str:
     """The subtitle box: yellow Arimo on a dark frame. Film titles go in <cite>."""
     l1 = f"<cite>{e(line1)}</cite>" if cite else e(line1)
-    size = "s" if max(len(line1), len(line2)) > 24 else "m"
+    longest = max(len(line1), len(line2))
+    # 26 characters still fit at full size on a 390px phone ("Film in lingua originale," = 25)
+    size = "l" if longest > 40 else ("s" if longest > 26 else "m")
     inner = l1 + (f"<br>{e(line2)}" if line2 else "")
     return f'<div class="subbox"><{tag} class="subt subt-{size}">{inner}</{tag}></div>'
 
@@ -495,7 +497,7 @@ def fmt_km(d: float, lang: str) -> str:
 # ---------------------------------------------------------------- pages
 
 def home(S: Site):
-    city_links = "".join(f'<a class="pill" href="{S.city_url(c)}">{e(S.cn(c))}</a>' for c in S.cities[:6])
+    city_links = "".join(f'<a class="pill" href="{S.city_url(c)}">{e(S.cn(c))}</a>' for c in S.cities[:8])
     films = by_film(S.week)
     rank = sorted(films, key=lambda fi: (-len({S.city_of(s) for s in films[fi]}), -len(films[fi]), S.ft(fi)))
     tiles = ""
@@ -504,13 +506,13 @@ def home(S: Site):
         tiles += poster_tile(S, fi, S.lang_badge(S.films[fi]) + " · " + (S.cn(cs[0]) if len(cs) == 1 else S.n(len(cs), "city")), S.film_url(fi))
     h1 = S.t("h1_home")
     body = (
-        f'<section class="top">{sub_h1(*h1)}</section>'
+        f'<div class="hero2"><div class="hero-main"><section class="top">{sub_h1(*h1)}</section>'
         '<section class="near" data-near-home>'
         f'<button type="button" class="btn-y btn-big" data-locate>{ICON_PIN}{S.t("near_btn")}</button>'
         f'<p class="hint">{S.t("near_hint")}</p>'
-        '<div class="near-out" data-near-out hidden></div></section>'
-        f'<section class="sec" id="citta"><h2 class="h2s">{S.t("or_city")}</h2><div class="pills">{city_links}'
-        f'<a class="pill pill-plain" href="{S.cinemas_url()}">{S.t("all")}</a></div></section>'
+        '<div class="near-out" data-near-out hidden></div></section></div>'
+        f'<section class="sec hero-side" id="citta"><h2 class="h2s">{S.t("or_city")}</h2><div class="pills">{city_links}'
+        f'<a class="pill pill-plain" href="{S.cinemas_url()}">{S.t("all")}</a></div></section></div>'
         f'<section class="sec"><div class="sec-head"><h2 class="h2">{S.t("this_week")}</h2><span class="count">{S.n(len(films), "film")}</span></div>'
         f'<div class="ptiles">{tiles}</div><a class="btn-o btn-wide" href="{S.films_url()}">{S.t("all_on")}</a></section>'
     )
@@ -712,9 +714,9 @@ def film_hub(S: Site):
     btn = (f'<button type="button" class="btn-o btn-wide" data-more>{S.t("show_more", n=len(single) - 30)}</button>' if len(single) > 30 else "")
     city_pills = "".join(f'<a class="pill" href="{S.city_url(c)}">{e(S.cn(c))}</a>' for c in S.cities[:8])
     body = (
-        f'<section class="top">{sub_h1(*S.t("h1_films"))}'
-        f'<p class="lead">{S.t("films_lead", films=S.n(len(films), "film"), cities=S.n(len(S.cities), "city"))}</p></section>'
-        f'<section class="sec"><h2 class="h2s">{S.t("by_city")}</h2><div class="pills">{city_pills}</div></section>'
+        f'<div class="hero2"><div class="hero-main"><section class="top">{sub_h1(*S.t("h1_films"))}'
+        f'<p class="lead">{S.t("films_lead", films=S.n(len(films), "film"), cities=S.n(len(S.cities), "city"))}</p></section></div>'
+        f'<section class="sec hero-side"><h2 class="h2s">{S.t("by_city")}</h2><div class="pills">{city_pills}</div></section></div>'
         + (f'<section class="sec"><div class="sec-head"><h2 class="h2">{S.t("multi_city")}</h2><span class="count">{len(multi)}</span></div><div class="lrows">{m}</div></section>' if m else "")
         + f'<section class="sec"><div class="sec-head"><h2 class="h2">{S.t("one_city")}</h2><span class="count">{len(single)}</span></div><div class="lrows">{"".join(srows)}</div>{btn}</section>'
     )
@@ -741,9 +743,9 @@ def cinema_hub(S: Site):
         secs += (f'<section class="sec"><div class="sec-head"><h2 class="h2">{S.t("other_towns")}</h2><span class="count">{S.t("one_each")}</span></div>'
                  f'<div class="lrows" data-sort>{"".join(row(ci, True) for ci in small)}</div></section>')
     body = (
-        f'<section class="top">{sub_h1(*S.t("h1_cinemas"))}'
-        f'<p class="lead">{S.t("cinemas_lead", cinemas=S.n(len(cins), "cinema"), cities=S.n(len(per_city), "city"))}</p>'
-        f'<button type="button" class="btn-o" data-locate>{ICON_PIN}{S.t("sort_dist")}</button></section>{secs}'
+        f'<div class="hero2"><div class="hero-main"><section class="top">{sub_h1(*S.t("h1_cinemas"))}'
+        f'<p class="lead">{S.t("cinemas_lead", cinemas=S.n(len(cins), "cinema"), cities=S.n(len(per_city), "city"))}</p></section></div>'
+        f'<div class="hero-side"><button type="button" class="btn-o btn-wide" data-locate>{ICON_PIN}{S.t("sort_dist")}</button></div></div>{secs}'
     )
     return page(S, f"{S.L}/cinema/index.html", S.t("cinemas_title"), S.t("cinemas_desc"), body, crumbs(S, (S.t("crumb_cinemas"), None)),
                 alt=S.other.cinemas_url())

@@ -202,19 +202,31 @@
           var radius = Math.max(5, best * 2.5);
           var near = D.sh.filter(function (s) { return cd[s.c] <= radius; });
           city = D.cinemas[cd.indexOf(best)][1];
-          var ks = [TODAY, TOMORROW, ""];
-          var render = function (ix) {
-            var k = ks[ix], rows = near.filter(function (s) { return !k || key(s.t) === k; }).slice(0, 8);
-            nhOut.innerHTML = "<h3>" + esc(L.near_h[ix]) + "</h3>"
-              + '<div class="tabs" role="group" aria-label="' + esc(L.when_label) + '">' + L.tabs.map(function (t, i) { return '<button type="button" data-ix="' + i + '" aria-pressed="' + (i === ix) + '">' + esc(t) + "</button>"; }).join("") + "</div>"
-              + (rows.length ? rows.map(function (s) {
-                var f = D.films[s.f], c = D.cinemas[s.c];
-                return '<a class="nrow" href="' + D.filmUrl(s.f, c[1]) + '"><span class="t">' + (k ? fmtTime.format(new Date(s.t)) : esc(whenShort(s.t))) + '</span><span class="w"><b>' + esc(f[0]) + "</b><span>" + esc(f[5]) + "</span><span>" + esc(c[0]) + " · " + fmtKm(cd[s.c]) + "</span></span>" + CHEV + "</a>";
-              }).join("") : '<p class="hint">' + esc(L.near_none[ix]) + "</p>")
-              + '<a class="more" href="' + D.cityUrl(city) + (k && k !== TODAY ? "?" + DAYP + "=" + k : "") + '">' + esc(fill(L.all_in[ix], { city: D.cities[city][0] })) + "</a>";
-            $$(".tabs button", nhOut).forEach(function (b) { b.addEventListener("click", function () { render(+b.getAttribute("data-ix")); }); });
+          // the same 7-day strip as the city pages: one day at a time, so every time belongs to a visible day
+          var days = [], perDay = {};
+          for (var i = 0; i < 7; i++) days.push(key(NOW + i * 864e5));
+          near.forEach(function (s) { var k = key(s.t); (perDay[k] = perDay[k] || []).push(s); });
+          var words = function (k) {  // Day: start of sentence, ds: inside a sentence, dd: "di oggi" (it)
+            var x = dayOf(k), date = wdName(k) + " " + x.d;
+            var ds = k === TODAY ? L.todayL : k === TOMORROW ? L.tomorrowL : (LANG === "en" ? "on " + date : date);
+            return { Day: k === TODAY ? L.today : k === TOMORROW ? L.tomorrow : cap(date), ds: ds, dd: LANG === "it" ? "di " + ds : ds };
           };
-          render(near.some(function (s) { return key(s.t) === TODAY; }) ? 0 : near.some(function (s) { return key(s.t) === TOMORROW; }) ? 1 : 2);
+          var render = function (k) {
+            var w = words(k), rows = perDay[k] || [], shown = rows.slice(0, 10);
+            nhOut.innerHTML = "<h3>" + esc(fill(L.near_title, w)) + "</h3>"
+              + '<div class="days" role="group" aria-label="' + esc(L.when_label) + '">' + days.map(function (d) {
+                var x = dayOf(d), cnt = (perDay[d] || []).length;
+                return '<button type="button" class="day' + (cnt ? "" : " empty") + '" data-k="' + d + '" aria-pressed="' + (d === k) + '" aria-label="' + esc(longDay(d) + ": " + n(cnt, "show")) + '">'
+                  + '<span class="dw">' + esc(d === TODAY ? L.today : (d === TOMORROW && LANG === "it") ? L.tomorrow : L.wds[x.wd]) + '</span><span class="dn">' + x.d + "</span></button>";
+              }).join("") + "</div>"
+              + (shown.length ? shown.map(function (s) {
+                var f = D.films[s.f], c = D.cinemas[s.c];
+                return '<a class="nrow" href="' + D.filmUrl(s.f, c[1]) + '"><span class="t">' + fmtTime.format(new Date(s.t)) + '</span><span class="w"><b>' + esc(f[0]) + "</b><span>" + esc(f[5]) + "</span><span>" + esc(c[0]) + " · " + fmtKm(cd[s.c]) + "</span></span>" + CHEV + "</a>";
+              }).join("") : '<p class="hint">' + esc(fill(L.near_empty, w)) + "</p>")
+              + '<a class="more" href="' + D.cityUrl(city) + (k !== TODAY ? "?" + DAYP + "=" + k : "") + '">' + esc(fill(L.all_in, { city: D.cities[city][0], ds: w.ds, dd: w.dd })) + "</a>";
+            $$(".day", nhOut).forEach(function (b) { b.addEventListener("click", function () { render(b.getAttribute("data-k")); }); });
+          };
+          render(days.filter(function (d) { return perDay[d]; })[0] || TODAY);
         }).catch(function () { nhBtn.disabled = false; nearFail(nhOut, "error"); });
       }, function (why) { nhBtn.disabled = false; nearFail(nhOut, why); });
     });
