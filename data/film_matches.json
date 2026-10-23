@@ -142,6 +142,12 @@
   "enwiki": "Andrei Rublev (film)",
   "intro_en": "Andrei Rublev is a 1966 Soviet epic biographical historical drama film directed by Andrei Tarkovsky who co-wrote it with Andrei Konchalovsky."
  },
+ "apocalypse now final cut": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "APOCALYPSE NOW - FINAL CUT",
+  "version": 4
+ },
  "auber 89": {
   "qid": null,
   "checked": "2026-10-20",
@@ -1051,6 +1057,34 @@
   "query": "FIORD",
   "version": 4
  },
+ "fjord": {
+  "qid": "Q137652478",
+  "title_it": "Fjord",
+  "original_title": "Fjord",
+  "year": 2026,
+  "runtime": 146,
+  "imdb": "tt35410859",
+  "tmdb": "1401459",
+  "itwiki": "Fjord (film)",
+  "title_en": "Fjord",
+  "enwiki": "Fjord (film)",
+  "directors": [
+   "Cristian Mungiu"
+  ],
+  "languages": [
+   "inglese",
+   "romeno",
+   "norvegese"
+  ],
+  "intro": "Fjord è un film del 2026 diretto, sceneggiato e co-prodotto da Cristian Mungiu, con protagonisti Sebastian Stan e Renate Reinsve.",
+  "intro_en": "Fjord is a 2026 legal thriller family drama film written, directed and co-produced by Cristian Mungiu.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "FJORD",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "forgotten island": {
   "qid": null,
   "checked": "2026-10-22",
@@ -1414,6 +1448,12 @@
   "qid": null,
   "checked": "2026-10-23",
   "query": "I CORTI DI AGNÈS VARDA // PARTE 1",
+  "version": 4
+ },
+ "i corti di agnes varda parte 2": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "I CORTI DI AGNÈS VARDA // PARTE 2",
   "version": 4
  },
  "i diavoli": {
@@ -2247,6 +2287,33 @@
   "title_en": "The Thing",
   "enwiki": "The Thing (1982 film)",
   "intro_en": "The Thing is a 1982 American science fiction horror film directed by John Carpenter from a screenplay by Bill Lancaster."
+ },
+ "la doppia vita di veronica la double vie de veronique": {
+  "qid": "Q1130211",
+  "title_it": "La doppia vita di Veronica",
+  "original_title": "La Double Vie de Véronique",
+  "year": 1991,
+  "runtime": 98,
+  "imdb": "tt0101765",
+  "tmdb": "1600",
+  "itwiki": "La doppia vita di Veronica",
+  "title_en": "The Double Life of Véronique",
+  "enwiki": "The Double Life of Veronique",
+  "directors": [
+   "Krzysztof Kieślowski"
+  ],
+  "languages": [
+   "francese",
+   "polacco"
+  ],
+  "intro": "La doppia vita di Veronica è un film del 1991 diretto da Krzysztof Kieślowski.",
+  "intro_en": "The Double Life of Veronique is a 1991 drama film directed by Krzysztof Kieślowski, and starring Irène Jacob and Philippe Volter.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "LA DOPPIA VITA DI VERONICA (LA DOUBLE VIE DE VERONIQUE)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "la fuga di logan": {
   "qid": "Q503018",
@@ -3207,6 +3274,32 @@
   "checked": "2026-10-22",
   "query": "No. Non E' L'Avaro Di Moliere",
   "version": 4
+ },
+ "non aprite quella porta": {
+  "qid": "Q886597",
+  "title_it": "Non aprite quella porta",
+  "original_title": "The Texas Chain Saw Massacre",
+  "year": 1974,
+  "runtime": 83,
+  "imdb": "tt0072271",
+  "tmdb": "30497",
+  "itwiki": "Non aprite quella porta (film 1974)",
+  "title_en": "The Texas Chain Saw Massacre",
+  "enwiki": "The Texas Chain Saw Massacre",
+  "directors": [
+   "Tobe Hooper"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Non aprite quella porta è un film del 1974 co-scritto, diretto, co-prodotto e co-composto da Tobe Hooper.",
+  "intro_en": "The Texas Chain Saw Massacre is a 1974 American slasher film produced, co-composed, and directed by Tobe Hooper, who co-wrote it with Kim Henkel.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "NON APRITE QUELLA PORTA",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "non sarai sola you won t be alone": {
   "qid": "Q104880088",
@@ -4570,6 +4663,32 @@
   "enwiki": "The Virgin of the Quarry Lake",
   "intro_en": "The Virgin of the Quarry Lake is a 2025 supernatural coming-of-age horror film directed by Laura Casabé, written by Benjamín Naishtat and based on two stories by Mariana Enríquez."
  },
+ "the yellow sea": {
+  "qid": "Q1393064",
+  "title_it": "The Yellow Sea",
+  "original_title": "황해",
+  "year": 2010,
+  "runtime": 156,
+  "imdb": "tt1230385",
+  "tmdb": "57361",
+  "itwiki": "The Yellow Sea",
+  "title_en": "The Yellow Sea",
+  "enwiki": "The Yellow Sea (film)",
+  "directors": [
+   "Na Hong-jin"
+  ],
+  "languages": [
+   "coreano"
+  ],
+  "intro": "The Yellow Sea è un film del 2010 scritto e diretto da Na Hong-jin.",
+  "intro_en": "The Yellow Sea is a 2010 South Korean action thriller film directed by Na Hong-jin and starring Ha Jung-woo and Kim Yoon-seok in the lead roles.",
+  "confidence": "high",
+  "score": 1.05,
+  "query": "THE YELLOW SEA",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "tracking edith": {
   "qid": "Q42325232",
   "title_it": "Tracking Edith",
@@ -4621,6 +4740,32 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "tre colori film rosso trois couleurs rouge": {
+  "qid": "Q952142",
+  "title_it": "Tre colori - Film Rosso",
+  "original_title": "Trois couleurs: Rouge",
+  "year": 1994,
+  "runtime": 99,
+  "imdb": "tt0111495",
+  "tmdb": "110",
+  "itwiki": "Tre colori - Film rosso",
+  "title_en": "Three Colours: Red",
+  "enwiki": "Three Colours: Red",
+  "directors": [
+   "Krzysztof Kieślowski"
+  ],
+  "languages": [
+   "francese"
+  ],
+  "intro": "Tre colori - Film rosso è un film del 1994 diretto da Krzysztof Kieślowski.",
+  "intro_en": "Three Colours: Red is a 1994 romantic psychological drama mystery art film co-written, produced and directed by Polish filmmaker Krzysztof Kieślowski.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "TRE COLORI - FILM ROSSO (TROIS COULEURS: ROUGE)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "trenque lauquen 1a parte": {
   "qid": null,

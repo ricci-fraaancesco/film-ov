@@ -1,0 +1,9 @@
+5283	roma-savoy (mycityplex sc)	=> SAVOY ROMA | Roma | RM	35 shows, 0 OV
+5285	roma-doria (mycityplex sc)	=> DORIA ROMA | Roma | RM	77 shows, 0 OV
+5279	roma-trianon (mycityplex sc)	=> TRIANON ROMA | Roma | RM	89 shows, 0 OV
+5859	roma-starplex-roma (thescreen sc)	=> THE SCREEN ROMA OTTAVIA | Roma | RM	122 shows, 0 OV
+5779	milano-notorious-merlata (notorious sc)	=> Notorious Cascina Merlata | Milano | MI	423 shows, 37 OV
+5048	firenze-multisala-fiamma (staseraalcinema mult)	=> FIAMMA FIRENZE | Firenze | FI	35 shows, 0 OV
+5051	firenze-multisala-marconi (staseraalcinema mult)	=> MARCONI FIRENZE | Firenze | FI	42 shows, 0 OV
+5858	torino-cinema-agnelli (loadLocal)	=> CINEMA TEATRO AGNELLI | Torino | TO	6 shows, 0 OV
+5650	varese-filmstudio-90 (loadLocal)	=> CINEMA NUOVO VARESE | Varese | VA	25 shows, 2 OV
