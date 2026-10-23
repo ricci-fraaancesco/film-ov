@@ -147,6 +147,8 @@ img { max-width: 100%; display: block; }
 .area .dist:not(:empty)::before { content: " · "; }
 .cc-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
 .area { font-size: 13px; color: var(--ink2); }
+.town { font-size: 13px; color: var(--ink2); margin-right: auto; }
+.town + .dist:not(:empty)::before { content: "· "; }
 .compact summary { list-style: none; cursor: pointer; display: flex; flex-direction: column; gap: 12px; }
 .compact summary::-webkit-details-marker { display: none; }
 .compact .oneline { margin: 0; font-size: 14px; }

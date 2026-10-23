@@ -35,7 +35,15 @@ HERE = Path(__file__).parent
 BRAND = "linguaoriginale"
 CONTACT = "ciao@linguaoriginale.com"
 GENERIC = re.compile(r"^(pop up cinema|cinema teatro|cineteatro|multicinema|multisala|multiplex|cinema|sala)\s+", re.I)
-SIDE_LIMIT = 6  # cinemas shown in the city side panel before "Mostra altri"
+SIDE_LIMIT = 6
+HUB_RADIUS_KM = 25    # big city pages also list the cinemas of other towns within this distance (Parco Leonardo, Assago...)
+HUB_CENTRES = {       # city centres (lat, lon) of the big cities that list the cinemas around them
+    "Roma": (41.9028, 12.4964), "Milano": (45.4642, 9.1900), "Napoli": (40.8518, 14.2681), "Torino": (45.0703, 7.6869),
+    "Bologna": (44.4949, 11.3426), "Firenze": (43.7696, 11.2558), "Genova": (44.4056, 8.9463), "Bari": (41.1171, 16.8719),
+    "Palermo": (38.1157, 13.3615), "Catania": (37.5079, 15.0830), "Venezia": (45.4408, 12.3155), "Verona": (45.4384, 10.9916),
+    "Padova": (45.4064, 11.8768), "Bergamo": (45.6983, 9.6773), "Brescia": (45.5416, 10.2118), "Cagliari": (39.2238, 9.1217),
+    "Trieste": (45.6495, 13.7768),
+}  # cinemas shown in the city side panel before "Mostra altri"
 SUB_SHORT = {"sott. ITA": "IT", "sott. ENG": "EN", "sott. ITA + ENG": "IT+EN"}
 
 
@@ -109,9 +117,10 @@ class Site:
         self.login = {s["c"] for s in self.shows if any(h in s["url"] for h in LOGIN_HOSTS)}
         self.week = [s for s in self.shows if s["day"] <= self.days[-1]]
 
-        # cities, ordered by the number of screenings this week (then all)
-        cnt = Counter(self.cinemas[s["c"]]["c"] for s in self.week)
-        cnt_all = Counter(self.cinemas[s["c"]]["c"] for s in self.shows)
+        # big cities also list the cinemas around them (self.hub); then cities, ordered by screenings this week (then all)
+        self.hub = self.hubs()
+        cnt = Counter(c for s in self.week for c in self.cities_of(s["c"]))
+        cnt_all = Counter(c for s in self.shows for c in self.cities_of(s["c"]))
         self.cities = sorted(cnt_all, key=lambda c: (-cnt[c], -cnt_all[c], c))
         self.city_slug = {c: slug(self.cn(c)) for c in self.cities}
 
@@ -240,6 +249,34 @@ class Site:
 
     def city_of(self, s):
         return self.cinemas[s["c"]]["c"]
+
+    def hubs(self) -> dict:
+        """cinema -> the big city whose pages also list it: a cinema in another town within HUB_RADIUS_KM
+        of the centre of a city in HUB_CENTRES (which then gets a page even with no cinema of its own, e.g. Verona).
+        Each cinema keeps its own town page too."""
+        out = {}
+        for ci in {s["c"] for s in self.shows}:
+            c = self.cinemas[ci]
+            if c["c"] in HUB_CENTRES:
+                continue
+            d = {h: km((c.get("lat"), c.get("lon")), ctr) for h, ctr in HUB_CENTRES.items()}
+            d = {h: x for h, x in d.items() if x is not None and x <= HUB_RADIUS_KM}
+            if d:
+                out[ci] = min(d, key=d.get)
+        return out
+
+    def cities_of(self, ci) -> list:
+        """Pages a cinema appears on: its own town, and the big city around it."""
+        own = self.cinemas[ci]["c"]
+        return [own, self.hub[ci]] if ci in self.hub else [own]
+
+    def on(self, s, city) -> bool:
+        return city in self.cities_of(s["c"])
+
+    def town_tag(self, ci, city) -> str:
+        """' · Fiumicino' next to a cinema shown on the Roma page."""
+        t = self.cinemas[ci]["c"]
+        return f'<span class="town">{e(self.cn(t))}</span>' if t != city else ""
 
 
 # ---------------------------------------------------------------- small components
@@ -456,7 +493,7 @@ def film_card(S: Site, fi, shows, city, compact=False) -> str:
     for ci, ss in sorted(by_cinema(shows).items(), key=lambda kv: kv[1][0]["ts"]):
         c = S.cinemas[ci]
         rows += (f'<div class="cinrow"{latlon(c)}><div class="row-top"><a class="row-name" href="{S.cinema_url(ci)}">{e(c["n"])}</a>'
-                 f'<span class="dist" data-dist></span></div>{chips(S, ss, title)}{login_hint(S, ci)}</div>')
+                 f'{S.town_tag(ci, city)}<span class="dist" data-dist></span></div>{chips(S, ss, title)}{login_hint(S, ci)}</div>')
     cr = credit(S, fi)
     meta = f'{"<p class=cred>" + cr + "</p>" if cr else ""}{S.badges(f, label)}'
     more = f'<a class="more" href="{href}">{e(S.t("all_dates", where=S.in_city(city)))}</a>'
@@ -486,10 +523,11 @@ def ext_link(S: Site, c) -> str:
     return (f'<a class="ext" href="{e(c["w"])}" target="_blank" rel="noopener">{S.t("full_programme")}{ICON_EXT}</a>' if c.get("w") else "")
 
 
-def cinema_card(S: Site, ci, shows) -> str:
+def cinema_card(S: Site, ci, shows, city=None) -> str:
     c = S.cinemas[ci]
+    area = c.get("z") or "" if (city is None or c["c"] == city) else S.cn(c["c"])
     return (f'<article class="card cin" data-card{latlon(c)}><div class="cc-top"><h3 class="ctitle"><a href="{S.cinema_url(ci)}">{e(c["n"])}</a></h3>'
-            f'<span class="area">{e(c.get("z") or "")}<span class="dist" data-dist></span></span></div>'
+            f'<span class="area">{e(area)}<span class="dist" data-dist></span></span></div>'
             f'{film_rows(S, shows, c["c"])}{login_hint(S, ci)}{ext_link(S, c)}</article>')
 
 
@@ -534,7 +572,7 @@ def home(S: Site):
 
 
 def city_page(S: Site, city):
-    shows = [s for s in S.week if S.city_of(s) == city]
+    shows = [s for s in S.week if S.on(s, city)]
     per_day = defaultdict(list)
     for s in shows:
         per_day[s["day"]].append(s)
@@ -550,14 +588,15 @@ def city_page(S: Site, city):
         ds = per_day.get(d, [])
         fl = sorted(by_film(ds).items(), key=lambda kv: (-len(kv[1]), kv[1][0]["ts"]))
         fcards = "".join(film_card(S, fi, ss, city, compact=len(fl) > 6 and i >= 3) for i, (fi, ss) in enumerate(fl))  # long days only
-        ccards = "".join(cinema_card(S, ci, ss) for ci, ss in sorted(by_cinema(ds).items(), key=lambda kv: S.cinemas[kv[0]]["n"]))
+        ccards = "".join(cinema_card(S, ci, ss, city) for ci, ss in sorted(by_cinema(ds).items(), key=lambda kv: S.cinemas[kv[0]]["n"]))
         days += (f'<section class="dayblock" data-dayblock="{d.isoformat()}"><h2 class="dayh">{S.long_date(d)}'
                  f'<span class="dayn"> · {S.n(len(ds), "show")}</span></h2>'
                  f'<div class="v-film">{fcards}</div><div class="v-cin">{ccards}</div>{empty_day(S, d, where)}</section>')
     cins = Counter(s["c"] for s in shows)
     cin_films = {ci: len({s["f"] for s in shows if s["c"] == ci}) for ci in cins}
     order = sorted(cins, key=lambda ci: (-cin_films[ci], S.cinemas[ci]["n"]))  # most films first; site.js re-sorts by distance when it may
-    side = "".join(lrow(S.cinema_url(ci), S.cinemas[ci]["n"], e(S.cinemas[ci].get("z") or "") + '<span class="dist" data-dist></span>',
+    side = "".join(lrow(S.cinema_url(ci), S.cinemas[ci]["n"], (e(S.cinemas[ci].get("z") or "") if S.cinemas[ci]["c"] == city else e(S.cn(S.cinemas[ci]["c"])))
+                        + '<span class="dist" data-dist></span>',
                         S.n(cin_films[ci], "film"), latlon(S.cinemas[ci]) + (" data-extra hidden" if i >= SIDE_LIMIT else ""))
                    for i, ci in enumerate(order))
     more_btn = (f'<button type="button" class="btn-o btn-wide" data-more>{S.t("more_cinemas", n=len(order) - SIDE_LIMIT)}</button>'
@@ -646,22 +685,22 @@ def film_head(S: Site, fi) -> str:
 
 def film_city_page(S: Site, fi, city):
     title = S.ft(fi)
-    shows = [s for s in S.shows if s["f"] == fi and S.city_of(s) == city]
+    shows = [s for s in S.shows if s["f"] == fi and S.on(s, city)]
     per_day = defaultdict(list)
     for s in shows:
         per_day[s["day"]].append(s)
     days = ""
     for d, ds in sorted(per_day.items()):
         rows = "".join(f'<div class="cinrow"{latlon(S.cinemas[ci])}><div class="row-top"><a class="row-name" href="{S.cinema_url(ci)}">{e(S.cinemas[ci]["n"])}</a>'
-                       f'<span class="dist" data-dist></span></div>{chips(S, ss, title)}{login_hint(S, ci)}</div>'
+                       f'{S.town_tag(ci, city)}<span class="dist" data-dist></span></div>{chips(S, ss, title)}{login_hint(S, ci)}</div>'
                        for ci, ss in sorted(by_cinema(ds).items(), key=lambda kv: kv[1][0]["ts"]))
         days += f'<section class="daylist" data-card><h2 class="dayh">{S.short_date(d)}</h2><div class="card rows">{rows}</div></section>'
     last = shows[-1]["day"]
     summary = S.t("fc_summary", shows=S.n(len(shows), "show"), cinemas=S.n(len({s["c"] for s in shows}), "cinema"),
                   until=S.t("only_today") if last == S.today else S.t("until", date=S.mid_date(last)))
-    other = Counter(S.city_of(s) for s in S.shows if s["f"] == fi and S.city_of(s) != city)
+    other = Counter(c for s in S.shows if s["f"] == fi for c in S.cities_of(s["c"]) if c != city)
     other_html = "".join(f'<a class="pill" href="{S.film_city_url(fi, c)}">{e(S.cn(c))} ({n})</a>' for c, n in other.most_common())
-    more = by_film([s for s in S.week if S.city_of(s) == city and s["f"] != fi])
+    more = by_film([s for s in S.week if S.on(s, city) and s["f"] != fi])
     tiles = "".join(poster_tile(S, j, S.lang_badge(S.films[j]), S.film_city_url(j, city)) for j in sorted(more, key=lambda j: -len(more[j]))[:6])
     where = S.in_city(city)
     body = (
@@ -684,7 +723,8 @@ def film_page(S: Site, fi):
     shows = [s for s in S.shows if s["f"] == fi]
     per_city = defaultdict(list)
     for s in shows:
-        per_city[S.city_of(s)].append(s)
+        for c in S.cities_of(s["c"]):
+            per_city[c].append(s)
     rows = "".join(
         lrow(S.film_city_url(fi, c), S.cn(c), e(f'{S.n(len({s["c"] for s in ss}), "cinema")} · {S.n(len(ss), "show")} · {S.t("next_one", when=S.next_when(ss[0]))}'))
         for c, ss in sorted(per_city.items(), key=lambda kv: (-len(kv[1]), kv[0])))
@@ -825,7 +865,7 @@ def build(data: dict, out: Path, base: str = "/", now: datetime | None = None) -
         pages += [cinema_page(S, ci) for ci in sorted({s["c"] for s in S.shows})]
         for fi in sorted({s["f"] for s in S.shows}):
             pages.append(film_page(S, fi))
-            pages += [film_city_page(S, fi, c) for c in sorted({S.city_of(s) for s in S.shows if s["f"] == fi})]
+            pages += [film_city_page(S, fi, c) for c in sorted({c for s in S.shows if s["f"] == fi for c in S.cities_of(s["c"])})]
         if S is it:
             pages.append(not_found(S))
         for path, html in pages:
