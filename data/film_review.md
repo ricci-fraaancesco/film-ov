@@ -37,11 +37,16 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - BENITA
 - Bts - World Tour Arirang Live Viewing
 - CARA A CARA
+- CENTO E UNA NOTTE
+- CITTÀ AMARA
 - Concerto Gospels
 - Doppia Coppia
+- FIORD
 - Gin,Whiskey,Vodka?
 - Giovanni Chiamato Francesco
+- I CORTI DI AGNÈS VARDA // PARTE 1
 - IL BIANCO SI LAVA A NOVANTA
+- L'ESORCISTA DIRECTOR'S CUT 4K– 50MO ANNIVERSARIO - WB 100TH ANNIVERSARY
 - Lo Straniero (V.Originale Sub Ita)
 - MAKING MARIE ANTONIETTE
 - MARATONA HALLOWEEN: CREATURE A SORPRESA

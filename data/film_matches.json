@@ -361,6 +361,12 @@
    }
   ]
  },
+ "cento e una notte": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "CENTO E UNA NOTTE",
+  "version": 4
+ },
  "china blue": {
   "qid": "Q734116",
   "title_it": "China Blue",
@@ -412,6 +418,12 @@
   "title_en": "Christine",
   "enwiki": "Christine (1983 film)",
   "intro_en": "Christine is a 1983 American supernatural horror film co-scored and directed by John Carpenter, and adapted from Stephen King's 1983 novel."
+ },
+ "citta amara": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "CITTÀ AMARA",
+  "version": 4
  },
  "claudine": {
   "qid": "Q1440046",
@@ -519,6 +531,33 @@
   "source": "search",
   "version": 4,
   "checked": "2026-10-20"
+ },
+ "daisies le margheritine": {
+  "qid": "Q910705",
+  "title_it": "Le margheritine",
+  "original_title": "Sedmikrásky",
+  "year": 1966,
+  "runtime": 76,
+  "imdb": "tt0060959",
+  "tmdb": "46919",
+  "itwiki": "Le margheritine",
+  "title_en": "Daisies",
+  "enwiki": "Daisies (film)",
+  "directors": [
+   "Věra Chytilová",
+   "Rudolf Jaroš"
+  ],
+  "languages": [
+   "ceco"
+  ],
+  "intro": "Le Margheritine è un film surrealista del 1966 diretto da Věra Chytilová.",
+  "intro_en": "Daisies is a 1966 Czechoslovak satirical comedy film, co-written and directed by Věra Chytilová.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "DAISIES - LE MARGHERITINE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "dark star": {
   "qid": "Q506580",
@@ -822,6 +861,58 @@
   "enwiki": "Dune: Part Three",
   "intro_en": "Dune: Part Three is an upcoming American epic space opera film directed by Denis Villeneuve, from a screenplay he wrote with Brian K."
  },
+ "easy rider": {
+  "qid": "Q503638",
+  "title_it": "Easy Rider - Libertà e paura",
+  "original_title": "Easy Rider",
+  "year": 1969,
+  "runtime": 95,
+  "imdb": "tt0064276",
+  "tmdb": "624",
+  "itwiki": "Easy Rider - Libertà e paura",
+  "title_en": "Easy Rider",
+  "enwiki": "Easy Rider",
+  "directors": [
+   "Dennis Hopper"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Easy Rider - Libertà e paura è un film del 1969 diretto e interpretato da Dennis Hopper con Peter Fonda e Jack Nicholson.",
+  "intro_en": "Easy Rider is a 1969 American road drama film written by Peter Fonda, Dennis Hopper, and Terry Southern, produced by Fonda and directed by Hopper.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "EASY RIDER",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
+ "en el camino": {
+  "qid": "Q135686753",
+  "title_it": "En el camino",
+  "original_title": "En el camino",
+  "year": 2025,
+  "runtime": 93,
+  "imdb": "tt37660509",
+  "tmdb": "1517123",
+  "itwiki": "En el camino",
+  "title_en": "On the Road",
+  "enwiki": "On the Road (2025 Mexican film)",
+  "directors": [
+   "David Pablos"
+  ],
+  "languages": [
+   "spagnolo"
+  ],
+  "intro": "En el camino è un film del 2025 diretto da David Pablos",
+  "intro_en": "On the Road is a 2025 Mexican romantic-thriller film written and directed by David Pablos.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "EN EL CAMINO",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "essi vivono": {
   "qid": "Q72909",
   "title_it": "Essi vivono",
@@ -953,6 +1044,12 @@
   "title_en": "3-Iron",
   "enwiki": "3-Iron",
   "intro_en": "3-Iron (Korean: 빈집) is a 2004 romantic drama film written, produced and directed by Kim Ki-duk."
+ },
+ "fiord": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "FIORD",
+  "version": 4
  },
  "forgotten island": {
   "qid": null,
@@ -1313,6 +1410,12 @@
   "enwiki": "The Mill and the Cross",
   "intro_en": "The Mill and the Cross is a 2011 drama film co-written, produced, shot, scored and directed by Lech Majewski and starring Rutger Hauer, Charlotte Rampling, and Michael York."
  },
+ "i corti di agnes varda parte 1": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "I CORTI DI AGNÈS VARDA // PARTE 1",
+  "version": 4
+ },
  "i diavoli": {
   "qid": "Q655996",
   "title_it": "I diavoli",
@@ -1525,6 +1628,32 @@
   "title_en": "Dr. Strangelove",
   "enwiki": "Dr. Strangelove",
   "intro_en": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb is a 1964 political satire black comedy film co-written, produced, and directed by Stanley Kubrick."
+ },
+ "il mucchio selvaggio the wild bunch": {
+  "qid": "Q994481",
+  "title_it": "Il mucchio selvaggio",
+  "original_title": "The Wild Bunch",
+  "year": 1969,
+  "runtime": 145,
+  "imdb": "tt0065214",
+  "tmdb": "576",
+  "itwiki": "Il mucchio selvaggio (film)",
+  "title_en": "The Wild Bunch",
+  "enwiki": "The Wild Bunch",
+  "directors": [
+   "Sam Peckinpah"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Il mucchio selvaggio è un film del 1969 diretto da Sam Peckinpah.",
+  "intro_en": "The Wild Bunch is a 1969 American epic revisionist Western film co-written and directed by Sam Peckinpah and starring William Holden, Ernest Borgnine, Robert Ryan, Edmond O'Brien, Ben Johnson and Warren Oates.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "IL MUCCHIO SELVAGGIO (THE WILD BUNCH)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "il seme della follia in the mounth of madness": {
   "qid": "Q1214972",
@@ -1936,6 +2065,12 @@
   "enwiki": "The Poseidon Adventure (1972 film)",
   "intro_en": "The Poseidon Adventure is a 1972 American disaster film directed by Ronald Neame, produced by Irwin Allen, and based on Paul Gallico's 1969 novel."
  },
+ "l esorcista director s cut 4k 50mo anniversario wb 100th anniversary": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "L'ESORCISTA DIRECTOR'S CUT 4K– 50MO ANNIVERSARIO - WB 100TH ANNIVERSARY",
+  "version": 4
+ },
  "l infernale quinlan": {
   "qid": "Q778161",
   "title_it": "L'infernale Quinlan",
@@ -2189,6 +2324,84 @@
   "enwiki": "La La Land",
   "intro_en": "La La Land is a 2016 American musical romantic comedy drama film written and directed by Damien Chazelle."
  },
+ "la notte dei morti viventi night of the living dead": {
+  "qid": "Q623051",
+  "title_it": "La notte dei morti viventi",
+  "original_title": "Night of the Living Dead",
+  "year": 1968,
+  "runtime": 96,
+  "imdb": "tt0063350",
+  "tmdb": "10331",
+  "itwiki": "La notte dei morti viventi (film 1968)",
+  "title_en": "Night of the Living Dead",
+  "enwiki": "Night of the Living Dead",
+  "directors": [
+   "George A. Romero"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "La notte dei morti viventi è un film del 1968 diretto da George A.",
+  "intro_en": "Night of the Living Dead is a 1968 American zombie horror film directed, photographed, and edited by George A.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "LA NOTTE DEI MORTI VIVENTI (NIGHT OF THE LIVING DEAD)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
+ "la pointe courte": {
+  "qid": "Q1503132",
+  "title_it": "La pointe courte",
+  "original_title": "La Pointe courte",
+  "year": 1955,
+  "runtime": 80,
+  "imdb": "tt0048499",
+  "tmdb": "54436",
+  "itwiki": "La pointe courte",
+  "title_en": "La Pointe Courte",
+  "enwiki": "La Pointe Courte",
+  "directors": [
+   "Agnès Varda"
+  ],
+  "languages": [
+   "francese"
+  ],
+  "intro": "La pointe courte è un film del 1955 diretto da Agnès Varda.",
+  "intro_en": "La Pointe Courte is a 1955 French drama film directed by Agnès Varda.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "LA POINTE COURTE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
+ "la rabbia giovane": {
+  "qid": "Q799202",
+  "title_it": "La rabbia giovane",
+  "original_title": "Badlands",
+  "year": 1973,
+  "runtime": 90,
+  "imdb": "tt0069762",
+  "tmdb": "3133",
+  "itwiki": "La rabbia giovane",
+  "title_en": "Badlands",
+  "enwiki": "Badlands (film)",
+  "directors": [
+   "Terrence Malick"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "La rabbia giovane (Badlands) è un film del 1973 scritto, prodotto e diretto da Terrence Malick, al suo debutto alla regia d'un lungometraggio.",
+  "intro_en": "Badlands is a 1973 American neo-noir period crime drama film written, produced and directed by Terrence Malick, in his directorial debut.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "LA RABBIA GIOVANE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "la signora ammazzatutti serial mom": {
   "qid": "Q610670",
   "title_it": "La signora ammazzatutti",
@@ -2243,6 +2456,110 @@
   "title_en": "Head-On",
   "enwiki": "Head-On (film)",
   "intro_en": "Head-On is a 2004 drama film written and directed by Fatih Akın."
+ },
+ "la venere elettrica la venus electrique": {
+  "qid": "Q138850159",
+  "title_it": "The Electric Kiss",
+  "original_title": "La Vénus électrique",
+  "year": 2026,
+  "runtime": null,
+  "imdb": "tt37163509",
+  "tmdb": "1442669",
+  "itwiki": null,
+  "title_en": "The Electric Kiss",
+  "enwiki": "The Electric Kiss",
+  "directors": [
+   "Pierre Salvadori"
+  ],
+  "languages": [
+   "francese"
+  ],
+  "intro": "",
+  "intro_en": "The Electric Kiss is a 2026 period romantic comedy-drama film directed by Pierre Salvadori, from a screenplay he co-wrote with Benjamin Charbit and Benoît Graffin and based on an original idea by Rebecca Zlotowski and Robin Campillo.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "LA VENERE ELETTRICA (LA VÉNUS ÉLECTRIQUE)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
+ "le creature": {
+  "qid": "Q3231865",
+  "title_it": "Les créatures",
+  "original_title": "Les Créatures",
+  "year": 1966,
+  "runtime": 90,
+  "imdb": "tt0060263",
+  "tmdb": "53026",
+  "itwiki": "Le creature",
+  "title_en": "Les Créatures",
+  "enwiki": "Les Créatures",
+  "directors": [
+   "Agnès Varda"
+  ],
+  "languages": [
+   "francese"
+  ],
+  "intro": "Le creature è un film del 1966 diretto da Agnès Varda.",
+  "intro_en": "Les Créatures is a 1966 fantasy drama film written and directed by Agnès Varda that recounts a story of a couple who have just moved to a new town and been in a car accident.",
+  "confidence": "high",
+  "score": 1.067,
+  "query": "LE CREATURE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
+ "les demoiselle de rochefort": {
+  "qid": "Q1214975",
+  "title_it": "Josephine",
+  "original_title": "Les Demoiselles de Rochefort",
+  "year": 1967,
+  "runtime": 122,
+  "imdb": "tt0062873",
+  "tmdb": "2433",
+  "itwiki": "Josephine (film 1967)",
+  "title_en": "The Young Girls of Rochefort",
+  "enwiki": "The Young Girls of Rochefort",
+  "directors": [
+   "Jacques Demy"
+  ],
+  "languages": [
+   "francese"
+  ],
+  "intro": "Josephine è un film del 1967 diretto da Jacques Demy.",
+  "intro_en": "The Young Girls of Rochefort is a 1967 French musical romantic comedy film written and directed by Jacques Demy.",
+  "confidence": "high",
+  "score": 1.132,
+  "query": "LES DEMOISELLE DE ROCHEFORT",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
+ "let my puppets come": {
+  "qid": "Q6532941",
+  "title_it": "Let My Puppets Come",
+  "original_title": "Let My Puppets Come",
+  "year": 1976,
+  "runtime": null,
+  "imdb": "tt0074788",
+  "tmdb": "223922",
+  "itwiki": null,
+  "title_en": "Let My Puppets Come",
+  "enwiki": "Let My Puppets Come",
+  "directors": [
+   "Gerard Damiano"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "",
+  "intro_en": "Let My Puppets Come is a 1976 softcore pornographic comedy film written and directed by Gerard Damiano, and starring Al Goldstein, Lynette Sheldon, Penny Nichols and Damiano.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "LET MY PUPPETS COME",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "leviticus": {
   "qid": "Q137557964",
@@ -2513,6 +2830,32 @@
   "query": "MATRIX 4K V.O.",
   "version": 4
  },
+ "mean streets": {
+  "qid": "Q841335",
+  "title_it": "Mean Streets - Domenica in chiesa, lunedì all'inferno",
+  "original_title": "Mean Streets",
+  "year": 1973,
+  "runtime": 112,
+  "imdb": "tt0070379",
+  "tmdb": "203",
+  "itwiki": "Mean Streets - Domenica in chiesa, lunedì all'inferno",
+  "title_en": "Mean Streets",
+  "enwiki": "Mean Streets",
+  "directors": [
+   "Martin Scorsese"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Mean Streets - Domenica in chiesa, lunedì all'inferno è un film del 1973 scritto e diretto da Martin Scorsese.",
+  "intro_en": "Mean Streets is a 1973 American crime drama film directed by Martin Scorsese, from a screenplay co-written with Mardik Martin.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "MEAN STREETS",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "midsummer formula": {
   "qid": null,
   "checked": "2026-10-20",
@@ -2727,6 +3070,32 @@
   "enwiki": "My Fair Lady (film)",
   "intro_en": "My Fair Lady is a 1964 American musical comedy drama film adapted from Lerner and Loewe's 1956 stage musical based on George Bernard Shaw's 1913 stage play Pygmalion."
  },
+ "nashville": {
+  "qid": "Q1424258",
+  "title_it": "Nashville",
+  "original_title": "Nashville",
+  "year": 1975,
+  "runtime": 159,
+  "imdb": "tt0073440",
+  "tmdb": "3121",
+  "itwiki": "Nashville (film)",
+  "title_en": "Nashville",
+  "enwiki": "Nashville (film)",
+  "directors": [
+   "Robert Altman"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Nashville è un film del 1975 diretto da Robert Altman.",
+  "intro_en": "Nashville is a 1975 American satirical musical comedy drama film directed and produced by Robert Altman.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "NASHVILLE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "nata ieri born yesterday": {
   "qid": "Q375594",
   "title_it": "Nata ieri",
@@ -2806,6 +3175,32 @@
   "title_en": "A Midwinter's Tale",
   "enwiki": "In the Bleak Midwinter (film)",
   "intro_en": "In the Bleak Midwinter is a 1995 British romantic comedy film written and directed by Kenneth Branagh."
+ },
+ "nightmare dal profondo della notte a nightmare on elm street": {
+  "qid": "Q329434",
+  "title_it": "Nightmare - Dal profondo della notte",
+  "original_title": "A Nightmare on Elm Street",
+  "year": 1984,
+  "runtime": 91,
+  "imdb": "tt0087800",
+  "tmdb": "377",
+  "itwiki": "Nightmare - Dal profondo della notte",
+  "title_en": "A Nightmare on Elm Street",
+  "enwiki": "A Nightmare on Elm Street",
+  "directors": [
+   "Wes Craven"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Nightmare - Dal profondo della notte è un film horror del 1984 scritto e diretto da Wes Craven.",
+  "intro_en": "A Nightmare on Elm Street is a 1984 American supernatural slasher film written and directed by Wes Craven, and produced by Robert Shaye.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "NIGHTMARE - DAL PROFONDO DELLA NOTTE (A NIGHTMARE ON ELM STREET)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "no non e l avaro di moliere": {
   "qid": null,
@@ -2964,6 +3359,32 @@
   "query": "(O.V.) Urchin",
   "version": 4
  },
+ "ombre": {
+  "qid": "Q1535980",
+  "title_it": "Ombre",
+  "original_title": "Shadows",
+  "year": 1958,
+  "runtime": 87,
+  "imdb": "tt0053270",
+  "tmdb": "15484",
+  "itwiki": "Ombre (film 1959)",
+  "title_en": "Shadows",
+  "enwiki": "Shadows (1958 film)",
+  "directors": [
+   "John Cassavetes"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Ombre (Shadows) è un film del 1959 scritto e diretto da John Cassavetes.",
+  "intro_en": "Shadows is a 1958 American independent drama film directed by John Cassavetes about race relations during the Beat Generation years in New York City.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "OMBRE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "ombre shadows": {
   "qid": "Q1535980",
   "title_it": "Ombre",
@@ -2989,6 +3410,33 @@
   "title_en": "Shadows",
   "enwiki": "Shadows (1958 film)",
   "intro_en": "Shadows is a 1958 American independent drama film directed by John Cassavetes about race relations during the Beat Generation years in New York City."
+ },
+ "orlando": {
+  "qid": "Q188384",
+  "title_it": "Orlando",
+  "original_title": "Orlando",
+  "year": 1992,
+  "runtime": 94,
+  "imdb": "tt0107756",
+  "tmdb": "9300",
+  "itwiki": "Orlando (film 1992)",
+  "title_en": "Orlando",
+  "enwiki": "Orlando (film)",
+  "directors": [
+   "Sally Potter"
+  ],
+  "languages": [
+   "inglese",
+   "russo"
+  ],
+  "intro": "Orlando è un film del 1992 diretto da Sally Potter, tratto dall'omonimo romanzo di Virginia Woolf.",
+  "intro_en": "Orlando is a 1992 fantasy drama film loosely based on Virginia Woolf's 1928 novel Orlando: A Biography, starring Tilda Swinton as Orlando, Billy Zane as Shelmerdine, and Quentin Crisp as Queen Elizabeth I.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "ORLANDO",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "ou vivre insist": {
   "qid": null,
@@ -3368,6 +3816,32 @@
   "enwiki": "Counsellor at Law",
   "intro_en": "Counsellor at Law is a 1933 American pre-Code drama film directed by William Wyler."
  },
+ "rosemary s baby nastro rosso a new york rosemary s baby": {
+  "qid": "Q607179",
+  "title_it": "Rosemary's Baby - Nastro rosso a New York",
+  "original_title": "Rosemary's Baby",
+  "year": 1968,
+  "runtime": 137,
+  "imdb": "tt0063522",
+  "tmdb": "805",
+  "itwiki": "Rosemary's Baby - Nastro rosso a New York",
+  "title_en": "Rosemary's Baby",
+  "enwiki": "Rosemary's Baby (film)",
+  "directors": [
+   "Roman Polański"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Rosemary's Baby - Nastro rosso a New York è un film del 1968 scritto e diretto da Roman Polański, con protagonista Mia Farrow, tratto dall'omonimo romanzo di Ira Levin.",
+  "intro_en": "Rosemary's Baby is a 1968 American psychological horror film written and directed by Roman Polanski, based on Ira Levin's 1967 novel.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "ROSEMARY'S BABY - NASTRO ROSSO A NEW YORK (ROSEMARY'S BABY)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "sense and sensibility": {
   "qid": "Q135436961",
   "title_it": "Ragione e sentimento",
@@ -3697,11 +4171,63 @@
   "enwiki": "The Brood",
   "intro_en": "The Brood is a 1979 Canadian psychological body horror film written and directed by David Cronenberg, and starring Oliver Reed, Samantha Eggar, and Art Hindle."
  },
+ "the chaser": {
+  "qid": "Q496724",
+  "title_it": "The Chaser",
+  "original_title": "추격자",
+  "year": 2008,
+  "runtime": 123,
+  "imdb": "tt1190539",
+  "tmdb": "13855",
+  "itwiki": "The Chaser (film 2008)",
+  "title_en": "The Chaser",
+  "enwiki": "The Chaser (2008 film)",
+  "directors": [
+   "Na Hong-jin"
+  ],
+  "languages": [
+   "coreano"
+  ],
+  "intro": "The Chaser è un film del 2008 diretto da Na Hong-jin.",
+  "intro_en": "The Chaser (Korean: 추격자) is a 2008 South Korean action thriller film starring Kim Yoon-seok and Ha Jung-woo.",
+  "confidence": "high",
+  "score": 1.05,
+  "query": "THE CHASER",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "the clearing": {
   "qid": null,
   "checked": "2026-10-20",
   "query": "THE CLEARING",
   "version": 4
+ },
+ "the descent discesa nelle tenebre": {
+  "qid": "Q1367317",
+  "title_it": "The Descent - Discesa nelle tenebre",
+  "original_title": "The Descent (El descenso)",
+  "year": 2005,
+  "runtime": 99,
+  "imdb": "tt0435625",
+  "tmdb": "9392",
+  "itwiki": "The Descent - Discesa nelle tenebre",
+  "title_en": "The Descent",
+  "enwiki": "The Descent",
+  "directors": [
+   "Neil Marshall"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "The Descent - Discesa nelle tenebre è un film del 2005 scritto e diretto da Neil Marshall.",
+  "intro_en": "The Descent is a 2005 British horror film written and directed by Neil Marshall.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "THE DESCENT - DISCESA NELLE TENEBRE",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "the fog": {
   "qid": "Q500403",
@@ -4136,6 +4662,32 @@
   "enwiki": null,
   "intro_en": ""
  },
+ "un po di luce kami nour": {
+  "qid": "Q140678610",
+  "title_it": "Un po' di luce",
+  "original_title": "",
+  "year": 2026,
+  "runtime": null,
+  "imdb": "tt43704846",
+  "tmdb": "1736490",
+  "itwiki": "Un po' di luce",
+  "title_en": "A Bit of Light",
+  "enwiki": "A Bit of Light (2026 film)",
+  "directors": [
+   "ʿAlī ʿAsgarī"
+  ],
+  "languages": [
+   "persiano"
+  ],
+  "intro": "Un po' di luce è un film del 2026 diretto da Ali Asgari.",
+  "intro_en": "A Bit of Light is a 2026 drama film directed by Ali Asgari, co-written with Shadmehr Rastin.",
+  "confidence": "high",
+  "score": 1.12,
+  "query": "UN PO' DI LUCE (KAMI NOUR)",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "un uomo da marciapiede midnight cowboy": {
   "qid": "Q61696",
   "title_it": "Un uomo da marciapiede",
@@ -4257,6 +4809,32 @@
   "title_en": "Twentieth Century",
   "enwiki": "Twentieth Century (film)",
   "intro_en": "Twentieth Century is a 1934 American pre-Code screwball comedy film directed by Howard Hawks and starring John Barrymore, Carole Lombard, Walter Connolly, and Roscoe Karns."
+ },
+ "volti": {
+  "qid": "Q2241601",
+  "title_it": "Volti",
+  "original_title": "Faces",
+  "year": 1968,
+  "runtime": 130,
+  "imdb": "tt0062952",
+  "tmdb": "753",
+  "itwiki": "Volti (film)",
+  "title_en": "Faces",
+  "enwiki": "Faces (1968 film)",
+  "directors": [
+   "John Cassavetes"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Volti (Faces) è un film del 1968 scritto e diretto da John Cassavetes.",
+  "intro_en": "Faces is a 1968 American drama film written, produced, and directed by John Cassavetes—his fourth directorial work.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "VOLTI",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "volti faces": {
   "qid": "Q2241601",
