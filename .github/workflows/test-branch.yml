@@ -33,6 +33,25 @@ jobs:
           (cd scraper && python -m pytest -q)
           (cd site && python -m pytest -q)
 
+      - name: Probe white-label Webtic numbers (temporary, this branch only)
+        run: |
+          cd scraper && python - <<'PY' | tee ../data/webtic_probe.txt
+          import requests, webtic
+          s = requests.Session(); s.headers["User-Agent"] = "FilmOV-bot/0.1 (+https://github.com/ricci-fraaancesco/film-ov)"
+          def get_json(u, params=None):
+              r = s.get(u, params=params, timeout=30); r.raise_for_status(); return r.json()
+          ids = {"5283": "roma-savoy (mycityplex sc)", "5285": "roma-doria (mycityplex sc)", "5279": "roma-trianon (mycityplex sc)",
+                 "5859": "roma-starplex-roma (thescreen sc)", "5779": "milano-notorious-merlata (notorious sc)",
+                 "5048": "firenze-multisala-fiamma (staseraalcinema mult)", "5051": "firenze-multisala-marconi (staseraalcinema mult)",
+                 "5858": "torino-cinema-agnelli (loadLocal)", "5650": "varese-filmstudio-90 (loadLocal)"}
+          for lid, who in ids.items():
+              try:
+                  shows, pages, local = webtic.read_cinema(get_json, lid)
+                  print(f"{lid}\t{who}\t=> {local.get('Description')} | {local.get('Town')} | {local.get('DistrictAbbreviation')}\t{len(shows)} shows, {sum(x.is_ov for x in shows)} OV")
+              except Exception as e:
+                  print(f"{lid}\t{who}\tERROR {e!r}"[:200])
+          PY
+
       - name: Read the cinema pages
         run: python scraper/ov18tickets.py live --out data
 
