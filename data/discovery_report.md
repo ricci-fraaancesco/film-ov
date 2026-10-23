@@ -2,15 +2,10 @@
 
 ## Questa notte
 
-- no_booking_link: 12
-- adapter_missing: 8
-- website_down: 6
-- needs_review: 2
-- active: 1
 
 ## Totale per stato
 
-- no_website: 1212
+- no_website: 1211
 - no_booking_link: 127
 - adapter_missing: 124
 - active: 102
