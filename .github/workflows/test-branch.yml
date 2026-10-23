@@ -33,6 +33,11 @@ jobs:
           (cd scraper && python -m pytest -q)
           (cd site && python -m pytest -q)
 
+      - name: Save UCI cinema list (temporary, this branch only)
+        run: |
+          curl -sS --fail -A "FilmOV-bot/0.1 (+https://github.com/ricci-fraaancesco/film-ov)" https://backend.ucicinemas.it/api/theatres -o data/uci_theatres_raw.json
+          python -c "import json;print(len(json.load(open('data/uci_theatres_raw.json'))['data']), 'UCI cinemas')"
+
       - name: Read the cinema pages
         run: python scraper/ov18tickets.py live --out data
 
