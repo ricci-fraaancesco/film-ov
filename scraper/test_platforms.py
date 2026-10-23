@@ -137,3 +137,12 @@ def test_uci_stops_on_refusal(tmp_path):
     shows, errors = run_platforms(None, tmp_path / "pages.json", get_json=get_json, uci=True)
     assert shows == [] and "uci:stopped" in errors
     assert not any(u.endswith("/b/programming") for u in calls)
+
+
+def test_uci_name_without_city_suffix():
+    assert uci.clean_name("UCI Cinemas Parco Leonardo | Roma") == "UCI Cinemas Parco Leonardo"
+    assert uci.clean_name("UCI Luxe Megalò |  Chieti ") == "UCI Luxe Megalò"
+    assert uci.clean_name("UCI Cinemas Arezzo") == "UCI Cinemas Arezzo"
+    assert uci.clean_name("| Roma") == "| Roma"
+    t = uci.theatres(lambda u, p: {"data": [{"slug": "x", "name": "UCI Cinemas Bicocca | Milano", "city": "Milano"}]})
+    assert t[0]["name"] == "UCI Cinemas Bicocca"

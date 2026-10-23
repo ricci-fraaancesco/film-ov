@@ -22,13 +22,21 @@ API = "https://backend.ucicinemas.it/api"
 SITE = "https://ucicinemas.it"
 
 
+def clean_name(name: str) -> str:
+    """'UCI Cinemas Parco Leonardo | Roma' -> 'UCI Cinemas Parco Leonardo': UCI ends many names with
+    ' | <area>', which repeats the city shown next to the name on the site."""
+    name = re.sub(r"\s+", " ", name).strip()
+    short = re.sub(r"\s*\|[^|]*$", "", name).strip()
+    return short or name
+
+
 def theatres(get_json) -> list[dict]:
     out = []
     for t in (get_json(f"{API}/theatres", None) or {}).get("data") or []:
         if not t.get("slug"):
             continue
         addr = clean_html(t.get("address") or "").split("\n")[0]
-        out.append({"slug": t["slug"], "name": (t.get("name") or "").strip(), "city": (t.get("city") or "").strip(),
+        out.append({"slug": t["slug"], "name": clean_name(t.get("name") or ""), "city": (t.get("city") or "").strip(),
                     "address": addr, "lat": t.get("latitude") or "", "lon": t.get("longitude") or ""})
     return out
 
