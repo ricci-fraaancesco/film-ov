@@ -29,7 +29,6 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - AMAZING MONSTER
 - APOCALYPSE NOW - FINAL CUT
 - AUBER 89
-- AZ ZEEB
 - BENITA
 - BTS - World tour Arirang in Buenos Aires e Sao Paulo C.A.
 - Bts - World Tour Arirang Live Viewing
@@ -53,7 +52,7 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - OÙ VIVRE INSIST
 - PRIMETIME V.O. (1H50')
 - PÒS PROCESSO CRIME
-- RAGIONE E SENTIMENTO
+- Ragione e sentimento
 - Rammstein - Live in Mexico City C.A.
 - STRAY KIDS WORLD TOUR "RUN IT": - IL LIVE VIEWING
 - Seventeen world tour NEW C.A.
