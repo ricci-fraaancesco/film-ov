@@ -7,7 +7,6 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 
 - (Vos) Matrix 4k -> [Matrix (1999, Lana Wachowski, Lilly Wachowski)](https://www.wikidata.org/wiki/Q83495) `Q83495`
 - George Michael: The Faith Tour -> [George Michael: The Faith Tour (?, regista ?)](https://www.wikidata.org/wiki/Q138701923) `Q138701923`
-- L'UOMO DI CENERE (RI? ES-SED) -> [L'uomo di cenere (1986, Nūrī Būzīd)](https://www.wikidata.org/wiki/Q1985728) `Q1985728`
 - LA SPOSA TURCA (GEGEN DIE WAND) -> [La sposa turca (2004, Fatih Akın)](https://www.wikidata.org/wiki/Q325648) `Q325648`
 - MAKING MARIE ANTOINETTE -> [Making Marie Antoinette (?, regista ?)](https://www.wikidata.org/wiki/Q141247887) `Q141247887`
 - SOUL KITCHEN -> [Soul Kitchen (2009, Fatih Akın)](https://www.wikidata.org/wiki/Q312538) `Q312538`
