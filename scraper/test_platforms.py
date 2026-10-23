@@ -54,6 +54,11 @@ def test_local_id_from_any_link():
     pu = base64.b64encode(b"https://www.webtic.it/index.htm#/home?action=loadLocal&localId=5652").decode()
     assert webtic.local_id_from_url(f"https://secure.webtic.it/angwt/webtic.aspx?pu={pu}") == "5652"
     assert webtic.local_id_from_url("https://secure.webtic.it/angwt/js/webapi/jquery.webtic.api.4.0.js") is None
+    # white-label Webtic sites
+    assert webtic.local_id_from_url("https://www.mycityplex.it/generic/seatsframe.php?sc=5283&sp=61404#seatsframe") == "5283"
+    assert webtic.local_id_from_url("https://www.notoriouscinemas.it/generic/seatsframe.php?sc=5779&amp;sp=52539") == "5779"
+    assert webtic.local_id_from_url("https://www.staseraalcinema.it/film-ricercato/?mult=5048&per=61158&pro=4325") == "5048"
+    assert webtic.local_id_from_url("https://www.example.it/page.php?sc=5283") is None
 
 
 def test_webtic_parse():

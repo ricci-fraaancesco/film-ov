@@ -156,3 +156,26 @@ def test_webtic_cinema_is_test_read_and_activated(monkeypatch):
 def test_uci_is_not_read():
     up = check({"website": "https://www.ucicinemas.it/cinema/lazio/roma/uci-cinemas-roma-est/"}, FakeFetch({}))
     assert up["status"] == "adapter_missing" and up["platform"] == "uci"
+
+
+def test_white_label_webtic(monkeypatch):
+    import webtic
+    calls = []
+
+    def fake_read(get_json, lid, cinema="", city=""):
+        calls.append(lid)
+        from ov18tickets import Show
+        s = Show("webtic.it", lid, "", "", "wt1-1", "X", "X", "Italiano", "", "2026-10-22T21:00:00+02:00", "2026-10-22", "21:00", "A", "u", False, "")
+        return [s], {}, {"DistrictAbbreviation": "RM", "Description": "TRIANON", "Town": "Roma"}
+    monkeypatch.setattr(webtic, "read_cinema", fake_read)
+    # booking links on the cinema's own domain, no "webtic" anywhere on the page
+    f = FakeFetch({"https://www.mycityplex.it/trianon/": '<a href="/generic/seatsframe.php?sc=5279&amp;sp=84312#seatsframe">Acquista</a>'})
+    f.s, f.delay = None, 0
+    up = check({"website": "https://www.mycityplex.it/trianon/"}, f)
+    assert calls == ["5279"] and up["status"] == "active" and up["booking_url"] == "https://www.webtic.it/app/shopping/loadLocal/RM/5279"
+    # number already known from review: no page fetch, even for a chain site
+    g = FakeFetch({})
+    g.s, g.delay = None, 0
+    up = check({"website": "https://www.notoriouscinemas.it/merlata/index.php", "platform": "webtic",
+                "booking_url": "https://www.notoriouscinemas.it/generic/seatsframe.php?sc=5779&sp=52539#seatsframe"}, g)
+    assert g.calls == [] and calls[-1] == "5779" and up["status"] == "active"

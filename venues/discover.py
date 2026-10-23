@@ -140,8 +140,12 @@ def analyse(html: str, base_url: str) -> dict:
             continue
         if tag == "a" and not re.search(NOT_BOOKING, h) and re.search(BOOKING_WORDS, (url + " " + text).lower()):
             unknown[h] += 1
-    from webtic import local_ids_in_text
-    webtic_ids = local_ids_in_text(html) if re.search(r"webtic", html, re.I) else []
+    from webtic import WHITE_LABEL_URL, local_ids_in_text
+    webtic_ids = local_ids_in_text(html) if re.search(r"webtic|seatsframe\.php|film-ricercato", html, re.I) else []
+    if "webtic" not in found:  # a white-label Webtic site: its booking links stay on its own domain
+        m = re.search(WHITE_LABEL_URL, html.replace("&amp;", "&"), re.I)
+        if m:
+            found["webtic"] = urljoin(base_url, m.group(0))
     best_pages = []
     for _, u in sorted(pages, key=lambda x: -x[0]):
         if u not in best_pages and u.rstrip("/") != base_url.rstrip("/"):
@@ -243,6 +247,11 @@ def check(row: dict, fetch: Fetcher) -> dict:
     h = host_of(site)
     if re.search(SOCIAL, h):
         return {"status": "social_only", "note": "solo pagina social"}
+    # a Webtic cinema whose number is already known (e.g. set in review): test-read it directly
+    if row.get("platform") == "webtic" and row.get("booking_url"):
+        from webtic import local_id_from_url
+        if local_id_from_url(row["booking_url"]):
+            return check_webtic(fetch, row["booking_url"], [])
     chain = match(CHAINS, h)
     if chain:
         # UCI is read as a whole chain by scraper/uci.py, so its cinemas count as active

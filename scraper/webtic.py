@@ -11,6 +11,10 @@ EventProperties such as {"EventProperty": "O.V."}, {"EventProperty": "EN",
 is often "CATEGORIA NON DEFINITA", so the values are read whatever the category.
 Each performance has PerformanceId, StartTime (local time) and Screen / ScreenName.
 
+White-label Webtic sites (mycityplex.it, thescreen.it, notoriouscinemas.it,
+ilregnodelcinema.com, staseraalcinema.it...) carry the same cinema number in their own
+booking links: generic/seatsframe.php?sc=<localId> or film-ricercato/?mult=<localId>.
+
 Booking link: the film's page at that cinema on webtic.it, which lists all its times
 (a link to one performance goes through a Webtic login first):
     https://www.webtic.it/app/shopping/loadEvent/<district>/<localId>/<performanceId>/<eventId>
@@ -31,7 +35,14 @@ ID_PATTERNS = [
     r"[?&#]localid=(\d{3,6})", r"localId=(\d{3,6})", r"/loadLocal/[A-Za-z]{2}/(\d{3,6})",
     r"/loadEvent/[A-Za-z]{2}/(\d{3,6})/", r"[?&]idcinema=(\d{3,6})", r"[?&]lid=(\d{3,6})",
     r"#/local/\w+/\d+/(\d{3,6})", r"#/event/\w+/\d+/(\d{3,6})/",
+    # Webtic sites under the cinema's own domain (MyCityplex, The Screen, Notorious,
+    # Il Regno del Cinema...): generic/seatsframe.php?sc=<localId>&sp=<performanceId>
+    r"seatsframe\.php\?(?:[^#\s\"'<>]*?&(?:amp;)?)?sc=(\d{3,6})",
+    # staseraalcinema.it: film-ricercato/?mult=<localId>&per=...&pro=...
+    r"film-ricercato/?\?(?:[^#\s\"'<>]*?&(?:amp;)?)?mult=(\d{3,6})",
 ]
+# a page of one of those white-label Webtic sites (no "webtic" word needed on the page)
+WHITE_LABEL_URL = r"[^\s\"'<>]*(?:seatsframe\.php\?[^\s\"'<>]*?sc=\d{3,6}|film-ricercato/?\?[^\s\"'<>]*?mult=\d{3,6})[^\s\"'<>]*"
 
 
 def local_id_from_url(url: str) -> str | None:
