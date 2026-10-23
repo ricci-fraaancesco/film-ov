@@ -5,8 +5,6 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 
 ## Medium confidence
 
-- (O.V.) La Bambola -> [La bambola (2026, Q139545734)](https://www.wikidata.org/wiki/Q136945628) `Q136945628`
-  - or [La Bambola (1991, Ninì Grassia)](https://www.wikidata.org/wiki/Q3820632) `Q3820632`
 - (Vos) Matrix 4k -> [Matrix (1999, Lana Wachowski, Lilly Wachowski)](https://www.wikidata.org/wiki/Q83495) `Q83495`
 - George Michael: The Faith Tour -> [George Michael: The Faith Tour (?, regista ?)](https://www.wikidata.org/wiki/Q138701923) `Q138701923`
 - L'UOMO DI CENERE (RI? ES-SED) -> [L'uomo di cenere (1986, Nūrī Būzīd)](https://www.wikidata.org/wiki/Q1985728) `Q1985728`
@@ -34,18 +32,13 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - APOCALYPSE NOW - FINAL CUT
 - AUBER 89
 - AZ ZEEB
-- Amanti, lader e dutur,,,,
 - BENITA
 - BTS - World tour Arirang in Buenos Aires e Sao Paulo C.A.
 - Bts - World Tour Arirang Live Viewing
 - CARA A CARA
 - CENTO E UNA NOTTE
 - CITTÀ AMARA
-- Concerto Gospels
-- Doppia Coppia
 - Enhypen world tour: Blood saga C.A.
-- Gin,Whiskey,Vodka?
-- Giovanni Chiamato Francesco
 - Hybe cheering party C.A.
 - I CORTI DI AGNÈS VARDA // PARTE 1
 - I CORTI DI AGNÈS VARDA // PARTE 2
@@ -57,8 +50,6 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - MARATONA HALLOWEEN: CREATURE A SORPRESA
 - MIDSUMMER FORMULA
 - Matrix C.A.
-- No. Non E' L'Avaro Di Moliere
-- Notre Dame Ananke
 - OZZY & BLACK SABBATH: BACK TO THE BEGINNING
 - Ozzy & Black Sabbath: Back To The Beginning C.A.
 - OÙ VIVRE INSIST
@@ -75,7 +66,6 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - THE PICKERS
 - Tomorrow X Together world tour Act: tomorrow C.A.
 - URCHIN in V.O.
-- Veleno Per Topi
 - Vos Wild Horse Nine Anteprima
 - WILDWOOD ORIGINAL VERSION
 - report to mother
