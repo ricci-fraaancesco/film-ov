@@ -8,11 +8,18 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - (O.V.) La Bambola -> [La bambola (2026, Q139545734)](https://www.wikidata.org/wiki/Q136945628) `Q136945628`
   - or [La Bambola (1991, Ninì Grassia)](https://www.wikidata.org/wiki/Q3820632) `Q3820632`
 - (Vos) Matrix 4k -> [Matrix (1999, Lana Wachowski, Lilly Wachowski)](https://www.wikidata.org/wiki/Q83495) `Q83495`
+- George Michael: The Faith Tour -> [George Michael: The Faith Tour (?, regista ?)](https://www.wikidata.org/wiki/Q138701923) `Q138701923`
+- L'UOMO DI CENERE (RI? ES-SED) -> [L'uomo di cenere (1986, Nūrī Būzīd)](https://www.wikidata.org/wiki/Q1985728) `Q1985728`
 - LA CASA DELLE DONNE (LA MAISON DES FEMMES) -> [La Maison des femmes (2025, Q141162816)](https://www.wikidata.org/wiki/Q138417077) `Q138417077`
 - LA SPOSA TURCA (GEGEN DIE WAND) -> [La sposa turca (2004, Fatih Akın)](https://www.wikidata.org/wiki/Q325648) `Q325648`
 - MAKING MARIE ANTOINETTE -> [Making Marie Antoinette (?, regista ?)](https://www.wikidata.org/wiki/Q141247887) `Q141247887`
 - SOUL KITCHEN -> [Soul Kitchen (2009, Fatih Akın)](https://www.wikidata.org/wiki/Q312538) `Q312538`
+- THE ROCKY HORROR PICTURES SHOW -> [The Rocky Horror Picture Show (1975, Jim Sharman)](https://www.wikidata.org/wiki/Q751921) `Q751921`
 - WILDE HORSE NINE -> [Wild Horse Nine (2026, Martin McDonagh)](https://www.wikidata.org/wiki/Q133341572) `Q133341572`
+- the razor's edge -> [The Razor's Edge (?, regista ?)](https://www.wikidata.org/wiki/Q130748763) `Q130748763`
+  - or [Il filo del rasoio (1946, Edmund Goulding)](https://www.wikidata.org/wiki/Q759322) `Q759322`
+  - or [Il filo del rasoio (1984, John Byrum)](https://www.wikidata.org/wiki/Q504101) `Q504101`
+  - or [Razor's Edge: The Legacy of Iranian Actresses (2016, Bahman Maghsoudlou)](https://www.wikidata.org/wiki/Q60738687) `Q60738687`
 
 ## No match
 
@@ -29,34 +36,48 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - AZ ZEEB
 - Amanti, lader e dutur,,,,
 - BENITA
+- BTS - World tour Arirang in Buenos Aires e Sao Paulo C.A.
 - Bts - World Tour Arirang Live Viewing
 - CARA A CARA
 - CENTO E UNA NOTTE
 - CITTÀ AMARA
 - Concerto Gospels
 - Doppia Coppia
+- Enhypen world tour: Blood saga C.A.
 - Gin,Whiskey,Vodka?
 - Giovanni Chiamato Francesco
+- Hybe cheering party C.A.
 - I CORTI DI AGNÈS VARDA // PARTE 1
 - I CORTI DI AGNÈS VARDA // PARTE 2
 - IL BIANCO SI LAVA A NOVANTA
 - L'ESORCISTA DIRECTOR'S CUT 4K– 50MO ANNIVERSARIO - WB 100TH ANNIVERSARY
+- League Of Legends Worlds 26 C.A.
 - Lo Straniero (V.Originale Sub Ita)
 - MAKING MARIE ANTONIETTE
 - MARATONA HALLOWEEN: CREATURE A SORPRESA
 - MIDSUMMER FORMULA
+- Matrix C.A.
 - No. Non E' L'Avaro Di Moliere
 - Notre Dame Ananke
 - OZZY & BLACK SABBATH: BACK TO THE BEGINNING
+- Ozzy & Black Sabbath: Back To The Beginning C.A.
 - OÙ VIVRE INSIST
 - PRIMETIME V.O. (1H50')
 - PÒS PROCESSO CRIME
 - RAGIONE E SENTIMENTO
+- Rammstein - Live in Mexico City C.A.
 - STRAY KIDS WORLD TOUR "RUN IT": - IL LIVE VIEWING
+- Seventeen world tour NEW C.A.
+- Stray Kids World Tour RUN IT C.A.
+- Svadba
 - THE CLEARING
 - THE GLORIOUS DEAD
 - THE PICKERS
+- Tomorrow X Together world tour Act: tomorrow C.A.
 - URCHIN in V.O.
 - Veleno Per Topi
 - Vos Wild Horse Nine Anteprima
 - WILDWOOD ORIGINAL VERSION
+- report to mother
+- trenque lauquen 1a parte
+- trenque lauquen 2a parte
