@@ -6,9 +6,9 @@
 ## Totale per stato
 
 - no_website: 1211
+- active: 142
 - no_booking_link: 127
-- adapter_missing: 124
-- active: 102
+- adapter_missing: 84
 - website_down: 65
 - needs_review: 62
 - unknown_platform: 19
