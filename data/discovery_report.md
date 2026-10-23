@@ -1,24 +1,21 @@
-# Controllo dei siti dei cinema (2026-10-22)
+# Controllo dei siti dei cinema (2026-10-23)
 
 ## Questa notte
 
-- no_booking_link: 58
-- website_down: 38
-- adapter_missing: 18
-- active: 16
-- needs_review: 11
-- unknown_platform: 6
-- social_only: 3
+- no_booking_link: 12
+- adapter_missing: 8
+- website_down: 6
+- needs_review: 2
+- active: 1
 
 ## Totale per stato
 
-- no_website: 1211
-- adapter_missing: 116
-- no_booking_link: 115
-- active: 101
-- needs_review: 60
-- website_down: 59
-- to_check: 29
+- no_website: 1212
+- no_booking_link: 127
+- adapter_missing: 124
+- active: 102
+- website_down: 65
+- needs_review: 62
 - unknown_platform: 19
 - closed: 11
 - manual_review: 8
@@ -26,15 +23,15 @@
 
 ## Piattaforme trovate
 
-- 18tickets: 94
-- webtic: 68
+- 18tickets: 95
+- webtic: 70
 - uci: 40
-- liveticket: 16
+- liveticket: 20
 - thespace: 15
+- cinebot: 9
 - eplanet: 7
 - giometti: 6
 - cinelandia: 6
-- cinebot: 5
 - notorious: 5
 - anteo: 4
 - ciaotickets: 3
