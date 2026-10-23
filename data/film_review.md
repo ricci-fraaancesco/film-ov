@@ -27,10 +27,10 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - (Kor) Stray Kids Wt - Run It
 - (Kor) Stray Kids Wt <run it=""> Live View</run>
 - (Lingua Originale) Avengers: Doomsday
-- (O.V) L'Infernale Quinlan Director'S Cut
 - (O.V.) Forgotten Island (2026)
 - (O.V.) Strange Journey:The Story Of Roc.
 - AMAZING MONSTER
+- APOCALYPSE NOW - FINAL CUT
 - AUBER 89
 - AZ ZEEB
 - Amanti, lader e dutur,,,,
@@ -41,10 +41,10 @@ Fix a match in `data/film_overrides.json`: the cinema title as key, the Wikidata
 - CITTÀ AMARA
 - Concerto Gospels
 - Doppia Coppia
-- FIORD
 - Gin,Whiskey,Vodka?
 - Giovanni Chiamato Francesco
 - I CORTI DI AGNÈS VARDA // PARTE 1
+- I CORTI DI AGNÈS VARDA // PARTE 2
 - IL BIANCO SI LAVA A NOVANTA
 - L'ESORCISTA DIRECTOR'S CUT 4K– 50MO ANNIVERSARIO - WB 100TH ANNIVERSARY
 - Lo Straniero (V.Originale Sub Ita)
