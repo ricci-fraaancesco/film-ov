@@ -165,6 +165,12 @@ img { max-width: 100%; display: block; }
 .pos-xs { width: 40px; height: 58px; }
 .pos-xs .ph { font-size: 0; }
 .pos-link { display: block; }
+/* classics: the year on the poster corner */
+.ytag { position: absolute; top: 4px; left: 4px; padding: 1px 5px; border-radius: 3px; background: var(--ink); color: #FFFFFF;
+  font: 700 11px/1.5 Inter, system-ui, sans-serif; font-variant-numeric: tabular-nums; box-shadow: 0 0 0 1px rgba(255,255,255,.35); }
+.pos-l .ytag { top: 6px; left: 6px; padding: 2px 6px; font-size: 12px; }
+.cred.dir { color: var(--ink); }
+.cred.dir .k { color: var(--ink2); }
 .ptiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 10px; }
 .ptile { display: flex; flex-direction: column; gap: 6px; text-decoration: none; min-width: 0; }
 .pt-title { font-size: 13px; font-weight: 700; line-height: 1.25; }

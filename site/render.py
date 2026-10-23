@@ -45,6 +45,10 @@ HUB_CENTRES = {       # city centres (lat, lon) of the big cities that list the 
     "Trieste": (45.6495, 13.7768),
 }  # cinemas shown in the city side panel before "Mostra altri"
 SUB_SHORT = {"sott. ITA": "IT", "sott. ENG": "EN", "sott. ITA + ENG": "IT+EN"}
+CLASSIC_YEARS = 5     # a film is a classic when it came out at least this many years before the current year.
+                      # 2 caught late Italian releases (Wang Bing's Youth, 2023-24) and kids' re-runs (Oceania 2); the data
+                      # has a clean gap between 2019 and 2022, so 5 years splits re-releases from recent films.
+CLASSICS_SHOWN = 9    # posters per city on the classics page before "Mostra altri"
 
 
 def e(s) -> str:
@@ -243,6 +247,15 @@ class Site:
     def cinemas_url(self):
         return self.u(f"{self.L}/cinema/")
 
+    def classics_url(self):
+        return self.u(f"{self.L}/{'classici' if self.L == 'it' else 'classics'}/")
+
+    def classic(self, fi) -> bool:
+        """Not a current release: out at least CLASSIC_YEARS before this year (so festival films that
+        reach Italy a year late aren't counted). See design-decisions.md, Classics."""
+        y = self.films[fi].get("y")
+        return bool(y) and int(y) <= self.today.year - CLASSIC_YEARS
+
     def poster_src(self, f, small=False):
         p = (f.get("ps") if small else None) or f.get("p") or ""
         return p if p.startswith("http") or not p else self.u(p)
@@ -312,13 +325,15 @@ def poster(S: Site, fi, cls="pos", small=True) -> str:
     f = S.films[fi]
     title = S.ft(fi)
     src = S.poster_src(f, small)
+    # classics carry their year on the poster corner (not on the tiny search/list posters)
+    ytag = f'<span class="ytag">{f["y"]}</span>' if S.classic(fi) and "pos-xs" not in cls else ""
     if src:
         # our own copies come in 120 and 480 px: let sharp screens take the bigger one
         srcset = ""
         if f.get("ps") and f.get("p") and not f["p"].startswith("http"):
             srcset = f' srcset="{e(S.u(f["ps"]))} 120w, {e(S.u(f["p"]))} 480w" sizes="{"100px" if small else "(min-width: 1024px) 180px, 33vw"}"'
-        return f'<span class="{cls}"><img src="{e(src)}"{srcset} alt="" loading="lazy" decoding="async"><span class="ph" hidden>{e(title)}</span></span>'
-    return f'<span class="{cls} noimg"><span class="ph">{e(title)}</span></span>'
+        return f'<span class="{cls}"><img src="{e(src)}"{srcset} alt="" loading="lazy" decoding="async"><span class="ph" hidden>{e(title)}</span>{ytag}</span>'
+    return f'<span class="{cls} noimg"><span class="ph">{e(title)}</span>{ytag}</span>'
 
 
 def other_title(S: Site, fi) -> str:
@@ -331,14 +346,23 @@ def other_title(S: Site, fi) -> str:
     return ""
 
 
-def credit(S: Site, fi) -> str:
+def credit(S: Site, fi, director: bool = True) -> str:
     f = S.films[fi]
     parts = [e(x) for x in (other_title(S, fi),) if x]
     if f.get("y"):
         parts.append(str(f["y"]))
-    if f.get("d"):
+    if director and f.get("d"):
         parts.append(e(f["d"].split(",")[0].strip()))
     return " · ".join(parts)
+
+
+def director_line(S: Site, fi) -> str:
+    """'Regia George Sluizer' on its own line (full film cards). No actors: no reliable source for the leads."""
+    d = S.films[fi].get("d")
+    if not d:
+        return ""
+    names = ", ".join(x.strip() for x in d.split(",")[:2] if x.strip())
+    return f'<p class="cred dir"><span class="k">{S.t("d_director")}</span> {e(names)}</p>'
 
 
 def latlon(c) -> str:
@@ -396,6 +420,7 @@ def header(S: Site, alt: str) -> str:
         f'<a class="logo" href="{S.home_url()}">{BRAND}<span class="dot" aria-hidden="true"></span></a>'
         f'<nav class="topnav" aria-label="{"Sezioni" if S.L == "it" else "Sections"}">'
         f'<a href="{S.home_url()}#citta">{S.t("nav_cities")}</a><a href="{S.films_url()}">{S.t("nav_films")}</a>'
+        f'<a href="{S.classics_url()}">{S.t("nav_classics")}</a>'
         f'<a href="{S.cinemas_url()}">{S.t("nav_cinemas")}</a></nav>{switch}'
         f'<button type="button" class="icon-btn" data-search aria-label="{e(S.t("search_label"))}">{ICON_SEARCH}</button>'
         "</div></header>"
@@ -411,6 +436,7 @@ def footer(S: Site) -> str:
         f'<nav class="ftr-links" aria-label="{S.t("nav_cities")}">{cities}<a href="{S.cinemas_url()}">{S.t("all_cities")}</a></nav>'
         '<nav class="ftr-links" aria-label="Info">'
         f'<a href="{S.films_url()}">{S.t("all_films")}</a>'
+        f'<a href="{S.classics_url()}">{S.t("nav_classics")}</a>'
         f'<a href="mailto:{CONTACT}?subject={quote(S.t("suggest_subject"))}">{S.t("suggest")}</a>'
         f'<a href="mailto:{CONTACT}">{S.t("contact")}</a></nav>'
         f'<p class="ftr-note">{note}</p>'
@@ -498,8 +524,10 @@ def film_card(S: Site, fi, shows, city, compact=False) -> str:
     meta = f'{"<p class=cred>" + cr + "</p>" if cr else ""}{S.badges(f, label)}'
     more = f'<a class="more" href="{href}">{e(S.t("all_dates", where=S.in_city(city)))}</a>'
     if not compact:
+        cr = credit(S, fi, director=False)  # full cards: original title · year, then the director on his own line
+        meta_full = f'{"<p class=cred>" + cr + "</p>" if cr else ""}{director_line(S, fi)}{S.badges(f, label)}'
         head = (f'<div class="fhead"><a class="pos-link" href="{href}" tabindex="-1" aria-hidden="true">{poster(S, fi)}</a>'
-                f'<div class="fmeta"><h3 class="ftitle"><a href="{href}">{e(title)}</a></h3>{meta}</div></div>')
+                f'<div class="fmeta"><h3 class="ftitle"><a href="{href}">{e(title)}</a></h3>{meta_full}</div></div>')
         return f'<article class="card film" data-card>{head}{rows}{more}</article>'
     line = " · ".join(f"<strong>{e(S.cinemas[ci]['n'])}</strong> <span class=tnum>{', '.join(s['time'] for s in ss)}</span>"
                       for ci, ss in sorted(by_cinema(shows).items(), key=lambda kv: kv[1][0]["ts"]))
@@ -531,8 +559,8 @@ def cinema_card(S: Site, ci, shows, city=None) -> str:
             f'{film_rows(S, shows, c["c"])}{login_hint(S, ci)}{ext_link(S, c)}</article>')
 
 
-def poster_tile(S: Site, fi, sub: str, href: str) -> str:
-    return (f'<a class="ptile" href="{href}">{poster(S, fi, "pos pos-l", small=False)}'
+def poster_tile(S: Site, fi, sub: str, href: str, extra: bool = False) -> str:
+    return (f'<a class="ptile" href="{href}"{" data-extra hidden" if extra else ""}>{poster(S, fi, "pos pos-l", small=False)}'
             f'<span class="pt-title">{e(S.ft(fi))}</span><span class="pt-sub">{e(sub)}</span></a>')
 
 
@@ -808,6 +836,46 @@ def cinema_hub(S: Site):
                 alt=S.other.cinemas_url())
 
 
+def classics_page(S: Site):
+    """/it/classici/ /en/classics/: films back in cinemas (see Site.classic), one section per city,
+    newest first. The H1 is a placeholder until the SEO title research is done."""
+    shows = [s for s in S.shows if S.classic(s["f"])]
+    if not shows:
+        return None
+    per_city = defaultdict(lambda: defaultdict(list))
+    for s in shows:
+        for c in S.cities_of(s["c"]):
+            per_city[c][s["f"]].append(s)
+    cities = sorted(per_city, key=lambda c: (-len(per_city[c]), S.cities.index(c)))
+    films = {s["f"] for s in shows}
+    secs = ""
+    for c in cities:
+        fs = per_city[c]
+        order = sorted(fs, key=lambda fi: (-int(S.films[fi]["y"]), slug(S.ft(fi))))
+        tiles = ""
+        for i, fi in enumerate(order):
+            cins = {s["c"] for s in fs[fi]}
+            sub = S.cinemas[next(iter(cins))]["n"] if len(cins) == 1 else S.n(len(cins), "cinema")
+            tiles += poster_tile(S, fi, sub, S.film_city_url(fi, c), extra=i >= CLASSICS_SHOWN)
+        btn = (f'<button type="button" class="btn-o btn-wide" data-more>{S.t("more_classics", n=len(order) - CLASSICS_SHOWN)}</button>'
+               if len(order) > CLASSICS_SHOWN else "")
+        where = S.in_city(c)
+        secs += (f'<section class="sec" id="{S.city_slug[c]}"><div class="sec-head"><h2 class="h2">'
+                 f'<a href="{S.city_url(c)}">{e(where[:1].upper() + where[1:])}</a></h2><span class="count">{S.n(len(fs), "film")}</span></div>'
+                 f'<div class="ptiles">{tiles}</div>{btn}</section>')
+    jump = "".join(f'<a class="pill" href="#{S.city_slug[c]}">{e(S.cn(c))}</a>' for c in cities[:8])
+    oldest = min(int(S.films[fi]["y"]) for fi in films)
+    body = (
+        f'<div class="hero2"><div class="hero-main"><section class="top">{sub_h1(*S.t("h1_classics"))}'
+        f'<p class="lead">{S.t("classics_line")}</p>'
+        f'<p class="upd">{S.t("classics_lead", films=S.n(len(films), "film"), cities=S.n(len(cities), "city"), year=oldest)}</p></section></div>'
+        f'<section class="sec hero-side"><h2 class="h2s">{S.t("jump_city")}</h2><div class="pills">{jump}</div></section></div>'
+        f'{secs}'
+    )
+    return page(S, f"{S.L}/{'classici' if S.L == 'it' else 'classics'}/index.html", S.t("classics_title"), S.t("classics_desc"),
+                body, crumbs(S, (S.t("nav_classics"), None)), alt=S.other.classics_url())
+
+
 def not_found(S: Site):
     """One 404 page for the whole site (GitHub Pages serves 404.html): Italian, with the English line below."""
     E = S.other
@@ -861,6 +929,9 @@ def build(data: dict, out: Path, base: str = "/", now: datetime | None = None) -
     total = 0
     for S in (it, en):
         pages = [home(S), film_hub(S), cinema_hub(S)]
+        cl = classics_page(S)
+        if cl:
+            pages.append(cl)
         pages += [city_page(S, c) for c in S.cities]  # every city with screenings, also when none falls in the next 7 days
         pages += [cinema_page(S, ci) for ci in sorted({s["c"] for s in S.shows})]
         for fi in sorted({s["f"] for s in S.shows}):
