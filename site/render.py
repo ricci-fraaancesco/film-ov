@@ -35,6 +35,7 @@ HERE = Path(__file__).parent
 BRAND = "linguaoriginale"
 CONTACT = "ciao@linguaoriginale.com"
 GENERIC = re.compile(r"^(pop up cinema|cinema teatro|cineteatro|multicinema|multisala|multiplex|cinema|sala)\s+", re.I)
+SIDE_LIMIT = 6  # cinemas shown in the city side panel before "Mostra altri"
 SUB_SHORT = {"sott. ITA": "IT", "sott. ENG": "EN", "sott. ITA + ENG": "IT+EN"}
 
 
@@ -543,16 +544,20 @@ def city_page(S: Site, city):
                  f'<div class="v-film">{fcards}</div><div class="v-cin">{ccards}</div>{empty_day(S, d, where)}</section>')
     cins = Counter(s["c"] for s in shows)
     cin_films = {ci: len({s["f"] for s in shows if s["c"] == ci}) for ci in cins}
+    order = sorted(cins, key=lambda ci: (-cin_films[ci], S.cinemas[ci]["n"]))  # most films first; site.js re-sorts by distance when it may
     side = "".join(lrow(S.cinema_url(ci), S.cinemas[ci]["n"], e(S.cinemas[ci].get("z") or "") + '<span class="dist" data-dist></span>',
-                        S.n(cin_films[ci], "film"), latlon(S.cinemas[ci])) for ci in sorted(cins, key=lambda ci: -cin_films[ci]))
+                        S.n(cin_films[ci], "film"), latlon(S.cinemas[ci]) + (" data-extra hidden" if i >= SIDE_LIMIT else ""))
+                   for i, ci in enumerate(order))
+    more_btn = (f'<button type="button" class="btn-o btn-wide" data-more>{S.t("more_cinemas", n=len(order) - SIDE_LIMIT)}</button>'
+                if len(order) > SIDE_LIMIT else "")
     l1, l2 = S.t("h1_city")
     body = (
         f'<section class="top">{sub_h1(l1, l2.format(where=where))}<p class="lead" data-lead>{lead}</p>{updated_line(S)}</section>'
         f'{day_strip(S, counts, toggle=True)}'
         f'<div class="cols"><div class="list" data-days data-where="{e(where)}">{days}</div>'
         f'<aside class="side"><div class="side-in"><h2 class="h2">{e(S.t("cinemas_in", where=where))}</h2>'
-        f'<button type="button" class="btn-o btn-wide" data-locate>{ICON_PIN}{S.t("sort_dist")}</button>'
-        f'<div class="lrows" data-sort>{side}</div></div></aside></div>'
+        f'<button type="button" class="linkbtn" data-locate hidden>{ICON_PIN}{S.t("sort_dist")}</button>'
+        f'<div class="lrows" data-sort data-limit="{SIDE_LIMIT}">{side}</div>{more_btn}</div></aside></div>'
     )
     return page(S, f"{S.L}/{S.city_slug[city]}/index.html", S.t("city_title", city=S.cn(city)), S.t("city_desc", city=S.cn(city)),
                 body, crumbs(S, (S.cn(city), None)), alt=S.other.city_url(city))
@@ -651,7 +656,7 @@ def film_city_page(S: Site, fi, city):
         f'<section class="top">{sub_h1(title, S.t("h1_film_city", where=where), cite=True)}{film_head(S, fi)}'
         f'<p class="lead">{e(summary)}</p><a class="more" href="{S.film_url(fi)}">{S.t("about_film")}</a></section>'
         f'<div class="cols"><div class="list">{days}</div><aside class="side"><div class="side-in">'
-        f'<button type="button" class="btn-o btn-wide" data-locate>{ICON_PIN}{S.t("sort_dist")}</button>'
+        f'<button type="button" class="linkbtn" data-locate hidden>{ICON_PIN}{S.t("sort_dist")}</button>'
         + (f'<h2 class="h2">{S.t("other_cities")}</h2><div class="pills">{other_html}</div>' if other_html else "")
         + "</div></aside></div>"
         + (f'<section class="sec"><h2 class="h2">{e(S.t("more_in_city", where=where))}</h2><div class="ptiles">{tiles}</div></section>' if tiles else "")
@@ -745,7 +750,7 @@ def cinema_hub(S: Site):
     body = (
         f'<div class="hero2"><div class="hero-main"><section class="top">{sub_h1(*S.t("h1_cinemas"))}'
         f'<p class="lead">{S.t("cinemas_lead", cinemas=S.n(len(cins), "cinema"), cities=S.n(len(per_city), "city"))}</p></section></div>'
-        f'<div class="hero-side"><button type="button" class="btn-o btn-wide" data-locate>{ICON_PIN}{S.t("sort_dist")}</button></div></div>{secs}'
+        f'<div class="hero-side"><button type="button" class="linkbtn" data-locate hidden>{ICON_PIN}{S.t("sort_dist")}</button></div></div>{secs}'
     )
     return page(S, f"{S.L}/cinema/index.html", S.t("cinemas_title"), S.t("cinemas_desc"), body, crumbs(S, (S.t("crumb_cinemas"), None)),
                 alt=S.other.cinemas_url())

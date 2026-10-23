@@ -148,17 +148,34 @@
     $$(".card.film").forEach(function (c) { sortBy(c, $$(":scope > .cinrow", c), $(":scope > .more", c)); });
     $$(".v-cin").forEach(function (v) { sortBy(v, $$(":scope > .card.cin", v)); });
     $$(".daylist .card.rows").forEach(function (v) { sortBy(v, $$(":scope > .cinrow", v)); });
-    $$("[data-sort]").forEach(function (v) { sortBy(v, $$(":scope > .lrow", v)); });
-    $$("[data-locate]").forEach(function (b) { if (!b.closest("[data-near-home],[data-near-film]")) { b.textContent = L.sorted; b.disabled = true; } });
+    $$("[data-sort]").forEach(function (v) {
+      sortBy(v, $$(":scope > .lrow", v));
+      // a list cut at N rows stays cut, but now the N nearest are the ones shown
+      var lim = +v.getAttribute("data-limit");
+      if (lim && $("[data-more]", v.parentElement)) $$(":scope > .lrow", v).forEach(function (r, i) { if (i >= lim) r.setAttribute("data-extra", ""); else r.removeAttribute("data-extra"); r.hidden = i >= lim; });
+    });
+    $$("[data-locate]").forEach(function (b) { if (!b.closest("[data-near-home],[data-near-film]")) b.hidden = true; });
   }
-  if (store("pos")) { try { applyDist(JSON.parse(store("pos"))); } catch (e) { /* ignore */ } }
-  $$("[data-locate]").forEach(function (b) {
-    if (b.closest("[data-near-home],[data-near-film]")) return;
+  /* Sorting by distance is silent: if the visitor already shared the location (in this visit, or the
+     browser remembers the permission) the lists are sorted; otherwise they keep the order of the page
+     (most films first) and a small link offers to use the location. If it was refused, nothing is shown. */
+  var sortLinks = $$("[data-locate]").filter(function (b) { return !b.closest("[data-near-home],[data-near-film]"); });
+  sortLinks.forEach(function (b) {
     b.addEventListener("click", function () {
       b.disabled = true;
-      getPos(applyDist, function () { b.disabled = false; b.textContent = L.no_pos; });
+      getPos(applyDist, function () { b.disabled = false; b.hidden = true; });
     });
   });
+  if (store("pos")) { try { applyDist(JSON.parse(store("pos"))); } catch (e) { /* ignore */ } }
+  else if ($("[data-lat]")) {
+    var showLinks = function () { sortLinks.forEach(function (b) { b.hidden = false; }); };
+    if (navigator.permissions && navigator.permissions.query) {
+      navigator.permissions.query({ name: "geolocation" }).then(function (st) {
+        if (st.state === "granted") getPos(applyDist, function () { /* stay in page order */ });
+        else if (st.state === "prompt") showLinks();
+      }, showLinks);
+    } else showLinks();
+  }
 
   /* 7. the data file, loaded only for search and "near me" */
   var dataP = null;

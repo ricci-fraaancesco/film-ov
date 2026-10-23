@@ -80,6 +80,9 @@ img { max-width: 100%; display: block; }
 .btn-wide { width: 100%; }
 .btn-row { display: flex; gap: 8px; }
 .btn-row > * { flex: 1; }
+.linkbtn { align-self: flex-start; min-height: 44px; padding: 0; border: 0; background: none; color: var(--ink); display: inline-flex; align-items: center; gap: 6px;
+  font: 600 14px Inter, sans-serif; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.linkbtn svg { width: 16px; height: 16px; }
 .pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .pill { min-height: 44px; padding: 0 16px; border: 1.5px solid var(--ink); border-radius: 999px; display: inline-flex; align-items: center; font-size: 15px; font-weight: 500; text-decoration: none; background: var(--card); }
 .pill:hover { background: var(--mute); }
