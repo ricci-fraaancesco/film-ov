@@ -27,17 +27,16 @@
   "with_coordinates": 1334,
   "arenas": 159,
   "by_status": {
-    "active": 85,
-    "adapter_missing": 98,
+    "active": 102,
+    "adapter_missing": 124,
     "closed": 11,
     "manual_review": 8,
-    "needs_review": 49,
-    "no_booking_link": 57,
-    "no_website": 667,
-    "social_only": 1,
-    "to_check": 723,
-    "unknown_platform": 13,
-    "website_down": 21
+    "needs_review": 62,
+    "no_booking_link": 127,
+    "no_website": 1211,
+    "social_only": 4,
+    "unknown_platform": 19,
+    "website_down": 65
   },
   "errors": {}
 }
