@@ -122,3 +122,18 @@ def test_run_platforms(tmp_path):
     cache = json.loads(pages.read_text())
     assert cache["https://ucicinemas.it/movies/ragione-e-sentimento"]["director"] == "Georgia Oakley"
     assert all("checked" in v for v in cache.values())
+
+
+def test_uci_stops_on_refusal(tmp_path):
+    import requests
+    calls = []
+
+    def get_json(url, params=None):
+        calls.append(url)
+        if url.endswith("/theatres"):
+            return {"data": [{"slug": "a", "name": "A", "city": "X"}, {"slug": "b", "name": "B", "city": "Y"}]}
+        resp = requests.Response(); resp.status_code = 403
+        raise requests.HTTPError("403", response=resp)
+    shows, errors = run_platforms(None, tmp_path / "pages.json", get_json=get_json, uci=True)
+    assert shows == [] and "uci:stopped" in errors
+    assert not any(u.endswith("/b/programming") for u in calls)

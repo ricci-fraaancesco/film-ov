@@ -456,9 +456,10 @@ def webtic_cinemas(venues_path: Path) -> list[dict]:
     return out
 
 
-# UCI's back end answers 403 to automated requests from servers (21 Oct 2026). We respect
-# that: the adapter stays off until UCI agrees to it (run with --uci to try).
-UCI_ENABLED = False
+# UCI's back end answered 403 to our requests on 21 Oct 2026 and the adapter was turned off.
+# On 23 Oct it answered normally again to the same identified bot (FilmOV-bot user agent),
+# so it is back on. If UCI refuses again (403/429), the run stops asking UCI for the night.
+UCI_ENABLED = True
 
 
 def run_platforms(venues_path: Path | None, pages_path: Path, get_json=None, uci: bool | None = None) -> tuple[list[Show], dict]:
@@ -493,6 +494,10 @@ def run_platforms(venues_path: Path | None, pages_path: Path, get_json=None, uci
             except Exception as e:
                 errors[f"uci:{t['slug']}"] = repr(e)[:200]
                 print(f"  uci {t['slug']}: ERROR {e}", file=sys.stderr)
+                code = getattr(getattr(e, "response", None), "status_code", None)
+                if code in (401, 403, 429):  # UCI refuses us: do not insist tonight
+                    errors["uci:stopped"] = f"UCI answered {code}, stopped after {t['slug']}"
+                    break
         try:
             cache = json.loads(pages_path.read_text(encoding="utf-8")) if pages_path.exists() else {}
         except json.JSONDecodeError:

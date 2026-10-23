@@ -77,7 +77,7 @@ NOT_BOOKING = r"(^|\.)(google\.[a-z.]+|goo\.gl|youtube\.com|youtu\.be|twitter\.c
 BOOKING_WORDS = r"acquist|bigliett|prenot|ticket|compra|booking|buy|cassa|online"
 PAGE_WORDS = [r"programm", r"orari", r"bigliett|acquist|prenot", r"in.?sala|film|cartellon|calendar"]
 CONFIRMED = ("filmov", "cinemarevolution", "moviemedia")
-CHAINS_READ: set[str] = set()  # chains read as a whole by an adapter (UCI is off: it blocks automated requests)
+CHAINS_READ: set[str] = {"uci"}  # chains read as a whole by an adapter (scraper/uci.py)
 
 
 def host_of(url: str) -> str:
