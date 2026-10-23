@@ -484,6 +484,24 @@ def run_platforms(venues_path: Path | None, pages_path: Path, get_json=None, uci
         except Exception as e:
             errors["uci:theatres"] = repr(e)[:200]
             theatres = []
+        # real town from data/venues.csv; address and coordinates from UCI, for the site build
+        rows = []
+        if venues_path and Path(venues_path).exists():
+            import csv as _csv
+            with open(venues_path, encoding="utf-8") as fh:
+                rows = list(_csv.DictReader(fh))
+        matched = uci_mod.match_venues(theatres, rows)
+        extra = []
+        for t in theatres:
+            row = matched.get(t["slug"])
+            if row:
+                t["city"] = uci_mod.TOWN_NAMES.get(row["city"], row["city"])
+            else:
+                print(f"  uci {t['slug']}: not in venues.csv, keeping UCI's city {t['city']}", file=sys.stderr)
+            extra.append({"name": t["name"], "city": t["city"], "address": t["address"], "lat": t["lat"], "lon": t["lon"],
+                          "website": f"{uci_mod.SITE}/cinema/{t['slug']}"})
+        if extra:
+            (pages_path.parent / "platform_venues.json").write_text(json.dumps(extra, indent=1, ensure_ascii=False), encoding="utf-8")
         for t in theatres:
             try:
                 got, pg = uci_mod.parse_programming(get_json(f"{uci_mod.API}/theatres/{t['slug']}/programming"), t)

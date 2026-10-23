@@ -146,3 +146,23 @@ def test_uci_name_without_city_suffix():
     assert uci.clean_name("| Roma") == "| Roma"
     t = uci.theatres(lambda u, p: {"data": [{"slug": "x", "name": "UCI Cinemas Bicocca | Milano", "city": "Milano"}]})
     assert t[0]["name"] == "UCI Cinemas Bicocca"
+
+
+def test_uci_real_town_from_venues():
+    th = uci.theatres(lambda u, p: {"data": [
+        {"slug": "uci-cinemas-molfetta-bari", "name": "UCI Cinemas Molfetta | Bari", "city": "Bari", "province": "Bari"},
+        {"slug": "uci-cinemas-fiumara-genova", "name": "UCI Luxe Fiumara | Genova", "city": "Genova"},
+        {"slug": "uci-cinemas-torino-lingotto", "name": "UCI Cinemas Torino Lingotto", "city": "Torino"},
+        {"slug": "uci-cinemas-megalo", "name": "UCI Luxe Megalò | Chieti", "city": "Chieti"},
+        {"slug": "uci-new", "name": "UCI Cinemas Nuovo", "city": "X"}]})
+    rows = [{"name": "Uci Cinemas Molfetta", "city": "Molfetta", "platform": "uci"},
+            {"name": "Uci Cinemas Genova", "city": "Genova", "platform": "uci"},
+            {"name": "Uci Cinemas Torino", "city": "Torino", "platform": "uci"},
+            {"name": "Uci Cinemas Megalo'", "city": "Chieti", "platform": "uci"},
+            {"name": "Cinema Molfetta", "city": "Molfetta", "platform": "18tickets"}]
+    m = uci.match_venues(th, rows)
+    assert m["uci-cinemas-molfetta-bari"]["city"] == "Molfetta"
+    assert m["uci-cinemas-fiumara-genova"]["name"] == "Uci Cinemas Genova"
+    assert m["uci-cinemas-torino-lingotto"]["city"] == "Torino"
+    assert m["uci-cinemas-megalo"]["city"] == "Chieti"
+    assert "uci-new" not in m

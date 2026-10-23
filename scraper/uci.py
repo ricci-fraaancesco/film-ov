@@ -30,13 +30,49 @@ def clean_name(name: str) -> str:
     return short or name
 
 
+# official town names written the way the rest of the site writes them
+TOWN_NAMES = {"Reggio nell'Emilia": "Reggio Emilia"}
+
+# UCI names that share no word with the name in data/venues.csv (key -> venues.csv key)
+NAME_ALIASES = {"fiumara": "genova", "palladio": "vicenza"}
+
+
+def name_key(name: str) -> frozenset:
+    """Words of a UCI cinema name without the brand: 'UCI Luxe Megalò | Chieti' -> {'megalo'}."""
+    import unicodedata
+    n = unicodedata.normalize("NFKD", clean_name(name)).encode("ascii", "ignore").decode().lower()
+    words = [w for w in re.split(r"[^a-z0-9]+", n) if w and w not in ("uci", "cinemas", "cinema", "luxe")]
+    key = " ".join(words)
+    return frozenset(NAME_ALIASES.get(key, key).split())
+
+
+def match_venues(theatres_: list[dict], venue_rows: list[dict]) -> dict:
+    """UCI slug -> its row in data/venues.csv (platform uci), matched by name words.
+    The row gives the real town: UCI's own 'city' is often the province (Molfetta -> Bari)."""
+    rows = [(name_key(r.get("name", "")), r) for r in venue_rows if r.get("platform") == "uci"]
+    out = {}
+    for t in theatres_:
+        k = name_key(t["name"])
+        if not k:
+            continue
+        exact = [r for rk, r in rows if rk == k]
+        near = exact or [r for rk, r in rows if rk and (rk <= k or k <= rk)]
+        if len(near) > 1:  # several candidates: keep the ones in UCI's province
+            prov = (t.get("province") or t.get("city") or "").lower()
+            near = [r for r in near if prov and prov in (r.get("city", "") + " " + r.get("province", "")).lower()] or near
+        if len(near) == 1:
+            out[t["slug"]] = near[0]
+    return out
+
+
 def theatres(get_json) -> list[dict]:
     out = []
     for t in (get_json(f"{API}/theatres", None) or {}).get("data") or []:
         if not t.get("slug"):
             continue
-        addr = clean_html(t.get("address") or "").split("\n")[0]
+        addr = re.sub(r"\s+", " ", clean_html(t.get("address") or "").split("\n")[0]).strip()
         out.append({"slug": t["slug"], "name": clean_name(t.get("name") or ""), "city": (t.get("city") or "").strip(),
+                    "province": (t.get("province") or "").strip(),
                     "address": addr, "lat": t.get("latitude") or "", "lon": t.get("longitude") or ""})
     return out
 

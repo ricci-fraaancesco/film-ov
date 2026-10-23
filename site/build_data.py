@@ -31,6 +31,10 @@ try:
         VENUES_CSV = {(v['city'].lower(), v['name'].lower()): v for v in csv.DictReader(fh)}
 except FileNotFoundError:
     pass
+# cinemas read as a whole chain (UCI): address, coordinates and website from the chain itself
+for v in load('platform_venues.json') or []:
+    key = (v['city'].lower(), v['name'].lower())
+    VENUES_CSV[key] = {**VENUES_CSV.get(key, {}), **{k: x for k, x in v.items() if x not in (None, '')}}
 PAGES = load('film_pages.json')       # cinema film pages, written by the scraper
 
 def match_for(raw):
