@@ -81,6 +81,9 @@ def unique_ids(titles: list[str], years: list) -> list[str]:
 
 # ---------------------------------------------------------------- the site model, one per language
 
+LOGIN_HOSTS = ("ucicinemas.it",)  # booking sites that ask for an account before seat selection
+
+
 class Site:
     def __init__(self, data: dict, base: str, lang: str = "it", now: datetime | None = None):
         self.L = lang
@@ -102,6 +105,8 @@ class Site:
             self.shows.append({"c": ci, "f": fi, "ts": ts, "dt": dt, "day": dt.date(), "time": dt.strftime("%H:%M"),
                                "screen": screen, "label": lab, "fmt": fmt, "url": url})
         self.shows.sort(key=lambda s: (s["ts"], s["c"]))
+        # cinemas whose booking pages sit behind a login (UCI: myUCI account), to warn before the click
+        self.login = {s["c"] for s in self.shows if any(h in s["url"] for h in LOGIN_HOSTS)}
         self.week = [s for s in self.shows if s["day"] <= self.days[-1]]
 
         # cities, ordered by the number of screenings this week (then all)
@@ -252,12 +257,18 @@ def sub_h1(line1: str, line2: str = "", cite: bool = False, tag: str = "h1") -> 
 def chip(S: Site, s, film_title: str = "") -> str:
     c = S.cinemas[s["c"]]
     label = S.t("book", what=f"{film_title}, " if film_title else "", cinema=c["n"], date=S.mid_date(s["day"]), time=s["time"])
+    if s["c"] in S.login:
+        label += f' ({S.t("login_aria")})'
     return (f'<a class="chip" href="{e(s["url"])}" target="_blank" rel="noopener" data-t="{s["ts"]}" '
             f'aria-label="{e(label)}">{s["time"]}</a>')
 
 
 def chips(S, shows, film_title="") -> str:
     return '<div class="chips">' + "".join(chip(S, s, film_title) for s in shows) + "</div>"
+
+
+def login_hint(S: Site, ci) -> str:
+    return f'<p class="hint login">{ICON_LOCK}{e(S.t("login_hint"))}</p>' if ci in S.login else ""
 
 
 def poster(S: Site, fi, cls="pos", small=True) -> str:
@@ -310,6 +321,7 @@ ICON_SEARCH = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" strok
 ICON_PIN = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'
 ICON_EXT = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>'
 ICON_NEXT = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>'
+ICON_LOCK = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>'
 
 
 def page(S: Site, path: str, title: str, desc: str, body: str, crumbs_html: str = "", alt: str = "") -> tuple[str, str]:
@@ -444,7 +456,7 @@ def film_card(S: Site, fi, shows, city, compact=False) -> str:
     for ci, ss in sorted(by_cinema(shows).items(), key=lambda kv: kv[1][0]["ts"]):
         c = S.cinemas[ci]
         rows += (f'<div class="cinrow"{latlon(c)}><div class="row-top"><a class="row-name" href="{S.cinema_url(ci)}">{e(c["n"])}</a>'
-                 f'<span class="dist" data-dist></span></div>{chips(S, ss, title)}</div>')
+                 f'<span class="dist" data-dist></span></div>{chips(S, ss, title)}{login_hint(S, ci)}</div>')
     cr = credit(S, fi)
     meta = f'{"<p class=cred>" + cr + "</p>" if cr else ""}{S.badges(f, label)}'
     more = f'<a class="more" href="{href}">{e(S.t("all_dates", where=S.in_city(city)))}</a>'
@@ -478,7 +490,7 @@ def cinema_card(S: Site, ci, shows) -> str:
     c = S.cinemas[ci]
     return (f'<article class="card cin" data-card{latlon(c)}><div class="cc-top"><h3 class="ctitle"><a href="{S.cinema_url(ci)}">{e(c["n"])}</a></h3>'
             f'<span class="area">{e(c.get("z") or "")}<span class="dist" data-dist></span></span></div>'
-            f'{film_rows(S, shows, c["c"])}{ext_link(S, c)}</article>')
+            f'{film_rows(S, shows, c["c"])}{login_hint(S, ci)}{ext_link(S, c)}</article>')
 
 
 def poster_tile(S: Site, fi, sub: str, href: str) -> str:
@@ -614,7 +626,7 @@ def cinema_page(S: Site, ci):
         f'<div class="cols"><div class="list">'
         f'{day_strip(S, {d: len(v) for d, v in per_day.items()})}'
         f'<div data-days data-where="{e(at)}">{days}</div>{later}{ext_link(S, c)}</div>'
-        f'<aside class="side"><div class="side-in">{facts}{mp}{btns}'
+        f'<aside class="side"><div class="side-in">{facts}{mp}{btns}{login_hint(S, ci)}'
         + (f'<h2 class="h2">{S.t("nearby")}</h2><div class="lrows">{near_html}</div>' if near_html else "")
         + f'<a class="more" href="{S.city_url(city)}">{e(S.t("all_in_city", where=S.in_city(city)))}</a></div></aside></div>'
     )
@@ -641,7 +653,7 @@ def film_city_page(S: Site, fi, city):
     days = ""
     for d, ds in sorted(per_day.items()):
         rows = "".join(f'<div class="cinrow"{latlon(S.cinemas[ci])}><div class="row-top"><a class="row-name" href="{S.cinema_url(ci)}">{e(S.cinemas[ci]["n"])}</a>'
-                       f'<span class="dist" data-dist></span></div>{chips(S, ss, title)}</div>'
+                       f'<span class="dist" data-dist></span></div>{chips(S, ss, title)}{login_hint(S, ci)}</div>'
                        for ci, ss in sorted(by_cinema(ds).items(), key=lambda kv: kv[1][0]["ts"]))
         days += f'<section class="daylist" data-card><h2 class="dayh">{S.short_date(d)}</h2><div class="card rows">{rows}</div></section>'
     last = shows[-1]["day"]

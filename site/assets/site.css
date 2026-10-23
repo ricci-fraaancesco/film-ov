@@ -100,6 +100,8 @@ img { max-width: 100%; display: block; }
 .chip { min-width: 74px; height: 46px; padding: 0 12px; border: 1.5px solid var(--ink); border-radius: 8px; background: var(--card);
   display: inline-flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; text-decoration: none; }
 .chip:hover { background: var(--yellow); }
+.hint.login { display: flex; gap: 6px; align-items: flex-start; margin-top: 8px; }
+.hint.login svg { flex: none; margin-top: 2px; }
 
 /* day strip and view toggle: fixed under the header while scrolling */
 .strip { position: sticky; top: 0; z-index: 10; margin: 14px calc(-1 * var(--gut)) 0; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
