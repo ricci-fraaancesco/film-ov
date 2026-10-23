@@ -83,6 +83,32 @@
   "query": "2001 : Odissea Nello Spazio 4k",
   "version": 4
  },
+ "2001 odissea nello spazio c a": {
+  "qid": "Q103474",
+  "title_it": "2001: Odissea nello spazio",
+  "original_title": "2001: A Space Odyssey",
+  "year": 1968,
+  "runtime": 143,
+  "imdb": "tt0062622",
+  "tmdb": "62",
+  "itwiki": "2001: Odissea nello spazio",
+  "title_en": "2001: A Space Odyssey",
+  "enwiki": "2001: A Space Odyssey",
+  "directors": [
+   "Stanley Kubrick"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "2001: Odissea nello spazio è un film del 1968 co-scritto, prodotto e diretto da Stanley Kubrick, che ha curato anche parte degli effetti speciali.",
+  "intro_en": "2001: A Space Odyssey is a 1968 epic science fiction film produced and directed by Stanley Kubrick, who co-wrote the screenplay with Arthur C.",
+  "confidence": "high",
+  "score": 1.026,
+  "query": "2001: Odissea nello spazio C.A.",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "agata the writer": {
   "qid": "Q141654900",
   "title_it": "Agata the Writer",
@@ -286,6 +312,12 @@
   "title_en": "Blowup",
   "enwiki": "Blowup",
   "intro_en": "Blowup is a 1966 psychological mystery film directed by Michelangelo Antonioni, co-written by Antonioni, Tonino Guerra and Edward Bond and produced by Carlo Ponti."
+ },
+ "bts world tour arirang in buenos aires e sao paulo c a": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "BTS - World tour Arirang in Buenos Aires e Sao Paulo C.A.",
+  "version": 4
  },
  "bts world tour arirang live viewing": {
   "qid": null,
@@ -919,6 +951,12 @@
   "version": 4,
   "checked": "2026-10-23"
  },
+ "enhypen world tour blood saga c a": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "Enhypen world tour: Blood saga C.A.",
+  "version": 4
+ },
  "essi vivono": {
   "qid": "Q72909",
   "title_it": "Essi vivono",
@@ -1116,6 +1154,29 @@
   "title_en": "Bonnie and Clyde",
   "enwiki": "Bonnie and Clyde (film)",
   "intro_en": "Bonnie and Clyde is a 1967 American biographical crime drama film directed by Arthur Penn and starring Warren Beatty and Faye Dunaway as Clyde Barrow and Bonnie Parker, outlaws and romantic partners in the Great Depression-era American South."
+ },
+ "george michael the faith tour": {
+  "qid": "Q138701923",
+  "title_it": "George Michael: The Faith Tour",
+  "original_title": "",
+  "year": null,
+  "runtime": null,
+  "imdb": "tt40564737",
+  "tmdb": "1649403",
+  "itwiki": null,
+  "title_en": "George Michael: The Faith Tour",
+  "enwiki": "George Michael: The Faith Tour",
+  "directors": [],
+  "languages": [],
+  "intro": "",
+  "intro_en": "George Michael: The Faith Tour is an upcoming British concert film featuring English singer-songwriter George Michael, directed by Andy Morahan and David Austin.",
+  "confidence": "medium",
+  "score": 1.0,
+  "query": "George Michael: The Faith Tour",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23",
+  "alternatives": []
  },
  "get shorty": {
   "qid": "Q261923",
@@ -1416,6 +1477,12 @@
   "title_en": "Hope",
   "enwiki": "Hope (2026 film)",
   "intro_en": "Hope (Korean: 호프) is a 2026 South Korean epic science fiction monster film written, directed, and co-produced by Na Hong-jin."
+ },
+ "hybe cheering party c a": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "Hybe cheering party C.A.",
+  "version": 4
  },
  "i colori della passione the mill and the cross": {
   "qid": "Q1215008",
@@ -2576,6 +2643,12 @@
   "version": 4,
   "checked": "2026-10-23"
  },
+ "league of legends worlds 26 c a": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "League Of Legends Worlds 26 C.A.",
+  "version": 4
+ },
  "les demoiselle de rochefort": {
   "qid": "Q1214975",
   "title_it": "Josephine",
@@ -2895,6 +2968,12 @@
   "qid": null,
   "checked": "2026-10-21",
   "query": "MATRIX 4K V.O.",
+  "version": 4
+ },
+ "matrix c a": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "Matrix C.A.",
   "version": 4
  },
  "mean streets": {
@@ -3452,6 +3531,33 @@
   "query": "(O.V.) Urchin",
   "version": 4
  },
+ "oceania 2": {
+  "qid": "Q124457266",
+  "title_it": "Oceania 2",
+  "original_title": "Moana 2",
+  "year": 2024,
+  "runtime": 100,
+  "imdb": "tt13622970",
+  "tmdb": "1241982",
+  "itwiki": "Oceania 2",
+  "title_en": "Moana 2",
+  "enwiki": "Moana 2",
+  "directors": [
+   "David G. Derrick Jr.",
+   "Dana Ledoux Miller"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Oceania 2 è un film d'animazione del 2024 diretto da Dave G.",
+  "intro_en": "Moana 2 is a 2024 American animated musical adventure film directed by David Derrick Jr., Jason Hand, and Dana Ledoux Miller and written by Miller and Jared Bush.",
+  "confidence": "high",
+  "score": 1.1,
+  "query": "Oceania 2",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "ombre": {
   "qid": "Q1535980",
   "title_it": "Ombre",
@@ -3547,6 +3653,12 @@
   "qid": null,
   "checked": "2026-10-20",
   "query": "OZZY & BLACK SABBATH: BACK TO THE BEGINNING",
+  "version": 4
+ },
+ "ozzy and black sabbath back to the beginning c a": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "Ozzy & Black Sabbath: Back To The Beginning C.A.",
   "version": 4
  },
  "palcoscenico stage door": {
@@ -3851,6 +3963,12 @@
   "enwiki": "Sense and Sensibility (2026 film)",
   "intro_en": "Sense and Sensibility is a 2026 period romantic drama film directed by Georgia Oakley from a screenplay by Diana Reid."
  },
+ "rammstein live in mexico city c a": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "Rammstein - Live in Mexico City C.A.",
+  "version": 4
+ },
  "report to mother": {
   "qid": null,
   "checked": "2026-10-21",
@@ -3989,6 +4107,39 @@
   "enwiki": "Serpico",
   "intro_en": "Serpico is a 1973 American biographical crime drama film directed by Sidney Lumet and starring Al Pacino in the title role, former New York City police officer Frank Serpico."
  },
+ "seventeen world tour new c a": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "Seventeen world tour NEW C.A.",
+  "version": 4
+ },
+ "shaun vita da pecora operazione z u c c a": {
+  "qid": "Q134694705",
+  "title_it": "Shaun, vita da pecora: Operazione Z.U.C.C.A",
+  "original_title": "Shaun the Sheep: The Beast of Mossy Bottom",
+  "year": 2026,
+  "runtime": 80,
+  "imdb": "tt36841161",
+  "tmdb": "1477104",
+  "itwiki": null,
+  "title_en": "Shaun the Sheep: The Beast of Mossy Bottom",
+  "enwiki": "Shaun the Sheep: The Beast of Mossy Bottom",
+  "directors": [
+   "Steve Cox",
+   "Matthew Walker"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "",
+  "intro_en": "Shaun the Sheep: The Beast of Mossy Bottom is a 2026 British stop motion science fiction comedy film directed by Steve Cox and Matthew Walker and written by Mark Burton and Giles Pilbrow.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "Shaun Vita da pecora - Operazione Z.U.C.C.A.",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
+ },
  "sheep in the box": {
   "qid": "Q137640905",
   "title_it": "Sheep in the Box",
@@ -4040,6 +4191,32 @@
   "title_en": "Sheep in the Box",
   "enwiki": "Sheep in the Box",
   "intro_en": "Sheep in the Box is a 2026 Japanese science fiction drama film written, directed and edited by Hirokazu Koreeda."
+ },
+ "sing": {
+  "qid": "Q20762698",
+  "title_it": "Sing",
+  "original_title": "Sing",
+  "year": 2016,
+  "runtime": 108,
+  "imdb": "tt3470600",
+  "tmdb": "335797",
+  "itwiki": "Sing (film 2016)",
+  "title_en": "Sing",
+  "enwiki": "Sing (2016 American film)",
+  "directors": [
+   "Garth Jennings"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Sing è un film d'animazione del 2016 scritto e diretto da Garth Jennings, prodotto da Illumination Entertainment.",
+  "intro_en": "Sing is a 2016 American animated musical comedy film written and directed by Garth Jennings.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "Sing",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "soul kitchen": {
   "qid": "Q312538",
@@ -4155,6 +4332,12 @@
   "enwiki": "Strange Journey: The Story of Rocky Horror",
   "intro_en": "Strange Journey: The Story of Rocky Horror is a 2025 American documentary film about the 1975 musical film The Rocky Horror Picture Show, which became a cultural phenomenon."
  },
+ "stray kids world tour run it c a": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "Stray Kids World Tour RUN IT C.A.",
+  "version": 4
+ },
  "stray kids world tour run it il live viewing": {
   "qid": null,
   "checked": "2026-10-20",
@@ -4186,6 +4369,12 @@
   "title_en": "Summer Blooms",
   "enwiki": null,
   "intro_en": ""
+ },
+ "svadba": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "Svadba",
+  "version": 4
  },
  "taxi driver": {
   "qid": "Q47221",
@@ -4689,6 +4878,12 @@
   "version": 4,
   "checked": "2026-10-23"
  },
+ "tomorrow x together world tour act tomorrow c a": {
+  "qid": null,
+  "checked": "2026-10-23",
+  "query": "Tomorrow X Together world tour Act: tomorrow C.A.",
+  "version": 4
+ },
  "tracking edith": {
   "qid": "Q42325232",
   "title_it": "Tracking Edith",
@@ -5149,6 +5344,32 @@
   "title_en": "Wildwood",
   "enwiki": "Wildwood (film)",
   "intro_en": "Wildwood is a 2026 American stop-motion adult animated epic dark fantasy film co-produced and directed by Travis Knight and written by Chris Butler, based on Colin Meloy and Carson Ellis's 2011 novel."
+ },
+ "wildwood i segreti del bosco proibito": {
+  "qid": "Q123058740",
+  "title_it": "WIldwood - I segreti del bosco proibito",
+  "original_title": "Wildwood",
+  "year": 2026,
+  "runtime": 132,
+  "imdb": "tt2056785",
+  "tmdb": "791523",
+  "itwiki": "Wildwood - I segreti del bosco proibito",
+  "title_en": "Wildwood",
+  "enwiki": "Wildwood (film)",
+  "directors": [
+   "Travis Knight"
+  ],
+  "languages": [
+   "inglese"
+  ],
+  "intro": "Wildwood - I segreti del bosco proibito (Wildwood) è un film d'animazione del 2026 diretto da Travis Knight.",
+  "intro_en": "Wildwood is a 2026 American stop-motion adult animated epic dark fantasy film directed by Travis Knight and written by Chris Butler, based on the 2011 novel by Colin Meloy and Carson Ellis.",
+  "confidence": "high",
+  "score": 1.15,
+  "query": "Wildwood: I Segreti del Bosco Proibito",
+  "source": "search",
+  "version": 4,
+  "checked": "2026-10-23"
  },
  "wildwood original version": {
   "qid": null,
