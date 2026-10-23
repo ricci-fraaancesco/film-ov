@@ -99,6 +99,12 @@ T = {
         "lead_404": "Forse il film non è più in programmazione. Cerca un altro film o scegli una città.", "go_home": "Vai alla home",
         "orig_lang": "Lingua originale", "many_langs": "Più lingue", "and": "e", "subs": "Sott. {s}", "subs_inline": "sott. {s}",
         "crumb_films": "Film", "crumb_cinemas": "Cinema",
+        "nav_classics": "Classici", "h1_classics": ("Classici al cinema", "in lingua originale"),
+        "classics_line": "Film che non hai potuto vedere in sala, di nuovo sul grande schermo.",
+        "classics_lead": "{films} in programma in {cities}. Il più vecchio è del {year}.",
+        "more_classics": "Mostra altri {n} classici", "jump_city": "Vai alla città",
+        "classics_title": "Classici al cinema in lingua originale: film del passato di nuovo in sala",
+        "classics_desc": "I film classici in versione originale nei cinema italiani, città per città, con gli orari e il link per prenotare.",
     },
     "en": {
         "skip": "Skip to content", "nav_cities": "Cities", "nav_films": "Films", "nav_cinemas": "Cinemas",
@@ -158,6 +164,12 @@ T = {
         "lead_404": "Maybe the film isn't showing any more. Search for another film or pick a city.", "go_home": "Go to the home page",
         "orig_lang": "Original language", "many_langs": "Several languages", "and": "and", "subs": "{s} subs", "subs_inline": "{s} subs",
         "crumb_films": "Films", "crumb_cinemas": "Cinemas",
+        "nav_classics": "Classics", "h1_classics": ("Classic films", "in original language"),
+        "classics_line": "Films you couldn't see on the big screen, back in cinemas.",
+        "classics_lead": "{films} showing in {cities}. The oldest is from {year}.",
+        "more_classics": "Show {n} more classics", "jump_city": "Jump to a city",
+        "classics_title": "Classic films in original language: old films back in Italian cinemas",
+        "classics_desc": "Classic films in original version in Italian cinemas, city by city, with showtimes and a link to book.",
     },
 }
 
