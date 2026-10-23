@@ -1,0 +1,258 @@
+[
+ {
+  "name": "UCI Cinemas Arezzo",
+  "city": "Arezzo",
+  "address": "Via Turati, n. 2",
+  "lat": "43.479041403496964",
+  "lon": "11.869633503004069",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-arezzo"
+ },
+ {
+  "name": "UCI Cinemas Bicocca",
+  "city": "Milano",
+  "address": "Viale Sarca, n. 336 angolo Via Chiese",
+  "lat": "45.5217995",
+  "lon": "9.2161435",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-bicocca-milano"
+ },
+ {
+  "name": "UCI Cinemas Bolzano",
+  "city": "Bolzano",
+  "address": "c/o TWENTY",
+  "lat": "46.4861284",
+  "lon": "11.3359108",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-bolzano"
+ },
+ {
+  "name": "UCI Luxe Campi Bisenzio",
+  "city": "Campi Bisenzio",
+  "address": "Via Fratelli Cervi, n. 9",
+  "lat": "43.8435509",
+  "lon": "11.1373349",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-campi-bisenzio-firenze"
+ },
+ {
+  "name": "UCI Cinemas Casoria",
+  "city": "Casoria",
+  "address": "Via San Salvatore,",
+  "lat": "40.8976721",
+  "lon": "14.3152285",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-casoria-napoli"
+ },
+ {
+  "name": "UCI Cinemas Catania",
+  "city": "Misterbianco",
+  "address": "presso Centro Commerciale Centro Sicilia",
+  "lat": "37.4766874",
+  "lon": "15.012554",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-catania"
+ },
+ {
+  "name": "UCI Cinemas Cinepolis Marcianise",
+  "city": "Marcianise",
+  "address": "Centro Commerciale Campania,",
+  "lat": "41.0047876",
+  "lon": "14.3283839",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-cinepolis-marcianise-caserta"
+ },
+ {
+  "name": "UCI Cinemas Firenze",
+  "city": "Firenze",
+  "address": "Via del Cavallaccio",
+  "lat": "43.7723831",
+  "lon": "11.1887768",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-firenze"
+ },
+ {
+  "name": "UCI Luxe Fiumara",
+  "city": "Genova",
+  "address": "Via Mantovani",
+  "lat": "44.4134152",
+  "lon": "8.8807726",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-fiumara-genova"
+ },
+ {
+  "name": "UCI Cinemas Lissone",
+  "city": "Lissone",
+  "address": "Via Madre Teresa, S.S. Valassina",
+  "lat": "45.6340226",
+  "lon": "9.2237574",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-lissone-milano"
+ },
+ {
+  "name": "UCI Luxe Marcon",
+  "city": "Marcon",
+  "address": "Via Enrico Mattei",
+  "lat": "45.5487204",
+  "lon": "12.3051239",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-venezia-marcon"
+ },
+ {
+  "name": "UCI Luxe Megalò",
+  "city": "Chieti",
+  "address": "Località Santa Filomena, 66100 Chieti CH",
+  "lat": "42.3565",
+  "lon": "14.1279",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-megalo"
+ },
+ {
+  "name": "UCI Cinemas Meridiana",
+  "city": "Casalecchio di Reno",
+  "address": "Via Aldo Moro, n. 14",
+  "lat": "44.4843443",
+  "lon": "11.2694446",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-meridiana-bologna"
+ },
+ {
+  "name": "UCI Cinemas MilanoFiori",
+  "city": "Assago",
+  "address": "Viale MilanoFiori",
+  "lat": "45.4074932",
+  "lon": "9.1520513",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-milanofiori-milano"
+ },
+ {
+  "name": "UCI Cinemas Molfetta",
+  "city": "Molfetta",
+  "address": "Strada Statale 16 bis - Uscita Molfetta Z.I.",
+  "lat": "41.2166952",
+  "lon": "16.5470493",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-molfetta-bari"
+ },
+ {
+  "name": "UCI Cinemas Moncalieri",
+  "city": "Moncalieri",
+  "address": "Via Fortunato Postiglione Z.I. Vadò",
+  "lat": "44.9763862",
+  "lon": "7.7088444",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-moncalieri-torino"
+ },
+ {
+  "name": "UCI Cinemas Orio",
+  "city": "Azzano San Paolo",
+  "address": "Via Toscana, 2 - 24052 Azzano San Paolo (BG)",
+  "lat": "45.6613995",
+  "lon": "9.6972232",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-orio-bergamo"
+ },
+ {
+  "name": "UCI Cinemas Palermo",
+  "city": "Palermo",
+  "address": "presso il Centro Commerciale Forum Palermo - Via Filippo Pecoraino SNC",
+  "lat": "38.0901173",
+  "lon": "13.4124993",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-palermo"
+ },
+ {
+  "name": "UCI Luxe Palladio",
+  "city": "Vicenza",
+  "address": "Strada Padana verso Padova n. 60",
+  "lat": "45.5293024",
+  "lon": "11.5946512",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-vicenza-palladio"
+ },
+ {
+  "name": "UCI Cinemas Parco Leonardo",
+  "city": "Fiumicino",
+  "address": "Via Gian Lorenzo Bernini, n. 20/22",
+  "lat": "41.7983211",
+  "lon": "12.2954392",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-parco-leonardo-roma"
+ },
+ {
+  "name": "UCI Cinemas Perugia",
+  "city": "Perugia",
+  "address": "Viale Centova, n. 1/D",
+  "lat": "43.0967406",
+  "lon": "12.3552844",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-perugia"
+ },
+ {
+  "name": "UCI Cinemas Pioltello",
+  "city": "Pioltello",
+  "address": "Via San Francesco, n. 33",
+  "lat": "45.5025942",
+  "lon": "9.3216659",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-pioltello-milano"
+ },
+ {
+  "name": "UCI Cinemas Porta di Roma",
+  "city": "Roma",
+  "address": "c/o Centro Commerciale Porta di Roma - Via delle Vigne Nuove, snc",
+  "lat": "41.971355",
+  "lon": "12.5414713",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-porta-di-roma-roma"
+ },
+ {
+  "name": "UCI Cinemas Romagna",
+  "city": "Savignano Sul Rubicone",
+  "address": "c/o Parco Commerciale Romagna - Piazza F.lli Lumière, n. 22",
+  "lat": "44.1585642",
+  "lon": "12.424129",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-forli-cesena"
+ },
+ {
+  "name": "UCI Cinemas Reggio Emilia",
+  "city": "Reggio Emilia",
+  "address": "Piazza Azzurri d&#039;Italia, n. 1",
+  "lat": "44.714828",
+  "lon": "10.6511025",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-reggio-emilia"
+ },
+ {
+  "name": "UCI Luxe Maximo",
+  "city": "Roma",
+  "address": "C/o Maximo Shopping",
+  "lat": "41.8076205052",
+  "lon": "12.4851105826",
+  "website": "https://ucicinemas.it/cinema/uci-luxe-maximo"
+ },
+ {
+  "name": "UCI Cinemas Roma Est",
+  "city": "Roma",
+  "address": "Via Collatina, n. 858",
+  "lat": "41.9159171",
+  "lon": "12.6617884",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-romaest-roma"
+ },
+ {
+  "name": "UCI Cinemas Seven Gioia del Colle",
+  "city": "Gioia del Colle",
+  "address": "Via Federico Fellini, 80, 70023 Gioia del Colle BA",
+  "lat": "40.8092105",
+  "lon": "16.9208035",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-seven-gioia-del-colle-bari"
+ },
+ {
+  "name": "UCI Cinemas Showville",
+  "city": "Bari",
+  "address": "Via Giannini 9",
+  "lat": "41.0907676",
+  "lon": "16.8872041",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-showville-bari"
+ },
+ {
+  "name": "UCI Cinemas Torino Lingotto",
+  "city": "Torino",
+  "address": "Via Nizza, n. 262",
+  "lat": "45.0329223",
+  "lon": "7.6660891",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-torino-lingotto"
+ },
+ {
+  "name": "UCI Cinemas Verona",
+  "city": "San Giovanni Lupatoto",
+  "address": "Via Monte Amiata",
+  "lat": "45.3966662",
+  "lon": "11.0164011",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-verona"
+ },
+ {
+  "name": "UCI Cinemas Villesse",
+  "city": "Villesse",
+  "address": "Località Maranuz, 2 - c/o Centro Commerciale Tiare Shopping",
+  "lat": "45.8651614",
+  "lon": "13.4301854",
+  "website": "https://ucicinemas.it/cinema/uci-cinemas-villesse-gorizia"
+ }
+]
