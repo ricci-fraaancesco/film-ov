@@ -1,52 +1,46 @@
-# Controllo dei siti dei cinema (2026-10-23)
+# Controllo dei siti dei cinema (2026-10-24)
 
 ## Questa notte
 
 
 ## Totale per stato
 
-- no_website: 1211
-- active: 142
-- no_booking_link: 127
-- adapter_missing: 84
-- website_down: 65
-- needs_review: 62
-- unknown_platform: 19
-- closed: 11
+- no_website: 667
+- active: 124
+- adapter_missing: 59
+- no_booking_link: 57
+- needs_review: 49
+- website_down: 21
+- unknown_platform: 13
 - manual_review: 8
-- social_only: 4
+- social_only: 1
 
 ## Piattaforme trovate
 
-- 18tickets: 95
-- webtic: 70
-- uci: 40
-- liveticket: 20
-- thespace: 15
-- cinebot: 9
+- 18tickets: 84
+- webtic: 51
+- uci: 39
+- thespace: 14
+- liveticket: 9
 - eplanet: 7
 - giometti: 6
 - cinelandia: 6
-- notorious: 5
-- anteo: 4
-- ciaotickets: 3
-- ferrero: 3
+- cinebot: 4
+- anteo: 3
+- notorious: 3
 - movieplanet: 3
+- ferrero: 2
 - boxoffice: 2
 - eventbrite: 2
-- boxol: 1
 - dice.fm: 1
 - ticka.it: 1
 
 ## Siti di biglietteria sconosciuti (candidati per un nuovo adapter)
 
-- www.2tickets.it: 7
-- www.anyticket.it: 2
+- www.2tickets.it: 5
 - www.ticketo.it: 2
 - www.circuitocinemavenezia.it: 2
 - www.romaworld.com: 1
-- www.midaticket.it: 1
 - cinemalacompagnia.ticka.it: 1
-- eventipiombino.it: 1
 - live.squby.it: 1
 - filmandmore.it: 1
